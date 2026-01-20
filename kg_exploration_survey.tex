@@ -20,9 +20,10 @@
 \begin{abstract}
 The growing availability of Knowledge Graphs (KGs) has fueled research on interactive systems for exploring, querying, and making sense of graph-structured knowledge. This survey reviews the state of the art on \emph{knowledge exploration} in KGs, proposes a taxonomy of key design attributes (interaction paradigm, guidance strategy, visualization, backend assumptions, scalability, and evaluation), and analyses ten representative works spanning faceted browsing, relationship discovery, guided query building, and recommendation-based exploration. We also discuss practical tools with graphical user interfaces, commonly used datasets and evaluation protocols, and outline open challenges and research directions.
 \end{abstract}
+\keywords{Knowledge graphs \and exploratory search \and user guidance \and faceted browsing \and query suggestion \and visualization recommendation}
 
 \section{Introduction}
-Knowledge graph exploration aims to help users inspect, connect, and query linked data without requiring expertise in formal graph query languages (e.g., SPARQL, Cypher). While graph-based representations enable flexible navigation, rich semantics, and multi-perspective analysis, they also introduce major challenges: schema complexity, data heterogeneity, ambiguous labels, endpoint latency, and the need for \emph{guidance} that prevents users from getting lost in uninformative traversals or over-complex results. Beyond correctness, exploration systems must support an iterative \emph{sense-making} process where users progressively refine their information needs and interpretations.
+Knowledge graph exploration aims to help users inspect, connect, and query linked data without requiring expertise in formal graph query languages (e.g., SPARQL, Cypher). It can be seen as a form of exploratory search~\cite{marchionini2006,white2009} where information needs evolve during interaction (``berrypicking''~\cite{bates1989}). Graph representations support flexible navigation and rich semantics, but they also introduce major challenges: schema complexity, data heterogeneity, ambiguous labels, endpoint latency, and the need for \emph{guidance} that prevents users from getting lost in uninformative traversals or over-complex results. Beyond correctness, exploration systems must support an iterative \emph{sense-making} process where users progressively refine their information needs and interpretations.
 
 \subsection{KG exploration: definitions, impact, and challenges}
 In this survey, \emph{knowledge exploration} refers to interfaces and methods that enable users to:
@@ -35,20 +36,24 @@ In this survey, \emph{knowledge exploration} refers to interfaces and methods th
 The core tension is balancing \emph{expressivity} and \emph{usability} while keeping interactive response times on large KGs (e.g., DBpedia, Wikidata) and providing explanations for ranking and recommendations.
 
 \subsection{Contributions and structure}
-This manuscript contributes: (i) a practical taxonomy of KG exploration systems; (ii) a structured analysis of representative works; (iii) a comparative table highlighting key design choices; and (iv) a discussion of evaluation practices and open challenges. The remainder is organized similarly to recent survey patterns in adjacent Semantic Web topics: scope and methodology (Section~2), taxonomy (Section~3), sub-tasks (Section~4), per-work analysis (Section~5), comparative discussion (Sections~6--10), tools and benchmarks (Sections~11--12), and open issues (Section~13).
+This manuscript contributes: (i) a practical taxonomy of KG exploration systems; (ii) a structured analysis of representative works; (iii) a comparative table highlighting key design choices; and (iv) a discussion of evaluation practices and open challenges. The remainder is organized as follows: scope and methodology (Section~2), taxonomy (Section~3), sub-tasks (Section~4), analysis of selected works (Section~5), comparative discussion (Sections~6--11), tools and benchmarks (Sections~12--13), open issues (Section~14), and conclusions (Section~15).
 
 \section{Scope and Methodology}
 \subsection{Differences from related surveys}
-Existing surveys cover visual query builders, Linked Data visualization, and question answering. However, fewer works focus specifically on the combination of \emph{interactive guidance}, \emph{recommendations}, and \emph{multi-modal visualizations} that characterize KG exploration as an iterative sense-making process. This survey explicitly relates interaction paradigms to backend assumptions and evaluation practices.
+Existing surveys cover Linked Data visualization and exploration systems (e.g., Dadzie and Rowe~\cite{dadzie2011}; Marie and Gandon~\cite{marie2014}; Jacksi et al.~\cite{jacksi2016review}), visual query builders, and question answering. However, fewer works focus specifically on the combination of \emph{interactive guidance}, \emph{recommendations}, and \emph{multi-modal visualizations} that characterize KG exploration as an iterative sense-making process. This survey explicitly relates interaction paradigms to backend assumptions and evaluation practices.
+
+\subsection{Scope}
+We focus on \emph{interactive} KG exploration systems, i.e., user-facing methods and tools that support iterative sense-making over graph-structured data through navigation, guided query construction, recommendations, and visualization. We include both RDF graphs queried via SPARQL and property graphs queried via Cypher when the contribution primarily targets exploration. We exclude work whose primary focus is (i) KG construction and curation pipelines, (ii) ontology engineering and schema alignment, (iii) standalone question answering systems that return answers without an exploration workflow, and (iv) offline graph analytics without an interactive exploration interface.
 
 \subsection{Methodology}
 \paragraph{Identification.} We searched CrossRef and Semantic Scholar using keywords such as ``knowledge graph exploration'', ``graph query suggestion'', ``SPARQL query builder'', ``linked data browser'', and ``visualization recommendation''.
 \paragraph{Screening.} We filtered results by peer-reviewed status, relevance to exploration (excluding pure ETL or isolated QA), and availability of a described method or interface.
 \paragraph{Inclusion.} We retained works that (i) target exploration and not only exact query answering, and (ii) propose either a user-facing interaction model or a guidance/recommendation mechanism.
 \paragraph{Selection.} We selected ten representative works (2008--2022) covering faceted browsing, relationship discovery, graph navigation, guided query building, visualization recommendation, and user guidance.
+\paragraph{Limitations.} This survey is not intended as an exhaustive systematic review; instead, it uses a compact set of representative works as anchors, complemented by a broader ecosystem of tools and systems (Section~12). Because datasets, tasks, and metrics vary widely across papers, some comparative statements necessarily follow the evidence reported in the literature rather than replicated experiments.
 
 \section{Taxonomic analysis of KG exploration approaches}
-We characterize approaches along the following attributes:
+We characterize approaches along the following attributes; Table~\ref{tab:taxonomy} summarizes typical design choices and Table~\ref{tab:comparazione} instantiates them for the selected works.
 \begin{itemize}
   \item \textbf{Interaction paradigm}: faceted browsing (gFacet, Sampo-UI), relationship/path discovery (RelFinder), click-based graph navigation (LodLive), guided query building (Sparklis), query-expansion recommendation (Graph-Query Suggestions), and visualization recommendation (LinkDaViz).
   \item \textbf{Guidance strategy}: lexical/semantic suggestions, NL paraphrasing of the evolving query (Sparklis), ranked path expansion, profile-based recommendations, and NL prompts to reduce schema and language ambiguity (Witschel et al.).
@@ -57,6 +62,25 @@ We characterize approaches along the following attributes:
   \item \textbf{Scalability}: target KG size, candidate-generation strategies, and reported latency; many works rely on DBpedia, Freebase, or Wikidata-like KGs.
   \item \textbf{Evaluation}: controlled user studies (Sparklis; Witschel et al.; LinkDaViz), offline benchmarks (Graph-Query Suggestions; LDRec), and deployment-oriented case studies (Sampo-UI).
 \end{itemize}
+
+\begin{table}[t]
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.3cm}p{5.4cm}}
+\toprule
+Dimension & Typical design choices \\
+\midrule
+Interaction paradigm & Faceted browsing; node-link navigation; relationship discovery; guided query construction; query-by-example and expansion; visualization recommendation. \\
+Guidance strategy & None/implicit; constraint-based suggestions (e.g., valid-step); ranked recommendations; personalization; natural-language prompts and paraphrasing. \\
+Visualization & Node-link graphs; facets/panels; tables and lists; charts/maps; multi-perspective analytic views. \\
+Backend and data access & RDF/SPARQL endpoints and dereferencing; property graphs/Cypher; hybrid services; precomputation and caching for interactivity. \\
+Scalability & From thousands to billions of triples/edges; strategies include sampling, summarization, efficient candidate generation, and incremental expansion. \\
+Evaluation & User studies (usability, time, insights); offline metrics for ranking/recommendation; deployment evidence from portals and logs. \\
+\bottomrule
+\end{tabular}
+\caption{Taxonomy dimensions for KG exploration interfaces and methods.}
+\label{tab:taxonomy}
+\end{table}
 
 \section{Sub-tasks}
 \subsection{Data preparation and profiling}
@@ -174,14 +198,22 @@ Interaction Patterns~(2022) & Interaction study & Design guidance & Prototypes &
 \section{Method (guidance and learning)}
 Approaches span a continuum from \emph{manual} exploration (LodLive) to \emph{assisted} filtering and path extraction (gFacet, RelFinder), \emph{guided} construction with NL support and schema-aware suggestions (Sparklis, NL Guidance), and \emph{recommendation-driven} exploration using ranking models or user profiles (Graph-Query Suggestions, LD Browser Rec.). This choice impacts both interaction cost (cognitive load) and system cost (need for precomputation, caching, or efficient candidate generation).
 
+At the algorithmic level, guidance ranges from \emph{hard} constraints that prevent dead ends (e.g., valid-step suggestions in Sparklis) to \emph{soft} ranking signals over candidate expansions (Graph-Query Suggestions, LDRec) and workflow templates that structure user actions (LinkDaViz, Sampo-UI). Hard constraints reduce error rates and improve learnability, but can bias exploration; ranking preserves freedom, but increases the need for explainable recommendations and quality control. In practice, most systems rely on incremental expansion and careful caching/summarization to keep latency within interactive bounds.
+
 \section{Domain}
 Many approaches are domain-agnostic (DBpedia/Freebase/Wikidata-style graphs). Sampo-UI demonstrates reusable components on cultural-heritage portals, while NL Guidance and the Interaction Patterns study focus on a specialized medical KG where domain terminology influences both parsing and exploration strategies.
+
+Domain-specific KGs often enable stronger, schema-aware guidance (because types and relations are narrower), but they also amplify risks such as jargon, ambiguous labels, and task sensitivity (e.g., medical scenarios). This typically shifts evaluation toward task-based studies and qualitative insight analysis rather than generic search benchmarks.
 
 \section{Application and purpose}
 Recurring use cases include data discovery (gFacet, LodLive), explanation of relationships (RelFinder), exploratory search with progressively refined queries (Sparklis, Graph-Query Suggestions), semantic portals for cultural-heritage analytics (Sampo-UI), personalization in browsing (LD Browser Rec.), and human-centered studies aimed at improving guidance and usability (Witschel et al.).
 
+\noindent Across these scenarios, exploration systems serve heterogeneous user roles (lay users, analysts, domain experts) and must balance expressivity, cognitive load, and trust: users need to understand what the system is showing, why suggestions appear, and how to recover from wrong turns without losing context.
+
 \section{Availability}
 Reproducibility varies widely across the literature. Several works provide reusable tools or demos: gFacet reports a public prototype (\url{http://www.gFacet.org}) and RelFinder a public demo (\url{http://relfinder.dbpedia.org}); LodLive is a reusable tool licensed under MIT and available as a web application (\url{http://en.lodlive.it/}); LinkDaViz provides a public web implementation (\url{http://eis.iai.uni-bonn.de/Projects/LinkDaViz.html}); and Sparklis is available online (\url{http://www.irisa.fr/LIS/ferre/sparklis/}). Sampo-UI is released as open-source framework for building semantic portals (\url{https://github.com/SemanticComputing/sampo-ui}).
+
+Long-term sustainability is an additional concern: early prototypes relying on deprecated client technologies (notably Flash/Flex) are difficult to reuse, even when ideas remain influential. More recent portal frameworks (e.g., Sampo-UI) address this by packaging patterns into maintained stacks and configuration-driven backends.
 
 Conversely, several recommendation and guidance contributions are primarily reported as methods and user-study prototypes, without public release of code and data processing pipelines. This is a major barrier to reproducible comparisons, because ranking and recommendation models are tightly coupled with the chosen KG, backend, and feature extraction choices.
 
@@ -194,10 +226,22 @@ Three evaluation patterns recur:
 \end{itemize}
 Overall, heterogeneity in tasks, datasets, and reported metrics makes cross-paper comparisons difficult. A shared benchmark suite for KG exploration (with task sets and measures for user effort and sense-making) remains an open need.
 
-\section{Tools}
-From a practical perspective, reusable GUI tools include: (i) Sparklis for schema-aware querying over public SPARQL endpoints with NL verbalization; (ii) LodLive for quick node-link inspection and cross-endpoint browsing; (iii) Sampo-UI as a modular framework for building full semantic portals; and (iv) LinkDaViz-like workflows to rapidly generate candidate visualizations for freshly published datasets. Tool choice depends on the desired guidance level, deployment complexity, and preferred visualization modalities.
+To strengthen evaluation practice, future work should aim to report (i) participant background and prior KG/IR experience, (ii) task definitions and stopping criteria, (iii) measures capturing both efficiency (time/steps) and effectiveness (coverage/insights), and (iv) system performance under realistic endpoint conditions. When possible, releasing anonymized interaction logs and task materials would enable more reproducible comparisons.
 
-Beyond these representative systems, the literature reports a broader ecosystem of Linked Data exploration tools and components. Examples of generic RDF/Linked Data browsers include Tabulator~\cite{tabulator2006}, /facet~\cite{facet2006}, and Haystack~\cite{haystack2003}, as well as more recent explorers such as Explorator~\cite{explorator2009}, LOD Explorer~\cite{lodexplorer2018}, LODmilla~\cite{lodmilla2014}, and LD Viewer~\cite{ldviewer2014}. Reusable visualization pipelines and wrappers include rdf:SynopsViz~\cite{synopsviz2014}, Payola~\cite{payola2013}, and Sgvizler~\cite{sgvizler2015}. For suggestion-driven interaction, Sapphire~\cite{sapphire2016} and VIIQ~\cite{viiq2015} exemplify UI support for querying, while PICASSO~\cite{picasso2017} targets exploratory search over connected subgraph patterns.
+\section{Tools}
+From a practical perspective, reusable GUI tools include:
+\begin{itemize}
+  \item \textbf{Guided querying}: Sparklis for schema-aware exploration over public SPARQL endpoints with controlled NL verbalization.
+  \item \textbf{Linked Data browsing}: LodLive for node-link inspection and cross-endpoint navigation (including inverse links and \texttt{owl:sameAs} jumps).
+  \item \textbf{Semantic portals}: Sampo-UI as a modular framework for multi-perspective, faceted semantic portals.
+  \item \textbf{Visualization recommendation}: LinkDaViz-like workflows to rapidly generate candidate visualizations for Linked Data slices.
+\end{itemize}
+Beyond these representative systems, the literature reports a broader ecosystem of Linked Data exploration tools and components:
+\begin{itemize}
+  \item \textbf{RDF/Linked Data browsers}: Tabulator~\cite{tabulator2006}, /facet~\cite{facet2006}, Haystack~\cite{haystack2003}, Explorator~\cite{explorator2009}, LOD Explorer~\cite{lodexplorer2018}, LODmilla~\cite{lodmilla2014}, and LD Viewer~\cite{ldviewer2014}.
+  \item \textbf{Visualization wrappers/pipelines}: rdf:SynopsViz~\cite{synopsviz2014}, Payola~\cite{payola2013}, and Sgvizler~\cite{sgvizler2015}.
+  \item \textbf{Suggestion-driven interaction}: Sapphire~\cite{sapphire2016}, VIIQ~\cite{viiq2015}, and PICASSO~\cite{picasso2017}.
+\end{itemize}
 
 \section{Gold Standards}
 There is no unified gold standard for KG exploration, but recurring resources include:
@@ -234,6 +278,12 @@ KG exploration is mature in core interaction paradigms (facets, relationship dis
 \bibitem{witschel2021} Witschel, H.F., Riesen, K., Grether, L.: Natural Language-based User Guidance for Knowledge Graph Exploration: A User Study. In: \emph{Proc.\ Int.\ Joint Conf.\ on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K)}, pp.~95--102 (2021). \url{https://doi.org/10.5220/0010640500003064}
 \bibitem{witschel2022} Grether, L., Witschel, H.F.: Studying Interaction Patterns for Knowledge Graph Exploration. In: \emph{Proc.\ Int.\ Joint Conf.\ on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K)}, pp.~257--264 (2022). \url{https://doi.org/10.5220/0011548600003335}
 \bibitem{sampoui2022} Ikkala, E., Hyv\"onen, E., Rantala, H., Koho, M.: Sampo-UI: A full stack JavaScript framework for developing semantic portal user interfaces. \emph{Semantic Web} 13(1), 69--84 (2022). \url{https://doi.org/10.3233/SW-210428}
+\bibitem{marchionini2006} Marchionini, G.: Exploratory search: From finding to understanding. \emph{Communications of the ACM} 49(4), 41--46 (2006).
+\bibitem{white2009} White, R.W., Roth, R.A.: \emph{Exploratory Search: Beyond the Query-Response Paradigm}. Morgan and Claypool Publishers (2009). \url{http://dx.doi.org/10.2200/S00174ED1V01Y200901ICR003}
+\bibitem{bates1989} Bates, M.J.: The design of browsing and berrypicking techniques for the online search interface. \emph{Online Review} 13(5), 407--424 (1989).
+\bibitem{dadzie2011} Dadzie, A.-S., Rowe, M.: Approaches to visualising linked data: A survey. \emph{Semantic Web} 2(2), 89--124 (2011).
+\bibitem{marie2014} Marie, N., Gandon, F.: Survey of Linked Data Based Exploration Systems. In: \emph{Proc.\ 3rd International Conf.\ on Intelligent Exploration of Semantic Data}, pp.~66--77 (2014).
+\bibitem{jacksi2016review} Jacksi, K., Dimililer, N., Zeebaree, S.R.: State of the Art Exploration Systems for Linked Data: A Review. \emph{International Journal of Advanced Computer Science and Applications} 7, 155--164 (2016).
 \bibitem{haystack2003} Quan, D., Huynh, D., Karger, D.: Haystack: A Platform for Authoring End User Semantic Web Applications. In: \emph{Proc.\ ISWC}, pp.~738--753 (2003).
 \bibitem{facet2006} Hildebrand, M., van Ossenbruggen, J., Hardman, L.: /facet: A browser for heterogeneous semantic web repositories. In: \emph{Proc.\ ISWC} (2006).
 \bibitem{tabulator2006} Berners-Lee, T., Chen, Y., Chilton, L., Connolly, D., Dhanaraj, R., Hollenbach, J., Lerer, A., Sheets, D.: Tabulator: Exploring and Analyzing linked data on the Semantic Web. In: \emph{Proc.\ Int.\ Semantic Web User Interaction Workshop} (2006).

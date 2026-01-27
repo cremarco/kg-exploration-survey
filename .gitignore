@@ -1,5 +1,4 @@
-approaches/
-survey/
+
 *.aux
 *.log
 *.out
@@ -8,4 +7,3 @@ survey/
 *.fdb_latexmk
 *.synctex.gz
 _minted*
-*.pdf

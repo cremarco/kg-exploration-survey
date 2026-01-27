@@ -1,0 +1,171 @@
+{
+  "_uiMeta": {
+    "coreTasks": { "taxonomy": "1", "color": "#6366f1" },
+    "supportTasks": { "taxonomy": "2", "color": "#3b82f6" },
+    "mainMethod": { "taxonomy": "3", "color": "#0ea5e9" },
+    "revision": { "taxonomy": "4", "color": "#06b6d4" },
+    "domain": { "taxonomy": "5", "color": "#14b8a6" },
+    "validation": { "taxonomy": "6", "color": "#22c55e" },
+    "codeAvailability": { "taxonomy": "7", "color": "#84cc16" },
+    "license": { "taxonomy": "8", "color": "#facc15" },
+    "output": { "taxonomy": "10", "color": "#f59e42" },
+    "applicationPurpose": { "taxonomy": "11", "color": "#ef4444" },
+    "userInterfaceTool": { "taxonomy": "12", "color": "#f43f5e" }
+  },
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "label": "ID" },
+    "added": { "type": "string", "format": "date", "label": "Added" },
+    "year": { "type": "integer", "label": "Year" },
+    "firstAuthor": { "type": "string", "label": "First Author" },
+    "authors": { "type": "array", "items": { "type": "string" }, "label": "Author" },
+    "title": { "type": "string", "label": "Name" },
+    "venue": {
+      "type": "object",
+      "label": "Venue",
+      "properties": {
+        "type": { "type": "string", "label": "Type" },
+        "acronym": { "type": "string", "label": "Acronym" }
+      },
+      "additionalProperties": false
+    },
+    "techniqueTags": { "type": "array", "items": { "type": "string" }, "label": "Tags" },
+    "coreTasks": {
+      "type": "object",
+      "label": "Interaction Paradigms",
+      "properties": {
+        "facets": { "type": "boolean", "label": "Facets" },
+        "navigation": { "type": "boolean", "label": "Navigation" },
+        "queryBuilding": { "type": "boolean", "label": "Query Building" },
+        "recommendation": { "type": "boolean", "label": "Guidance/Visualization" }
+      },
+      "additionalProperties": false
+    },
+    "supportTasks": {
+      "type": "object",
+      "label": "Comparison Dimensions",
+      "properties": {
+        "guidance": { "type": "string", "label": "Guidance" },
+        "backendAssumptions": { "type": "string", "label": "Backend & Assumptions" },
+        "evidence": { "type": "string", "label": "Evidence" },
+        "availability": { "type": "string", "label": "Availability" },
+        "visualization": { "type": "string", "label": "Visualization" },
+        "dataAccess": { "type": "string", "label": "Data Access" },
+        "dataSources": { "type": "string", "label": "Data Sources" },
+        "notes": { "type": "string", "label": "Notes" }
+      },
+      "additionalProperties": false
+    },
+    "mainMethod": {
+      "type": "object",
+      "label": "Approach Class",
+      "properties": {
+        "type": {
+          "type": "string",
+          "label": "Class",
+          "enum": [
+            "Browser",
+            "Query Builder",
+            "Recommendation",
+            "Framework",
+            "Visualization",
+            "Study",
+            "Discovery",
+            "Other"
+          ]
+        },
+        "tech": { "type": "string", "label": "Notes" }
+      },
+      "additionalProperties": false
+    },
+    "revision": {
+      "type": "object",
+      "label": "Guidance Strategy",
+      "properties": {
+        "type": {
+          "type": "string",
+          "label": "Strategy",
+          "enum": [
+            "Implicit",
+            "Constraint-based",
+            "Ranked",
+            "Personalized",
+            "NL-based",
+            "Config-driven",
+            "Other"
+          ]
+        },
+        "description": { "type": "string", "label": "Description" }
+      },
+      "additionalProperties": false
+    },
+    "domain": {
+      "type": "object",
+      "label": "Backend Type",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "label": "Backend",
+          "enum": [
+            "RDF/SPARQL",
+            "Property Graph",
+            "Graph DB",
+            "Local Index",
+            "Other/Hybrid"
+          ]
+        },
+        "type": { "type": "string", "label": "Details" }
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "label": "Evidence",
+      "properties": {
+        "type": {
+          "type": "string",
+          "label": "Evidence Type",
+          "enum": [
+            "User Study",
+            "Experiment",
+            "Deployment",
+            "Tool Paper",
+            "Prototype/Demo",
+            "Offline/Crowd",
+            "System",
+            "Comparison",
+            "Implementation",
+            "Other"
+          ]
+        },
+        "details": { "type": "string", "label": "Details" }
+      },
+      "additionalProperties": false
+    },
+    "codeAvailability": { "type": "string", "label": "Availability" },
+    "license": { "type": "string", "label": "License" },
+    "kg": {
+      "type": "object",
+      "label": "Backend Details",
+      "properties": {
+        "tripleStore": { "type": "string", "label": "Backend" },
+        "index": { "type": "string", "label": "Index/Precompute" }
+      },
+      "additionalProperties": false
+    },
+    "output": { "type": "string", "label": "Output" },
+    "applicationPurpose": { "type": "string", "label": "Primary Goal" },
+    "userInterfaceTool": { "type": "string", "label": "User Interaction" },
+    "doi": { "type": "string", "label": "DOI" },
+    "citations": {
+      "type": "object",
+      "label": "Citations",
+      "properties": {
+        "references": { "type": "array", "items": { "type": "object" } },
+        "count": { "type": "integer" },
+        "note": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
+  }
+}

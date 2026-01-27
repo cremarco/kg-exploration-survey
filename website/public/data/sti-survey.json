@@ -1,0 +1,1988 @@
+[
+  {
+    "id": "2003_Quan_Haystack_A",
+    "added": "2026-01-27",
+    "year": 2003,
+    "firstAuthor": "Quan",
+    "authors": [
+      "Quan, D.",
+      "Huynh, D.",
+      "Karger, D."
+    ],
+    "title": "Haystack",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "View/interaction model encoded in RDF (Ozone)",
+      "backendAssumptions": "Local RDF store; extensible services (Adenine)",
+      "evidence": "System",
+      "availability": "Paper/prototype",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Framework",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "View/interaction model encoded in RDF (Ozone)"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "System",
+      "details": "System"
+    },
+    "codeAvailability": "Paper/prototype",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Application-like views",
+    "applicationPurpose": "Platform (end-user Semantic Web apps)",
+    "userInterfaceTool": "Configurable views; RDF authoring",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2006_Berners-Lee_Tabulator_Exploring",
+    "added": "2026-01-27",
+    "year": 2006,
+    "firstAuthor": "Berners-Lee",
+    "authors": [
+      "Berners-Lee, T.",
+      "Chen, Y.",
+      "Chilton, L.",
+      "Connolly, D.",
+      "Dhanaraj, R.",
+      "Hollenbach, J.",
+      "Lerer, A.",
+      "Sheets, D."
+    ],
+    "title": "Tabulator",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Multi-view inspection; QBE->SPARQL",
+      "backendAssumptions": "URI dereferencing + SPARQL; open web",
+      "evidence": "System",
+      "availability": "Prototype/tool",
+      "visualization": "Map; Charts; Tables/Lists",
+      "dataAccess": "SPARQL + URI dereferencing",
+      "dataSources": "Open Web",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "Multi-view inspection; QBE->SPARQL"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": "Open Web"
+    },
+    "validation": {
+      "type": "System",
+      "details": "System"
+    },
+    "codeAvailability": "Prototype/tool",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Outliner; tables; map; timeline",
+    "applicationPurpose": "Generic Linked Data browser",
+    "userInterfaceTool": "Follow URIs; outliner; query-by-example",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2006_Hildebrand_facet_A",
+    "added": "2026-01-27",
+    "year": 2006,
+    "firstAuthor": "Hildebrand",
+    "authors": [
+      "Hildebrand, M.",
+      "van Ossenbruggen, J.",
+      "Hardman, L."
+    ],
+    "title": "/facet",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "facets",
+      "graph-navigation"
+    ],
+    "coreTasks": {
+      "facets": true,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "Auto facet configuration; prune empty refinements",
+      "backendAssumptions": "RDF store + (S)PARQL; facet mining",
+      "evidence": "Prototype",
+      "availability": "Online demo",
+      "visualization": "Tables/Lists",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Constraint-based",
+      "description": "Auto facet configuration; prune empty refinements"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Prototype"
+    },
+    "codeAvailability": "Online demo",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Facets + lists",
+    "applicationPurpose": "Faceted browsing for heterogeneous RDF",
+    "userInterfaceTool": "Facets per type; cross-type facets; search",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2008_Heim_gFacet_A",
+    "added": "2026-01-27",
+    "year": 2008,
+    "firstAuthor": "Heim",
+    "authors": [
+      "Heim, P.",
+      "Ziegler, J.",
+      "Lohmann, S."
+    ],
+    "title": "gFacet",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "facets",
+      "graph-navigation"
+    ],
+    "coreTasks": {
+      "facets": true,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "Facet filtering",
+      "backendAssumptions": "RDF/SPARQL; Flash client",
+      "evidence": "User study",
+      "availability": "Demo (Flash)",
+      "visualization": "Graph",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "Facet filtering"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User study"
+    },
+    "codeAvailability": "Demo (Flash)",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Graph + facets",
+    "applicationPurpose": "Faceted graph browsing",
+    "userInterfaceTool": "Graph + facets; pin/layout",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2009_Araujo_Experimenting_with",
+    "added": "2026-01-27",
+    "year": 2009,
+    "firstAuthor": "Araujo",
+    "authors": [
+      "Araujo, S.F.C.D.",
+      "Schwabe, D.",
+      "Barbosa, S.D.J."
+    ],
+    "title": "Explorator",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "Set-based model (limited explicit guidance)",
+      "backendAssumptions": "RDF store; set/projection operators",
+      "evidence": "User studies",
+      "availability": "Demo (web)",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "Set-based model (limited explicit guidance)"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Other",
+      "details": "User studies"
+    },
+    "codeAvailability": "Demo (web)",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Set panels; tabular results",
+    "applicationPurpose": "Direct manipulation RDF browsing/querying",
+    "userInterfaceTool": "Set operations + browsing/search",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2009_Heim_RelFinder_Revealing",
+    "added": "2026-01-27",
+    "year": 2009,
+    "firstAuthor": "Heim",
+    "authors": [
+      "Heim, P.",
+      "Hellmann, S.",
+      "Lehmann, J.",
+      "Lohmann, S.",
+      "Stegemann, T."
+    ],
+    "title": "RelFinder",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "Constrained path search + interactive pruning",
+      "backendAssumptions": "SPARQL endpoints; Flash/Flex",
+      "evidence": "Case/demo",
+      "availability": "Demo (Flash)",
+      "visualization": "Graph",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Discovery",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "Constrained path search + interactive pruning"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Case/demo"
+    },
+    "codeAvailability": "Demo (Flash)",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Relationship graph",
+    "applicationPurpose": "Relationship discovery",
+    "userInterfaceTool": "Select 2 entities; inspect paths; filters",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2012_Camarda_LodLive_exploring",
+    "added": "2026-01-27",
+    "year": 2012,
+    "firstAuthor": "Camarda",
+    "authors": [
+      "Camarda, D.V.",
+      "Mazzini, S.",
+      "Antonuccio, A."
+    ],
+    "title": "LodLive",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "None/implicit",
+      "backendAssumptions": "Client JS + JSONP; SPARQL endpoints",
+      "evidence": "Demo/adoption",
+      "availability": "Open source (MIT)",
+      "visualization": "Graph; Map",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Implicit",
+      "description": "None/implicit"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Deployment",
+      "details": "Demo/adoption"
+    },
+    "codeAvailability": "Open source (MIT)",
+    "license": "MIT",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Graph; map/gallery",
+    "applicationPurpose": "Lightweight Linked Data navigation",
+    "userInterfaceTool": "Expand nodes; follow in/out links; sameAs jumps",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2013_Klimek_Payola_collaborative",
+    "added": "2026-01-27",
+    "year": 2013,
+    "firstAuthor": "Klimek",
+    "authors": [
+      "Klimek, J.",
+      "Helmich, J.",
+      "Necasky, M."
+    ],
+    "title": "Payola",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Plugin ecosystem (analyzers/visualizers)",
+      "backendAssumptions": "Scala server + SPARQL endpoints",
+      "evidence": "Use cases",
+      "availability": "Online tool",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Framework",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Config-driven",
+      "description": "Plugin ecosystem (analyzers/visualizers)"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Use cases"
+    },
+    "codeAvailability": "Online tool",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Pipelines + visualizations",
+    "applicationPurpose": "LD analysis + visualization framework",
+    "userInterfaceTool": "Compose analyzer pipelines; reuse plugins",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2013_Rietveld_YASGUI_Not",
+    "added": "2026-01-27",
+    "year": 2013,
+    "firstAuthor": "Rietveld",
+    "authors": [
+      "Rietveld, L.",
+      "Hoekstra, R."
+    ],
+    "title": "YASGUI",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Autocomplete; endpoint lookup; syntax aids",
+      "backendAssumptions": "SPARQL endpoints; web services",
+      "evidence": "Feature comparison",
+      "availability": "Web tool",
+      "visualization": "Editor UI",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Autocomplete; endpoint lookup; syntax aids"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Comparison",
+      "details": "Feature comparison"
+    },
+    "codeAvailability": "Web tool",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Editor + result rendering",
+    "applicationPurpose": "SPARQL client for iterative querying",
+    "userInterfaceTool": "Textual SPARQL editing",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2014_AMA_LODmilla_Shared",
+    "added": "2026-01-27",
+    "year": 2014,
+    "firstAuthor": "Micsik",
+    "authors": [
+      "Micsik, A.",
+      "Toth, Z.",
+      "Turbucz, S."
+    ],
+    "title": "LODmilla",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "None/implicit",
+      "backendAssumptions": "SPARQL endpoints; multi-dataset browsing",
+      "evidence": "Prototype",
+      "availability": "Paper/prototype",
+      "visualization": "Graph",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Implicit",
+      "description": "None/implicit"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Prototype"
+    },
+    "codeAvailability": "Paper/prototype",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Graph + shareable views",
+    "applicationPurpose": "Generic LOD graph browsing + sharing",
+    "userInterfaceTool": "Graph navigation; save/share views",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2014_Bikakis_rdfSynopsViz_a",
+    "added": "2026-01-27",
+    "year": 2014,
+    "firstAuthor": "Bikakis",
+    "authors": [
+      "Bikakis, N.",
+      "Skourla, M.",
+      "Papastefanatos, G."
+    ],
+    "title": "rdf:SynopsViz",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "facets",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": true,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Auto hierarchy + on-the-fly stats",
+      "backendAssumptions": "RDF input (+ optional OWL); hierarchy construction",
+      "evidence": "Prototype",
+      "availability": "Online prototype",
+      "visualization": "Map; Charts",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Visualization",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Constraint-based",
+      "description": "Auto hierarchy + on-the-fly stats"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Prototype"
+    },
+    "codeAvailability": "Online prototype",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Charts/timeline/treemap + stats",
+    "applicationPurpose": "Hierarchical exploration + analytics",
+    "userInterfaceTool": "Facets; hierarchy drill-down",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2014_Lukovnikov_LD_Viewer",
+    "added": "2026-01-27",
+    "year": 2014,
+    "firstAuthor": "Lukovnikov",
+    "authors": [
+      "Lukovnikov, D.",
+      "Stadler, C.",
+      "Lehmann, J."
+    ],
+    "title": "LD Viewer",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Triple Action Framework (configurable actions)",
+      "backendAssumptions": "SPARQL + optional index; dataset-specific actions",
+      "evidence": "User survey",
+      "availability": "Paper/framework",
+      "visualization": "Map",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Framework",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Constraint-based",
+      "description": "Triple Action Framework (configurable actions)"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User survey"
+    },
+    "codeAvailability": "Paper/framework",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": "Index/summary"
+    },
+    "output": "Rich entity pages; map; filters",
+    "applicationPurpose": "Linked Data presentation framework",
+    "userInterfaceTool": "Resource pages; filters; triple actions",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2015_Skjaeveland_Sgvizler_a",
+    "added": "2026-01-27",
+    "year": 2015,
+    "firstAuthor": "Skjveland",
+    "authors": [
+      "Skjveland, M.G."
+    ],
+    "title": "Sgvizler",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "None/implicit",
+      "backendAssumptions": "SPARQL endpoints; DataTable abstraction",
+      "evidence": "System/tool",
+      "availability": "Open source (MIT)",
+      "visualization": "Graph; Map; Charts",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Implicit",
+      "description": "None/implicit"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "System",
+      "details": "System/tool"
+    },
+    "codeAvailability": "Open source (MIT)",
+    "license": "MIT",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Charts/maps/timeline/graphs",
+    "applicationPurpose": "Visualize SPARQL result sets in web pages",
+    "userInterfaceTool": "Embed SELECT in HTML",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2015_Jayaram_VIIQ_auto-suggestion",
+    "added": "2026-01-27",
+    "year": 2015,
+    "firstAuthor": "Jayaram",
+    "authors": [
+      "Jayaram, N.",
+      "Goyal, S.",
+      "Li, C."
+    ],
+    "title": "VIIQ",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "recommendation",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Ranked edge/label suggestions",
+      "backendAssumptions": "Heterogeneous graph; query graphs",
+      "evidence": "Demo",
+      "availability": "Paper/demo",
+      "visualization": "Graph; Editor UI",
+      "dataAccess": "Mixed/Other",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Ranked edge/label suggestions"
+    },
+    "domain": {
+      "domain": "Other/Hybrid",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Demo"
+    },
+    "codeAvailability": "Paper/demo",
+    "license": "",
+    "kg": {
+      "tripleStore": "",
+      "index": ""
+    },
+    "output": "Query graph builder UI",
+    "applicationPurpose": "Visual graph query formulation",
+    "userInterfaceTool": "Draw query graph interactively",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2015_Thellmann_LinkDaViz_Automatic",
+    "added": "2026-01-27",
+    "year": 2015,
+    "firstAuthor": "Thellmann",
+    "authors": [
+      "Thellmann, K.",
+      "Galkin, M.",
+      "Orlandi, F.",
+      "Auer, S."
+    ],
+    "title": "LinkDaViz",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "recommendation",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Profiling + ranked binding suggestions",
+      "backendAssumptions": "RDF/SPARQL (and CSV); visualization model",
+      "evidence": "User study + perf.",
+      "availability": "Online tool",
+      "visualization": "Map; Charts",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Recommendation",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Profiling + ranked binding suggestions"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User study + perf."
+    },
+    "codeAvailability": "Online tool",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Charts + maps",
+    "applicationPurpose": "Visualization recommendation",
+    "userInterfaceTool": "Select data slice; refine bindings",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2016_El-Roby_Sapphire_Querying",
+    "added": "2026-01-27",
+    "year": 2016,
+    "firstAuthor": "El-Roby",
+    "authors": [
+      "El-Roby, A.",
+      "Ammar, K.",
+      "Aboulnaga, A.",
+      "Lin, J."
+    ],
+    "title": "Sapphire",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Data-driven suggestions; query change recommendations",
+      "backendAssumptions": "Public SPARQL endpoints",
+      "evidence": "System/demo",
+      "availability": "Paper",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Data-driven suggestions; query change recommendations"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "System/demo"
+    },
+    "codeAvailability": "Paper",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "SPARQL queries + answers",
+    "applicationPurpose": "Assisted SPARQL query writing",
+    "userInterfaceTool": "Iterative query construction",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2017_Ferre_Sparklis_An",
+    "added": "2026-01-27",
+    "year": 2017,
+    "firstAuthor": "Ferre",
+    "authors": [
+      "Ferre, S."
+    ],
+    "title": "Sparklis",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "nl-guidance",
+      "query-building"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Valid-step (non-empty) + controlled NL",
+      "backendAssumptions": "SPARQL endpoints; on-the-fly schema discovery",
+      "evidence": "Studies + logs",
+      "availability": "Online tool",
+      "visualization": "Tables/Lists",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "NL-based",
+      "description": "Valid-step (non-empty) + controlled NL"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Other",
+      "details": "Studies + logs"
+    },
+    "codeAvailability": "Online tool",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Tables + NL verbalization",
+    "applicationPurpose": "Guided SPARQL query builder",
+    "userInterfaceTool": "Stepwise refinements; focus-based editing",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2017_Huang_PICASSO_exploratory",
+    "added": "2026-01-27",
+    "year": 2017,
+    "firstAuthor": "Huang",
+    "authors": [
+      "Huang, K.",
+      "Bhowmick, S.S.",
+      "Zhou, S.",
+      "Choi, B."
+    ],
+    "title": "PICASSO",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Query evolution + result juxtaposition",
+      "backendAssumptions": "Graph DB over many small/medium graphs",
+      "evidence": "Demo",
+      "availability": "Paper/demo",
+      "visualization": "Graph; Wall view",
+      "dataAccess": "Graph database",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Other",
+      "description": "Query evolution + result juxtaposition"
+    },
+    "domain": {
+      "domain": "Graph DB",
+      "type": ""
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Demo"
+    },
+    "codeAvailability": "Paper/demo",
+    "license": "",
+    "kg": {
+      "tripleStore": "Graph DB",
+      "index": ""
+    },
+    "output": "Results wall; subgraph views",
+    "applicationPurpose": "Exploratory subgraph search",
+    "userInterfaceTool": "Progressive visual query; multi-stream wall",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2018_Cerans_ViziQuer_A",
+    "added": "2026-01-27",
+    "year": 2018,
+    "firstAuthor": "Cerans",
+    "authors": [
+      "Cerans, K.",
+      "Sostaks, A.",
+      "Bojars, U.",
+      "Ovcinnikova, J.",
+      "Lace, L.",
+      "Grasmanis, M.",
+      "Romane, A.",
+      "Sprogis, A.",
+      "Barzdins, J."
+    ],
+    "title": "ViziQuer",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Schema-aware environment; visual constructs",
+      "backendAssumptions": "SPARQL endpoint + schema exploration service",
+      "evidence": "Experiment",
+      "availability": "Open source",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Constraint-based",
+      "description": "Schema-aware environment; visual constructs"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Experiment",
+      "details": "Experiment"
+    },
+    "codeAvailability": "Open source",
+    "license": "Open source",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "SPARQL incl. aggregates/subqueries",
+    "applicationPurpose": "Diagrammatic SPARQL authoring",
+    "userInterfaceTool": "UML-style visual queries",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2018_Durao_A_Linked",
+    "added": "2026-01-27",
+    "year": 2018,
+    "firstAuthor": "Dur\\ ao",
+    "authors": [
+      "Dur\\ ao, F.A.",
+      "Bridge, D."
+    ],
+    "title": "LDRec",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Profile-based recommendations (ICA-inspired)",
+      "backendAssumptions": "Linked profiles + SPARQL (DBpedia); neighborhood extraction",
+      "evidence": "Offline + user trial",
+      "availability": "Paper",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "DBpedia, Linked Profiles",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Browser",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Personalized",
+      "description": "Profile-based recommendations (ICA-inspired)"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": "DBpedia, Linked Profiles"
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "Offline + user trial"
+    },
+    "codeAvailability": "Paper",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "InfoBox + recommended resources",
+    "applicationPurpose": "Personalized Linked Data browsing",
+    "userInterfaceTool": "Browse + user profile (likes)",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2018_Jacksi_LOD_Explorer",
+    "added": "2026-01-27",
+    "year": 2018,
+    "firstAuthor": "Jacksi",
+    "authors": [
+      "Jacksi, K.",
+      "Zeebaree, S.R.",
+      "Dimililer, N."
+    ],
+    "title": "LOD Explorer",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Autocomplete + search within opened resources",
+      "backendAssumptions": "Client JS + JSONP; SPARQL endpoints",
+      "evidence": "Tool paper",
+      "availability": "Online demo",
+      "visualization": "Graph",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Autocomplete + search within opened resources"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Tool Paper",
+      "details": "Tool paper"
+    },
+    "codeAvailability": "Online demo",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Graph + details panel",
+    "applicationPurpose": "Simple endpoint-centric exploration",
+    "userInterfaceTool": "Search/autocomplete; open nodes; expand links",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2019_Vargas_RDF_Explorer",
+    "added": "2026-01-27",
+    "year": 2019,
+    "firstAuthor": "Vargas",
+    "authors": [
+      "Vargas, H.",
+      "Buil-Aranda, C.",
+      "Hogan, A.",
+      "Lopez, C."
+    ],
+    "title": "RDF Explorer",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building",
+      "recommendation",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Data-driven property suggestions; avoid empty results",
+      "backendAssumptions": "SPARQL endpoints (e.g., Wikidata)",
+      "evidence": "Demo",
+      "availability": "Online + code",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "Wikidata",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Data-driven property suggestions; avoid empty results"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": "Wikidata"
+    },
+    "validation": {
+      "type": "Prototype/Demo",
+      "details": "Demo"
+    },
+    "codeAvailability": "Online + code",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Visual query + SPARQL view",
+    "applicationPurpose": "Visual SPARQL query builder",
+    "userInterfaceTool": "Drag resources; draw edges/variables",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2020_Lissandrini_Graph-Query_Suggestions",
+    "added": "2026-01-27",
+    "year": 2020,
+    "firstAuthor": "Lissandrini",
+    "authors": [
+      "Lissandrini, M.",
+      "Mottin, D.",
+      "Palpanas, T.",
+      "Velegrakis, Y."
+    ],
+    "title": "Graph-Query Suggestions",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "LM/PRF-ranked edge expansions",
+      "backendAssumptions": "Freebase snapshot (very large); IR scoring",
+      "evidence": "Offline + crowd",
+      "availability": "OA (CC-BY)",
+      "visualization": "",
+      "dataAccess": "Local index",
+      "dataSources": "Freebase",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "LM/PRF-ranked edge expansions"
+    },
+    "domain": {
+      "domain": "Local Index",
+      "type": "Freebase"
+    },
+    "validation": {
+      "type": "Offline/Crowd",
+      "details": "Offline + crowd"
+    },
+    "codeAvailability": "OA (CC-BY)",
+    "license": "CC-BY",
+    "kg": {
+      "tripleStore": "Local Index",
+      "index": ""
+    },
+    "output": "Suggested expansion edges",
+    "applicationPurpose": "Ranked query expansion for exemplar queries",
+    "userInterfaceTool": "Start from exemplar; select expansions",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2021_Destandau_S-Paths_Set-based",
+    "added": "2026-01-27",
+    "year": 2021,
+    "firstAuthor": "Destandau",
+    "authors": [
+      "Destandau, M.",
+      "Appert, C.",
+      "Pietriga, E."
+    ],
+    "title": "S-Paths",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": false
+    },
+    "supportTasks": {
+      "guidance": "Automatic view selection + aggregation",
+      "backendAssumptions": "SPARQL endpoint; path analysis",
+      "evidence": "User study",
+      "availability": "Demo + code",
+      "visualization": "",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Other",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Constraint-based",
+      "description": "Automatic view selection + aggregation"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User study"
+    },
+    "codeAvailability": "Demo + code",
+    "license": "",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Aggregated set views",
+    "applicationPurpose": "Set-based exploration via semantic paths",
+    "userInterfaceTool": "Select set; choose path/view",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2021_Parra_Fast_Approximate",
+    "added": "2026-01-27",
+    "year": 2021,
+    "firstAuthor": "de la Parra",
+    "authors": [
+      "de la Parra, G.",
+      "Hogan, A."
+    ],
+    "title": "FAAS",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Graph summary (over-approx. suggestions)",
+      "backendAssumptions": "Local index over Wikidata dump; endpoint baseline",
+      "evidence": "Experiments",
+      "availability": "Paper/prototype",
+      "visualization": "Tables/Lists",
+      "dataAccess": "Local index",
+      "dataSources": "Wikidata",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Graph summary (over-approx. suggestions)"
+    },
+    "domain": {
+      "domain": "Local Index",
+      "type": "Wikidata"
+    },
+    "validation": {
+      "type": "Experiment",
+      "details": "Experiments"
+    },
+    "codeAvailability": "Paper/prototype",
+    "license": "",
+    "kg": {
+      "tripleStore": "Local Index",
+      "index": "Index/summary"
+    },
+    "output": "Autocomplete lists",
+    "applicationPurpose": "Fast approximate autocomplete for query builders",
+    "userInterfaceTool": "Autocomplete variables during query build",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2021_Witschel_Natural_Language-based",
+    "added": "2026-01-27",
+    "year": 2021,
+    "firstAuthor": "Witschel",
+    "authors": [
+      "Witschel, H.F.",
+      "Riesen, K.",
+      "Grether, L."
+    ],
+    "title": "NL Guidance",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "nl-guidance",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Context-based recommended queries",
+      "backendAssumptions": "Property graph backend (Cypher)",
+      "evidence": "User study",
+      "availability": "Paper",
+      "visualization": "Graph",
+      "dataAccess": "Cypher/Property Graph",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Recommendation",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Context-based recommended queries"
+    },
+    "domain": {
+      "domain": "Property Graph",
+      "type": ""
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User study"
+    },
+    "codeAvailability": "Paper",
+    "license": "",
+    "kg": {
+      "tripleStore": "Property Graph",
+      "index": ""
+    },
+    "output": "Answer subgraphs",
+    "applicationPurpose": "Sequential QA-style exploration",
+    "userInterfaceTool": "Keyword entry + context selection + NL question",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2022_Grether_Studying_Interaction",
+    "added": "2026-01-27",
+    "year": 2022,
+    "firstAuthor": "Grether",
+    "authors": [
+      "Grether, L.",
+      "Witschel, H.F."
+    ],
+    "title": "Interaction Patterns",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Guidance design recommendations",
+      "backendAssumptions": "Medical KG + prototype",
+      "evidence": "User study",
+      "availability": "Paper",
+      "visualization": "",
+      "dataAccess": "Mixed/Other",
+      "dataSources": "Medical KG",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Study",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Guidance design recommendations"
+    },
+    "domain": {
+      "domain": "Other/Hybrid",
+      "type": "Medical KG"
+    },
+    "validation": {
+      "type": "User Study",
+      "details": "User study"
+    },
+    "codeAvailability": "Paper",
+    "license": "",
+    "kg": {
+      "tripleStore": "",
+      "index": ""
+    },
+    "output": "Interaction patterns + features",
+    "applicationPurpose": "Study of exploration intents/breakdowns",
+    "userInterfaceTool": "Task-based exploration on prototype",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2022_Ikkala_Sampo-UI_A",
+    "added": "2026-01-27",
+    "year": 2022,
+    "firstAuthor": "Ikkala",
+    "authors": [
+      "Ikkala, E.",
+      "Hyvonen, E.",
+      "Rantala, H.",
+      "Koho, M."
+    ],
+    "title": "Sampo-UI",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "facets",
+      "visualization"
+    ],
+    "coreTasks": {
+      "facets": true,
+      "navigation": false,
+      "queryBuilding": false,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Config-driven portal patterns",
+      "backendAssumptions": "React+Redux + Node/Express generating SPARQL",
+      "evidence": "Deployments",
+      "availability": "Open source (MIT)",
+      "visualization": "Map; Charts; Tables/Lists",
+      "dataAccess": "SPARQL endpoints",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Framework",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Config-driven",
+      "description": "Config-driven portal patterns"
+    },
+    "domain": {
+      "domain": "RDF/SPARQL",
+      "type": ""
+    },
+    "validation": {
+      "type": "Deployment",
+      "details": "Deployments"
+    },
+    "codeAvailability": "Open source (MIT)",
+    "license": "MIT",
+    "kg": {
+      "tripleStore": "RDF/SPARQL",
+      "index": ""
+    },
+    "output": "Tables/maps/charts/timelines",
+    "applicationPurpose": "Semantic portal UI framework",
+    "userInterfaceTool": "Facets + perspectives; analysis tabs",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  },
+  {
+    "id": "2025_Emonet_A_User-Friendly",
+    "added": "2026-01-27",
+    "year": 2025,
+    "firstAuthor": "Emonet",
+    "authors": [
+      "Emonet, V.",
+      "Sima, A.-C.",
+      "Mendes de Farias, T."
+    ],
+    "title": "SPARQL Editor",
+    "venue": {
+      "type": "",
+      "acronym": ""
+    },
+    "techniqueTags": [
+      "graph-navigation",
+      "query-building",
+      "recommendation"
+    ],
+    "coreTasks": {
+      "facets": false,
+      "navigation": true,
+      "queryBuilding": true,
+      "recommendation": true
+    },
+    "supportTasks": {
+      "guidance": "Auto examples; context-aware autocomplete; schema viz",
+      "backendAssumptions": "Endpoint metadata + triple patterns; YASGUI-based",
+      "evidence": "Implementation",
+      "availability": "Open source",
+      "visualization": "Editor UI",
+      "dataAccess": "Mixed/Other",
+      "dataSources": "",
+      "notes": ""
+    },
+    "mainMethod": {
+      "type": "Query Builder",
+      "tech": ""
+    },
+    "revision": {
+      "type": "Ranked",
+      "description": "Auto examples; context-aware autocomplete; schema viz"
+    },
+    "domain": {
+      "domain": "Other/Hybrid",
+      "type": ""
+    },
+    "validation": {
+      "type": "Implementation",
+      "details": "Implementation"
+    },
+    "codeAvailability": "Open source",
+    "license": "Open source",
+    "kg": {
+      "tripleStore": "",
+      "index": ""
+    },
+    "output": "Query editor UI",
+    "applicationPurpose": "SPARQL editor w/ metadata-based guidance",
+    "userInterfaceTool": "Textual SPARQL; browse examples",
+    "doi": "",
+    "citations": {
+      "references": [],
+      "count": 0,
+      "note": null
+    },
+    "uncertainFields": []
+  }
+]

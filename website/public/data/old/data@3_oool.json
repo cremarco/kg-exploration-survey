@@ -1,0 +1,3722 @@
+[
+  {
+    "type": "evolve",
+    "source": "Hignette",
+    "source_date": "2007-01-01",
+    "target": "Hignette",
+    "target_date": "2009-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Mulwad",
+    "target_date": "2010-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Syed",
+    "target_date": "2010-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Tao",
+    "target_date": "2010-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Venetis",
+    "target_date": "2011-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Goel",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Knoblock",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Pimplikar",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Wang",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Wang",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Wang",
+    "target_date": "2012-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2007-01-01",
+    "target": "Buche",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2009-01-01",
+    "target": "Buche",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Cruz",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pimplikar",
+    "source_date": "2012-01-01",
+    "target": "Deng",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Deng",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Deng",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Ermilov",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Mulwad",
+    "target_date": "2011-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Mulwad",
+    "source_date": "2011-01-01",
+    "target": "Mulwad",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Mulwad",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Crestan",
+    "source_date": "2010-01-01",
+    "target": "Munoz",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Munoz",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2009-01-01",
+    "target": "Quercini",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Quercini",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Quercini",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Quercini",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Zhang",
+    "source_date": "2018-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhang",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Zwicklbauer",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zwicklbauer",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Quercini",
+    "source_date": "2013-01-01",
+    "target": "Zwicklbauer",
+    "target_date": "2013-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Sekhavat",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Sekhavat",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Munoz",
+    "source_date": "2013-01-01",
+    "target": "Sekhavat",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Sekhavat",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Taheriyan",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Taheriyan",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan",
+    "target_date": "2014-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Buche",
+    "source_date": "2013-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2009-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Munoz",
+    "source_date": "2013-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Bhagavatula",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan",
+    "source_date": "2014-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Ramnandan",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Ritze",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Ritze",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Ritze",
+    "target_date": "2015-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Ermilov",
+    "source_date": "2013-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Ermilov",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ermilov",
+    "source_date": "2013-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan",
+    "source_date": "2014-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Taheriyan",
+    "source_date": "2014-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Taheriyan",
+    "source_date": "2014-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2013-01-01",
+    "target": "Neumaier",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Pham",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan [1]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Taheriyan [2]",
+    "target_date": "2016-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Quercini",
+    "source_date": "2013-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Efthymiou",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Ell",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Ell",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Ell",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Ell",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Ell",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Lehmberg",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhang",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Zhang",
+    "target_date": "2017-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ermilov",
+    "source_date": "2016-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Kacprzak",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Luo",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Tao",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhang",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Zhang",
+    "target_date": "2018-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Chabot",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Chen [1]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Chen [1]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Chen [2]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Chen [2]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Chen [2]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Chen [2]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Chen [2]",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Luo",
+    "source_date": "2018-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Hulsebos",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ermilov",
+    "source_date": "2016-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Kruit",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Kruit",
+    "source_date": "2019-01-01",
+    "target": "Morikawa",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Morikawa",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Nguyen",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Oliveira",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2013-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Takeoka",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Thawani",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hulsebos",
+    "source_date": "2019-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Goel",
+    "source_date": "2012-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Syed",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Takeoka",
+    "source_date": "2019-01-01",
+    "target": "Zhang",
+    "target_date": "2019-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Abdelmageed",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Azzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Azzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Eslahi",
+    "source_date": "2020-01-01",
+    "target": "Azzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [2]",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Baazouzi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Chen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Chen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Chen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Chen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Chen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Takeoka",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Cremaschi [1]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Cremaschi [2]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Cremaschi [2]",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Eslahi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Eslahi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Eslahi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Eslahi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Eslahi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Guo",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2013-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hulsebos",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Kacprzak",
+    "source_date": "2018-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2019-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Khurana",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "",
+    "source_date": "",
+    "target": "Kim",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2012-01-01",
+    "target": "Li",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2018-01-01",
+    "target": "Li",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Shigapov",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Tyagi",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Quercini",
+    "source_date": "2013-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Zhang",
+    "target_date": "2020-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [1]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Abdelmageed",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed [1]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Abdelmageed [1]",
+    "source_date": "2021-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Kim",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Abdelmageed [2]",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Avogadro",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Cremaschi [2]",
+    "source_date": "2020-01-01",
+    "target": "Avogadro",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Avogadro",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Avogadro",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Baazouzi",
+    "source_date": "2020-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Baazouzi",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Heist",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Huynh",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Huynh",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Huynh",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [2]",
+    "source_date": "2020-01-01",
+    "target": "Huynh",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed [1]",
+    "source_date": "2021-01-01",
+    "target": "Huynh",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [2]",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Kim",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Morikawa",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Thawani",
+    "source_date": "2019-01-01",
+    "target": "Nguyen",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed",
+    "source_date": "2020-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Azzi",
+    "source_date": "2020-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Steenwinckel",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2010-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2022-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Takeoka",
+    "source_date": "2019-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hulsebos",
+    "source_date": "2019-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2019-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Wang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Yang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Yang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Yang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Yang",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hulsebos",
+    "source_date": "2019-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Guo",
+    "source_date": "2020-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2022-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Zhou",
+    "target_date": "2021-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2021-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2021-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed",
+    "source_date": "2020-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed [1]",
+    "source_date": "2021-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Abdelmageed [2]",
+    "source_date": "2021-01-01",
+    "target": "Abdelmageed",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ramnandan",
+    "source_date": "2015-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Baazouzi",
+    "source_date": "2021-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Baazouzi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2007-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hignette",
+    "source_date": "2009-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Mulwad",
+    "source_date": "2013-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Kim",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [2]",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2021-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Huynh",
+    "source_date": "2021-01-01",
+    "target": "Chen",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Cremaschi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Cremaschi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [2]",
+    "source_date": "2020-01-01",
+    "target": "Cremaschi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Avogadro",
+    "source_date": "2021-01-01",
+    "target": "Cremaschi",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Deng",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Deng",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Deng",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Deng",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Deng",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen",
+    "source_date": "2020-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi [1]",
+    "source_date": "2020-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Knoblock",
+    "source_date": "2012-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Luo",
+    "source_date": "2018-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Neumaier",
+    "source_date": "2016-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Pham",
+    "source_date": "2016-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Steenwinckel",
+    "source_date": "2019-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Taheriyan [1]",
+    "source_date": "2016-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Gottschalk",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Huynh",
+    "source_date": "2021-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Sarthou-Camy",
+    "source_date": "2022-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2021-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2021-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2022-01-01",
+    "target": "Huynh",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Abdelmageed",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Bhagavatula",
+    "source_date": "2015-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chabot",
+    "source_date": "2019-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Deng",
+    "source_date": "2022-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Efthymiou",
+    "source_date": "2017-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Eslahi",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2019-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Oliveira",
+    "source_date": "2019-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Ritze",
+    "source_date": "2015-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Sarthou-Camy",
+    "source_date": "2022-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Shigapov",
+    "source_date": "2020-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2019-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2017-01-01",
+    "target": "Liu",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Cremaschi",
+    "source_date": "2019-01-01",
+    "target": "Sarthou-Camy",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Huynh",
+    "source_date": "2021-01-01",
+    "target": "Sarthou-Camy",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "evolve",
+    "source": "Huynh",
+    "source_date": "2022-01-01",
+    "target": "Sarthou-Camy",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Nguyen",
+    "source_date": "2021-01-01",
+    "target": "Sarthou-Camy",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [2]",
+    "source_date": "2019-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Chen [1]",
+    "source_date": "2019-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Hulsebos",
+    "source_date": "2019-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Khurana",
+    "source_date": "2020-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Limaye",
+    "source_date": "2010-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Venetis",
+    "source_date": "2011-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Takeoka",
+    "source_date": "2019-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Wang",
+    "source_date": "2021-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  },
+  {
+    "type": "cite",
+    "source": "Zhang",
+    "source_date": "2020-01-01",
+    "target": "Suhara",
+    "target_date": "2022-01-01",
+    "value": 1
+  }
+]

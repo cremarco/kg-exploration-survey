@@ -11,8 +11,8 @@
     ],
     "title": "Haystack",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ISWC"
     },
     "techniqueTags": [
       "query-building"
@@ -58,7 +58,7 @@
     "output": "Application-like views",
     "applicationPurpose": "Platform (end-user Semantic Web apps)",
     "userInterfaceTool": "Configurable views; RDF authoring",
-    "doi": "",
+    "doi": "10.1007/978-3-540-39718-2_34",
     "citations": {
       "references": [],
       "count": 0,
@@ -83,8 +83,8 @@
     ],
     "title": "Tabulator",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Workshop",
+      "acronym": "SWUI"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -152,8 +152,8 @@
     ],
     "title": "/facet",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ISWC"
     },
     "techniqueTags": [
       "facets",
@@ -200,7 +200,7 @@
     "output": "Facets + lists",
     "applicationPurpose": "Faceted browsing for heterogeneous RDF",
     "userInterfaceTool": "Facets per type; cross-type facets; search",
-    "doi": "",
+    "doi": "10.1007/11926078_20",
     "citations": {
       "references": [],
       "count": 0,
@@ -220,8 +220,8 @@
     ],
     "title": "gFacet",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Workshop",
+      "acronym": "IMC-SSW"
     },
     "techniqueTags": [
       "facets",
@@ -288,8 +288,8 @@
     ],
     "title": "Explorator",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Workshop",
+      "acronym": "CEUR"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -358,8 +358,8 @@
     ],
     "title": "RelFinder",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "EKAW"
     },
     "techniqueTags": [
       "graph-navigation"
@@ -405,7 +405,7 @@
     "output": "Relationship graph",
     "applicationPurpose": "Relationship discovery",
     "userInterfaceTool": "Select 2 entities; inspect paths; filters",
-    "doi": "",
+    "doi": "10.1007/978-3-642-10543-2_21",
     "citations": {
       "references": [],
       "count": 0,
@@ -425,8 +425,8 @@
     ],
     "title": "LodLive",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "SEMANTiCS"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -473,7 +473,7 @@
     "output": "Graph; map/gallery",
     "applicationPurpose": "Lightweight Linked Data navigation",
     "userInterfaceTool": "Expand nodes; follow in/out links; sameAs jumps",
-    "doi": "",
+    "doi": "10.1145/2362499.2362532",
     "citations": {
       "references": [],
       "count": 0,
@@ -493,8 +493,8 @@
     ],
     "title": "Payola",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "visualization"
@@ -540,7 +540,7 @@
     "output": "Pipelines + visualizations",
     "applicationPurpose": "LD analysis + visualization framework",
     "userInterfaceTool": "Compose analyzer pipelines; reuse plugins",
-    "doi": "",
+    "doi": "10.1007/978-3-642-38288-8_35",
     "citations": {
       "references": [],
       "count": 0,
@@ -559,8 +559,8 @@
     ],
     "title": "YASGUI",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "query-building",
@@ -607,7 +607,7 @@
     "output": "Editor + result rendering",
     "applicationPurpose": "SPARQL client for iterative querying",
     "userInterfaceTool": "Textual SPARQL editing",
-    "doi": "",
+    "doi": "10.1007/978-3-642-41242-4_7",
     "citations": {
       "references": [],
       "count": 0,
@@ -627,8 +627,8 @@
     ],
     "title": "LODmilla",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "TPDL"
     },
     "techniqueTags": [
       "graph-navigation"
@@ -674,7 +674,7 @@
     "output": "Graph + shareable views",
     "applicationPurpose": "Generic LOD graph browsing + sharing",
     "userInterfaceTool": "Graph navigation; save/share views",
-    "doi": "",
+    "doi": "10.1007/978-3-319-11961-0_46",
     "citations": {
       "references": [],
       "count": 0,
@@ -694,8 +694,8 @@
     ],
     "title": "rdf:SynopsViz",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "facets",
@@ -742,7 +742,7 @@
     "output": "Charts/timeline/treemap + stats",
     "applicationPurpose": "Hierarchical exploration + analytics",
     "userInterfaceTool": "Facets; hierarchy drill-down",
-    "doi": "",
+    "doi": "10.1007/978-3-319-07443-6_31",
     "citations": {
       "references": [],
       "count": 0,
@@ -762,8 +762,8 @@
     ],
     "title": "LD Viewer",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "SEMANTiCS"
     },
     "techniqueTags": [
       "visualization"
@@ -809,7 +809,7 @@
     "output": "Rich entity pages; map; filters",
     "applicationPurpose": "Linked Data presentation framework",
     "userInterfaceTool": "Resource pages; filters; triple actions",
-    "doi": "",
+    "doi": "10.1145/2660517.2660525",
     "citations": {
       "references": [],
       "count": 0,
@@ -820,15 +820,15 @@
   {
     "id": "2015_Skjaeveland_Sgvizler_a",
     "added": "2026-01-27",
-    "year": 2015,
+    "year": 2012,
     "firstAuthor": "Skjveland",
     "authors": [
       "Skjveland, M.G."
     ],
     "title": "Sgvizler",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -876,7 +876,7 @@
     "output": "Charts/maps/timeline/graphs",
     "applicationPurpose": "Visualize SPARQL result sets in web pages",
     "userInterfaceTool": "Embed SELECT in HTML",
-    "doi": "",
+    "doi": "10.1007/978-3-642-30284-8_36",
     "citations": {
       "references": [],
       "count": 0,
@@ -896,8 +896,8 @@
     ],
     "title": "VIIQ",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "PVLDB"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -946,7 +946,7 @@
     "output": "Query graph builder UI",
     "applicationPurpose": "Visual graph query formulation",
     "userInterfaceTool": "Draw query graph interactively",
-    "doi": "",
+    "doi": "10.14778/2735479.2735482",
     "citations": {
       "references": [],
       "count": 0,
@@ -967,8 +967,8 @@
     ],
     "title": "LinkDaViz",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ISWC"
     },
     "techniqueTags": [
       "recommendation",
@@ -1015,7 +1015,7 @@
     "output": "Charts + maps",
     "applicationPurpose": "Visualization recommendation",
     "userInterfaceTool": "Select data slice; refine bindings",
-    "doi": "",
+    "doi": "10.1007/978-3-319-21278-4_10",
     "citations": {
       "references": [],
       "count": 0,
@@ -1036,8 +1036,8 @@
     ],
     "title": "Sapphire",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "PVLDB"
     },
     "techniqueTags": [
       "query-building",
@@ -1084,7 +1084,7 @@
     "output": "SPARQL queries + answers",
     "applicationPurpose": "Assisted SPARQL query writing",
     "userInterfaceTool": "Iterative query construction",
-    "doi": "",
+    "doi": "10.14778/2994509.2994528",
     "citations": {
       "references": [],
       "count": 0,
@@ -1102,8 +1102,8 @@
     ],
     "title": "Sparklis",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "Semantic Web"
     },
     "techniqueTags": [
       "nl-guidance",
@@ -1150,7 +1150,7 @@
     "output": "Tables + NL verbalization",
     "applicationPurpose": "Guided SPARQL query builder",
     "userInterfaceTool": "Stepwise refinements; focus-based editing",
-    "doi": "",
+    "doi": "10.3233/SW-160220",
     "citations": {
       "references": [],
       "count": 0,
@@ -1171,8 +1171,8 @@
     ],
     "title": "PICASSO",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "PVLDB"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1220,7 +1220,7 @@
     "output": "Results wall; subgraph views",
     "applicationPurpose": "Exploratory subgraph search",
     "userInterfaceTool": "Progressive visual query; multi-stream wall",
-    "doi": "",
+    "doi": "10.14778/3137765.3137800",
     "citations": {
       "references": [],
       "count": 0,
@@ -1246,8 +1246,8 @@
     ],
     "title": "ViziQuer",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "query-building",
@@ -1294,7 +1294,7 @@
     "output": "SPARQL incl. aggregates/subqueries",
     "applicationPurpose": "Diagrammatic SPARQL authoring",
     "userInterfaceTool": "UML-style visual queries",
-    "doi": "",
+    "doi": "10.1007/978-3-319-98192-5_30",
     "citations": {
       "references": [],
       "count": 0,
@@ -1313,8 +1313,8 @@
     ],
     "title": "LDRec",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ICTAI"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1361,7 +1361,7 @@
     "output": "InfoBox + recommended resources",
     "applicationPurpose": "Personalized Linked Data browsing",
     "userInterfaceTool": "Browse + user profile (likes)",
-    "doi": "",
+    "doi": "10.1109/ICTAI.2018.00162",
     "citations": {
       "references": [],
       "count": 0,
@@ -1381,8 +1381,8 @@
     ],
     "title": "LOD Explorer",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "IJACSA"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1430,7 +1430,7 @@
     "output": "Graph + details panel",
     "applicationPurpose": "Simple endpoint-centric exploration",
     "userInterfaceTool": "Search/autocomplete; open nodes; expand links",
-    "doi": "",
+    "doi": "10.14569/IJACSA.2018.090107",
     "citations": {
       "references": [],
       "count": 0,
@@ -1451,8 +1451,8 @@
     ],
     "title": "RDF Explorer",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Demo",
+      "acronym": "Demo"
     },
     "techniqueTags": [
       "query-building",
@@ -1500,7 +1500,7 @@
     "output": "Visual query + SPARQL view",
     "applicationPurpose": "Visual SPARQL query builder",
     "userInterfaceTool": "Drag resources; draw edges/variables",
-    "doi": "",
+    "doi": "10.1007/978-3-030-30796-7_40",
     "citations": {
       "references": [],
       "count": 0,
@@ -1521,8 +1521,8 @@
     ],
     "title": "Graph-Query Suggestions",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "WWW"
     },
     "techniqueTags": [
       "query-building",
@@ -1569,7 +1569,7 @@
     "output": "Suggested expansion edges",
     "applicationPurpose": "Ranked query expansion for exemplar queries",
     "userInterfaceTool": "Start from exemplar; select expansions",
-    "doi": "",
+    "doi": "10.1145/3366423.3380005",
     "citations": {
       "references": [],
       "count": 0,
@@ -1589,8 +1589,8 @@
     ],
     "title": "S-Paths",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "Semantic Web"
     },
     "techniqueTags": [
       "graph-navigation"
@@ -1636,7 +1636,7 @@
     "output": "Aggregated set views",
     "applicationPurpose": "Set-based exploration via semantic paths",
     "userInterfaceTool": "Select set; choose path/view",
-    "doi": "",
+    "doi": "10.3233/SW-200383",
     "citations": {
       "references": [],
       "count": 0,
@@ -1655,8 +1655,8 @@
     ],
     "title": "FAAS",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Workshop",
+      "acronym": "VOILA"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1673,7 +1673,7 @@
       "guidance": "Graph summary (over-approx. suggestions)",
       "backendAssumptions": "Local index over Wikidata dump; endpoint baseline",
       "evidence": "Experiments",
-      "availability": "Paper/prototype",
+      "availability": "Open source",
       "visualization": "Tables/Lists",
       "dataAccess": "Local index",
       "dataSources": "Wikidata",
@@ -1724,8 +1724,8 @@
     ],
     "title": "NL Guidance",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "IC3K"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1773,7 +1773,7 @@
     "output": "Answer subgraphs",
     "applicationPurpose": "Sequential QA-style exploration",
     "userInterfaceTool": "Keyword entry + context selection + NL question",
-    "doi": "",
+    "doi": "10.5220/0010651800003064",
     "citations": {
       "references": [],
       "count": 0,
@@ -1792,8 +1792,8 @@
     ],
     "title": "Interaction Patterns",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "IC3K"
     },
     "techniqueTags": [
       "recommendation"
@@ -1839,7 +1839,7 @@
     "output": "Interaction patterns + features",
     "applicationPurpose": "Study of exploration intents/breakdowns",
     "userInterfaceTool": "Task-based exploration on prototype",
-    "doi": "",
+    "doi": "10.5220/0011548600003335",
     "citations": {
       "references": [],
       "count": 0,
@@ -1860,8 +1860,8 @@
     ],
     "title": "Sampo-UI",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Journal",
+      "acronym": "Semantic Web"
     },
     "techniqueTags": [
       "facets",
@@ -1908,7 +1908,7 @@
     "output": "Tables/maps/charts/timelines",
     "applicationPurpose": "Semantic portal UI framework",
     "userInterfaceTool": "Facets + perspectives; analysis tabs",
-    "doi": "",
+    "doi": "10.3233/SW-210428",
     "citations": {
       "references": [],
       "count": 0,
@@ -1926,10 +1926,10 @@
       "Sima, A.-C.",
       "Mendes de Farias, T."
     ],
-    "title": "SPARQL Editor",
+    "title": "User-Friendly SPARQL Editor",
     "venue": {
-      "type": "",
-      "acronym": ""
+      "type": "Conference",
+      "acronym": "ESWC"
     },
     "techniqueTags": [
       "graph-navigation",
@@ -1977,7 +1977,7 @@
     "output": "Query editor UI",
     "applicationPurpose": "SPARQL editor w/ metadata-based guidance",
     "userInterfaceTool": "Textual SPARQL; browse examples",
-    "doi": "",
+    "doi": "10.48550/arXiv.2503.02688",
     "citations": {
       "references": [],
       "count": 0,

@@ -440,12 +440,7 @@ function App() {
                 <div className="text-neutral-300 text-sm mb-2">
                   <p>Task 2.4 group</p>
                 </div>
-                
-                {/* Affiliations */}
-                <div className="text-neutral-400 text-xs mb-4">
-                  <p>Draft survey manuscript</p>
-                  <p>Knowledge graph exploration working draft</p>
-                </div>
+              
               </div>
               
               {/* Data Overview Section */}

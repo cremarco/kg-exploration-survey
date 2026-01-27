@@ -15,6 +15,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as d3 from 'd3';
 import Navigation from './Navigation';
+import Icon from './Icon';
 
 // Colors are now loaded from taxonomy.json
 
@@ -252,5 +253,4 @@ function Taxonomy() {
   );
 }
 
-export default Taxonomy; 
-import Icon from './Icon';
+export default Taxonomy;

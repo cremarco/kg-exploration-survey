@@ -15,6 +15,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import Navigation from './Navigation';
+import Icon from './Icon';
 
 /**
  * Main CitationMap component
@@ -339,5 +340,4 @@ ${d3.sum(chords, (c) => (c.target.index === d.index) * c.source.value)} Citing â
   );
 }
 
-export default CitationMap; 
-import Icon from './Icon';
+export default CitationMap;

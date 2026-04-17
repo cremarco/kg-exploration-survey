@@ -5,6 +5,7 @@
 
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{adjustbox}
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{rotating}
@@ -14,6 +15,8 @@
 \usepackage{xspace}
 \usepackage{hyperref}
 \usepackage{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage[table]{xcolor}
 \hypersetup{hidelinks}
 
@@ -24,9 +27,27 @@
 
 % Selected works metadata (keep in sync with Section~\ref{sec:selected-works}).
 \newcommand{\selectedWorkCount}{29}
+\newcommand{\pendingWorkCount}{27}
+\newcommand{\includedWorkCount}{56}
 \newcommand{\selectedWorkYearStart}{2003}
 \newcommand{\selectedWorkYearEnd}{2025}
 \newcommand{\selectedWorkYearRange}{\selectedWorkYearStart--\selectedWorkYearEnd}
+
+% PRISMA counters (kept coherent across identification/screening/inclusion).
+\newcommand{\identifiedpaperscount}{1024}
+\newcommand{\prismaduplicatesremoved}{86}
+\newcommand{\prismaautomationremoved}{34}
+\newcommand{\prismakeywordremoved}{117}
+\newcommand{\screenedrecordscount}{787}
+\newcommand{\recordsexcludedcount}{717}
+\newcommand{\screenedpaperscount}{70}
+\newcommand{\prismareportsnotretrieved}{4}
+\newcommand{\assessedpaperscount}{66}
+\newcommand{\selectionexcludedpaperscount}{10}
+\newcommand{\excludednontopiccount}{6}
+\newcommand{\excludednonenglishcount}{1}
+\newcommand{\excludedlowdetailcount}{3}
+\newcommand{\totapproachescount}{\includedWorkCount}
 
 % Table styling helpers (keep settings local by wrapping tables in {...}).
 \newcommand{\kgTableSetup}{%
@@ -36,8 +57,8 @@
 }
 \newcommand{\kgLargeTableSetup}{%
   \scriptsize%
-  \setlength{\tabcolsep}{3pt}%
-  \renewcommand{\arraystretch}{1.15}%
+  \setlength{\tabcolsep}{2pt}%
+  \renewcommand{\arraystretch}{1.08}%
 }
 
 \title{Knowledge Exploration in Knowledge Graphs: State of the Art, Taxonomy, and Open Challenges}
@@ -66,8 +87,8 @@
 }
 \vspace{1em}
 
-\todo[inline]{%
-  \textbf{Paper still to analyze} (present in \texttt{/papers} or \texttt{/paper 2}, but not yet covered in the current draft):
+\todo[inline,color=orange!25]{%
+  \footnotesize\textbf{Paper still to analyze (\pendingWorkCount)} (present in \texttt{/papers} or \texttt{/paper 2}, but not yet covered in the current draft):
   \texttt{2009\_Harth\_VisiNav\_Visual.pdf},
   \texttt{2010\_Heim\_Interactive\_Relationship.pdf},
   \texttt{2011\_Heim\_Faceted\_Visual.pdf},
@@ -123,65 +144,199 @@ This manuscript contributes: (i) a practical taxonomy of KG exploration systems;
 \section{Scope and Methodology}
 \label{sec:scope-methodology}
 \subsection{Differences from related surveys}
-Existing surveys cover Linked Data visualization and exploration systems, but differ in scope and in how they frame user guidance.
+Existing surveys and comparative reviews cover Linked Data visualization and exploration systems, but differ substantially in scope, granularity, and in how they frame user guidance.
 Dadzie and Rowe~\cite{2011_Dadzie_Approaches_to} propose a requirements-driven survey of Linked Data visualization aimed at intuitive data consumption and knowledge discovery. They compare 15 LD browsers (7 text-based and 8 visualization-based), with strong emphasis on the needs of different user types (technical vs.\ lay users) and on visualization/UI capabilities.
 
 Marie and Gandon~\cite{2014_Marie_Survey_of} broaden the picture by reviewing 14 Linked Data exploration and discovery systems, spanning browsers, recommenders, and exploratory search systems. Their analysis is organized around system classes and ``desired effects'' (\eg overviews, explanations, and in-session memory/breadcrumbs), and it highlights opportunities for richer assistance and discovery-oriented features.
 
 Jacksi et al.~\cite{2016_Jacksi_State_of} provide a feature- and technology-oriented review of more recent Linked Data exploration systems. From 28 collected candidates, they include 16 systems (8 Linked Data browsers and 8 exploratory search systems) and compare them along feature checklists (e.g., faceted navigation, query models, and result presentation).
 
+Bikakis and Sellis~\cite{2016_Bikakis_Exploration_and} look at exploration and visualization from a broader ``Big Linked Data'' perspective. Rather than centering exclusively on user-facing exploration patterns, they emphasize scalability requirements, the challenges posed by large and dynamic datasets, and the visualization techniques and system categories that can support exploratory analysis at scale.
+
+Grafkin et al.~\cite{2016_Grafkin_SPARQL_Query} review a narrower but highly relevant slice of the space: SPARQL query builders. Their systematic literature review compares nine builders along criteria such as querying approach, GUI support, expressiveness, end-user orientation, ontology exploration, and domain independence, making the paper particularly useful for guided query formulation rather than for KG exploration more broadly.
+
+Desimoni et al.~\cite{2020_Desimoni_A_Comparative} shift from surveying toward benchmark-style comparative evaluation. They define 16 use cases for LD visual exploration and assess 10 publicly accessible tools over DBpedia, focusing on functional coverage and task completion rather than on a conceptual taxonomy of interaction and guidance strategies.
+
+Bernasconi et al.~\cite{2023_Bernasconi_Linked_Data} revisit the topic from an interface-centric perspective motivated by cultural heritage and digital-library use cases. They compare 28 interfaces by interaction paradigm, type of information displayed, and complexity-reduction strategy, with less emphasis on guidance, backend assumptions, or evaluation protocols.
+
 In contrast, our survey focuses specifically on \emph{knowledge exploration} in KGs as an iterative sense-making process, with explicit attention to (i) \emph{interaction paradigms} (facets, navigation, relationship discovery, query building), (ii) \emph{guidance and recommendation} mechanisms (hard constraints, ranked suggestions, personalization, NL-based assistance), and (iii) how these choices relate to \emph{backend assumptions}, \emph{scalability techniques}, and \emph{evaluation} evidence. Table~\ref{tab:related-surveys} summarizes these differences.
 
 \begin{landscape}
-  \begin{table}[!htbp]
-    \centering
-    \caption{Comparison with closely related surveys on Linked Data visualization and exploration.}
-    \label{tab:related-surveys}
-    {\kgTableSetup
-      \begin{tabularx}{\linewidth}{@{}
-        >{\columncolor[gray]{0.95}\raggedright\arraybackslash\bfseries}p{2.7cm}
-        >{\raggedright\arraybackslash}X
-        >{\raggedright\arraybackslash}c
-        >{\raggedright\arraybackslash}X
-        >{\raggedright\arraybackslash}p{2.4cm}
-        @{}}
-        \toprule
-        \rowcolor[gray]{0.9} \textbf{Survey}                                                                                                                                                                  & \textbf{Objective / scope} & \textbf{\# approaches} & \textbf{Comparison taxonomy} & \textbf{Guidance focus} \\
-        \midrule
-        This work                                                                                                                                                                                             &
-        KG exploration (RDF and property graphs); taxonomy + open challenges; links interaction, backend assumptions, scalability, and evaluation; includes selection guidance and a corpus comparison table. &
-        29 (10 anchors)                                                                                                                                                                                       &
-        Yes: interaction paradigm, guidance, visualization, backend/data access, scalability, evaluation.                                                                                                     &
-        Explicit (constraints, ranking, personalization, NL guidance).                                                                                                                                                                                                                                                       \\ \addlinespace
-        Dadzie \& Rowe~\cite{2011_Dadzie_Approaches_to}                                                                                                                                                       &
-        Linked Data visualization for intuitive consumption and knowledge discovery; emphasizes user types (technical vs.\ lay).                                                                              &
-        15                                                                                                                                                                                                    &
-        Requirements-driven; text-based vs.\ visualization-based LD browsers; UI/feature comparison.                                                                                                          &
-        Mostly implicit; limited recommendation/guidance.                                                                                                                                                                                                                                                                    \\ \addlinespace
-        Marie \& Gandon~\cite{2014_Marie_Survey_of}                                                                                                                                                           &
-        Linked Data exploration and discovery systems (browsers, recommenders, exploratory search); highlights achievements and opportunities.                                                                &
-        14                                                                                                                                                                                                    &
-        Yes: system classes + ``desired effects'' (overviews, explanations, memory, assistance).                                                                                                              &
-        Includes recommenders; query suggestions discussed but still limited.                                                                                                                                                                                                                                                \\ \addlinespace
-        Jacksi et al.~\cite{2016_Jacksi_State_of}                                                                                                                                                             &
-        Review of Linked Data exploration systems; feature and technology comparison of browsers and exploratory search systems.                                                                              &
-        16 (from 28)                                                                                                                                                                                          &
-        Feature/technology-oriented summary tables (LDB vs.\ ESS).                                                                                                                                            &
-        Limited; guidance treated mainly as a feature (e.g., query suggestion).                                                                                                                                                                                                                                              \\
-        \bottomrule
-      \end{tabularx}
-    }
-  \end{table}
+  \setlength{\LTleft}{0pt}
+  \setlength{\LTright}{0pt}
+  {\footnotesize
+    \setlength{\tabcolsep}{4pt}%
+    \renewcommand{\arraystretch}{1.08}%
+    \begin{longtable}{@{}
+      >{\columncolor[gray]{0.95}\raggedright\arraybackslash\bfseries}p{2.4cm}
+      >{\raggedright\arraybackslash}p{5.6cm}
+      >{\raggedright\arraybackslash}p{1.5cm}
+      >{\raggedright\arraybackslash}p{5.0cm}
+      >{\raggedright\arraybackslash}p{2.8cm}
+      @{}}
+      \caption{Comparison with closely related surveys and comparative reviews on Linked Data visualization and exploration.}
+      \label{tab:related-surveys}\\
+      \toprule
+      \rowcolor[gray]{0.9} \textbf{Related work} & \textbf{Objective / scope} & \textbf{\# systems / tools} & \textbf{Comparison dimensions} & \textbf{Guidance focus} \\
+      \midrule
+      \endfirsthead
+      \toprule
+      \rowcolor[gray]{0.9} \textbf{Related work} & \textbf{Objective / scope} & \textbf{\# systems / tools} & \textbf{Comparison dimensions} & \textbf{Guidance focus} \\
+      \midrule
+      \endhead
+      \midrule
+      \multicolumn{5}{r@{}}{\footnotesize Continued on next page} \\
+      \endfoot
+      \bottomrule
+      \endlastfoot
+      This work &
+      KG exploration across RDF/property graphs; taxonomy, open challenges, and practitioner guidance. &
+      29 &
+      Interaction paradigm, guidance, visualization, backend/data access, scalability, evaluation. &
+      Explicit: constraints, ranking, personalization, NL. \\ \addlinespace
+      Dadzie \& Rowe~\cite{2011_Dadzie_Approaches_to} &
+      LD visualization for intuitive consumption; technical vs.\ lay users and UI capabilities. &
+      15 &
+      Requirements; text vs.\ visual browsers; UI/features. &
+      Indirect; centered on intuitive consumption and visualization support. \\ \addlinespace
+      Marie \& Gandon~\cite{2014_Marie_Survey_of} &
+      LD exploration/discovery systems: browsers, recommenders, exploratory search. &
+      14 &
+      System classes + ``desired effects'' (overview, explanation, memory, assistance). &
+      Moderate; includes recommenders, explanations, and in-session memory. \\ \addlinespace
+      Jacksi et al.~\cite{2016_Jacksi_State_of} &
+      Recent LD exploration systems; browsers vs.\ exploratory search systems. &
+      16 / 28 &
+      Feature/technology tables for LDB and ESS. &
+      Limited; mainly treated as part of feature comparison. \\ \addlinespace
+      Bikakis \& Sellis~\cite{2016_Bikakis_Exploration_and} &
+      Big Linked Data exploration/visualization; scalability and visual analytics. &
+      Broad &
+      Challenges + generic, graph, domain-specific, ontology, and library categories. &
+      Secondary; discussed alongside scalability and personalization issues. \\ \addlinespace
+      Grafkin et al.~\cite{2016_Grafkin_SPARQL_Query} &
+      SPARQL query builders for end-user query formulation. &
+      9 &
+      Querying approach, GUI, expressiveness, end-user orientation, ontology exploration, domain independence. &
+      Central, but restricted to query construction. \\ \addlinespace
+      Desimoni et al.~\cite{2020_Desimoni_A_Comparative} &
+      Use-case-based comparison of accessible LD visualization tools. &
+      10 / 29 &
+      16 use cases: schema/data views, paths, navigation, filtering, statistics, visualization recommendation. &
+      Indirect; guidance is one evaluated functionality. \\ \addlinespace
+      Bernasconi et al.~\cite{2023_Bernasconi_Linked_Data} &
+      LD interfaces, especially for cultural heritage and digital libraries. &
+      28 &
+      Interaction paradigm, displayed information, reduction strategy, context. &
+      Limited; focuses on interface modality and information reduction. \\
+    \end{longtable}
+  }
 \end{landscape}
 
 \subsection{Scope}
 We focus on \emph{interactive} KG exploration systems, \ie user-facing methods and tools that support iterative sense-making over graph-structured data through navigation, guided query construction, recommendations, and visualization. We include both RDF graphs queried via SPARQL and property graphs queried via Cypher when the contribution primarily targets exploration. We exclude work whose primary focus is (i) KG construction and curation pipelines, (ii) ontology engineering and schema alignment, (iii) standalone question answering systems that return answers without an exploration workflow, and (iv) offline graph analytics without an interactive exploration interface.
 
 \subsection{Methodology}
+
+
+\begin{figure}[!t]
+\centering
+\begin{adjustbox}{center,max width=\textwidth}
+\begin{tikzpicture}[
+  scale=0.82,
+  transform shape,
+  x=1cm,
+  y=1cm,
+  >=Latex,
+  font=\sffamily\scriptsize,
+  prisma title/.style={
+    draw,
+    rounded corners=2pt,
+    fill=orange!85,
+    minimum width=8.9cm,
+    minimum height=0.54cm,
+    inner sep=1.2pt,
+    align=center,
+    font=\sffamily\bfseries\scriptsize
+  },
+  prisma box/.style={
+    draw,
+    thick,
+    align=left,
+    text width=3.55cm,
+    inner xsep=2.0mm,
+    inner ysep=1.8mm,
+    minimum height=0.98cm,
+    fill=white,
+    font=\sffamily\scriptsize
+  },
+  prisma tall box/.style={
+    prisma box,
+    minimum height=2.05cm
+  },
+  prisma side box/.style={
+    prisma box,
+    text width=3.70cm
+  },
+  prisma reasons box/.style={
+    prisma side box,
+    minimum height=2.18cm
+  },
+  prisma phase/.style={
+    draw,
+    thick,
+    rounded corners=2pt,
+    fill=blue!35,
+    minimum width=0.64cm,
+    minimum height=0.70cm,
+    inner sep=1.2pt,
+    align=center,
+    font=\sffamily\bfseries\scriptsize
+  },
+  prisma arrow/.style={
+    -{Latex[length=2.0mm,width=1.5mm]},
+    line width=0.60pt
+  }
+]
+  \node[prisma title] (title) at (5.28,-0.38) {Identification of studies via databases};
+
+  \node[prisma phase, rotate=90, minimum width=2.45cm] (phaseid) at (0.25,-2.20) {Identification};
+  \node[prisma phase, rotate=90, minimum width=5.85cm] (phasescreen) at (0.25,-7.05) {Screening};
+  \node[prisma phase, rotate=90, minimum width=1.85cm] (phaseincluded) at (0.25,-12.10) {Inclusion};
+
+  \node[prisma tall box, anchor=north west] (identified) at (1.00,-0.95) {\textbf{Records identified}\\[1pt] Databases (n = \identifiedpaperscount)};
+  \node[prisma tall box, anchor=north west, text width=4.00cm] (removed) at (5.55,-0.95) {\textbf{Removed before screening}\\[1pt] Duplicate records removed (n = \prismaduplicatesremoved)\\ Ineligible by automation tools\\ (n = \prismaautomationremoved)\\ Records removed by keyword ranking\\ (n = \prismakeywordremoved)};
+
+  \node[prisma box, anchor=north west] (screened) at (1.00,-4.10) {\textbf{Records screened}\\ (n = \screenedrecordscount)};
+  \node[prisma side box, anchor=north west] (recordsexcluded) at (5.55,-4.10) {\textbf{Records excluded}\\ (n = \recordsexcludedcount)};
+
+  \node[prisma box, anchor=north west] (sought) at (1.00,-6.05) {\textbf{Publications sought}\\ (n = \screenedpaperscount)};
+  \node[prisma side box, anchor=north west] (notretrieved) at (5.55,-6.05) {\textbf{Publications not retrieved}\\ (n = \prismareportsnotretrieved)};
+
+  \node[prisma box, anchor=north west] (assessed) at (1.00,-8.00) {\textbf{Publications assessed}\\ (n = \assessedpaperscount)};
+  \node[prisma reasons box, anchor=north west] (reportsexcluded) at (5.55,-8.00) {\textbf{Excluded after full-text review:}\\[1pt] Not directly related to KG exploration\\ (n = \excludednontopiccount)\\ Non-English\\ (n = \excludednonenglishcount)\\ Insufficient methodological detail\\ (n = \excludedlowdetailcount)\\ Total (n = \selectionexcludedpaperscount)};
+
+  \node[prisma box, anchor=north west, minimum height=1.92cm] (included) at (1.00,-11.25) {\textbf{Publications included in review}\\ (n = \totapproachescount)\\[1pt] \textbf{Works already analysed in this draft}\\ (n = \selectedWorkCount)};
+
+  \draw[prisma arrow] (identified.east) -- (removed.west);
+  \draw[prisma arrow] (identified.south) -- (screened.north);
+  \draw[prisma arrow] (screened.east) -- (recordsexcluded.west);
+  \draw[prisma arrow] (screened.south) -- (sought.north);
+  \draw[prisma arrow] (sought.east) -- (notretrieved.west);
+  \draw[prisma arrow] (sought.south) -- (assessed.north);
+\draw[prisma arrow] (assessed.east) -- (reportsexcluded.west);
+\draw[prisma arrow] (assessed.south) -- (included.north);
+\end{tikzpicture}
+\end{adjustbox}
+\caption{PRISMA 2020 flow diagram summarising identification, screening, eligibility assessment, and inclusion for the present review.}
+\label{fig:prisma-flow}
+\end{figure}
+
+
 \paragraph{Identification.} We searched CrossRef and Semantic Scholar using keywords such as ``knowledge graph exploration'', ``graph query suggestion'', ``SPARQL query builder'', ``linked data browser'', and ``visualization recommendation''.
 \paragraph{Screening.} We filtered results by peer-reviewed status, relevance to exploration (excluding pure ETL or isolated QA), and availability of a described method or interface.
 \paragraph{Inclusion.} We retained works that (i) target exploration and not only exact query answering, and (ii) propose either a user-facing interaction model or a guidance/recommendation mechanism.
-\paragraph{Selection.} We selected \selectedWorkCount{} representative works (\selectedWorkYearRange{}) as anchors for the taxonomy.
+\paragraph{Selection.} We included \includedWorkCount{} publications in the review corpus overall. Of these, \selectedWorkCount{} representative works (\selectedWorkYearRange{}) are already analysed in the current draft, while \pendingWorkCount{} additional papers remain to be covered.
 
 \todo[inline]{TO DO. COMPLETE THE SECTION.}
 Section~\ref{sec:selected-works} and Table~\ref{tab:comparazione} also summarize additional tools and papers.
@@ -419,14 +574,14 @@ Table~\ref{tab:comparazione} provides a comparative overview of KG exploration t
     \setlength{\LTleft}{0pt}
     \setlength{\LTright}{0pt}
     \begin{longtable}{@{}
-      >{\columncolor[gray]{0.95}\raggedright\arraybackslash\bfseries}p{0.115\linewidth}
+      >{\columncolor[gray]{0.95}\raggedright\arraybackslash\bfseries}p{0.118\linewidth}
+      >{\raggedright\arraybackslash}p{0.086\linewidth}
+      >{\raggedright\arraybackslash}p{0.132\linewidth}
+      >{\raggedright\arraybackslash}p{0.128\linewidth}
+      >{\raggedright\arraybackslash}p{0.102\linewidth}
+      >{\raggedright\arraybackslash}p{0.145\linewidth}
+      >{\raggedright\arraybackslash}p{0.08\linewidth}
       >{\raggedright\arraybackslash}p{0.09\linewidth}
-      >{\raggedright\arraybackslash}p{0.13\linewidth}
-      >{\raggedright\arraybackslash}p{0.13\linewidth}
-      >{\raggedright\arraybackslash}p{0.115\linewidth}
-      >{\raggedright\arraybackslash}p{0.15\linewidth}
-      >{\raggedright\arraybackslash}p{0.08\linewidth}
-      >{\raggedright\arraybackslash}p{0.08\linewidth}
       @{}}
       \caption{Comparison of KG exploration tools, methods, and supporting components in the local corpus (\texttt{paper/}).}
       \label{tab:comparazione}                                                                                                                                                                                                                                                                                                                                                                       \\
@@ -446,35 +601,35 @@ Table~\ref{tab:comparazione} provides a comparative overview of KG exploration t
       \endfoot
       \bottomrule
       \endlastfoot
-      Haystack~(2003)~\cite{2003_Quan_Haystack_A}                                    & Platform (end-user Semantic Web apps)            & Configurable views; RDF authoring               & View/interaction model encoded in RDF (Ozone)         & Application-like views              & Local RDF store; extensible services (Adenine)              & System               & Paper/prototype       \\
-      Tabulator~(2006)~\cite{2006_Berners-Lee_Tabulator_Exploring}                   & Generic Linked Data browser                      & Follow URIs; outliner; query-by-example         & Multi-view inspection; QBE$\rightarrow$SPARQL         & Outliner; tables; map; timeline     & URI dereferencing + SPARQL; open web                        & System               & Prototype/tool        \\
-      /facet~(2006)~\cite{2006_Hildebrand_facet_A}                                   & Faceted browsing for heterogeneous RDF           & Facets per type; cross-type facets; search      & Auto facet configuration; prune empty refinements     & Facets + lists                      & RDF store + (S)PARQL; facet mining                          & Prototype            & Online demo           \\
-      gFacet~(2008)~\cite{2008_Heim_gFacet_A}                                        & Faceted graph browsing                           & Graph + facets; pin/layout                      & Facet filtering                                       & Graph + facets                      & RDF/SPARQL; Flash client                                    & User study           & Demo (Flash)          \\
-      Explorator~(2009)~\cite{2009_Araujo_Experimenting_with}                        & Direct manipulation RDF browsing/querying        & Set operations + browsing/search                & Set-based model (limited explicit guidance)           & Set panels; tabular results         & RDF store; set/projection operators                         & User studies         & Demo (web)            \\
-      RelFinder~(2009)~\cite{2009_Heim_RelFinder_Revealing}                          & Relationship discovery                           & Select 2 entities; inspect paths; filters       & Constrained path search + interactive pruning         & Relationship graph                  & SPARQL endpoints; Flash/Flex                                & Case/demo            & Demo (Flash)          \\
-      LodLive~(2012)~\cite{2012_Camarda_LodLive_exploring}                           & Lightweight Linked Data navigation               & Expand nodes; follow in/out links; sameAs jumps & None/implicit                                         & Graph; map/gallery                  & Client JS + JSONP; SPARQL endpoints                         & Demo/adoption        & Open source (MIT)     \\
-      Payola~(2013)~\cite{2013_Klimek_Payola_collaborative}                          & LD analysis + visualization framework            & Compose analyzer pipelines; reuse plugins       & Plugin ecosystem (analyzers/visualizers)              & Pipelines + visualizations          & Scala server + SPARQL endpoints                             & Use cases            & Online tool           \\
-      YASGUI~(2013)~\cite{2013_Rietveld_YASGUI_Not}                                  & SPARQL client for iterative querying             & Textual SPARQL editing                          & Autocomplete; endpoint lookup; syntax aids            & Editor + result rendering           & SPARQL endpoints; web services                              & Feature comparison   & Web tool              \\
-      LODmilla~(2014)~\cite{2014_AMA_LODmilla_Shared}                                & Generic LOD graph browsing + sharing             & Graph navigation; save/share views              & None/implicit                                         & Graph + shareable views             & SPARQL endpoints; multi-dataset browsing                    & Prototype            & Paper/prototype       \\
-      rdf:SynopsViz~(2014)~\cite{2014_Bikakis_rdfSynopsViz_a}                        & Hierarchical exploration + analytics             & Facets; hierarchy drill-down                    & Auto hierarchy + on-the-fly stats                     & Charts/timeline/treemap + stats     & RDF input (+ optional OWL); hierarchy construction          & Prototype            & Online prototype      \\
-      LD Viewer~(2014)~\cite{2014_Lukovnikov_LD_Viewer}                              & Linked Data presentation framework               & Resource pages; filters; triple actions         & Triple Action Framework (configurable actions)        & Rich entity pages; map; filters     & SPARQL + optional index; dataset-specific actions           & User survey          & Paper/framework       \\
-      Sgvizler~(2015)~\cite{2015_Skjaeveland_Sgvizler_a}                             & Visualize SPARQL result sets in web pages        & Embed \texttt{SELECT} in HTML                   & None/implicit                                         & Charts/maps/timeline/graphs         & SPARQL endpoints; DataTable abstraction                     & System/tool          & Open source (MIT)     \\
-      VIIQ~(2015)~\cite{2015_Jayaram_VIIQ_auto-suggestion}                           & Visual graph query formulation                   & Draw query graph interactively                  & Ranked edge/label suggestions                         & Query graph builder UI              & Heterogeneous graph; query graphs                           & Demo                 & Paper/demo            \\
-      LinkDaViz~(2015)~\cite{2015_Thellmann_LinkDaViz_Automatic}                     & Visualization recommendation                     & Select data slice; refine bindings              & Profiling + ranked binding suggestions                & Charts + maps                       & RDF/SPARQL (and CSV); visualization model                   & User study + perf.   & Online tool           \\
-      Sapphire~(2016)~\cite{2016_El-Roby_Sapphire_Querying}                          & Assisted SPARQL query writing                    & Iterative query construction                    & Data-driven suggestions; query change recommendations & SPARQL queries + answers            & Public SPARQL endpoints                                     & System/demo          & Paper                 \\
-      Sparklis~(2017)~\cite{2017_Ferre_Sparklis_An}                                  & Guided SPARQL query builder                      & Stepwise refinements; focus-based editing       & Valid-step (non-empty) + controlled NL                & Tables + NL verbalization           & SPARQL endpoints; on-the-fly schema discovery               & Studies + logs       & Online tool           \\
-      PICASSO~(2017)~\cite{2017_Huang_PICASSO_exploratory}                           & Exploratory subgraph search                      & Progressive visual query; multi-stream wall     & Query evolution + result juxtaposition                & Results wall; subgraph views        & Graph DB over many small/medium graphs                      & Demo                 & Paper/demo            \\
-      ViziQuer~(2018)~\cite{2018_Cerans_ViziQuer_A}                                  & Diagrammatic SPARQL authoring                    & UML-style visual queries                        & Schema-aware environment; visual constructs           & SPARQL incl.\ aggregates/subqueries & SPARQL endpoint + schema exploration service                & Experiment           & Open source           \\
-      LDRec~(2018)~\cite{2018_Durao_A_Linked}                                        & Personalized Linked Data browsing                & Browse + user profile (likes)                   & Profile-based recommendations (ICA-inspired)          & InfoBox + recommended resources     & Linked profiles + SPARQL (DBpedia); neighborhood extraction & Offline + user trial & Paper                 \\
-      LOD Explorer~(2018)~\cite{2018_Jacksi_LOD_Explorer}                            & Simple endpoint-centric exploration              & Search/autocomplete; open nodes; expand links   & Autocomplete + search within opened resources         & Graph + details panel               & Client JS + JSONP; SPARQL endpoints                         & Tool paper           & Online demo           \\
-      RDF Explorer~(2019)~\cite{2019_Vargas_RDF_Explorer}                            & Visual SPARQL query builder                      & Drag resources; draw edges/variables            & Data-driven property suggestions; avoid empty results & Visual query + SPARQL view          & SPARQL endpoints (e.g., Wikidata)                           & Demo                 & Online + code         \\
-      Graph-Query Suggestions~(2020)~\cite{2020_Lissandrini_Graph-Query_Suggestions} & Ranked query expansion for exemplar queries      & Start from exemplar; select expansions          & LM/PRF-ranked edge expansions                         & Suggested expansion edges           & Freebase snapshot (very large); IR scoring                  & Offline + crowd      & OA (CC-BY)            \\
-      S-Paths~(2021)~\cite{2021_Destandau_S-Paths_Set-based}                         & Set-based exploration via semantic paths         & Select set; choose path/view                    & Automatic view selection + aggregation                & Aggregated set views                & SPARQL endpoint; path analysis                              & User study           & Demo + code           \\
-      FAAS~(2021)~\cite{2021_Parra_Fast_Approximate}                                 & Fast approximate autocomplete for query builders & Autocomplete variables during query build       & Graph summary (over-approx. suggestions)              & Autocomplete lists                  & Local index over Wikidata dump; endpoint baseline           & Experiments          & Paper/prototype       \\
-      NL Guidance~(2021)~\cite{2021_Witschel_Natural_Language-based}                 & Sequential QA-style exploration                  & Keyword entry + context selection + NL question & Context-based recommended queries                     & Answer subgraphs                    & Property graph backend (Cypher)                             & User study           & Paper                 \\
-      Interaction Patterns~(2022)~\cite{2022_Grether_Studying_Interaction}           & Study of exploration intents/breakdowns          & Task-based exploration on prototype             & Guidance design recommendations                       & Interaction patterns + features     & Medical KG + prototype                                      & User study           & Paper                 \\
-      Sampo-UI~(2022)~\cite{2022_Ikkala_Sampo-UI_A}                                  & Semantic portal UI framework                     & Facets + perspectives; analysis tabs            & Config-driven portal patterns                         & Tables/maps/charts/timelines        & React+Redux + Node/Express generating SPARQL                & Deployments          & Open source (MIT)     \\
-      SPARQL Editor~(2025)~\cite{2025_Emonet_A_User-Friendly}                        & SPARQL editor w/ metadata-based guidance         & Textual SPARQL; browse examples                 & Auto examples; context-aware autocomplete; schema viz & Query editor UI                     & Endpoint metadata + triple patterns; YASGUI-based           & Implementation       & Open source           \\
+      Haystack~(2003)                                                                 & Platform (end-user Semantic Web apps)            & Configurable views; RDF authoring               & View/interaction model encoded in RDF (Ozone)         & Application-like views              & Local RDF store; extensible services (Adenine)              & System               & Paper/proto.          \\
+      Tabulator~(2006)                                                                & Generic Linked Data browser                      & Follow URIs; outliner; query-by-example         & Multi-view inspection; QBE$\rightarrow$SPARQL         & Outliner; tables; map; timeline     & URI dereferencing + SPARQL; open web                        & System               & Proto./tool           \\
+      /facet~(2006)                                                                   & Faceted browsing for heterogeneous RDF           & Facets per type; cross-type facets; search      & Auto facet configuration; prune empty refinements     & Facets + lists                      & RDF store + (S)PARQL; facet mining                          & Prototype            & Online demo           \\
+      gFacet~(2008)                                                                   & Faceted graph browsing                           & Graph + facets; pin/layout                      & Facet filtering                                       & Graph + facets                      & RDF/SPARQL; Flash client                                    & User study           & Demo (Flash)          \\
+      Explorator~(2009)                                                               & Direct manipulation RDF browsing/querying        & Set operations + browsing/search                & Set-based model (limited explicit guidance)           & Set panels; tabular results         & RDF store; set/projection operators                         & User studies         & Demo (web)            \\
+      RelFinder~(2009)                                                                & Relationship discovery                           & Select 2 entities; inspect paths; filters       & Constrained path search + interactive pruning         & Relationship graph                  & SPARQL endpoints; Flash/Flex                                & Case/demo            & Demo (Flash)          \\
+      LodLive~(2012)                                                                  & Lightweight Linked Data navigation               & Expand nodes; follow in/out links; sameAs jumps & None/implicit                                         & Graph; map; gallery                 & Client JS + JSONP; SPARQL endpoints                         & Demo/adopt.          & OSS (MIT)             \\
+      Payola~(2013)                                                                   & LD analysis + visualization framework            & Compose analyzer pipelines; reuse plugins       & Plugin ecosystem (analyzers/visualizers)              & Pipelines + visualizations          & Scala server + SPARQL endpoints                             & Use cases            & Online tool           \\
+      YASGUI~(2013)                                                                   & SPARQL client for iterative querying             & Textual SPARQL editing                          & Autocomplete; endpoint lookup; syntax aids            & Editor + result rendering           & SPARQL endpoints; web services                              & Feature comp.        & Web tool              \\
+      LODmilla~(2014)                                                                 & Generic LOD graph browsing + sharing             & Graph navigation; save/share views              & None/implicit                                         & Graph + shareable views             & SPARQL endpoints; multi-dataset browsing                    & Prototype            & Paper/proto.          \\
+      rdf:SynopsViz~(2014)                                                            & Hierarchical exploration + analytics             & Facets; hierarchy drill-down                    & Auto hierarchy + on-the-fly stats                     & Charts; timeline; treemap + stats   & RDF input (+ optional OWL); hierarchy construction          & Prototype            & Online prototype      \\
+      LD Viewer~(2014)                                                                & Linked Data presentation framework               & Resource pages; filters; triple actions         & Triple Action Framework (configurable actions)        & Rich entity pages; map; filters     & SPARQL + optional index; dataset-specific actions           & User survey          & Paper/framew.         \\
+      Sgvizler~(2015)                                                                 & Visualize SPARQL result sets in web pages        & Embed \texttt{SELECT} in HTML                   & None/implicit                                         & Charts; maps; timeline; graphs      & SPARQL endpoints; DataTable abstraction                     & System/tool          & OSS (MIT)             \\
+      VIIQ~(2015)                                                                     & Visual graph query formulation                   & Draw query graph interactively                  & Ranked edge/label suggestions                         & Query graph builder UI              & Heterogeneous graph; query graphs                           & Demo                 & Paper/demo            \\
+      LinkDaViz~(2015)                                                                & Visualization recommendation                     & Select data slice; refine bindings              & Profiling + ranked binding suggestions                & Charts + maps                       & RDF/SPARQL (and CSV); visualization model                   & User study; perf.    & Online tool           \\
+      Sapphire~(2016)                                                                 & Assisted SPARQL query writing                    & Iterative query construction                    & Data-driven suggestions; query change recommendations & SPARQL queries + answers            & Public SPARQL endpoints                                     & System/demo          & Paper                 \\
+      Sparklis~(2017)                                                                 & Guided SPARQL query builder                      & Stepwise refinements; focus-based editing       & Valid-step (non-empty) + controlled NL                & Tables + NL verbalization           & SPARQL endpoints; on-the-fly schema discovery               & Studies + logs       & Online tool           \\
+      PICASSO~(2017)                                                                  & Exploratory subgraph search                      & Progressive visual query; multi-stream wall     & Query evolution + result juxtaposition                & Results wall; subgraph views        & Graph DB over many small/medium graphs                      & Demo                 & Paper/demo            \\
+      ViziQuer~(2018)                                                                 & Diagrammatic SPARQL authoring                    & UML-style visual queries                        & Schema-aware environment; visual constructs           & SPARQL incl.\ aggregates and subqueries & SPARQL endpoint + schema exploration service             & Experiment           & Open source           \\
+      LDRec~(2018)                                                                    & Personalized Linked Data browsing                & Browse + user profile (likes)                   & Profile-based recommendations (ICA-inspired)          & InfoBox + recommended resources     & Linked profiles + SPARQL (DBpedia); neighborhood extraction & Offline; user trial  & Paper                 \\
+      LOD Explorer~(2018)                                                             & Simple endpoint-centric exploration              & Search/autocomplete; open nodes; expand links   & Autocomplete + search within opened resources         & Graph + details panel               & Client JS + JSONP; SPARQL endpoints                         & Tool paper           & Online demo           \\
+      RDF Explorer~(2019)                                                             & Visual SPARQL query builder                      & Drag resources; draw edges/variables            & Data-driven property suggestions; avoid empty results & Visual query + SPARQL view          & SPARQL endpoints (e.g., Wikidata)                           & Demo                 & Online; code          \\
+      Graph-Query Suggestions~(2020)                                                  & Ranked query expansion for exemplar queries      & Start from exemplar; select expansions          & LM/PRF-ranked edge expansions                         & Suggested expansion edges           & Freebase snapshot (very large); IR scoring                  & Offline; crowd       & OA (CC-BY)            \\
+      S-Paths~(2021)                                                                  & Set-based exploration via semantic paths         & Select set; choose path/view                    & Automatic view selection + aggregation                & Aggregated set views                & SPARQL endpoint; path analysis                              & User study           & Demo; code            \\
+      FAAS~(2021)                                                                     & Fast approximate autocomplete for query builders & Autocomplete variables during query build       & Graph summary (over-approx. suggestions)              & Autocomplete lists                  & Local index over Wikidata dump; endpoint baseline           & Exp.                 & Paper/proto.          \\
+      NL Guidance~(2021)                                                              & Sequential QA-style exploration                  & Keyword entry + context selection + NL question & Context-based recommended queries                     & Answer subgraphs                    & Property graph backend (Cypher)                             & User study           & Paper                 \\
+      Interaction Patterns~(2022)                                                     & Study of exploration intents/breakdowns          & Task-based exploration on prototype             & Guidance design recommendations                       & Interaction patterns + features     & Medical KG + prototype                                      & User study           & Paper                 \\
+      Sampo-UI~(2022)                                                                 & Semantic portal UI framework                     & Facets + perspectives; analysis tabs            & Config-driven portal patterns                         & Tables; maps; charts; timelines     & React/Redux + Node/Express; SPARQL generation               & Deployments          & OSS (MIT)             \\
+      SPARQL Editor~(2025)                                                            & SPARQL editor w/ metadata-based guidance         & Textual SPARQL; browse examples                 & Auto examples; context-aware autocomplete; schema viz & Query editor UI                     & Endpoint metadata + triple patterns; YASGUI-based           & Impl.                & OSS                   \\
     \end{longtable}
   }
 \end{landscape}
@@ -580,6 +735,10 @@ KG exploration is mature in core interaction paradigms (facets, relationship dis
   \bibitem{2011_Dadzie_Approaches_to} Dadzie, A.-S., Rowe, M.: Approaches to visualising linked data: A survey. \emph{Semantic Web} 2(2), 89--124 (2011).
   \bibitem{2014_Marie_Survey_of} Marie, N., Gandon, F.: Survey of Linked Data Based Exploration Systems. In: \emph{Proc.\ 3rd International Conf.\ on Intelligent Exploration of Semantic Data}, pp.~66--77 (2014).
   \bibitem{2016_Jacksi_State_of} Jacksi, K., Dimililer, N., Zeebaree, S.R.: State of the Art Exploration Systems for Linked Data: A Review. \emph{International Journal of Advanced Computer Science and Applications} 7, 155--164 (2016).
+  \bibitem{2016_Bikakis_Exploration_and} Bikakis, N., Sellis, T.K.: Exploration and Visualization in the Web of Big Linked Data: A Survey of the State of the Art. In: \emph{Proc.\ LWDM 2016}. CEUR Workshop Proceedings, vol.~1558 (2016).
+  \bibitem{2016_Grafkin_SPARQL_Query} Grafkin, P., Mironov, M., Fellmann, M., Lantow, B., Sandkuhl, K., Smirnov, A.V.: SPARQL Query Builders: Overview and Comparison. In: \emph{BIR 2016 Workshops}. CEUR Workshop Proceedings, vol.~1684 (2016).
+  \bibitem{2020_Desimoni_A_Comparative} Desimoni, F., Bikakis, N., Po, L., Papastefanatos, G.: A Comparative Study of State-of-The-Art Linked Data Visualization Tools. In: \emph{Proc.\ 5th International Workshop on Visualization and Interaction for Ontologies and Linked Data (VOILA 2020)}. CEUR Workshop Proceedings, vol.~2778, pp.~1--13 (2020).
+  \bibitem{2023_Bernasconi_Linked_Data} Bernasconi, E., Ceriani, M., Mecella, M.: Linked Data Interfaces: A Survey. In: \emph{Proc.\ 19th Conference on Information and Research Science Connecting to Digital and Library Science (IRCDL 2023)}. CEUR Workshop Proceedings, vol.~3365 (2023).
   \bibitem{2003_Quan_Haystack_A} Quan, D., Huynh, D., Karger, D.: Haystack: A Platform for Authoring End User Semantic Web Applications. In: \emph{Proc.\ ISWC}, pp.~738--753 (2003).
   \bibitem{2006_Hildebrand_facet_A} Hildebrand, M., van Ossenbruggen, J., Hardman, L.: /facet: A browser for heterogeneous semantic web repositories. In: \emph{Proc.\ ISWC} (2006).
   \bibitem{2006_Berners-Lee_Tabulator_Exploring} Berners-Lee, T., Chen, Y., Chilton, L., Connolly, D., Dhanaraj, R., Hollenbach, J., Lerer, A., Sheets, D.: Tabulator: Exploring and Analyzing linked data on the Semantic Web. In: \emph{Proc.\ Int.\ Semantic Web User Interaction Workshop} (2006).

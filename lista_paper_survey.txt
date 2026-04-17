@@ -25,7 +25,6 @@ PAPERS
 2015_Thellmann_LinkDaViz_Automatic.pdf | LinkDaViz - Automatic Binding of Linked Data to Visualizations
 2016_Arenas_Faceted_search.pdf | Faceted Search over RDF-based Knowledge Graphs
 2016_El-Roby_Sapphire_Querying.pdf | Sapphire: Querying RDF Data Made Simple
-2016_Grafkin_SPARQL_Query.pdf | SPARQL Query Builders: Overview and Comparison
 2016_Soylu_Experiencing_OptiqueVQS.pdf | Experiencing OptiqueVQS: a Multi-paradigm and Ontology-based Visual Query System for End Users
 2017_Ferre_Sparklis_An.pdf | Sparklis: An Expressive Query Builder for SPARQL Endpoints with Guidance in Natural Language
 2017_Huang_PICASSO_exploratory.pdf | PICASSO: Exploratory Search of Connected Subgraph Substructures in Graph Databases
@@ -38,7 +37,6 @@ PAPERS
 2019_Feddoul_Automatic_Facet.pdf | Automatic Facet Generation and Selection over Knowledge Graphs
 2019_Kuric_Knowledge_Graph.pdf | Knowledge Graph Exploration: A Usability Evaluation of Query Builders for Laypeople
 2019_Vargas_RDF_Explorer.pdf | RDF Explorer: A Visual Query Builder for Semantic Web Knowledge Graphs
-2020_Desimoni_A_Comparative.pdf | A Comparative Study of State-of-The-Art Linked Data Visualization Tools
 2020_Lissandrini_Graph-Query_Suggestions.pdf | Graph-Query Suggestions for Knowledge Graph Exploration
 2021_Destandau_S-Paths_Set-based.pdf | S-Paths: Set-based Visual Exploration of Linked Data Driven by Semantic Paths
 2021_Hyvonen_Knowledge-based_relational.pdf | Knowledge-based Relational Search in Cultural Heritage Linked Data
@@ -59,5 +57,7 @@ SURVEY
 2011_Dadzie_Approaches_to.pdf | Approaches to Visualising Linked Data: A Survey
 2014_Marie_Survey_of.pdf | Survey of Linked Data Based Exploration Systems
 2016_Bikakis_Exploration_and.pdf | Exploration and Visualization in the Web of Big Linked Data: A Survey of the State of the Art
+2016_Grafkin_SPARQL_Query.pdf | SPARQL Query Builders: Overview and Comparison
 2016_Jacksi_State_of.pdf | State of the Art Exploration Systems for Linked Data: A Review
+2020_Desimoni_A_Comparative.pdf | A Comparative Study of State-of-The-Art Linked Data Visualization Tools
 2023_Bernasconi_Linked_Data.pdf | Linked Data Interfaces: A Survey

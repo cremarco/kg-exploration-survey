@@ -1,0 +1,63 @@
+PAPERS
+2003_Quan_Haystack_A.pdf | Haystack: A Platform for Authoring End User Semantic Web Applications
+2006_Berners-Lee_Tabulator_Exploring.pdf | Tabulator: Exploring and Analyzing Linked Data on the Semantic Web
+2006_Hildebrand_facet_A.pdf | /facet: A Browser for Heterogeneous Semantic Web Repositories
+2008_Heim_gFacet_A.pdf | gFacet: A Browser for the Web of Data
+2009_Araujo_Experimenting_with.pdf | Experimenting with Explorator: a Direct Manipulation Generic RDF Browser and Querying Tool
+2009_Harth_VisiNav_Visual.pdf | VisiNav: Visual Web Data Search and Navigation
+2009_Heim_RelFinder_Revealing.pdf | RelFinder: Revealing Relationships in RDF Knowledge Bases
+2010_Heim_Interactive_Relationship.pdf | Interactive Relationship Discovery via the Semantic Web
+2011_Heim_Faceted_Visual.pdf | Faceted Visual Exploration of Semantic Data
+2011_Popov_Connecting_the.pdf | Connecting the Dots: A Multi-pivot Approach to Data Exploration
+2012_Camarda_LodLive_exploring.pdf | LodLive, Exploring the Web of Data
+2013_Klimek_Payola_collaborative.pdf | Payola: Collaborative Linked Data Analysis and Visualization Framework
+2013_Rietveld_YASGUI_Not.pdf | YASGUI: Not Just Another SPARQL Client
+2014_Arenas_SemFacet_Semantic.pdf | SemFacet: Semantic Faceted Search over Yago
+2014_Bikakis_rdfSynopsViz_a.pdf | rdf:SynopsViz - A Framework for Hierarchical Linked Data Visual Exploration and Analysis
+2014_Cheng_Explass_Exploring.pdf | Explass: Exploring Associations between Entities via Top-K Ontological Patterns and Facets
+2014_Hoefler_Linked_Data.pdf | Linked Data Query Wizard: A Novel Interface for Accessing SPARQL Endpoints
+2014_Lukovnikov_LD_Viewer.pdf | LD Viewer - Linked Data Presentation Framework
+2014_Mader_Facilitating_the.pdf | Facilitating the Exploration and Visualization of Linked Data
+2014_Micsik_LODmilla_Shared.pdf | LODmilla: Shared Visualization of Linked Open Data
+2015_Jayaram_VIIQ_auto-suggestion.pdf | VIIQ: auto-suggestion enabled visual interface for interactive graph query formulation
+2015_Pirro_Explaining_and.pdf | Explaining and Suggesting Relatedness in Knowledge Graphs
+2015_Skjveland_Sgvizler_a.pdf | Sgvizler: A JavaScript Wrapper for Easy Visualization of SPARQL Result Sets
+2015_Thellmann_LinkDaViz_Automatic.pdf | LinkDaViz - Automatic Binding of Linked Data to Visualizations
+2016_Arenas_Faceted_search.pdf | Faceted Search over RDF-based Knowledge Graphs
+2016_El-Roby_Sapphire_Querying.pdf | Sapphire: Querying RDF Data Made Simple
+2016_Grafkin_SPARQL_Query.pdf | SPARQL Query Builders: Overview and Comparison
+2016_Soylu_Experiencing_OptiqueVQS.pdf | Experiencing OptiqueVQS: a Multi-paradigm and Ontology-based Visual Query System for End Users
+2017_Ferre_Sparklis_An.pdf | Sparklis: An Expressive Query Builder for SPARQL Endpoints with Guidance in Natural Language
+2017_Huang_PICASSO_exploratory.pdf | PICASSO: Exploratory Search of Connected Subgraph Substructures in Graph Databases
+2017_Khalili_WYSIWYQ_What.pdf | WYSIWYQ - What You See Is What You Query
+2018_Cerans_ViziQuer_A.pdf | ViziQuer: A Web-Based Tool for Visual Diagrammatic Queries Over RDF Data
+2018_Durao_A_Linked.pdf | A Linked Data Browser with Recommendations
+2018_Jacksi_LOD_Explorer.pdf | LOD Explorer: Presenting the Web of Data
+2018_Khalili_FERASAT_A.pdf | FERASAT: A Serendipity-Fostering Faceted Browser for Linked Data
+2018_Moreno-Vega_GraFa_Scalable.pdf | GraFa: Scalable Faceted Browsing for RDF Graphs
+2019_Feddoul_Automatic_Facet.pdf | Automatic Facet Generation and Selection over Knowledge Graphs
+2019_Kuric_Knowledge_Graph.pdf | Knowledge Graph Exploration: A Usability Evaluation of Query Builders for Laypeople
+2019_Vargas_RDF_Explorer.pdf | RDF Explorer: A Visual Query Builder for Semantic Web Knowledge Graphs
+2020_Desimoni_A_Comparative.pdf | A Comparative Study of State-of-The-Art Linked Data Visualization Tools
+2020_Lissandrini_Graph-Query_Suggestions.pdf | Graph-Query Suggestions for Knowledge Graph Exploration
+2021_Destandau_S-Paths_Set-based.pdf | S-Paths: Set-based Visual Exploration of Linked Data Driven by Semantic Paths
+2021_Hyvonen_Knowledge-based_relational.pdf | Knowledge-based Relational Search in Cultural Heritage Linked Data
+2021_Parra_Fast_Approximate.pdf | Fast Approximate Autocompletion for SPARQL Query Builders
+2021_Witschel_Natural_Language-based.pdf | Natural Language-based User Guidance for Knowledge Graph Exploration: A User Study
+2022_Amsterdamer_Interactive_Knowledge.pdf | Interactive Knowledge Graph Querying Through Examples and Facets
+2022_Grether_Studying_Interaction.pdf | Studying Interaction Patterns for Knowledge Graph Exploration
+2022_Ikkala_Sampo-UI_A.pdf | Sampo-UI: A Full Stack JavaScript Framework for Developing Semantic Portal User Interfaces
+2023_Francart_Sparnatural_A.pdf | Sparnatural: A Visual Knowledge Graph Exploration Tool
+2023_Liebig_Scalable_No-Code.pdf | Scalable No-Code Knowledge Graph Exploration and Querying with SemSpect
+2023_Menin_LDViz_A.pdf | LDViz: A Tool to Assist the Multidimensional Exploration of SPARQL Endpoints
+2024_Papadaki_Unifying_Faceted.pdf | Unifying Faceted Search and Analytics over RDF Knowledge Graphs
+2024_Yuan_KGScope_Interactive.pdf | KGScope: Interactive Visual Exploration of Knowledge Graphs With Embedding-Based Guidance
+2025_Emonet_A_User-Friendly.pdf | A User-Friendly SPARQL Query Editor Powered by Lightweight Metadata
+2025_Hyvonen_Serendipitous_knowledge.pdf | Serendipitous Knowledge Discovery on the Web of Wisdom Based on Searching and Explaining Interesting Relations in Knowledge Graphs
+
+SURVEY
+2011_Dadzie_Approaches_to.pdf | Approaches to Visualising Linked Data: A Survey
+2014_Marie_Survey_of.pdf | Survey of Linked Data Based Exploration Systems
+2016_Bikakis_Exploration_and.pdf | Exploration and Visualization in the Web of Big Linked Data: A Survey of the State of the Art
+2016_Jacksi_State_of.pdf | State of the Art Exploration Systems for Linked Data: A Review
+2023_Bernasconi_Linked_Data.pdf | Linked Data Interfaces: A Survey

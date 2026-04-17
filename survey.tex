@@ -54,16 +54,11 @@
 \end{abstract}
 \keywords{Knowledge graph exploration \and linked data visualization \and exploratory search \and user guidance \and faceted browsing \and relationship discovery \and SPARQL query building \and sense-making}
 
-
-
-\section{Introduction}
-\label{sec:introduction}
-
 \noindent\fbox{%
   \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
     \textbf{Note regarding this draft:}
     \begin{itemize}
-      \item The analyzed approaches (PDFs) are located in the \texttt{/paper} directory.
+      \item The collected papers (PDFs) are located in the \texttt{/papers} and \texttt{/paper 2} directories.
       \item Other related surveys are located in the \texttt{/survey} directory.
       \item The \texttt{website/} folder contains the React application code for the interactive survey companion.
     \end{itemize}
@@ -71,6 +66,39 @@
 }
 \vspace{1em}
 
+\todo[inline]{%
+  \textbf{Paper still to analyze} (present in \texttt{/papers} or \texttt{/paper 2}, but not yet covered in the current draft):
+  \texttt{2009\_Harth\_VisiNav\_Visual.pdf},
+  \texttt{2010\_Heim\_Interactive\_Relationship.pdf},
+  \texttt{2011\_Heim\_Faceted\_Visual.pdf},
+  \texttt{2011\_Popov\_Connecting\_the.pdf},
+  \texttt{2014\_Arenas\_SemFacet\_Semantic.pdf},
+  \texttt{2014\_Cheng\_Explass\_Exploring.pdf},
+  \texttt{2014\_Hoefler\_Linked\_Data.pdf},
+  \texttt{2014\_Mader\_Facilitating\_the.pdf},
+  \texttt{2015\_Pirro\_Explaining\_and.pdf},
+  \texttt{2016\_Arenas\_Faceted\_search.pdf},
+  \texttt{2016\_Grafkin\_SPARQL\_Query.pdf},
+  \texttt{2016\_Soylu\_Experiencing\_OptiqueVQS.pdf},
+  \texttt{2017\_Khalili\_WYSIWYQ\_What.pdf},
+  \texttt{2018\_Khalili\_FERASAT\_A.pdf},
+  \texttt{2018\_Moreno-Vega\_GraFa\_Scalable.pdf},
+  \texttt{2019\_Feddoul\_Automatic\_Facet.pdf},
+  \texttt{2019\_Kuric\_Knowledge\_Graph.pdf},
+  \texttt{2020\_Desimoni\_A\_Comparative.pdf},
+  \texttt{2021\_Hyvonen\_Knowledge-based\_relational.pdf},
+  \texttt{2022\_Amsterdamer\_Interactive\_Knowledge.pdf},
+  \texttt{2023\_Francart\_Sparnatural\_A.pdf},
+  \texttt{2023\_Liebig\_Scalable\_No-Code.pdf},
+  \texttt{2023\_Menin\_LDViz\_A.pdf},
+  \texttt{2024\_Papadaki\_Unifying\_Faceted.pdf},
+  \texttt{2024\_Yuan\_KGScope\_Interactive.pdf},
+  \texttt{2025\_Hyvonen\_Serendipitous\_knowledge.pdf},
+  \texttt{paper 2/russell\_swui2008.pdf}.
+}
+
+\section{Introduction}
+\label{sec:introduction}
 Knowledge graph exploration aims to help users inspect, connect, and query linked data without requiring expertise in formal graph query languages (\eg SPARQL, Cypher). It can be seen as a form of exploratory search~\cite{marchionini2006,white2009} where information needs evolve during interaction (``berrypicking''~\cite{bates1989}). Graph representations support flexible navigation and rich semantics, but they also introduce major challenges: schema complexity, data heterogeneity, ambiguous labels, endpoint latency, and the need for \emph{guidance} that prevents users from getting lost in uninformative traversals or over-complex results. Beyond correctness, exploration systems must support an iterative \emph{sense-making} process where users progressively refine their information needs and interpretations.
 
 \subsection{KG exploration: definitions, impact, and challenges}
@@ -265,7 +293,7 @@ Kl\'imek et al.~\cite{2013_Klimek_Payola_collaborative} present Payola, a collab
 \emph{Takeaway.} Payola frames KG exploration as a configurable pipeline of reusable analyzers and visualizations; its effectiveness hinges on the availability of high-quality plugins and on keeping generated queries efficient.
 
 \subsection{YASGUI}
-Rietveld and Hoekstra~\cite{2013_Rietveld_YASGUI_Not} introduce YASGUI\footnote{\url{https://github.com/Triply-Dev/YASGUI} [not working]}, a web-based SPARQL client intended to lower the friction of interacting with RDF endpoints. The system integrates practical features familiar from modern developer tooling: syntax highlighting/checking, autocompletion, endpoint lookup, query persistence, permalinks, and results rendering/download, with explicit attention to robustness when external services are unavailable.
+Rietveld and Hoekstra~\cite{2013_Rietveld_YASGUI_Not} introduce YASGUI, a web-based SPARQL client intended to lower the friction of interacting with RDF endpoints. The system integrates practical features familiar from modern developer tooling: syntax highlighting/checking, autocompletion, endpoint lookup, query persistence, permalinks, and results rendering/download, with explicit attention to robustness when external services are unavailable.
 
 \emph{Takeaway.} While not an ``exploration UI'' in the narrow sense, YASGUI is a foundational building block for KG exploration workflows by making iterative querying and debugging more accessible and reproducible.
 
@@ -471,7 +499,7 @@ Recurring use cases include data discovery (gFacet, LodLive), explanation of rel
 
 \section{Availability}
 \label{sec:availability}
-Reproducibility varies widely across the literature. Several works provide reusable tools or demos: gFacet reports a public prototype (\url{http://www.gFacet.org} [not working]) and RelFinder a public demo (\url{http://relfinder.dbpedia.org}); LodLive is a reusable tool licensed under MIT and available as a web application (\url{http://en.lodlive.it/}); LinkDaViz provides a public web implementation (\url{http://eis.iai.uni-bonn.de/Projects/LinkDaViz.html} [not working]); and Sparklis is available online (\url{http://www.irisa.fr/LIS/ferre/sparklis/}). Sampo-UI is released as open-source framework for building semantic portals\footnote{\url{https://github.com/SemanticComputing/sampo-ui}}.
+Reproducibility varies widely across the literature. Several works provide reusable tools or demos: gFacet reports a public prototype (\url{http://www.gFacet.org}) and RelFinder a public demo (\url{http://relfinder.dbpedia.org}); LodLive is a reusable tool licensed under MIT and available as a web application (\url{http://en.lodlive.it/}); LinkDaViz provides a public web implementation (\url{http://eis.iai.uni-bonn.de/Projects/LinkDaViz.html}); and Sparklis is available online (\url{http://www.irisa.fr/LIS/ferre/sparklis/}). Sampo-UI is released as open-source framework for building semantic portals\footnote{\url{https://github.com/SemanticComputing/sampo-ui}}.
 
 Long-term sustainability is an additional concern: early prototypes relying on deprecated client technologies (notably Flash/Flex) are difficult to reuse, even when ideas remain influential. More recent portal frameworks (\eg Sampo-UI) address this by packaging patterns into maintained stacks and configuration-driven backends.
 
@@ -537,7 +565,7 @@ KG exploration is mature in core interaction paradigms (facets, relationship dis
 
 \begin{thebibliography}{99}
   \bibitem{2008_Heim_gFacet_A} Heim, P., Ziegler, J., Lohmann, S.: gFacet: A Browser for the Web of Data. In: \emph{Proc.\ International Workshop on Interacting with Multimedia Content in the Social Semantic Web (IMC-SSW)}. CEUR Workshop Proceedings, Vol.~417 (2008).
-  \bibitem{2009_Heim_RelFinder_Revealing} Heim, P., Hellmann, S., Lehmann, J., Lohmann, S., Stegemann, T.: RelFinder: Revealing Relationships in RDF Knowledge Bases. In: \emph{Lecture Notes in Computer Science}, pp.~182--187. Springer (2009). \url{https://doi.org/10.1007/978-3-642-10543-2_21} [not working]
+  \bibitem{2009_Heim_RelFinder_Revealing} Heim, P., Hellmann, S., Lehmann, J., Lohmann, S., Stegemann, T.: RelFinder: Revealing Relationships in RDF Knowledge Bases. In: \emph{Lecture Notes in Computer Science}, pp.~182--187. Springer (2009). \url{https://doi.org/10.1007/978-3-642-10543-2_21}
   \bibitem{2012_Camarda_LodLive_exploring} Camarda, D.V., Mazzini, S., Antonuccio, A.: LodLive, exploring the web of data. In: \emph{Proc.\ Int.\ Conf.\ on Semantic Systems}, pp.~197--200 (2012). \url{https://doi.org/10.1145/2362499.2362532}
   \bibitem{2015_Thellmann_LinkDaViz_Automatic} Thellmann, K., Galkin, M., Orlandi, F., Auer, S.: LinkDaViz -- Automatic Binding of Linked Data to Visualizations. In: \emph{Lecture Notes in Computer Science}, pp.~147--162. Springer (2015). \url{https://doi.org/10.1007/978-3-319-25007-6_9}
   \bibitem{2017_Ferre_Sparklis_An} Ferr\'e, S.: Sparklis: An expressive query builder for SPARQL endpoints with guidance in natural language. \emph{Semantic Web} 8(3), 405--418 (2017). \url{https://doi.org/10.3233/SW-150208}
@@ -557,8 +585,7 @@ KG exploration is mature in core interaction paradigms (facets, relationship dis
   \bibitem{2006_Berners-Lee_Tabulator_Exploring} Berners-Lee, T., Chen, Y., Chilton, L., Connolly, D., Dhanaraj, R., Hollenbach, J., Lerer, A., Sheets, D.: Tabulator: Exploring and Analyzing linked data on the Semantic Web. In: \emph{Proc.\ Int.\ Semantic Web User Interaction Workshop} (2006).
   \bibitem{2018_Jacksi_LOD_Explorer} Jacksi, K., Zeebaree, S.R., Dimililer, N.: LOD Explorer: Presenting the Web of Data. \emph{International Journal of Advanced Computer Science and Applications} 9(1), 45--51 (2018).
   \bibitem{2009_Araujo_Experimenting_with} Ara\'ujo, S.F.C.D., Schwabe, D., Barbosa, S.D.J.: Experimenting with Explorator: a direct manipulation generic RDF browser and querying tool. In: \emph{CEUR Workshop Proceedings}, Vol.~443 (2009).
-  %\bibitem{2014_AMA_LODmilla_Shared} A.~M.~A., T\'oth, Z., Turbucz, S.: LODmilla: Shared Visualization of Linked Open Data. In: \emph{Theory and Practice of Digital Libraries -- TPDL 2013 Selected Workshops} (2014).
-  \bibitem{2014_AMA_LODmilla_Shared} Micsik, A., Turbucz, S., T\'oth, Z.: Exploring publication metadata graphs with the LODmilla browser and editor. Int J Digit Libr 16, pp.~15–-24 (2015). \url{https://doi.org/10.1007/s00799-014-0130-2}
+  \bibitem{2014_AMA_LODmilla_Shared} A.~M.~A., T\'oth, Z., Turbucz, S.: LODmilla: Shared Visualization of Linked Open Data. In: \emph{Theory and Practice of Digital Libraries -- TPDL 2013 Selected Workshops} (2014).
   \bibitem{2014_Lukovnikov_LD_Viewer} Lukovnikov, D., Stadler, C., Lehmann, J.: LD Viewer -- Linked Data Presentation Framework. In: \emph{Proc.\ Int.\ Conf.\ on Semantic Systems}, pp.~124--131 (2014).
   \bibitem{2014_Bikakis_rdfSynopsViz_a} Bikakis, N., Skourla, M., Papastefanatos, G.: rdf:Synopsviz -- a framework for hierarchical linked data visual exploration and analysis. In: \emph{Proc.\ ESWC} (2014).
   \bibitem{2013_Klimek_Payola_collaborative} Kl\'imek, J., Helmich, J., Ne\v{c}ask\'y, M.: Payola: collaborative linked data analysis and visualization framework. In: Cimiano, P., Fern\'andez, M., Lopez, V., Schlobach, S., V\"olker, J. (eds.) \emph{Proc.\ ESWC}. LNCS, vol.~7955, pp.~147--151. Springer (2013).

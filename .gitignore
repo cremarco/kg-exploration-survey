@@ -22,6 +22,8 @@ survey.pdf
 _minted*
 
 # Website (Node.js)
+node_modules
+node_modules/
 website/node_modules/
 website/dist/
 website/.vite/
@@ -33,6 +35,10 @@ website/.env.production.local
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Generated outputs
+outputs/
+.codex-tmp/
 
 # VS Code
 .vscode/*

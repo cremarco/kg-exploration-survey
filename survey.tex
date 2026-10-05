@@ -49,6 +49,17 @@
 \newcommand{\excludedlowdetailcount}{3}
 \newcommand{\totapproachescount}{\includedWorkCount}
 
+% Interim v3 title/abstract-screening snapshot (29 August 2026).
+% Keep these values aligned with the screening spreadsheet until consensus screening is complete.
+\newcommand{\vthreeprimaryrecordcount}{3{,}030}
+\newcommand{\autoexcludedrecordcount}{724}
+\newcommand{\autononprimarycount}{550}
+\newcommand{\autonottopiccount}{173}
+\newcommand{\autoduplicatecount}{1}
+\newcommand{\screeningremainingcount}{2{,}306}
+\newcommand{\provisionalincludecount}{19}
+\newcommand{\manualscreeningpendingcount}{2{,}287}
+
 % Table styling helpers (keep settings local by wrapping tables in {...}).
 \newcommand{\kgTableSetup}{%
   \scriptsize%
@@ -333,14 +344,57 @@ We focus on \emph{interactive} KG exploration systems, \ie user-facing methods a
 \end{figure}
 
 
-\paragraph{Identification.} We searched CrossRef and Semantic Scholar using keywords such as ``knowledge graph exploration'', ``graph query suggestion'', ``SPARQL query builder'', ``linked data browser'', and ``visualization recommendation''.
-\paragraph{Screening.} We filtered results by peer-reviewed status, relevance to exploration (excluding pure ETL or isolated QA), and availability of a described method or interface.
-\paragraph{Inclusion.} We retained works that (i) target exploration and not only exact query answering, and (ii) propose either a user-facing interaction model or a guidance/recommendation mechanism.
-\paragraph{Selection.} We included \includedWorkCount{} publications in the review corpus overall. Of these, \selectedWorkCount{} representative works (\selectedWorkYearRange{}) are already analysed in the current draft, while \pendingWorkCount{} additional papers remain to be covered.
+\paragraph{Identification and search strategy.} On 29 August 2026, we executed the final primary search in Scopus, the ACM Digital Library, OpenAlex, and IEEE Xplore, together with a supplementary relevance-ranked search in Google Scholar. Two preliminary formulations (v1 and v2) were tested first; we selected v3 because it combines their domain vocabularies and achieved the highest coverage in the three calibration sources (Scopus, ACM, and OpenAlex) before being ported to IEEE Xplore. The domain block includes both Semantic Web terminology (RDF, SPARQL, Linked Data, and knowledge graphs) and property-graph terminology (property graphs, Cypher, and graph databases). It is combined with an exploration-and-interface block covering browsing, faceted search, graph navigation, relationship discovery, guided and visual query construction, user guidance, autocompletion, and visualization. The portable Boolean form of v3 is:
 
-\todo[inline]{TO DO. COMPLETE THE SECTION.}
+\begin{quote}
+\footnotesize\ttfamily\raggedright
+("RDF" OR "SPARQL" OR "linked data" OR "knowledge graph" OR "property graphs" OR "cypher" OR "graph database") AND ("knowledge graph exploration" OR "linked data exploration" OR "knowledge graph browsing" OR "linked data browser" OR "RDF exploration" OR "semantic web exploration" OR "exploratory search" OR "faceted browsing" OR "faceted search" OR "graph navigation" OR "relationship discovery" OR "query builder" OR "guided query formulation" OR "query-by-example" OR "visual query" OR "visual query builder" OR "SPARQL query builder" OR "user guidance" OR "graph query suggestion" OR "autocomplete" OR "linked data visualization" OR "RDF browser" OR "serendipity browsing" OR "knowledge graph user interface" OR "exploratory search interface" OR "semantic search interface" OR "SPARQL query assistance" OR "SPARQL query construction" OR "knowledge graph visualization" OR "graph visualization interface" OR ("visual analytics" AND "knowledge graph"))
+\par
+\end{quote}
+
+For Scopus, every term was mapped to \texttt{TITLE-ABS-KEY}; for the ACM Digital Library, the portable query was applied to \texttt{AllField} in the ACM Full-Text Collection; for OpenAlex, it was applied through \texttt{title\_and\_abstract.search}; and for IEEE Xplore, it was applied to \texttt{All Metadata}. Because the complete Boolean expression exceeded IEEE Xplore's practical parser limit, the exploration block was divided into seven non-exclusive subqueries containing five clauses each, except for the final visual-analytics clause. No date or language limit was imposed at retrieval time. The primary searches returned 1{,}021 records in Scopus, 1{,}668 hits in the ACM Digital Library, 1{,}279 records in OpenAlex, and 191 occurrences across the seven IEEE subqueries. The ACM export contains 1{,}640 unique records after removing 28 within-source duplicates by DOI, then URL, then title; the IEEE export contains 182 unique records after article-ID/title deduplication. Thus, v3 produced 4{,}159 raw primary-source hits and 4{,}122 exported records. Cross-source deduplication by normalized DOI and then normalized exact title produced 3{,}033 groups. We manually reviewed seven same-year near-title pairs, merging three (one index-specific title variant and two preprint--final-article pairs) and retaining four supplementary datasets with distinct DOIs. The final primary corpus therefore contains 3{,}030 unique records, with 1{,}092 duplicate occurrences removed and no unresolved near-duplicate pair.
+
+Google Scholar was treated as a supplementary discovery source rather than as a fifth bibliographic database. We used a shorter adaptation of v3, sorted by relevance, without date or language limits, and predeclared a cutoff at the first 200 results. Scholar reported approximately 245{,}000 results; the complete cutoff set of 200 records was exported and is reported separately from the primary-source totals.
+
+\paragraph{Screening and automatic exclusions.} We screen results for peer-reviewed status, relevance to interactive exploration (excluding, for example, pure ETL and isolated question answering), and the presence of a described method or interface. Before independent manual title/abstract screening, we applied a conservative rule-based pass to the \vthreeprimaryrecordcount{} deduplicated primary-source records. A record was excluded automatically only when its bibliographic metadata, title, abstract, or record type made the decision unambiguous; uncertain cases were left for human review. Every such decision is retained in the screening sheet with a standardized exclusion category and a record-level \texttt{[AUTO-EXCLUDE]} note.
+
+This pass excluded \autoexcludedrecordcount{} records. As detailed in Table~\ref{tab:automatic-exclusions}, \autononprimarycount{} were not individual primary studies, \autonottopiccount{} were outside the review topic, and \autoduplicatecount{} was a residual preprint duplicate for which the published version was retained. Proceedings and conference-review collections were excluded as whole-volume records, not because an individual paper happened to appear in proceedings. Likewise, bibliometric or scientometric papers were excluded only when ``knowledge graph'' denoted a map of the literature rather than an interactive RDF, Linked Data, or KG exploration system.
+
+\begin{table}[!t]
+  \centering
+  \caption{Automatic pre-screening exclusions in the v3 primary corpus (snapshot: 29 August 2026).}
+  \label{tab:automatic-exclusions}
+  {\kgTableSetup
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \toprule
+    \textbf{Exclusion category recorded in the screening sheet} & \textbf{Records} \\
+    \midrule
+    \textbf{Not a primary study} & \textbf{550} \\
+    \quad Proceedings or conference-review collections & 444 \\
+    \quad Workshop, event, or competition descriptions & 49 \\
+    \quad Dataset or supplementary-file records & 22 \\
+    \quad Software repository or release records & 11 \\
+    \quad Other non-primary or retracted record types & 24 \\
+    \addlinespace
+    \textbf{Not on topic} & \textbf{173} \\
+    \quad Bibliometric/scientometric maps of the literature & 100 \\
+    \quad Clear false positives unrelated to interactive KG exploration & 73 \\
+    \addlinespace
+    \textbf{Duplicate} (preprint; version of record retained) & \textbf{1} \\
+    \midrule
+    \textbf{Total automatically excluded} & \textbf{724} \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
+
+After automatic exclusions, \screeningremainingcount{} records remain in the title/abstract pool: \provisionalincludecount{} are currently marked for inclusion and \manualscreeningpendingcount{} remain undecided. The manual protocol requires three independent votes (\emph{Include}, \emph{Maybe}, or \emph{Exclude}); missing or insufficient abstracts and other uncertain cases receive \emph{Maybe} rather than an automatic exclusion, and disagreements are resolved by discussion. Cross-source deduplication, including manual review of all seven near-title candidates, and the supplementary Scholar cutoff are complete, but manual title/abstract screening is ongoing. Consequently, the PRISMA diagram still reports the earlier processed-corpus snapshot rather than the final v3 selection totals.
+\paragraph{Inclusion.} We retained works that (i) target exploration and not only exact query answering, and (ii) propose either a user-facing interaction model or a guidance/recommendation mechanism.
+\paragraph{Selection.} Independently of the ongoing v3 screening, the manuscript's seed review corpus contains \includedWorkCount{} publications. Of these, \selectedWorkCount{} representative works (\selectedWorkYearRange{}) are already analysed in the current draft, while \pendingWorkCount{} additional papers remain to be covered. These seed-corpus counts will be reconciled with the v3 consensus decisions after manual screening and full-text assessment.
+
+\todo[inline]{Complete manual title/abstract screening of the \manualscreeningpendingcount{} undecided records, reconcile decisions across the \screeningremainingcount{} records not automatically excluded, and then refresh the PRISMA counters. Keep the 200-record Scholar set separate and use it only for supplementary discovery and citation chasing.}
 Section~\ref{sec:selected-works} and Table~\ref{tab:comparazione} also summarize additional tools and papers.
-\paragraph{Limitations.} This survey is not intended as an exhaustive systematic review; instead, it uses a compact set of representative works as anchors, complemented by a broader ecosystem of tools and systems (Section~\ref{sec:tools}). Because datasets, tasks, and metrics vary widely across papers, some comparative statements necessarily follow the evidence reported in the literature rather than replicated experiments.
+\paragraph{Limitations.} Primary-database retrieval now follows a reproducible four-source strategy, cross-source deduplication is complete, and clear-cut automatic exclusions are documented at record level. However, \manualscreeningpendingcount{} records still await manual title/abstract decisions; the exclusion and inclusion counts reported above are therefore an interim snapshot rather than the final PRISMA totals. Google Scholar contributes only the first 200 relevance-ranked results from an estimated result set of approximately 245{,}000 and is used for supplementary discovery rather than exhaustive coverage. The current manuscript should therefore not be read as a completed exhaustive systematic review. It uses a compact set of representative works as anchors, complemented by a broader ecosystem of tools and systems (Section~\ref{sec:tools}). Because datasets, tasks, and metrics vary widely across papers, some comparative statements necessarily follow the evidence reported in the literature rather than replicated experiments.
 
 \section{Taxonomic analysis of KG exploration approaches}
 \label{sec:taxonomy}

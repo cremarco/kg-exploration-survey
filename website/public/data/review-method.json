@@ -10,5 +10,25 @@
   "historical_automation_use": "not_documented",
   "risk_of_bias_procedure": "not_confirmed",
   "target_venue": "ACM Computing Surveys",
-  "target_status": "Intended submission venue; no submission or acceptance is claimed."
+  "target_status": "Intended submission venue; no submission or acceptance is claimed.",
+  "historical_scope": "Responsibilities above describe the frozen assessment; they do not attest human review of the recovery extension.",
+  "recovery_extension": {
+    "date": "2026-10-06",
+    "added_reports": 73,
+    "method": {
+      "selection": "Parent criteria application after source extraction; no automatic title classifier.",
+      "extraction": "Codex scoped primary-source reading; root plus 3 extraction agents; no independent blinded duplicate screening.",
+      "additional_human_review": false,
+      "independent_duplicate_review": false,
+      "human_per_report_verification": "not_attested",
+      "historical_human_fulltext_reviewers": 1,
+      "historical_human_data_extractors": 3
+    },
+    "authorization": {
+      "user_message": "ok procedi",
+      "scope": "Integrate sources judged eligible into the working survey and website.",
+      "authority": "Author delegated criteria application to Codex; this does not attest human per-report verification."
+    },
+    "ledger": "recovery-integration.json"
+  }
 }

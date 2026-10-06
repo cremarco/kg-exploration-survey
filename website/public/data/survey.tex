@@ -2,6 +2,8 @@
 \acmJournal{CSUR}
 \setcopyright{none}
 \settopmatter{printacmref=false}
+% The unsubmitted draft has no ACM publication or submission notice.
+\renewcommand{\footnotetextcopyrightpermission}[1]{}
 \citestyle{acmnumeric}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -38,13 +40,17 @@
 
 
 \begin{abstract}
-Knowledge graph exploration combines entity and relationship inspection with iterative filtering, query construction, and interpretation. This systematic review relates interaction, guidance, representations, backend access, scalability, and evaluation. Searches covered Scopus, the ACM Digital Library, OpenAlex, and IEEE Xplore through 29 August 2026. Eligible reports were English-language, peer-reviewed primary publications describing human exploration or specified guidance over semantic knowledge graphs. The frozen search contains 4,159 raw occurrences and 3,030 deduplicated records. Two human title--abstract reviewers excluded 2,061 records; 969 database reports and 22 distinct existing-collection reports entered retrieval. Of 991 sought reports, 324 were assessed, 242 included, 82 excluded, and 667 not retrieved. All included reports enter a descriptive coding profile; illustrative comparisons retain evaluation designs, samples, comparators, measures, and limitations. Report counts do not establish independent systems or studies. Narrative synthesis uses no common quality score or statistical pooling. Navigation, facets, paths, and query construction support different tasks and expose different constraints. Guidance separates executable refinements, approximate candidates, ranking, personalization, and explanation. Usability ratings, qualitative observations, ranking experiments, execution benchmarks, and deployment statistics support different inferences. Requirements concern visible query scope, recoverable state, provenance, computation bounds, and evaluation under stated task and user conditions. The retrieval gap, incomplete search provenance, and undocumented independent duplicate full-text review limit coverage and comparative inference. The review was not registered and received no specific funding or support.
+Knowledge graph exploration combines entity and relationship inspection with iterative filtering, query construction, and interpretation. This systematic review relates interaction, guidance, representations, backend access, scalability, and evaluation. Searches covered Scopus, the ACM Digital Library, OpenAlex, and IEEE Xplore through 29 August 2026. Eligible reports were English-language, peer-reviewed primary publications describing human exploration or specified guidance over semantic knowledge graphs. The frozen search contains 4,159 raw occurrences and 3,030 deduplicated records. Two human title--abstract reviewers excluded 2,061 records; 969 database reports and 22 distinct existing-collection reports entered retrieval. The historical baseline assessed 324 of 991 sought reports, including 242 and excluding 82. An author-authorized recovery extension adds 73 reports, producing a current corpus of 315 included reports: 437 assessed, 122 excluded, 543 not retrieved, and 11 awaiting assessment. Codex used scoped source extraction for the extension; additional independent human verification is not attested. Descriptive coding and narrative comparisons preserve report-specific designs, samples, measures, and limitations. Report counts do not establish independent systems or studies. Narrative synthesis uses no common quality score or statistical pooling. Navigation, facets, paths, and query construction support different tasks and expose different constraints. Guidance separates executable refinements, approximate candidates, ranking, personalization, and explanation. Usability ratings, qualitative observations, ranking experiments, execution benchmarks, and deployment statistics support different inferences. Requirements concern visible query scope, recoverable state, provenance, computation bounds, and evaluation under stated task and user conditions. The retrieval gap, incomplete search provenance, and undocumented independent duplicate full-text review limit coverage and comparative inference. The review was not registered and received no specific funding or support.
 \end{abstract}
 \keywords{knowledge graph exploration, exploratory search, interaction, user guidance, visual queries, evidence synthesis}
 \ccsdesc[500]{Information systems~Graph-based database models}
 \ccsdesc[500]{Human-centered computing~Visualization}
 \ccsdesc[300]{Information systems~Search interfaces}
 \maketitle
+% Preserve ACM review layout while identifying the unsubmitted working draft.
+\fancypagestyle{workingdraft}[standardpagestyle]{\fancyfoot[RO,LE]{\footnotesize Working draft for ACM Computing Surveys}}
+\fancypagestyle{workingdraftfirst}[firstpagestyle]{\fancyfoot[RE,LO]{\footnotesize Working draft for ACM Computing Surveys}}
+\pagestyle{workingdraft}\thispagestyle{workingdraftfirst}
 
 \section{Introduction}
 Knowledge graphs represent entities, their attributes, and typed relationships in a form that can be inspected and queried. Exploration begins when a user does not yet know which entities, relationships, or constraints will resolve an information need. A historian may follow people through institutions and life events; a researcher may refine a set of publications through topics and collaborators; an analyst may construct a query while learning the vocabulary of an unfamiliar dataset. In each case, useful information can change the next question. The evolving search described by \citet{bates1989} provides a useful frame for these changes. Work on exploratory search connects this process with understanding beyond an isolated query response \citep{marchionini2006,white2009}.
@@ -92,7 +98,7 @@ The title--abstract stage has two confirmed independent human reviewers. Their r
 
 \begin{table}[htbp]
 \centering\small
-\caption{Reconciled selection accounting. Included reports are distinct from independent systems and evaluation studies.}
+\caption{Historical baseline selection accounting. Included reports are distinct from independent systems and evaluation studies.}
 \label{tab:flow}
 \begin{tabularx}{\linewidth}{Y r Y}
 \toprule Stage & Count & Interpretation\\\midrule
@@ -142,17 +148,17 @@ Reports not retrieved & 667 & Retrieval gaps retained in the flow\\\bottomrule
 \draw[flowarrow] (assessed.south) -- (included.north);
 \draw[flowarrow] (assessed.east) -- ++(0.55,0) |- (excluded.west);
 \end{tikzpicture}
-\caption{PRISMA selection flow for the frozen corpus. Removal counts use raw occurrences for the database route; 39 local copies are identity aliases, not additional reports sought. The final unit is the report, with no inferred independent-system or cohort count.}
-\Description{Two identification routes merge into 991 reports sought. Four databases yield 4,159 occurrences and 3,030 records after deduplication; 969 advance after 2,061 title-abstract exclusions. An existing collection supplies 22 distinct reports after removing 39 represented copies. Of 991 sought reports, 667 were not retrieved and 324 were assessed. Assessment includes 242 reports and excludes 82 with criterion-specific reasons.}
+\caption{Historical baseline PRISMA selection flow for the frozen corpus. Removal counts use raw occurrences for the database route; 39 local copies are identity aliases, not additional reports sought. The final unit is the report, with no inferred independent-system or cohort count.}
+\Description{Historical baseline: two identification routes merge into 991 reports sought. Four databases yield 4,159 occurrences and 3,030 records after deduplication; 969 advance after 2,061 title-abstract exclusions. An existing collection supplies 22 distinct reports after removing 39 represented copies. Of 991 sought reports, 667 were not retrieved and 324 were assessed. Assessment includes 242 reports and excludes 82 with criterion-specific reasons.}
 \label{fig:prisma}
 \end{figure}
 
-Full-text eligibility uses criteria-based report assessment with individual source locators (Figure~\ref{fig:prisma}). The 82 exclusions comprise 26 non-primary reports, 37 outside scope, 11 non-English reports, five with insufficient detail, and three whose publication status was not established. Missing reports remain retrieval gaps; uncertainty about a publication track remains an editorial-evidence gap. Neither establishes a negative finding about the method. Assessment dispositions apply the documented eligibility criteria to the source evidence. One person reviewed full-text eligibility, without independent duplicate review. Three people participated in extraction; independently duplicated extraction and checking responsibilities are not documented. No full-text inter-rater coefficient is inferred. Eligibility dispositions are therefore distinct from independent reviewer votes.
+Historical baseline full-text eligibility uses criteria-based report assessment with individual source locators (Figure~\ref{fig:prisma}). The 82 exclusions comprise 26 non-primary reports, 37 outside scope, 11 non-English reports, five with insufficient detail, and three whose publication status was not established. Missing reports remain retrieval gaps; uncertainty about a publication track remains an editorial-evidence gap. Neither establishes a negative finding about the method. Assessment dispositions apply the documented eligibility criteria to the source evidence. One person reviewed full-text eligibility, without independent duplicate review. Three people participated in extraction; independently duplicated extraction and checking responsibilities are not documented. No full-text inter-rater coefficient is inferred. Eligibility dispositions are therefore distinct from independent reviewer votes.
 
 \subsection{Retrieval Coverage}
 \label{sec:retrieval-coverage-proposal}
 
-Of 991 distinct reports sought, 324 were recorded as assessed and 667 as not retrieved. Assessment coverage differed by identification route: 302/969 database-route reports (31.17\%) and 22/22 distinct reports from the existing collection (100\%). These counts refer to the recorded assessment workflow, including partial language or genre assessments and scoped publisher-page assessments; they do not establish complete full-text reading. Eligibility remained undetermined for all 667 reports not retrieved.
+At the historical baseline, 324 of 991 distinct reports sought were recorded as assessed and 667 as not retrieved. All route, year, indexed-type, genre and retained-request comparisons in this subsection describe that baseline; current reconciled states are reported separately below. Assessment coverage differed by identification route: 302/969 database-route reports (31.17\%) and 22/22 distinct reports from the existing collection (100\%). These counts refer to the recorded assessment workflow, including partial language or genre assessments and scoped publisher-page assessments; they do not establish complete full-text reading. Eligibility remained undetermined for all 667 reports not retrieved.
 
 A bibliographic year was recorded for all 991 reports. The existing-collection reports spanned 2003--2025 (median 2014), whereas database-route reports spanned 2001--2026 (median 2019). Within the database route, assessed reports had a median recorded year of 2017 (range 2001--2026), compared with 2019 (range 2002--2026) for reports not retrieved. Table~\ref{tab:retrieval-coverage-proposal} retains the assessed and not-retrieved denominators within each year band. Assessment coverage was 29/145 (20\%) for 2025--2026. These years are frozen bibliographic-register values; primary-source publication and version dates were not harmonised for this comparison.
 
@@ -174,7 +180,7 @@ Total & 302/969 & 667/969 & 31.17 \\
 \end{tabular}
 \end{table}
 
-Original acquisition-index membership could not be recovered from the inspected local snapshots and remains unknown for all 991 reports. Recorded frozen Scopus anchors for 606 reports provide partial bibliographic corroboration, not a complete index-membership register. Primary-report genre information in this analysis was unavailable or unestablished for 850/991 reports. The catalogue stores publication metadata for the 242 included reports, leaving 749 nonincluded reports without those metadata. Publisher evidence identifies one excluded report as a review, leaving 748 nonincluded genres unknown; a further 102 included reports have unestablished genre. This uneven metadata coverage precludes a complete primary-genre comparison between assessed and not-retrieved reports.
+Original acquisition-index membership could not be recovered from the inspected local snapshots and remains unknown for all 991 reports. Recorded frozen Scopus anchors for 606 reports provide partial bibliographic corroboration, not a complete index-membership register. Primary-report genre information in this analysis was unavailable or unestablished for 850/991 reports. The baseline catalogue stores publication metadata for the 242 included reports, leaving 749 nonincluded reports without those metadata. Publisher evidence identifies one excluded report as a review, leaving 748 nonincluded genres unknown; a further 102 included reports have unestablished genre. This uneven metadata coverage precludes a complete primary-genre comparison between assessed and not-retrieved reports.
 
 
 Indexed Document Type was recorded for 606 reports. Assessment coverage differed within this recorded subset: 43/155 Articles (27.74\%) and 187/429 Conference papers (43.59\%) were assessed (Table~\ref{tab:indexed-type-coverage-proposal}). The remaining 385 reports have no recorded indexed type. These labels do not establish peer review, primary-study contribution, or eligibility, and their coverage differences do not establish causal retrieval bias.
@@ -199,13 +205,39 @@ Unknown & 90/385 & 295/385 & 23.38 \\
 
 Among the 667 reports not retrieved, retained evidence comprised four exclusive categories: 475 had at least one entry recording a request URL, date, and outcome, 183 had documented exact-title discovery only, two had undated URL-and-outcome observations only, and seven had no dated request or discovery evidence in the inspected files. Dated entries include landing-page and PDF requests; discovery receipts do not establish recovery of the requested report. These categories describe retained evidence, not exhaustive or demonstrably unique retrieval calls.
 
-Generic closure notes referring to a locked host appeared for 433 current not-retrieved reports; earlier notes are retained in the archived snapshot. They do not document a separate institutional-browser attempt for each report. The closure register supports a reporting snapshot dated 6 October 2026. Per-record completion of institutional access, exhaustion of all retrieval routes, and a prespecified attempt threshold are not established by this audit. Differences in route or year coverage therefore do not establish a causal retrieval bias, and unavailable reports cannot be assigned substantive eligibility from these descriptors.
+Generic closure notes referring to a locked host appeared for 433 baseline not-retrieved reports; earlier notes are retained in the archived snapshot. They do not document a separate institutional-browser attempt for each report. The closure register supports a reporting snapshot dated 6 October 2026. Per-record completion of institutional access, exhaustion of all retrieval routes, and a prespecified attempt threshold are not established by this audit. Differences in route or year coverage therefore do not establish a causal retrieval bias, and unavailable reports cannot be assigned substantive eligibility from these descriptors.
 
 
-The current snapshot incorporates a newly recovered source for the existing frozen record V3-01769. On 6 October 2026, a source assessment and strict workbook readback recorded the requested journal report as \textit{Assessed/Exclude: Not a primary study}. The official publisher-rendered page identifies an \textit{Open Access Review}; the assessment used its identity and genre block, Abstract, Introduction, and Survey Methodology. Its genre is normalised to \textit{survey} in this analysis only. No journal PDF acquisition, integral reading, human reviewer vote, or independently duplicated review is inferred. The earlier wrong-copy and denied-request evidence remains historical. Separately, V3-02974 is recorded as a workshop conference paper for the assessed report embedded in a thesis; the earlier thesis label described the container, and its inclusion was unchanged.
+The baseline snapshot incorporates a newly recovered source for the existing frozen record V3-01769. On 6 October 2026, a source assessment and strict workbook readback recorded the requested journal report as \textit{Assessed/Exclude: Not a primary study}. The official publisher-rendered page identifies an \textit{Open Access Review}; the assessment used its identity and genre block, Abstract, Introduction, and Survey Methodology. Its genre is normalised to \textit{survey} in this analysis only. No journal PDF acquisition, integral reading, human reviewer vote, or independently duplicated review is inferred. The earlier wrong-copy and denied-request evidence remains historical. Separately, V3-02974 is recorded as a workshop conference paper for the assessed report embedded in a thesis; the earlier thesis label described the container, and its inclusion was unchanged.
 
 The retrieval state is reported as of 6 October 2026. This reporting date is not a prespecified or exhaustive retrieval stopping rule.
 
+
+\subsection{Author-Authorized Recovery Extension}
+\label{sec:recovery-extension}
+The authors authorized integration of eligible recovered sources on 6 October 2026. This extension applies the same semantic-graph, contribution, detail, language, publication and cutoff criteria to records already advanced from the frozen search. It introduces no new topic search or later literature cutoff. The selection register archives the 242-report baseline and records each follow-up disposition separately. Of the recovery candidates, 73 reports now meet the criteria, 40 receive criterion-linked exclusions, and 24 remain unresolved. These 24 are a candidate subset spanning retrieval and assessment gaps: 13 have invalid or mismatched source copies and remain retrieval gaps, while 11 acquired reports await assessment or publication verification. They are not an additional PRISMA state to add to the totals.
+
+Codex performed scoped reading and structured extraction with one coordinating agent and three extraction agents. Sources were divided among the agents; the coordinating agent applied the eligibility criteria and reconciled the report identities, publication evidence and extraction fields. This shared workflow was not independent, duplicate or blinded full-text screening. Each extraction retains the actual PDF hash, physical page count, pages read, publication version and field locators. Reading was scoped to the identified methods, implementation, evaluation and conclusions; integral reading of every report is not asserted. Official publication and editorial evidence was checked separately from the source content. Wrong copies, uncertain tracks and unresolved publication evidence remain pending rather than becoming primary reports through acquisition alone.
+
+The historical author-confirmed staffing remains one human full-text reviewer and three people participating in extraction. The recovery extension adds machine-assisted extraction and author-delegated criteria application; it does not establish any additional human reviewer, independent extraction, human verification of every new report, or full-text agreement coefficient. Its 73 included reports enter the working synthesis with this provenance visible. The extension ledger records 40 further exclusions and the individual pending reasons, including readable reports for which the required publication status remains unestablished.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Current reconciled report states after the recovery extension. Baseline Figure~\ref{fig:prisma} remains a historical snapshot.}
+\label{tab:current-flow}
+\begin{tabularx}{\linewidth}{Y r Y}
+\toprule State & Count & Interpretation\\\midrule
+Reports sought & 991 & Same frozen retrieval population\\
+Reports assessed & 437 & 324 baseline + 73 inclusions + 40 exclusions\\
+Included reports & 315 & 242 baseline + 73 follow-up primary reports\\
+Excluded after assessment & 122 & 82 baseline + 40 follow-up exclusions\\
+Reports not retrieved & 543 & Requested report unavailable or identity unresolved\\
+Reports awaiting assessment & 11 & Acquired/partial evidence or unresolved publication/eligibility\\
+Identity-alias local copies & 39 & Duplicate copies; outside the distinct-report denominator\\\bottomrule
+\end{tabularx}
+\end{table}
+
+The accounting reconciles as $991 = 437 + 543 + 11$ and $437 = 315 + 122$. Current assessment coverage is therefore 437/991 (44.10\%). The earlier 667 not-retrieved state is partitioned after follow-up into 113 newly assessed reports, 543 remaining retrieval gaps and 11 reports awaiting assessment. This partition records current report states; it does not equate pending evidence with complete retrieval or eligibility. The 73 new primary reports are listed in Appendix~\ref{app:recovered-reports}, with separate citations for reports in a common system family.
 
 \subsection{Extraction and Evidence Appraisal}
 Three people participated in data extraction, as confirmed by the authors on 6 October 2026. This count does not establish that each report was extracted independently by all three people. Per-report allocation, duplicate extraction, and the checking or disagreement-resolution procedure are not documented. Extraction covers title, authors, report identity, publication dates, graph object, implemented workflow, guidance mechanism, representations, backend, scalability, evaluation, and artifacts. Each substantive field carries a report locator. A complete paper is distinguished from a supplement, a proceedings container, or a truncated copy. An appendix containing algorithms does not establish that the corresponding main report was read. When a container includes several papers, evidence is limited to the pages of the requested report.
@@ -216,13 +248,13 @@ The six-dimensional framework uses multiple codes per report when warranted. Imp
 
 \subsection{Descriptive Profile and Synthesis Scope}
 
-This coverage check was prepared retrospectively from the current catalogue, codebook, and frozen extraction of 242 included, retrieved reports. The current review accounting records 324 assessed reports, 242 included, 82 excluded after assessment, and 667 not retrieved from 991 sought. It counts existing assertions by canonical report identifier and recorded status; it does not establish the coding rules used historically. Every report proportion uses 242 as its denominator. Reports can have multiple codes and statuses, so the dimension and status counts overlap.
+This historical baseline coverage check was prepared retrospectively from the archived catalogue, codebook, and frozen extraction of 242 included, retrieved reports. The baseline review accounting records 324 assessed reports, 242 included, 82 excluded after assessment, and 667 not retrieved from 991 sought. It counts existing assertions by canonical report identifier and recorded status; it does not establish the coding rules used historically. Every historical baseline report proportion uses 242 as its denominator. Reports can have multiple codes and statuses, so the dimension and status counts overlap.
 
 \begin{table}[htbp]
 
 \centering\small
 
-\caption{Controlled-code coverage among 242 included reports. I/D = implemented or demonstrated; P = proposed method; F = future work; NE = coded not established. Each cell counts distinct reports.}
+\caption{Historical baseline controlled-code coverage among 242 included reports. I/D = implemented or demonstrated; P = proposed method; F = future work; NE = coded not established. Each cell counts distinct reports.}
 
 \label{tab:retrospective-code-coverage}
 
@@ -250,15 +282,17 @@ Report evaluation & 236 & 236 & 0 & 9 & 0 & 6\\
 
 No code denotes an uncoded dimension and does not establish feature absence. Uncoded interaction, representation, model, access, and evaluation dimensions are classified as not established. For guidance, 16 reports are classified as not established and nine as not reported; for scalability the respective counts are 46 and 27. No coded assertion has not-established status. The separate dimension classifications describe missing evidence.
 
+The following representation-role inventory describes the historical baseline; roles added in the recovery extension are recorded separately in the current catalogue.
+
 Representation form and role are separate descriptors. Among 600 visual-code assertions, four named QueryVOWL contexts in two reports have established roles: V01 depicts a query pattern and V03 depicts returned data in each report. The roles of the other 596 assertions remain unknown; this does not establish representation absence. The qualifiers concern the described query graphs and result lists; they do not imply that every node--link view renders graph data, or that roles in other reports have been audited \citep{V3-02190,V3-02191}.
 
-For RQ4, report-level evaluation codes describe recorded evidence types, not appraisal quality or verified effectiveness. Table~\ref{tab:retrospective-evaluation-scope} separates those report assertions from explicit local study-entry classifications. The catalogue has 237 local study entries in 174 reports; 68 reports have no structured study entry. Design codes are recorded for 112 entries in 69 reports and missing for 125 entries in 105 reports. Missing study classifications are not inherited from report-level codes. Report-level evaluation summaries retain their report scope, without assigning combined outcomes to an individual study. Neither the entries nor these report counts establish independent studies or cohorts.
+For RQ4, report-level evaluation codes describe recorded evidence types, not appraisal quality or verified effectiveness. Table~\ref{tab:retrospective-evaluation-scope} separates those report assertions from explicit local study-entry classifications. The historical baseline catalogue has 237 local study entries in 174 reports; 68 reports have no structured study entry. Design codes are recorded for 112 entries in 69 reports and missing for 125 entries in 105 reports. Missing study classifications are not inherited from report-level codes. Report-level evaluation summaries retain their report scope, without assigning combined outcomes to an individual study. Neither the entries nor these report counts establish independent studies or cohorts.
 
 \begin{table}[htbp]
 
 \centering\small
 
-\caption{Selected RQ4 codes: distinct report counts (denominator 242) and local entries with explicit design codes (inventory 237 entries). An entry can have multiple design codes; the local-entry column is not an independent-study count.}
+\caption{Historical baseline selected RQ4 codes: distinct report counts (denominator 242) and local entries with explicit design codes (inventory 237 entries). An entry can have multiple design codes; the local-entry column is not an independent-study count.}
 
 \label{tab:retrospective-evaluation-scope}
 
@@ -283,6 +317,27 @@ E07 Performance & 30 & 0 & 0 & 30 & 10\\
 The map locates candidate material for entity navigation (I01), facets and coordinated views (I02, I08, V11), visual queries (I03), refinements and ranking (G01, G03), and measured runtime, reported scale, and strategies (S01, S03, S05). These labels do not establish compatible tasks, populations, comparators, or outcomes. The accompanying ledger preserves current cited contexts and report-specific qualifications: approximate autocompletion has false-positive suggestions; no evaluated ranking method significantly outperformed random ranking with a single exemplar; ViziQuer interpretation, construction, and query-conversion exercises use different units; QueryVOWL companions do not establish two independent cohorts; and deployment scale does not establish controlled interaction latency \citep{2021_Parra_Fast_Approximate,2020_Lissandrini_Graph-Query_Suggestions,V3-01077,V3-01013,V3-02190,V3-02191,2022_Ikkala_Sampo-UI_A}.
 
 The map locates material for each question; membership alone does not establish support for a synthesis conclusion, a causal comparison, an overall quality verdict, or prevalence in the full field. The supplement records code definitions and counts, report sets, source locators, and the requirements evidence crosswalk. Requirements evidence identifiers E01--E08 are distinct from evaluation taxonomy codes. The corpus profile describes the included, retrieved reports; the narrative explains operations, assumptions, results, and limitations with report-specific sources.
+
+\subsection{Current Corpus Profile}
+The revised catalogue contains 315 included reports. Table~\ref{tab:current-code-profile} recomputes report-level code coverage for that corpus, separately from the preceding 242-report baseline tables. Each cell counts distinct reports; a report may have several dimensions and several implementation statuses. Proposed or future functionality is retained separately from implemented or demonstrated behavior. Missing codes describe missing recorded evidence and do not establish absence of a capability.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Current report-level controlled-code coverage (315 reports). I/D = implemented or demonstrated; P = proposed method; F = future work. Overlapping statuses are not additive.}
+\label{tab:current-code-profile}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule Dimension & Any code & I/D & P & F & No code\\\midrule
+Interaction & 304 & 294 & 12 & 8 & 11\\
+Guidance & 288 & 269 & 20 & 10 & 27\\
+Representation & 297 & 290 & 8 & 6 & 18\\
+Data model & 288 & 282 & 6 & 0 & 27\\
+Data access & 278 & 275 & 3 & 1 & 37\\
+Scalability & 223 & 219 & 5 & 0 & 92\\
+Report evaluation & 309 & 305 & 4 & 10 & 6\\
+\bottomrule\end{tabular}
+\end{table}
+
+The current catalogue contains 315 local study entries in 232 reports, with 83 reports lacking a structured entry. Explicit design codes are present for 189 entries and absent for 126. These are report-local evidence records, including demonstrations, formal analyses, prior-study summaries and multiple analyses of shared cohorts; neither 315 entries nor 232 reports is an independent-study denominator. The preceding inventory of 237 entries in 174 reports remains the historical baseline. Current report-level codes do not fill missing entry-level designs, and source-reported questionnaires, task responses and component benchmarks retain their own units.
 
 \subsection{Grouping and Narrative Synthesis}
 The included corpus supplies both the descriptive profile and the thematic discussion. The same eligibility criteria apply to every primary report. Detailed comparison draws on an identifiable operation, implementation condition, source-qualified evaluation result, or necessary version or historical distinction. Its contribution is linked to the assessed source version and a specific page or section. The accompanying ledger records the fact used, its role in the comparison, relevant qualifications, and overlap with other reports.
@@ -367,6 +422,18 @@ ForestQB & Use sensor/date/location forms or intents & Type-sensitive fields and
 \end{tabularx}
 \end{table}
 
+The recovered reports make the transition from browsing to querying more explicit. Smeagol lets users navigate concrete resources, select a subgraph and generalize nodes into variables; RDF Explorer combines pattern construction with constant-to-variable generalization and current-result feedback. The DBpedia Visualizer applies related operations through Android gestures, while KGVis allows transformations between query patterns and result graphs \citep{V3-02525,V3-02210,V3-00229,V3-01622}. The reusable state is therefore more than a displayed neighborhood: it includes which nodes are constants, which are variables and which edges constrain the answer. The DBpedia report describes filters, aggregates and autocomplete as future work, so the gesture-based workflow does not establish the expressiveness of a full SPARQL editor.
+
+A similar-looking graph can represent different objects at successive stages. The visual data-schema library contracts classes and properties to produce configurable UML-like source-schema diagrams; initiating queries directly from those diagrams is future work. Schema-based ViziQuer uses a class tree to start queries, and the Wikidata extension displays a query pattern with readable entity labels and reverse SPARQL visualization \citep{V3-00138,V3-02393,V3-02757}. KG3D, in contrast, uses a three-dimensional entity view alongside query construction and tabular answers \citep{V3-01616}. Schema simplification, query notation and result exploration require separate representation roles even when they use nodes and links. Lossy schema abstraction also needs an explicit indication of what the view omits.
+
+Query-by-example is not one uniform interaction. The GF framework uses a grid of classes, properties, conditions and selected output fields. CUTE accepts tabular example tuples; iQbees starts from an entity and updates semantic-aspect rankings through positive and negative feedback. SPARQL-QBE builds conjunctive constraints from positive and negative entities, while Von-QBE maps keyword input through an ontology schema and suggests fragment expansions \citep{V3-00165,V3-00742,V3-01566,V3-02185,V3-02018}. These mechanisms differ in whether an example specifies a table row, an entity, a graph fragment or a conceptual starting point. Their expressive limits and feedback semantics should be stated before treating the shared name as evidence of equivalent user control.
+
+Views can also reorganize relationships without changing their role into source assertions. LDViz connects editable SPARQL queries and style sheets with coordinated MGExplorer views and exploration history. ARViz synchronizes scatter, chord and association-graph views of mined rules and provides links to the supporting publications \citep{V3-01178,V3-00411}. Stunning Doodle places embedding neighbors beside asserted knowledge-graph links, with distance-based shading and a neighbor list \citep{V3-02586}. These examples support preserving the distinction between returned facts, mined associations and embedding similarity throughout selection, explanation and export. Sparklis nested tables address a different presentation problem by using query-variable dependencies to group results and reduce repeated values; no measured usability gain is supplied for that extension \citep{V3-00261}.
+
+Chem2Bio2RDF adds a domain-specific combination of facets, generated relationship paths and resource-level inspection. DrugBank entries can be narrowed and presented as tables, tiles, thumbnails or approval timelines; the ontology-driven link-path generator connects selected classes and produces SPARQL. A Cytoscape plugin exposes resource menus and related MEDLINE/PubMed literature \citep{V3-00576}. The report's biomedical examples and source-coverage comparisons establish concrete discovery operations, without a recruited-user study or an interaction-latency benchmark. The assessed author manuscript uses a title omitting ``Systems''; the published IEEE title, DOI and author sequence are retained separately, without substituting the related journal article.
+
+Inference Variable proposes an encoding aligned with the question being investigated. In its time-oriented organizational example, subject and object capsules span occurrence-to-cessation intervals and relationship arcs show activity across those intervals; current and past attributes have distinct marks \citep{V3-01484}. This is a proposed representation and visual inferencing procedure over typed semantic relationships, without an established implemented interface, RDF serialization or graph-store backend. Its authored employee-selection example motivates cognitive-fit and load hypotheses, but supplies no participant trial or cognitive-load measurement. It therefore extends the representation comparison while leaving its usability benefit open.
+
 \section{Guidance, Context, and Explanations}
 \subsection{Valid Refinements and Candidate Generation}
 Guidance first determines which actions are available. Sparklis constructs queries through a focus-based sequence of refinements, with controlled-language verbalization and suggestions derived from the current endpoint context \citep{2017_Ferre_Sparklis_An}. RDF Explorer combines a visual query with data-aware property suggestions \citep{2019_Vargas_RDF_Explorer}. A schema-compatible refinement need not return data; an instance-supported refinement may be valid only within the current partial results or endpoint snapshot. The scope of validity should therefore accompany the suggestion.
@@ -374,6 +441,8 @@ Guidance first determines which actions are available. Sparklis constructs queri
 Approximation changes this contract. Fast Approximate Autocompletion for SPARQL query builders uses a local graph summary to reduce reliance on expensive exact endpoint operations \citep{2021_Parra_Fast_Approximate}. Relevance was assessed only for queries for which the public Wikidata Query Service (WDQS) returned results. Across that subset, median precision was 0.21: precision measures the fraction of FAAS suggestions also returned by the exact endpoint query. Recall ranged from 0.92 to 1.00, with median 1.00; the authors traced imperfect recall to updates in WDQS after the indexed dump. These are query-level suggestion measures. A fast candidate list is useful when users can recognize and recover from suggestions that do not yield results. Presenting approximate candidates as guaranteed nonempty refinements would conceal an observed limitation.
 
 Templates and formal descriptions offer another entry point. ShEx2SPARQL translates Shape Expressions blueprints into query structures, including ASK, SELECT, CONSTRUCT, VALUES, and optional patterns \citep{V3-01110}. Its report supplies concrete generation rules and limitations, including unsupported recursion and imports; it does not provide a usability trial or execution benchmark. Petrova's entity-comparison proposal identifies commonalities and differences through conjunctive queries and formal ranking conditions \citep{V3-00633}. Such guidance methods can be in scope without an implemented graphical workflow, while their practical benefit remains untested.
+
+Schema-derived entry patterns also have a distinct operational contract. The peer-reviewed ShEx2SPARQL report accepts a Shape Expressions schema, an output query type and optionally a resource URI, and generates SELECT or CONSTRUCT patterns for exploring shape-conforming resources. ASK supplies an exact compliance check and requires a URI; that capability alone does not establish exploration \citep{V3-02495}. Its prototype executes 292 Wikidata Entity-Schema CONSTRUCT queries: 187 initially receive HTTP 200, and 47 more succeed with a one-result limit. Fifty-six of the 234 successful responses are empty. Request success, nonempty answers and user usefulness are therefore separate outcomes. Recursive shapes and imports remain unsupported, and no graphical authoring or recruited-user trial is established.
 
 \subsection{Ranking and Personalization}
 Ranking orders available actions rather than proving their validity. VIIQ recommends edges and labels during graph-query formulation \citep{2015_Jayaram_VIIQ_auto-suggestion}. Graph-Query Suggestions applies language-model and pseudo-relevance-feedback methods to candidate expansions \citep{2020_Lissandrini_Graph-Query_Suggestions}. The latter's results depend on the information already present in the query. With a single exemplar entity, no evaluated method significantly outperformed random ranking; an edge or a larger query supplied context that improved the effectiveness of the best-ranked expansions. It would be misleading to generalize the larger-query result to every initial exemplar.
@@ -388,6 +457,18 @@ Language can represent input, output, or both. Sparklis uses controlled choices 
 The medical exploration studies provide direct observations about guidance and orientation. \citet{2021_Witschel_Natural_Language-based} randomly assigned ten Medical Informatics students to two groups of five using the same prototype with or without query recommendations. Participants explored a patient case described by age, gender, and symptoms. The authors operationalized an insight as a task-relevant retrieved result coded from session videos: expected diagnostic information included possible diseases, differentiating symptoms, patient groups, and treatments, with additional relevant results also counted. Mean counts were 5.4 with recommendations and 3.4 without. The authors framed the small study as qualitative; these counts do not establish diagnostic accuracy or a general effectiveness gain. They also observed premature query selection and inadequate context. \citet{2022_Grether_Studying_Interaction} found different preferences for textual and visual navigation and reported the usefulness of clustering for orientation. The results support attention to context and recovery, with the populations and tasks limiting broader conclusions.
 
 Exploration state includes the current entities, filters, query focus, source scope, and prior decisions. LODmilla's saved state and undo support revisiting a graph selection \citep{2014_AMA_LODmilla_Shared}. FaRBIE combines partial results with visible source, error, progress, and response information \citep{V3-01117}. These features can help users distinguish an empty result from an incomplete response and can preserve orientation as asynchronous operations finish. The available reports often describe the mechanism more fully than its tested effect, so the design argument remains separate from a comparative usability claim.
+
+Guidance can reduce the visible choices while introducing a risk of losing the desired target. SView ranks link patterns by goodness and diversity and exposes hierarchy, list and top-$k$ organizations. Its user comparison found shorter interactions with top-$k$ patterns, but twelve of the twenty-four participants noted target-loss risk; hierarchy improved overview while deep branches confused some participants \citep{V3-01744}. RelClus instead groups relationship paths into a labeled hierarchy, with expansion and collapse for inspecting the grouped results \citep{V3-02740}. Ranked pruning and grouped overview support different actions. A system that reduces options should retain a route back to the full candidate set and distinguish an absent target from one hidden by ranking.
+
+An implemented host interface does not make every guidance extension implemented. The OptiqueVQS query-history report specifies conditional-probability ranking of continuations through partial-query matching, illustrated with an assumed query log; the ranking is a proposed method. A later query-log report combines proposed ranking and dead-end approximation, reporting a preliminary elimination of up to 80\% of dead ends using views about 10\% of the original data \citep{V3-02739,V3-01984}. Combined ranking and dead-end evaluation remains future work. Separately, OWL graph projection supplies a concrete navigation component used in OptiqueVQS and SemFacet, while summarizing earlier application evaluations rather than recruiting a new cohort \citep{V3-01948}. These reports warrant separate method, implementation and study identities within the same family.
+
+Conversational exploration also depends on a declared interaction scope. The news agent of Schneider et al. uses a Neo4j graph and structured exploration modes, with suggestions for related entities; unrestricted language-model generation is future work. Its 54 users produced 65 sessions, with mean SUS 79.4 (SD 18.5), but only 130 of 222 entity-related search requests were recognized \citep{V3-01173}. Seabra et al. implement clarification and reformulation with a knowledge graph and GPT-4o, illustrated through four underspecified questions about historical Brazilian capitals; quantitative participant evaluation remains future work \citep{V3-01170}. User ratings in the former and clarification examples in the latter provide different evidence. Neither establishes arbitrary conversational access across graphs or reliable resolution of every ambiguous question.
+
+Preferences can affect filtering, ordering and subsequent recommendations in different ways. PFSgeo combines facets with rectangular geographic selection and best/worst preference actions; one geographical facet is implemented. SEED V3 applies weighted positive and negative entity/aspect feedback and provides graph-link explanations of embedding-ranked entities \citep{V3-02091,V3-02418}. LINDASearch records preference learning and query recommendations, but its three-expert assessment concerns analytic annotation choices rather than a three-person end-to-end search trial \citep{V3-01754}. An application should distinguish a hard restriction from a soft preference and retain the feedback history that changes a ranked result. A related graph path explains a connection without proving that an embedding score itself is a source assertion.
+
+EmpiRE-Compass couples curated competency questions with custom natural-language querying, SPARQL inspection, manual or prompt-based refinement, and restoration of query/analysis history. Curated interpretations are currently written manually for correctness; custom interpretations use language-model generation and require validation \citep{V3-00942}. The two implemented research use cases support a concrete exploration and reuse workflow, while expert reviews, pilot studies and larger assessments remain planned. No chart type, linked brushing or measured cognitive benefit is inferred from the dashboard label. Eligibility and extraction concern the complete seven-page proceedings report, published on 2 June 2026, rather than treating its original one-page poster as a sufficient method report.
+
+The Hippalus automatic-ranking extension makes relaxation and ordering inspectable. SmartFSRank retains preference buckets, fills a short result set with approximate objects and uses discrimination statistics to break large ranking ties; its object explanations expose the score components and satisfied preferences. Added objects can violate hard constraints, so their approximate status affects the interpretation of the result population \citep{V3-01079}. Computational simulations use each of 382 hotels as a target: at top-one retrieval, common-value ranking requires a mean 4.11 hard constraints, compared with 4.55 without automatic ranking, while rare-value ranking worsens this to 4.85. These are simulated target-finding costs. The separately reported action latency rises from about 2 to 20 milliseconds with ranking; neither result establishes a measured human-task improvement or a performance bound for much larger data.
 
 \section{Backend Assumptions and Scalability}
 \subsection{Model, Access, and Configuration}
@@ -422,6 +503,12 @@ Whyis Knowledge Explorer (2024) & On-demand neighborhood queries; configurable v
 Oracle facets (2015) & Hardware, materialized rows, refinement times & Human outcomes; general workload coverage & Specific execution comparison\\\bottomrule
 \end{tabularx}
 \end{table}
+
+The recovered sources expose distinct portability costs. Humboldt works with locally loaded RDF documents and SPARQL; run-time dereferencing remains a planned extension. FedViz uses dataset class/property connectivity to build and execute federated queries, whereas the KeyFS/MidSemI architecture aligns enterprise SQL, Facebook JSON and a DBpedia RDF dump through explicit mapping components \citep{V3-01337,V3-01125,V3-01741}. Graph projection translates OWL axioms into navigable structures for existing query interfaces \citep{V3-01948}. These are different access and schema-maintenance arrangements. Their data routes must be recorded directly rather than inferred from a graph-shaped view or a list of backend engine names.
+
+Source size and interactive cost remain separate in the extension. La Rioja Turismo reports 67,284 entities and 675,368 triples in a deployed tourism graph; approximately 40,000 monthly visits are deployment traffic. LDViz describes a DBpedia source of about 400 million triples, while its illustrated visual graphs have 26 nodes/124 links and 237 nodes/1,160 links \citep{V3-01709,V3-01178}. Stunning Doodle gives operation times for rendered selections: centering 502 nodes took 21.7 seconds and expanding 271 nodes took 12.03 seconds in its stated setting \citep{V3-02586}. The larger source description therefore cannot substitute for the rendered workload or for a measured end-to-end response.
+
+Measured scalability can depend sharply on the action and cache state. SPARQL-QBE reports average query execution of 103 milliseconds on its approximately one-million-triple movie dataset; feedback ranking initially ranges from 103 to 824 milliseconds and is about 103 milliseconds when cached. These are client-component times on the specified browser and hardware \citep{V3-02185}. PFSgeo separately tests synthetic datasets up to 20,000 hotels: average initialization is 1.8 seconds, yet some large-data preference actions exceed 100 seconds and the per-object alternative times out \citep{V3-02091}. Its human trial uses only twenty hotels. Reporting an initialization average or a warm-cache result as a uniform interaction bound would conceal a material workload difference.
 
 \section{Evaluation Evidence}
 \subsection{What the Studies Measure}
@@ -459,6 +546,16 @@ Missing participant counts and incomplete statistical reporting limit synthesis.
 
 The reports' contributions are bounded by these limitations. Qualitative observations can identify context-selection problems, unfamiliar controls, or differences in user strategies without estimating a population effect. Offline ranking can identify a dependence on query context without proving that users find more valuable discoveries. Deployment evidence can support operational feasibility without establishing causal usability gains. The resulting evidence is therefore synthesized by design and outcome, with no pooled participant total, standardized effect, or overall tool ranking.
 
+The recovered comparisons extend the evidence without supplying a common effectiveness scale. RDF Explorer compares query construction with Wikidata Query Helper in a within-subject study of 28 fourth-year computer-science students without prior SPARQL knowledge. Reported differences favor RDF Explorer for whole-query correctness and graph shape, while the triple-pattern difference is not significant \citep{V3-02210}. Smeagol compares 20 users with 23 Pubby users; correctness differences are significant for more complex topologies but not the simple two-node tasks. Its text mentions twelve tasks while the results table lists ten \citep{V3-02525}. Task reach under fixed time and inconsistent task inventories remain part of the interpretation, rather than being removed when describing a favorable result.
+
+The industrial OptiqueVQS report contributes two small domain trials: three Statoil experts and four Siemens experts. Correct completion is reported as 84\% and 88\%, respectively, with first-attempt completion of 69\% and 72\%; the report also summarizes an earlier fifteen-student movie study \citep{V3-02014}. The earlier group is not a newly recruited industrial cohort. In SView, the browser and pattern-organization comparisons share the same twenty-four-student study setting; mean SUS is 79.8 for SView, 70.32 for Rhizomer and 64.51 for OpenLink, while reorientation and link-label ratings expose contrary findings \citep{V3-01744}. Neither repeating the shared sample across analyses nor adding prior-study summaries creates independent participants.
+
+The PFSgeo and SPARQL-QBE evaluations require task-response denominators. Twenty PFSgeo users contribute eighty responses per interface, with 79/80 successful responses using the map and 63/80 without it. Interface order is fixed: without map precedes map use. The source reports usefulness categories rather than a standard ten-item SUS score \citep{V3-02091}. SPARQL-QBE recruits twenty-two computer-science volunteers for ten tasks, yielding 220 responses with 65 failures; favorable usefulness ratings coexist with difficulty translating some tasks into actions \citep{V3-02185}. These findings motivate evaluation of recovery and query understanding, but do not imply 160 or 220 users or causal superiority across interfaces.
+
+Questionnaire and response units also need reconciliation within a report. FedViz reports fifteen SUS respondents and ten respondents to a custom questionnaire, but their overlap is unestablished; they cannot be summed as twenty-five unique participants \citep{V3-01125}. The Sparklis analytical-query study describes twelve pairs while its analysis also uses twelve subjects. Its reported mean answered-question counts, 1.67 with Yasgui and 6.17 with Sparklis, belong to those recorded response units; a unique individual count is not inferred \citep{V3-00369}. The Sparklis extension, RDF Explorer demonstration/research/Android reports, ViziQuer reports, and OptiqueVQS components retain family links. Shared names or repeated results prompt an overlap check rather than an automatic merge or an independent-study count.
+
+Offline guidance tests answer different questions from human trials. iQbees evaluates 163 INEX topics with simulated feedback: positive and mixed feedback improve its ranking, while a single negative hint does not. Von-QBE evaluates selected IMDB and QALD queries without recruiting users; reported precision is 0.69 for IMDB and 0.0047 for the QALD subset \citep{V3-01566,V3-02018}. The ViziQuer Wikidata demonstration successfully visualizes 105 of 120 example queries under a criterion combining returned-result agreement with mathematical equivalence for timeout or empty cases \citep{V3-02757}. Ranking quality, keyword-to-query precision and query round-trip coverage are distinct outcomes. They do not establish human task success or comprehension, even when embedded in an implemented exploration workflow.
+
 \section{Discussion and Design Agenda}
 \subsection{Task Fit and Progressive Control}
 RQ1 is answered through the relationships between tasks and operations. Navigation supports inspection from a known entity; facets support repeated narrowing of an identifiable population; path discovery makes connections the object of search; query construction makes relationships and logical constraints explicit. Coordinated views support aggregate interpretation when their selection state is preserved. A future application can combine these operations, but switching should retain the user's entities, constraints, and source scope. The representative reports support this requirement more directly than a preference for one dominant visual style.
@@ -477,6 +574,8 @@ For RQ4, the reported evidence supports different, bounded conclusions. Usabilit
 
 For RQ5, the assessed reports describe different dependencies on configuration, preprocessing, and versions. Sampo-UI requires domain perspectives and query configuration; the approximate-autocompletion method requires a preprocessed summary index; ViziQuer constructs depend on the assessed version \citep{2022_Ikkala_Sampo-UI_A,2021_Parra_Fast_Approximate,2018_Cerans_ViziQuer_A,V3-01013}. These dependencies limit direct reuse unless the source data, configuration, and version are retained. A source-reported repository or demonstration address is an artifact lead, not a current availability check. A reachable article is not source code, and a repository for a conversion pipeline may not contain the interface. The assessed version, license, release or commit, test data, configuration, tasks, and expected results should be identified when available. Later artifacts must not be backdated to an earlier report. These distinctions allow engineering reuse without overstating what the review has verified.
 
+Reproducibility in the extension also depends on preserving configuration and the assessed implementation. KinGVisher permits sharing graph configurations and reports code and demonstration addresses; its maximum-edge setting and property selection affect what the shared view contains. The schema library reports cached JSON schema descriptions and a schema-library repository, while SPARQL-QBE loads RDF text files into a custom browser-side executor \citep{V3-01624,V3-00138,V3-02185}. Reusing a graph image, a schema diagram or a generated query alone can therefore omit the bounds, data snapshot or executor subset needed to reproduce the result. The reported resource addresses are artifact leads; their presence does not establish a current release, license, archived version or successful independent reproduction.
+
 \subsection{Questions for Further Evaluation}
 The design implications above suggest comparisons with outcomes that remain unknown. Table~\ref{tab:research-agenda} states three such comparisons. Each starts from a reported limitation or implemented mechanism; it does not assume that the proposed interface change improves performance.
 
@@ -493,12 +592,12 @@ Different backend assumptions and separate timing units \citep{2017_Ferre_Sparkl
 \end{table}
 
 \section{Limitations}
-The review is bounded by its frozen sources, English-language criterion, working protocol, and documented retrieval state. Only 324 of 991 sought reports were assessed (32.7\%); 667 were not retrieved (67.3\%). This large retrieval gap limits coverage and prevents a claim that the assessed reports represent the full eligible field. The existing collection has incomplete original-discovery provenance. Planned searches without execution evidence are not counted. Original ACM, OpenAlex, IEEE, and supplementary Google Scholar results exports are absent, and the exact submitted IEEE block strings were not retained, limiting independent search reproduction. Database indexing can omit reports or produce divergent dates and titles. Publication-track verification can remain unresolved even when substantive content is readable. These limitations affect coverage and selection and do not establish limitations of an underlying exploration method.
+The review is bounded by its frozen sources, English-language criterion, working protocol, and documented retrieval state. At the historical baseline, 324 of 991 sought reports were assessed and 667 were not retrieved. The current extension raises assessment to 437/991 (44.10\%); 543/991 (54.79\%) remain not retrieved and 11/991 (1.11\%) await assessment. This large retrieval gap limits coverage and prevents a claim that the assessed reports represent the full eligible field. The existing collection has incomplete original-discovery provenance. Planned searches without execution evidence are not counted. Original ACM, OpenAlex, IEEE, and supplementary Google Scholar results exports are absent, and the exact submitted IEEE block strings were not retained, limiting independent search reproduction. Database indexing can omit reports or produce divergent dates and titles. Publication-track verification can remain unresolved even when substantive content is readable. These limitations affect coverage and selection and do not establish limitations of an underlying exploration method.
 
-The descriptive profile covers the included, retrieved reports. The narrative comparisons use illustrative, source-located examples and do not estimate feature prevalence across all eligible systems. Reports often omit participant counts, latency conditions, task materials, or stable artifact versions. Qualitative studies and domain deployments provide context-dependent evidence. Full-text eligibility was reviewed by one person; three people participated in extraction, but independently duplicated extraction and per-report checking are not documented. The synthesis makes no pooled effectiveness or certainty-of-evidence claim. Separate reports about a system may still contain unrecognized shared data; where sharing is not verified, no independent study count is inferred.
+The descriptive profile covers the included, retrieved reports. The narrative comparisons use illustrative, source-located examples and do not estimate feature prevalence across all eligible systems. Reports often omit participant counts, latency conditions, task materials, or stable artifact versions. Qualitative studies and domain deployments provide context-dependent evidence. Historical full-text eligibility was reviewed by one person; three people participated in extraction, but independently duplicated extraction and per-report checking are not documented. The recovery extension uses scoped Codex extraction and author-authorized criteria application without additional human verification or blinded duplicate screening. Its source locators make the revised claims inspectable, but do not establish complete reading or eliminate extraction error. The synthesis makes no pooled effectiveness or certainty-of-evidence claim. Separate reports about a system may still contain unrecognized shared data; where sharing is not verified, no independent study count is inferred.
 
 \section{Conclusions}
-Knowledge graph exploration involves choices about actions, suggestions, views, data access, computation, and evidence. Comparing those choices reveals why similar interfaces can support different tasks and why strong component results do not automatically establish end-to-end usability. The six-dimensional framework preserves these distinctions and connects concrete report findings with application requirements. The most defensible design implications are to preserve interpretable state, explain the scope and basis of guidance, expose retrieval and computation limits, and evaluate claims under explicit task and user conditions. The descriptive profile covers 242 included, retrieved reports; the illustrative comparisons explain mechanisms and source-specific evidence. The frozen search and retrieval gaps limit extension of these findings to the full eligible field.
+Knowledge graph exploration involves choices about actions, suggestions, views, data access, computation, and evidence. Comparing those choices reveals why similar interfaces can support different tasks and why strong component results do not automatically establish end-to-end usability. The six-dimensional framework preserves these distinctions and connects concrete report findings with application requirements. The most defensible design implications are to preserve interpretable state, explain the scope and basis of guidance, expose retrieval and computation limits, and evaluate claims under explicit task and user conditions. The current descriptive profile covers 315 included reports, comprising the historical 242-report baseline and 73 recovered primary reports. The extension strengthens comparisons of schema/query/result roles, example feedback, conversational scope and workload-specific performance, while its machine-assisted extraction provenance remains distinct from historical human review. The illustrative comparisons explain mechanisms and source-specific evidence. The frozen search and retrieval gaps limit extension of these findings to the full eligible field.
 
 \section*{Declarations}
 \textbf{Funding.} The authors report no specific funding or support for this review.
@@ -507,7 +606,7 @@ Knowledge graph exploration involves choices about actions, suggestions, views, 
 
 \noindent\textbf{Protocol and data availability.} The working protocol, source/search register, selection accounting, and report-level catalogue accompany the review. The review was not registered. The protocol and search register are available in the accompanying review workbook at \url{https://docs.google.com/spreadsheets/d/1NCKCZTV90CyJZTcpzGVmBnYSgm3rqKiWWHStI3MftC4/edit}. Bibliographic source links identify primary reports; their availability does not imply redistribution rights or verified software availability.
 
-\noindent\textbf{Assistance in this revision.} Codex assisted with manuscript formatting and methodological reporting, preparation of the application specification and companion website, and public-source recovery. Automated source acquisition is recorded separately from human eligibility review and data extraction. This statement describes assistance in the current revision; it does not reconstruct the historical use of tools during screening or extraction.
+\noindent\textbf{Assistance in this revision.} Codex assisted with manuscript formatting and methodological reporting, preparation of the application specification and companion website, public-source recovery, scoped primary-source extraction, publication verification and narrative synthesis. One coordinating agent and three extraction agents contributed to the recovery extension; the coordinating agent applied the criteria under author-delegated authority. Automated acquisition, scoped machine reading and criteria application are recorded separately from the historical human eligibility review and data extraction; additional human verification of each recovered source is not attested. This statement describes assistance in the current revision; it does not reconstruct the historical use of tools during screening or extraction.
 
 \appendix
 \section{Operational Protocol Summary}\label{app:protocol}
@@ -560,7 +659,91 @@ ForestQB & Mussa et al. (2022) & Domain forms, language intents, and geospatial 
 GlyCosmos & Lee et al. (2026) & 2025 event, 2026 proceedings release, and 2024 product release identify different dates.\\
 \end{longtable}
 
-\begin{thebibliography}{99}
+\section{Primary Reports Added in the Recovery Extension}\label{app:recovered-reports}
+The following 73 reports enter the current primary corpus under the author-authorized follow-up dispositions. They are publications, not 73 independent systems or trials. The machine-reading scope, source hashes, physical page locators and primary publication receipts accompany each report in the recovery ledger. An event year can precede the cited publication year; publication dates determine cutoff eligibility.
+\begin{longtable}{@{}L{21mm}L{107mm}L{17mm}@{}}
+\caption{Newly integrated primary reports. Every identifier retains its own embedded bibliography entry.}\\
+\toprule Record & Publication & Year/source\\\midrule
+\endfirsthead
+\toprule Record & Publication & Year/source\\\midrule
+\endhead
+\bottomrule\endfoot
+V3-00117 & A Human-Friendly Query Generation Frontend for a Scientific Events Knowledge Graph & 2019 \citep{V3-00117}\\
+V3-00138 & A Method and a Library for Visual Data Schemas & 2025 \citep{V3-00138}\\
+V3-00165 & A Query-By-Example Approach to Compose SPARQL Queries in the GF Framework for Ontology-Based Data Access & 2023 \citep{V3-00165}\\
+V3-00187 & A semantic web faceted search system for facilitating building of biodiversity and ecosystems services & 2014 \citep{V3-00187}\\
+V3-00229 & A Visual Query Builder for DBpedia & 2025 \citep{V3-00229}\\
+V3-00261 & Adding Structure and Removing Duplicates in SPARQL Results with Nested Tables & 2021 \citep{V3-00261}\\
+V3-00323 & An Architecture based in voice command recognition for faceted search in linked open datasets & 2018 \citep{V3-00323}\\
+V3-00346 & An intelligent SPARQL query builder for exploration of various life-science databases & 2014 \citep{V3-00346}\\
+V3-00347 & An Interactive Dashboard for Exploring Patient-Reported Drug-Condition Relations & 2026 \citep{V3-00347}\\
+V3-00369 & Analytical Queries on Vanilla RDF Graphs with a Guided Query Builder Approach & 2021 \citep{V3-00369}\\
+V3-00411 & ARViz: Interactive Visualization of Association Rules for RDF Data Exploration & 2021 \citep{V3-00411}\\
+V3-00496 & BioPW: An interactive tool for biological pathway visualization on linked data & 2017 \citep{V3-00496}\\
+V3-00515 & Browsing linked data with fenfire & 2008 \citep{V3-00515}\\
+V3-00533 & Building MD analytical stars using a visual linked data query builder & 2015 \citep{V3-00533}\\
+V3-00576 & Chem2Bio2RDF: A Linked Open Data Portal for Systems Chemical Biology & 2010 \citep{V3-00576}\\
+V3-00630 & Combining faceted search with data-analytic visualizations on top of a SPARQL endpoint & 2018 \citep{V3-00630}\\
+V3-00639 & Composite interests' exploration thanks to on-the-fly linked data spreading activation & 2013 \citep{V3-00639}\\
+V3-00650 & Conceptual Navigation in Large Knowledge Graphs & 2022 \citep{V3-00650}\\
+V3-00708 & Creating and Publishing Semantic Metadata about Linked and Open Datasets & 2011 \citep{V3-00708}\\
+V3-00742 & CUTE: Querying knowledge graphs by tabular examples & 2018 \citep{V3-00742}\\
+V3-00751 & DashSearch LD: Exploratory search for linked data & 2013 \citep{V3-00751}\\
+V3-00786 & DBpedia mobile: A location-enabled linked data browser & 2008 \citep{V3-00786}\\
+V3-00821 & Design and implementation of a standpoint-based linked data visualization approach & 2018 \citep{V3-00821}\\
+V3-00878 & Diversifying the results of keyword queries on linked data & 2016 \citep{V3-00878}\\
+V3-00894 & Domain-driven visual query formulation over RDF data sets & 2014 \citep{V3-00894}\\
+V3-00942 & EmpiRE-Compass: A Neuro-Symbolic Dashboard for Sustainable and Dynamic Knowledge Exploration, Synthesis, and Reuse: Navigating the Knowledge Landscape of Empirical Research in Requirements Engineering & 2026 \citep{V3-00942}\\
+V3-00966 & Enhancing Information Retrieval in Digital Libraries Through Unit Harmonisation in Scholarly Knowledge Graphs & 2026 \citep{V3-00966}\\
+V3-00971 & Enriching Scholarly Knowledge with Context & 2022 \citep{V3-00971}\\
+V3-01034 & Explorator: A tool for exploring RDF data through direct manipulation & 2009 \citep{V3-01034}\\
+V3-01038 & Exploratory patent search with faceted search and configurable entity mining & 2013 \citep{V3-01038}\\
+V3-01039 & Exploratory professional search through semantic post-analysis of search results & 2014 \citep{V3-01039}\\
+V3-01053 & Exploring fact-checked claims and their descriptive statistics & 2019 \citep{V3-01053}\\
+V3-01060 & Exploring publication metadata graphs with the LODmilla browser and editor & 2015 \citep{V3-01060}\\
+V3-01079 & Extending Faceted Search with Automated Object Ranking & 2019 \citep{V3-01079}\\
+V3-01106 & Facetted Browsing on Extracted Fusion Tables Data for Digital Cities. & 2012 \citep{V3-01106}\\
+V3-01125 & FedViz: A visual interface for SPARQL queries formulation and execution & 2015 \citep{V3-01125}\\
+V3-01170 & From Asking to Understanding: A Human-Centered Approach for Human-AI Interaction & 2026 \citep{V3-01170}\\
+V3-01173 & From Data to Dialogue: Leveraging the Structure of Knowledge Graphs for Conversational Exploratory Search & 2023 \citep{V3-01173}\\
+V3-01178 & From Linked Data Querying to Visual Search: Towards a Visualization Pipeline for LOD Exploration & 2021 \citep{V3-01178}\\
+V3-01337 & Humboldt: Exploring linked data & 2008 \citep{V3-01337}\\
+V3-01484 & Inference Variable---A Human Cognition and Design Perspective on Knowledge Graph Visualization & 2021 \citep{V3-01484}\\
+V3-01566 & IQbees: Interactive Query-by-example Entity Search in semantic knowledge graphs & 2016 \citep{V3-01566}\\
+V3-01616 & KG3D: An Interactive 3D Visualization Tool for Knowledge Graphs & 2019 \citep{V3-01616}\\
+V3-01622 & KGVis: An Interactive Visual Query Language for Knowledge Graphs & 2019 \citep{V3-01622}\\
+V3-01624 & KinGVisher -- Knowledge Graph Visualizer & 2025 \citep{V3-01624}\\
+V3-01709 & La Rioja turismo: The construction and exploitation of a queryable tourism knowledge graph & 2018 \citep{V3-01709}\\
+V3-01741 & Leveraging Enterprise Knowledge Graphs for Efficient Bridging Between Business Data with Large-Scale Web Data & 2021 \citep{V3-01741}\\
+V3-01744 & Leveraging link pattern for entity-centric exploration over Linked Data & 2018 \citep{V3-01744}\\
+V3-01750 & LIDAB: a user-friendly display system for linked multimedia data and its application in education & 2016 \citep{V3-01750}\\
+V3-01754 & LINDASearch: a faceted search system for linked open datasets & 2020 \citep{V3-01754}\\
+V3-01948 & Navigating OWL 2 Ontologies Through Graph Projection & 2019 \citep{V3-01948}\\
+V3-01984 & On enhancing visual query building over KGs using query logs & 2018 \citep{V3-01984}\\
+V3-02014 & Ontology-based visual query formulation: An industry experience & 2015 \citep{V3-02014}\\
+V3-02018 & Ontology-schema based query by example & 2019 \citep{V3-02018}\\
+V3-02091 & PFSgeo: Preference-enriched faceted search for geographical data & 2017 \citep{V3-02091}\\
+V3-02185 & Querying knowledge graphs through positive and negative examples and feedback & 2024 \citep{V3-02185}\\
+V3-02210 & RDF Explorer: A Visual SPARQL Query Builder & 2019 \citep{V3-02210}\\
+V3-02220 & Reassembling and enriching the life stories in printed biographical registers: Norssi high school alumni on the semantic web & 2017 \citep{V3-02220}\\
+V3-02260 & RepoTale: A visual analytics framework for exploring software repository evolution on issue tracking & 2026 \citep{V3-02260}\\
+V3-02264 & Representing statistical indexes as linked data including metadata about their computation process & 2014 \citep{V3-02264}\\
+V3-02393 & Schema-Based Visual Queries over Linked Data Endpoints & 2019 \citep{V3-02393}\\
+V3-02418 & SEED V3: Entity-Oriented Exploratory Search in Knowledge Graphs on Tablets & 2018 \citep{V3-02418}\\
+V3-02495 & ShEx2SPARQL: Translating Shape Expressions into SPARQL Queries & 2026 \citep{V3-02495}\\
+V3-02525 & Smeagol: A "specific-to-general" semantic web query interface paradigm for novices & 2011 \citep{V3-02525}\\
+V3-02543 & SPARQL - Compliant semantic search engine with an intuitive user interface & 2014 \citep{V3-02543}\\
+V3-02586 & Stunning Doodle: A Tool for Joint Visualization and Analysis of Knowledge Graphs and Graph Embeddings & 2022 \citep{V3-02586}\\
+V3-02712 & Time-related patient data retrieval for the case studies from the pharmacogenomics research network. & 2012 \citep{V3-02712}\\
+V3-02739 & Towards exploiting query history for adaptive ontology-based visual query formulation & 2014 \citep{V3-02739}\\
+V3-02740 & Towards exploratory relationship search: A clustering-based approach & 2014 \citep{V3-02740}\\
+V3-02741 & Towards exploratory video search using linked data & 2012 \citep{V3-02741}\\
+V3-02746 & Towards graphical query notation for semantic databases & 2015 \citep{V3-02746}\\
+V3-02757 & Towards UML-Style Visual Queries over Wikidata & 2022 \citep{V3-02757}\\
+V3-02977 & Web searching with entity mining at query time & 2012 \citep{V3-02977}\\
+\end{longtable}
+
+\begin{thebibliography}{199}
 \setlength{\bibhang}{1.5em}
 \setlength{\bibsep}{0.45em}
 \bibitem[Bates(1989)]{bates1989} Bates, M. J. (1989). The design of browsing and berrypicking techniques for the online search interface. \textit{Online Review, 13}(5), 407--424. \url{https://doi.org/10.1108/eb024320}
@@ -687,5 +870,153 @@ GlyCosmos & Lee et al. (2026) & 2025 event, 2026 proceedings release, and 2024 p
 \bibitem[White \& Roth(2009)]{white2009} White, R. W., \& Roth, R. A. (2009). \textit{Exploratory search: Beyond the query-response paradigm}. Morgan \& Claypool Publishers. \url{https://doi.org/10.2200/S00174ED1V01Y200901ICR003}
 
 \bibitem[Witschel et al.(2021)]{2021_Witschel_Natural_Language-based} Witschel, H. F., Riesen, K., \& Grether, L. (2021). Natural language-based user guidance for knowledge graph exploration: A user study. In \textit{IC3K 2021 - Volume 1: KDIR} (pp. 95--102). \url{https://doi.org/10.5220/0010640500003064}
+
+
+% Primary publications integrated from the dated recovery extension.
+\bibitem[Fathalla et al.(2019)]{V3-00117} Said Fathalla; Christoph Lange; S\"{o}ren Auer. (2019). A Human-Friendly Query Generation Frontend for a Scientific Events Knowledge Graph. \textit{TPDL 2019, LNCS 11799, pp. 200--214}. \url{https://doi.org/10.1007/978-3-030-30760-8_18}
+
+\bibitem[L\={a}ce et al.(2025)]{V3-00138} Lelde L\={a}ce; Aiga Rom\={a}ne; Jana Fedotova; Mikus Grasmanis; K\={a}rlis \v{C}er\={a}ns. (2025). A Method and a Library for Visual Data Schemas. \textit{ESWC 2024, LNCS 15344, pp. 254--258}. \url{https://doi.org/10.1007/978-3-031-78952-6_37}
+
+\bibitem[G\'{o}mez \& Fillottrani(2023)]{V3-00165} Sergio Alejandro G\'{o}mez; Pablo Rub\'{e}n Fillottrani. (2023). A Query-By-Example Approach to Compose SPARQL Queries in the GF Framework for Ontology-Based Data Access. \textit{CACIC 2022, CCIS 1778, pp. 211--226}. \url{https://doi.org/10.1007/978-3-031-34147-2_14}
+
+\bibitem[Laporte et al.(2014)]{V3-00187} Marie-Ang\'{e}lique Laporte; Isabelle Mougenot; Eric Garnier; Ulrike Stahl; Lutz Maicher; Jens Kattge. (2014). A semantic web faceted search system for facilitating building of biodiversity and ecosystems services. \textit{DILS 2014, LNBI 8574, pp. 50--57}. \url{https://doi.org/10.1007/978-3-319-08590-6_5}
+
+\bibitem[Soumis et al.(2025)]{V3-00229} Dimitrios Soumis; George Stamoulis; Manolis Koubarakis. (2025). A Visual Query Builder for DBpedia. \textit{WISE 2024, LNCS 15463, pp. 243--248}. \url{https://doi.org/10.1007/978-981-96-1483-7_20}
+
+\bibitem[Ferr\'{e}(2021)]{V3-00261} S\'{e}bastien Ferr\'{e}. (2021). Adding Structure and Removing Duplicates in SPARQL Results with Nested Tables. \textit{SEMANTiCS 2021 / Further with Knowledge Graphs}. \url{https://doi.org/10.3233/ssw210047}
+
+\bibitem[L\'{o}pez-Ochoa et al.(2018)]{V3-00323} Betia Lizbeth L\'{o}pez-Ochoa; Jos\'{e} Luis S\'{a}nchez-Cervantes; Giner Alor-Hern\'{a}ndez; Ma. Antonieta Abud-Figueroa; Beatriz A. Olivares-Zepahua; Lisbeth Rodr\'{i}guez-Mazahua. (2018). An Architecture based in voice command recognition for faceted search in linked open datasets. \textit{Trends and Applications in Software Engineering, AISC 688}. \url{https://doi.org/10.1007/978-3-319-69341-5_16}
+
+\bibitem[Yamaguchi et al.(2014)]{V3-00346} Atsuko Yamaguchi; Kouji Kozaki; Kai Lenz; Hongyan Wu; Norio Kobayashi. (2014). An intelligent SPARQL query builder for exploration of various life-science databases. \textit{IESD 2014, CEUR Workshop Proceedings 1279}. \url{https://ceur-ws.org/Vol-1279/}
+
+\bibitem[Zavarella et al.(2026)]{V3-00347} Vanni Zavarella; Lorenzo Bertolini; Sergio Consoli; Gianni Fenu; Diego Reforgiato Recupero; Alessandro Zani. (2026). An Interactive Dashboard for Exploring Patient-Reported Drug-Condition Relations. \textit{LOD 2025, Springer chapter, pp. 286--296}. \url{https://doi.org/10.1007/978-3-032-21477-5_19}
+
+\bibitem[Ferr\'{e}(2021)]{V3-00369} S\'{e}bastien Ferr\'{e}. (2021). Analytical Queries on Vanilla RDF Graphs with a Guided Query Builder Approach. \textit{FQAS 2021}. \url{https://doi.org/10.1007/978-3-030-86967-0_4}
+
+\bibitem[Menin et al.(2021)]{V3-00411} Aline Menin; Lucie Cadorel; Andrea Tettamanzi; Alain Giboin; Fabien Gandon; Marco Winckler. (2021). ARViz: Interactive Visualization of Association Rules for RDF Data Exploration. \textit{25th International Conference Information Visualisation (IV 2021)}. \url{https://doi.org/10.1109/IV53921.2021.00013}
+
+\bibitem[Liu et al.(2017)]{V3-00496} Yuan Liu; Xin Wang; Qiang Xu. (2017). BioPW: An interactive tool for biological pathway visualization on linked data. \textit{APWeb-WAIM 2017, Part II, LNCS 10367, pp. 333--336}. \url{https://doi.org/10.1007/978-3-319-63564-4_30}
+
+\bibitem[Hastrup et al.(2008)]{V3-00515} Tuukka Hastrup; Richard Cyganiak; Uldis Boj\={a}rs. (2008). Browsing linked data with fenfire. \textit{LDOW 2008, CEUR Workshop Proceedings 369}. \url{https://ceur-ws.org/Vol-369/}
+
+\bibitem[Nebot \& Berlanga(2015)]{V3-00533} Victoria Nebot; Rafael Berlanga. (2015). Building MD analytical stars using a visual linked data query builder. \textit{IC3K 2014 Revised Selected Papers, pp. 198--211 (Springer, 2015)}. \url{https://doi.org/10.1007/978-3-319-25840-9_13}
+
+\bibitem[Chen et al.(2010)]{V3-00576} Bin Chen; Ying Ding; Huijun Wang; David J. Wild; Xiao Dong; Yuyin Sun; Qian Zhu; Madhuvanthi Sankaranarayanan. (2010). Chem2Bio2RDF: A Linked Open Data Portal for Systems Chemical Biology. \textit{2010 IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology, Vol. 1, pp. 232--239}. \url{https://doi.org/10.1109/WI-IAT.2010.183}
+
+\bibitem[Leskinen et al.(2018)]{V3-00630} Petri Leskinen; Goki Miyakita; Mikko Koho; Eero Hyv\"{o}nen. (2018). Combining faceted search with data-analytic visualizations on top of a SPARQL endpoint. \textit{VOILA 2018, CEUR Workshop Proceedings 2187, pp. 53--63}. \url{https://ceur-ws.org/Vol-2187/}
+
+\bibitem[Marie et al.(2013)]{V3-00639} Nicolas Marie; Olivier Corby; Fabien Gandon; Myriam Ribi\`{e}re. (2013). Composite interests' exploration thanks to on-the-fly linked data spreading activation. \textit{HT 2013: 24th ACM Conference on Hypertext and Social Media, pp. 31--40}. \url{https://doi.org/10.1145/2481492.2481496}
+
+\bibitem[Ferr\'{e}(2022)]{V3-00650} S\'{e}bastien Ferr\'{e}. (2022). Conceptual Navigation in Large Knowledge Graphs. \textit{Complex Data Analytics with Formal Concept Analysis}. \url{https://doi.org/10.1007/978-3-030-93278-7_2}
+
+\bibitem[Frosterus et al.(2011)]{V3-00708} Matias Frosterus; Eero Hyv\"{o}nen; Joonas Laitio. (2011). Creating and Publishing Semantic Metadata about Linked and Open Datasets. \textit{Linking Government Data}. \url{https://doi.org/10.1007/978-1-4614-1767-5_5}
+
+\bibitem[Wang et al.(2018)]{V3-00742} Zichen Wang; Tian Li; Yingxia Shao; Bin Cui. (2018). CUTE: Querying knowledge graphs by tabular examples. \textit{APWeb-WAIM 2018, Web and Big Data}. \url{https://doi.org/10.1007/978-3-319-96890-2_39}
+
+\bibitem[Goto et al.(2013)]{V3-00751} Takayuki Goto; Hideaki Takeda; Masahiro Hamasaki. (2013). DashSearch LD: Exploratory search for linked data. \textit{JIST2012 Semantic Technology, LNCS7774 (published2013)}. \url{https://doi.org/10.1007/978-3-642-37996-3_26}
+
+\bibitem[Becker \& Bizer(2008)]{V3-00786} Christian Becker; Christian Bizer. (2008). DBpedia mobile: A location-enabled linked data browser. \textit{Linked Data on the Web Workshop 2008, CEUR369}. \url{https://ceur-ws.org/Vol-369/}
+
+\bibitem[Morikawa \& Nishino(2018)]{V3-00821} Hiroaki Morikawa; Fumihito Nishino. (2018). Design and implementation of a standpoint-based linked data visualization approach. \textit{JIST 2018 Poster and Demonstration Papers, CEUR2293}. \url{https://ceur-ws.org/Vol-2293/}
+
+\bibitem[Dass et al.(2016)]{V3-00878} Ananya Dass; Cem Aksoy; Aggeliki Dimitriou; Dimitri Theodoratos; Xiaoying Wu. (2016). Diversifying the results of keyword queries on linked data. \textit{WISE2016 Web Information Systems Engineering, LNCS10041}. \url{https://doi.org/10.1007/978-3-319-48740-3_14}
+
+\bibitem[Balis et al.(2014)]{V3-00894} Bartosz Balis; Tomasz Grabiec; Marian Bubak. (2014). Domain-driven visual query formulation over RDF data sets. \textit{Parallel Processing and Applied Mathematics 2013 revised papers}. \url{https://doi.org/10.1007/978-3-642-55224-3_28}
+
+\bibitem[Karras et al.(2026)]{V3-00942} Oliver Karras; Amirreza Alasti; Lena John; Sushant Aggarwal; Y\"{u}cel Celik. (2026). EmpiRE-Compass: A Neuro-Symbolic Dashboard for Sustainable and Dynamic Knowledge Exploration, Synthesis, and Reuse: Navigating the Knowledge Landscape of Empirical Research in Requirements Engineering. \textit{REFSQ 2026 Posters and Tools Track, CEUR Workshop Proceedings4208}. \url{https://ceur-ws.org/Vol-4208/pt-paper5.pdf}
+
+\bibitem[Heidari et al.(2026)]{V3-00966} Golsa Heidari; Markus Stocker; S\"{o}ren Auer. (2026). Enhancing Information Retrieval in Digital Libraries Through Unit Harmonisation in Scholarly Knowledge Graphs. \textit{ICADL 2025}. \url{https://doi.org/10.1007/978-981-95-4861-3_15}
+
+\bibitem[Haris et al.(2022)]{V3-00971} Muhammad Haris; Markus Stocker; S\"{o}ren Auer. (2022). Enriching Scholarly Knowledge with Context. \textit{ICWE 2022 Web Engineering}. \url{https://doi.org/10.1007/978-3-031-09917-5_10}
+
+\bibitem[Ara\'{u}jo \& Schwabe(2009)]{V3-01034} Samur F. C. de Ara\'{u}jo; Daniel Schwabe. (2009). Explorator: A tool for exploring RDF data through direct manipulation. \textit{Linked Data on the Web Workshop 2009, CEUR538}. \url{https://ceur-ws.org/Vol-538/}
+
+\bibitem[Fafalios et al.(2013)]{V3-01038} Pavlos Fafalios; Michail Salampasis; Yannis Tzitzikas. (2013). Exploratory patent search with faceted search and configurable entity mining. \textit{IRPS 2013 Integrating IR technologies for Professional Search, CEUR968}. \url{https://ceur-ws.org/Vol-968/}
+
+\bibitem[Fafalios \& Tzitzikas(2014)]{V3-01039} Pavlos Fafalios; Yannis Tzitzikas. (2014). Exploratory professional search through semantic post-analysis of search results. \textit{Professional Search in the Modern World, LNCS8830}. \url{https://doi.org/10.1007/978-3-319-12511-4_9}
+
+\bibitem[Gasquet et al.(2019)]{V3-01053} Malo Gasquet; Darl\`{e}ne Brechtel; Matth\"{a}us Zloch; Andon Tchechmedjiev; Katarina Boland; Pavlos Fafalios; Stefan Dietze; Konstantin Todorov. (2019). Exploring fact-checked claims and their descriptive statistics. \textit{ISWC2019 Demonstrations, CEUR2456}. \url{https://ceur-ws.org/Vol-2456/}
+
+\bibitem[Micsik et al.(2015)]{V3-01060} Andr\'{a}s Micsik; S\'{a}ndor Turbucz; Zolt\'{a}n T\'{o}th. (2015). Exploring publication metadata graphs with the LODmilla browser and editor. \textit{International Journal on Digital Libraries}. \url{https://doi.org/10.1007/s00799-014-0130-2}
+
+\bibitem[Manioudakis \& Tzitzikas(2019)]{V3-01079} Kostas Manioudakis; Yannis Tzitzikas. (2019). Extending Faceted Search with Automated Object Ranking. \textit{MTSR 2019, CCIS 1057, pp. 223--235}. \url{https://doi.org/10.1007/978-3-030-36599-8_20}
+
+\bibitem[Quercini et al.(2012)]{V3-01106} Gianluca Quercini; Jochen Setz; Daniel Sonntag; Chantal Reynaud. (2012). Facetted Browsing on Extracted Fusion Tables Data for Digital Cities.. \textit{Web of Linked Entities Workshop2012, CEUR906}. \url{https://ceur-ws.org/Vol-906/}
+
+\bibitem[Zainab et al.(2015)]{V3-01125} Syeda Sana e Zainab; Muhammad Saleem; Qaiser Mehmood; Durre Zehra; Stefan Decker; Ali Hasnain. (2015). FedViz: A visual interface for SPARQL queries formulation and execution. \textit{VOILA2015 Visualizations and User Interfaces for Ontologies and Linked Data, CEUR1456}. \url{https://ceur-ws.org/Vol-1456/}
+
+\bibitem[Seabra et al.(2026)]{V3-01170} Antony Seabra; Claudio Cavalcante; Veronica dos Santos; Daniel Schwabe; Sergio Lifschitz. (2026). From Asking to Understanding: A Human-Centered Approach for Human-AI Interaction. \textit{CHIRA 2025, CCIS 2835}. \url{https://doi.org/10.1007/978-3-032-16451-3_16}
+
+\bibitem[Schneider et al.(2023)]{V3-01173} Phillip Schneider; Nils Rehtanz; Kristiina Jokinen; Florian Matthes. (2023). From Data to Dialogue: Leveraging the Structure of Knowledge Graphs for Conversational Exploratory Search. \textit{PACLIC 2023, pp. 609--619}. \url{https://aclanthology.org/2023.paclic-1.61/}
+
+\bibitem[Menin et al.(2021)]{V3-01178} Aline Menin; Catherine Faron; Olivier Corby; Carla Maria Dal Sasso Freitas; Fabien Gandon; Marco Winckler. (2021). From Linked Data Querying to Visual Search: Towards a Visualization Pipeline for LOD Exploration. \textit{WEBIST 2021, pp. 53--64}. \url{https://doi.org/10.5220/0010654600003058}
+
+\bibitem[Kobilarov \& Dickinson(2008)]{V3-01337} Georgi Kobilarov; Ian Dickinson. (2008). Humboldt: Exploring linked data. \textit{LDOW 2008, CEUR Workshop Proceedings 369}. \url{https://ceur-ws.org/Vol-369/}
+
+\bibitem[Joseph et al.(2021)]{V3-01484} Rani Joseph; Abhilasha; Prithvi Raj Ramakrishnaraja; Ramesh Manickam; K. Vineetha; Srinjoy Ghosh. (2021). Inference Variable---A Human Cognition and Design Perspective on Knowledge Graph Visualization. \textit{ICoRD 2021, Design for Tomorrow---Volume 2, SIST 222, pp. 595--606}. \url{https://doi.org/10.1007/978-981-16-0119-4_48}
+
+\bibitem[Sydow et al.(2016)]{V3-01566} Marcin Sydow; Grzegorz Sobczak; Ralf Schenkel; Krzysztof Mioduszewski. (2016). IQbees: Interactive Query-by-example Entity Search in semantic knowledge graphs. \textit{FedCSIS 2016, ACSIS 8, pp. 153--160}. \url{https://doi.org/10.15439/2016F562}
+
+\bibitem[Xu et al.(2019)]{V3-01616} Dawei Xu; Lin Wang; Xin Wang; Dianquan Li; Jianpeng Duan; Yongzhe Jia. (2019). KG3D: An Interactive 3D Visualization Tool for Knowledge Graphs. \textit{ADMA 2019, LNAI 11888, pp. 886--889}. \url{https://doi.org/10.1007/978-3-030-35231-8_67}
+
+\bibitem[Wang et al.(2019)]{V3-01622} Xin Wang; Qiang Fu; Jianqiang Mei; Jianxin Li; Yajun Yang. (2019). KGVis: An Interactive Visual Query Language for Knowledge Graphs. \textit{DASFAA 2019, LNCS 11448, pp. 538--541}. \url{https://doi.org/10.1007/978-3-030-18590-9_82}
+
+\bibitem[Both et al.(2025)]{V3-01624} Andreas Both; Aleksandr Perevalov; Aleksandr Gashkov. (2025). KinGVisher -- Knowledge Graph Visualizer. \textit{ESWC 2024 Satellite Events, LNCS 15344, pp. 173--177}. \url{https://doi.org/10.1007/978-3-031-78952-6_21}
+
+\bibitem[Alonso-Maturana et al.(2018)]{V3-01709} Ricardo Alonso-Maturana; Elena Alvarado-Cortes; Susana L\'{o}pez-Sola; Mar\'{i}a Ortega Mart\'{i}nez-Losa; Pablo Hermoso-Gonz\'{a}lez. (2018). La Rioja turismo: The construction and exploitation of a queryable tourism knowledge graph. \textit{ICWE 2018, LNCS 11153, pp. 213--220}. \url{https://doi.org/10.1007/978-3-030-03056-8_20}
+
+\bibitem[Sellami et al.(2021)]{V3-01741} Samir Sellami; Taoufiq Dkaki; Nacer Eddine Zarour; Pierre-Jean Charrel. (2021). Leveraging Enterprise Knowledge Graphs for Efficient Bridging Between Business Data with Large-Scale Web Data. \textit{Knowledge Graphs and Semantic Web, pp. 209--222}. \url{https://doi.org/10.1007/978-3-030-91305-2_16}
+
+\bibitem[Zheng et al.(2018)]{V3-01744} Liang Zheng; Yuzhong Qu; Gong Cheng. (2018). Leveraging link pattern for entity-centric exploration over Linked Data. \textit{World Wide Web 21:421--453}. \url{https://doi.org/10.1007/s11280-017-0464-y}
+
+\bibitem[Hwang \& Park(2016)]{V3-01750} Junsik Hwang; Seongbin Park. (2016). LIDAB: a user-friendly display system for linked multimedia data and its application in education. \textit{Multimedia Tools and Applications 75:13149--13162}. \url{https://doi.org/10.1007/s11042-015-2994-6}
+
+\bibitem[S\'{a}nchez-Cervantes et al.(2020)]{V3-01754} Jos\'{e} Luis S\'{a}nchez-Cervantes; Luis Omar Colombo-Mendoza; Giner Alor-Hern\'{a}ndez; Jorge Luis Garc\'{i}a-Alcar\'{a}z; Jos\'{e} Mar\'{i}a \'{A}lvarez-Rodr\'{i}guez; Alejandro Rodr\'{i}guez-Gonz\'{a}lez. (2020). LINDASearch: a faceted search system for linked open datasets. \textit{Wireless Networks 26:5645--5663}. \url{https://doi.org/10.1007/s11276-019-02029-z}
+
+\bibitem[Soylu \& Kharlamov(2019)]{V3-01948} Ahmet Soylu; Evgeny Kharlamov. (2019). Navigating OWL 2 Ontologies Through Graph Projection. \textit{MTSR 2018, CCIS 846, pp. 113--119}. \url{https://doi.org/10.1007/978-3-030-14401-2_10}
+
+\bibitem[Klungre et al.(2018)]{V3-01984} Vidar Klungre; Ahmet Soylu; Martin Giese; Arild Waaler; Evgeny Kharlamov. (2018). On enhancing visual query building over KGs using query logs. \textit{JIST 2018, LNCS 11341, pp. 77--85}. \url{https://doi.org/10.1007/978-3-030-04284-4_6}
+
+\bibitem[Soylu et al.(2015)]{V3-02014} Ahmet Soylu; Evgeny Kharlamov; Dmitriy Zheleznyakov; Ernesto Jimenez-Ruiz; Martin Giese; Ian Horrocks. (2015). Ontology-based visual query formulation: An industry experience. \textit{ISVC 2015, LNCS 9474, pp. 842--854}. \url{https://doi.org/10.1007/978-3-319-27857-5_75}
+
+\bibitem[Peres et al.(2019)]{V3-02018} Lucas Peres; Ticiana L. Coelho da Silva; Jose Macedo; David Araujo. (2019). Ontology-schema based query by example. \textit{ER 2019, LNCS 11788, pp. 204--212}. \url{https://doi.org/10.1007/978-3-030-33223-5_17}
+
+\bibitem[Lionakis \& Tzitzikas(2017)]{V3-02091} Panagiotis Lionakis; Yannis Tzitzikas. (2017). PFSgeo: Preference-enriched faceted search for geographical data. \textit{OTM 2017, LNCS 10574, pp. 125--143}. \url{https://doi.org/10.1007/978-3-319-69459-7_9}
+
+\bibitem[Akritidis \& Tzitzikas(2024)]{V3-02185} Akritas Akritidis; Yannis Tzitzikas. (2024). Querying knowledge graphs through positive and negative examples and feedback. \textit{Journal of Intelligent Information Systems 62:1165--1186}. \url{https://doi.org/10.1007/s10844-024-00846-z}
+
+\bibitem[Vargas et al.(2019)]{V3-02210} Hern\'{a}n Vargas; Carlos Buil-Aranda; Aidan Hogan; Claudia L\'{o}pez. (2019). RDF Explorer: A Visual SPARQL Query Builder. \textit{ISWC 2019; LNCS 11778, 647--663}. \url{https://doi.org/10.1007/978-3-030-30793-6_37}
+
+\bibitem[Hyv\"{o}nen et al.(2017)]{V3-02220} Eero Hyv\"{o}nen; Petri Leskinen; Erkki Heino; Jouni Tuominen; Laura Sirola. (2017). Reassembling and enriching the life stories in printed biographical registers: Norssi high school alumni on the semantic web. \textit{LDK 2017; LNAI 10318, 113--119}. \url{https://doi.org/10.1007/978-3-319-59888-8_9}
+
+\bibitem[Huang et al.(2026)]{V3-02260} Yingying Huang; Zhenglei Liu; Yuxin Ma. (2026). RepoTale: A visual analytics framework for exploring software repository evolution on issue tracking. \textit{Journal of Visualization 29, 767--785}. \url{https://doi.org/10.1007/s12650-026-01129-1}
+
+\bibitem[Gayo et al.(2014)]{V3-02264} Jose Emilio Labra Gayo; Hania Farham; Juan Castro Fern\'{a}ndez; Jose Mar\'{i}a \'{A}lvarez Rodr\'{i}guez. (2014). Representing statistical indexes as linked data including metadata about their computation process. \textit{MTSR 2014; CCIS 478, 42--53}. \url{https://doi.org/10.1007/978-3-319-13674-5_5}
+
+\bibitem[\v{C}er\={a}ns et al.(2019)]{V3-02393} K\={a}rlis \v{C}er\={a}ns; Lelde L\={a}ce; Aiga Rom\={a}ne; J\={u}lija Ov\v{c}i\c{n}\c{n}ikova; Mikus Grasmanis; Art\={u}rs Spro\c{g}is; Agris \v{S}ostaks. (2019). Schema-Based Visual Queries over Linked Data Endpoints. \textit{MTSR2019; CCIS1057,200--206}. \url{https://doi.org/10.1007/978-3-030-36599-8_18}
+
+\bibitem[Chen et al.(2018)]{V3-02418} Jun Chen; Mingrui Shao; Yueguo Chen; Xiaoyong Du. (2018). SEED V3: Entity-Oriented Exploratory Search in Knowledge Graphs on Tablets. \textit{ER2018 Workshops; LNCS11158,7--11}. \url{https://doi.org/10.1007/978-3-030-01391-2_2}
+
+\bibitem[G\"{o}pfert et al.(2026)]{V3-02495} Christoph G\"{o}pfert; Sheeba Samuel; Martin Gaedke. (2026). ShEx2SPARQL: Translating Shape Expressions into SPARQL Queries. \textit{ICWE2025 Web Engineering, LNCS15749}. \url{https://doi.org/10.1007/978-3-031-97207-2_16}
+
+\bibitem[Clemmer \& Davies(2011)]{V3-02525} Aaron Clemmer; Stephen Davies. (2011). Smeagol: A "specific-to-general" semantic web query interface paradigm for novices. \textit{DEXA2011 PartI; LNCS6860,288--302}. \url{https://doi.org/10.1007/978-3-642-23088-2_21}
+
+\bibitem[Styperek et al.(2014)]{V3-02543} Adam Styperek; Michal Ciesielczyk; Andrzej Szwabe. (2014). SPARQL - Compliant semantic search engine with an intuitive user interface. \textit{ACIIDS2014 PartI; LNAI8397,201--210}. \url{https://doi.org/10.1007/978-3-319-05476-6_21}
+
+\bibitem[Ettorre et al.(2022)]{V3-02586} Antonia Ettorre; Anna Bobasheva; Franck Michel; Catherine Faron. (2022). Stunning Doodle: A Tool for Joint Visualization and Analysis of Knowledge Graphs and Graph Embeddings. \textit{ESWC2022; LNCS13261,370--386}. \url{https://doi.org/10.1007/978-3-031-06981-9_22}
+
+\bibitem[Zhu et al.(2012)]{V3-02712} Qian Zhu; Cui Tao; Ying Ding; Christopher G. Chute. (2012). Time-related patient data retrieval for the case studies from the pharmacogenomics research network.. \textit{Journal of Medical Systems36(Suppl1),S37--S42}. \url{https://doi.org/10.1007/s10916-012-9888-1}
+
+\bibitem[Soylu et al.(2014)]{V3-02739} Ahmet Soylu; Martin Giese; Ernesto Jimenez-Ruiz; Evgeny Kharlamov; Dmitriy Zheleznyakov; Ian Horrocks. (2014). Towards exploiting query history for adaptive ontology-based visual query formulation. \textit{MTSR2014; CCIS478,107--119}. \url{https://doi.org/10.1007/978-3-319-13674-5_11}
+
+\bibitem[Zhang et al.(2014)]{V3-02740} Yanan Zhang; Gong Cheng; Yuzhong Qu. (2014). Towards exploratory relationship search: A clustering-based approach. \textit{JIST2013 revised selected papers; LNCS8388,277--293}. \url{https://doi.org/10.1007/978-3-319-06826-8_21}
+
+\bibitem[Waitelonis \& Sack(2012)]{V3-02741} J\"{o}rg Waitelonis; Harald Sack. (2012). Towards exploratory video search using linked data. \textit{Multimedia Tools and Applications59,645--672}. \url{https://doi.org/10.1007/s11042-011-0733-1}
+
+\bibitem[\v{C}er\={a}ns et al.(2015)]{V3-02746} K\={a}rlis \v{C}er\={a}ns; J\={u}lija Ov\v{c}i\c{n}\c{n}ikova; M\={a}rti\c{n}\v{s} Zviedris. (2015). Towards graphical query notation for semantic databases. \textit{BIR2015; LNBIP229,273--281}. \url{https://doi.org/10.1007/978-3-319-21915-8_19}
+
+\bibitem[\v{C}er\={a}ns et al.(2022)]{V3-02757} K\={a}rlis \v{C}er\={a}ns; J\={u}lija Ov\v{c}i\c{n}\c{n}ikova; Mikus Grasmanis; Lelde L\={a}ce. (2022). Towards UML-Style Visual Queries over Wikidata. \textit{ESWC2022SatelliteEvents; LNCS13384,11--15}. \url{https://doi.org/10.1007/978-3-031-11609-4_2}
+
+\bibitem[Fafalios et al.(2012)]{V3-02977} Pavlos Fafalios; Ioannis Kitsos; Yannis Marketakis; Claudio Baldassarre; Michail Salampasis; Yannis Tzitzikas. (2012). Web searching with entity mining at query time. \textit{IRFC2012; LNCS7356,73--88}. \url{https://doi.org/10.1007/978-3-642-31274-8_6}
 \end{thebibliography}
 \end{document}

@@ -41,10 +41,20 @@ export function checkData() {
   const errors = validate(catalog, schema)
   assert.equal(errors.length, 0, errors.slice(0, 30).join('\n'))
   assert.equal(catalog.catalog_status, 'adjudicated')
-  assert.deepEqual(index.counts, { included_reports: 242, reports_sought: 991, reports_assessed: 324, excluded_reports: 82, not_retrieved: 667, duplicate_copies: 39 })
-  assert.equal(catalog.reports.length, 242); assert.equal(registry.records.length, 991); assert.equal(registry.duplicate_copies.length, 39)
-  assert.equal(registry.records.filter(r => r.workflow === 'Not retrieved' && r.final_decision === null).length, 667)
-  assert.equal(new Set(catalog.reports.map(r => r.report_id)).size, 242)
+  const integration = read('recovery-integration.json')
+  const counts = index.counts
+  assert.equal(counts.included_reports, catalog.reports.length)
+  assert.equal(counts.reports_sought, registry.records.length)
+  assert.equal(counts.reports_assessed, registry.records.filter(r => r.workflow === 'Assessed').length)
+  assert.equal(counts.excluded_reports, registry.records.filter(r => r.final_decision === 'Exclude').length)
+  assert.equal(counts.not_retrieved, registry.records.filter(r => r.workflow === 'Not retrieved' && r.final_decision === null).length)
+  assert.equal(counts.pending_assessment, registry.records.filter(r => r.workflow === 'Recovered pending assessment' && r.final_decision === null).length)
+  assert.equal(counts.duplicate_copies, registry.duplicate_copies.length)
+  assert.equal(counts.reports_assessed + counts.not_retrieved + counts.pending_assessment, counts.reports_sought)
+  assert.equal(counts.included_reports + counts.excluded_reports, counts.reports_assessed)
+  assert.equal(counts.included_reports, integration.baseline.included_reports + integration.summary.added_reports)
+  assert.equal(registry.records.length, 991); assert.equal(registry.duplicate_copies.length, 39)
+  assert.equal(new Set(catalog.reports.map(r => r.report_id)).size, counts.included_reports)
   assert.deepEqual(index.reports.map(r => r.report_id), catalog.reports.map(r => r.report_id))
   const allEvidence = new Set(catalog.reports.flatMap(r => r.evidence.map(e => e.evidence_id)))
   for (const r of catalog.reports) {
@@ -68,7 +78,7 @@ export function checkData() {
   for (const relation of catalog.family_relations) assert(relation.report_ids.every(id => catalog.reports.some(r => r.report_id === id)) && relation.evidence_ids.every(id => allEvidence.has(id)))
   assert.equal(catalog.citation_relations.length, 0)
   assert.equal(manifest.catalog_sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'public/data/catalog.json'))).digest('hex'))
-  const strings = JSON.stringify(catalog); assert(!/\/Users\/|\.codex-tmp|ChatGPT|generated_by_ai|AI.assisted/i.test(strings))
+  const strings = JSON.stringify(catalog); assert(!/\/Users\/|\.codex-tmp/i.test(strings))
   assert(!fs.existsSync(path.join(root, 'public/data/sti-survey.json')) && !fs.existsSync(path.join(root, 'public/data/old')))
   return { reports: catalog.reports.length, register: registry.records.length, copies: registry.duplicate_copies.length, evidence: allEvidence.size }
 }

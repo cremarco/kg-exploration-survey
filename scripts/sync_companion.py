@@ -93,16 +93,39 @@ def main():
     for name in ("survey.tex", "kg-exploration-requirements.tex"):
         shutil.copyfile(ROOT / name, DATA / name)
     method = {"confirmed_on": "2026-10-06", "title_abstract_reviewers": 2, "title_abstract_independent": True, "full_text_reviewers": 1, "full_text_duplicate_review": False, "data_extractors": 3, "extraction_allocation": "not_documented", "independent_duplicate_extraction": "not_documented", "historical_automation_use": "not_documented", "risk_of_bias_procedure": "not_confirmed", "target_venue": "ACM Computing Surveys", "target_status": "Intended submission venue; no submission or acceptance is claimed."}
+    integration_path = DATA / "recovery-integration.json"
+    if integration_path.exists():
+        integration = json.loads(integration_path.read_text())
+        method["historical_scope"] = "Responsibilities above describe the frozen assessment; they do not attest human review of the recovery extension."
+        method["recovery_extension"] = {"date": integration["resolved_on"], "added_reports": integration["summary"]["added_reports"], "method": integration["method"], "authorization": integration["authorization"], "ledger": "recovery-integration.json"}
     write("review-method.json", method)
     requirements()
     recovery()
     relocate_synthesis()
+    additions_path = ROOT / "outputs/recovery-integration-2026-10-06/manuscript-additions.json"
+    if additions_path.exists():
+        additions = json.loads(additions_path.read_text())
+        source = (ROOT / "survey.tex").read_text()
+        additions["manuscript_sha256"] = hashlib.sha256(source.encode()).hexdigest()
+        def bind(node):
+            if isinstance(node, dict):
+                if "context_text" in node:
+                    context = node["context_text"]
+                    assert source.count(context) == 1, "Recovery synthesis context changed."
+                    node["manuscript_line"] = source[:source.index(context)].count("\n") + 1
+                for child in node.values(): bind(child)
+            elif isinstance(node,list):
+                for child in node: bind(child)
+        bind(additions)
+        write("recovery-synthesis.json", additions)
     checklist = json.loads((DATA / "prisma-checklist.json").read_text())
     for r in checklist["rows"]:
         if r["item"] == "8":
             r["note"] = "Two independent human title/abstract reviewers and one human full-text reviewer are author-confirmed. Full-text eligibility was not independently duplicated. Historical automation use and detailed workflow responsibilities remain undocumented."
         if r["item"] == "9":
             r["note"] = "Three human data extractors are author-confirmed. Source-located fields and checks are recorded, but per-report allocation, independent duplicate extraction, checking and disagreement resolution are not documented."
+        if r["item"] in ["8", "9"] and integration_path.exists():
+            r["note"] += " The 6 October recovery extension records author-authorized Codex scoped reading separately; no additional human or blinded independent review is attested."
     write("prisma-checklist.json", checklist)
     manifest = json.loads((DATA / "data-manifest.json").read_text())
     manifest["artifact_sha256"] = {str(p.relative_to(DATA)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(DATA.iterdir()) if p.is_file() and p.name != "data-manifest.json"}

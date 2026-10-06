@@ -1,0 +1,699 @@
+VALUTAZIONE DEI PAPER RECUPERATI — 6 ottobre 2026
+
+137 record: 76 integrazioni raccomandate, 29 esclusioni raccomandate, 6 fonti di contesto, 26 casi da chiarire.
+Valutazione Codex con un singolo revisore AI, basata su lettura mirata: non è una revisione umana indipendente né una lettura integrale di tutti i full text.
+Il corpus pubblicato di 242 report e i conteggi PRISMA restano congelati. Per integrare servono verifica finale umana, conferma della versione/track e completamento dell’estrazione; i report della stessa famiglia non sono studi indipendenti per default.
+Il JSON contiene gli hash delle fonti e i riferimenti di pagina. Il PDF corretto di V3-00630 è stato recuperato separatamente; il frontespizio originale è conservato.
+
+INTEGRAZIONE RACCOMANDATA
+
+V3-00117 — A Human-Friendly Query Generation Frontend for a Scientific Events Knowledge Graph
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 5, 6, 7, 13.
+SPARQL-AG supports form-based querying of a scientific-events KG, displaying and modifying the generated query before execution. Extract query-building and endpoint-selection operations.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-30760-8_18.pdf?error=cookies_not_supported&code=25cfc212-c7d6-4558-a4b7-ee346f576860
+
+V3-00138 — A Method and a Library for Visual Data Schemas
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 4.
+Visual schema transformations and an interactive Schema Explorer feed ViziQuer query projects. Extract schema guidance separately from instance exploration; link to the ViziQuer family.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-78952-6_37.pdf?error=cookies_not_supported&code=76e948ac-df3d-4753-a5e5-12a89d8c52bd
+
+V3-00165 — A Query-By-Example Approach to Compose SPARQL Queries in the GF Framework for Ontology-Based Data Access
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 4, 5, 6, 15.
+QueryByExampleGF specifies visual example-based SELECT/CONSTRUCT query construction over OWL/RDF. Extract the query-by-example workflow and generated-query feedback.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-34147-2_14.pdf?error=cookies_not_supported&code=960eb914-15fa-436f-997f-0ca43aa4cba1
+
+V3-00178 — A Semantic and Service-Oriented Platform for Integrating Multi-Source Archival Data: The Case of the Rivista Storica Italiana Archive
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 6, 7, 8.
+The RSI archival KG combines semantic facets and graph exploration with a documented prototype. The publisher records first publication on 29 May 2026, within the cutoff.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-032-23341-7_2.pdf?error=cookies_not_supported&code=b04561a1-c4fa-40fb-90f1-939a06abac77
+
+V3-00187 — A semantic web faceted search system for facilitating building of biodiversity and ecosystems services
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 4, 7.
+Thesauform uses SKOS-linked biodiversity data and facets to guide discovery across plant traits. Extract facet navigation and its relation to the linked semantic model.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-08590-6_5.pdf?error=cookies_not_supported&code=e665e5db-52ec-4630-b399-499443c8d1eb
+
+V3-00193 — A Streamlined Pipeline to Enable the Semantic Exploration of a Bookstore
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 4, 5, 6.
+The bookstore pipeline specifies a coupled KG exploration and tabular book-metadata interface, illustrated by a mockup and Ontodia integration. Code this as a proposed method/in-progress implementation, not a completed user evaluation.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-39905-4_8.pdf?error=cookies_not_supported&code=c92ddf58-a3f0-4abb-953c-89e8b98ba13b
+
+V3-00218 — A universal application programming interface to access and reuse linked open data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 4.
+A guided web interface builds queries over LOD endpoints, displays generated SPARQL and exposes tabular/exported results. User evaluation remains future work.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-50578-3_44.pdf?error=cookies_not_supported&code=7abfe055-d8a7-4b4e-bf23-870fd5297d38
+
+V3-00229 — A Visual Query Builder for DBpedia
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 5.
+DBpediaVisualizer supports entity lookup, neighbour expansion and visual query-graph construction on Android. Autocomplete is described as future work, not an implemented feature.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-96-1483-7_20.pdf?error=cookies_not_supported&code=c12640a3-befa-4b5f-a42d-dbc78733c591
+
+V3-00261 — Adding Structure and Removing Duplicates in SPARQL Results with Nested Tables
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 11, 14.
+Nested result tables are implemented in Sparklis to preserve query dependencies and support interpretation. Extract presentation guidance and benchmark evidence without inferring a usability benefit.
+Fonte: https://inria.hal.science/hal-03531777/document
+
+V3-00323 — An Architecture based in voice command recognition for faceted search in linked open datasets
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 8, 10.
+The voice-facet architecture specifies command interpretation, dataset selection and facet/query navigation. Preserve proposed-method status and do not infer a deployed or evaluated voice browser.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-69341-5_16.pdf?error=cookies_not_supported&code=9c4139dc-38d2-425d-a86b-89710b3cc421
+
+V3-00346 — An intelligent SPARQL query builder for exploration of various life-science databases
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 4, 5.
+SPARQLBuilder guides endpoint and input/output-class selection, path selection and query generation in life-science datasets. Confirm peer review of the workshop track before final inclusion.
+Fonte: https://ceur-ws.org/Vol-1279/iesd14_10.pdf
+
+V3-00347 — An Interactive Dashboard for Exploring Patient-Reported Drug-Condition Relations
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 10.
+The patient-drug dashboard specifies RDF/SPARQL facets and chord-based exploration. First online publication is 1 May 2026; implementation is ongoing and relation labels do not establish clinical causality.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-032-21477-5_19.pdf?error=cookies_not_supported&code=1aa3bc84-fc97-49a2-954b-cd2adfc506c3
+
+V3-00369 — Analytical Queries on Vanilla RDF Graphs with a Guided Query Builder Approach
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 11.
+The FQAS Sparklis report specifies guided analytics with controlled-language query transformations and aggregations. Link the 2018 research report as a related version rather than counting independent evidence twice.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-86967-0_4.pdf?error=cookies_not_supported&code=fe8dbd54-f7b6-444d-83b5-abc32dc3b063
+
+V3-00411 — ARViz: Interactive Visualization of Association Rules for RDF Data Exploration
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4, 5.
+ARViz supports filtering, sorting, rule selection and linked publication drill-down on an RDF COVID-19 KG using coordinated scatter/chord/association views.
+Fonte: https://hal.science/hal-03292140/document
+
+V3-00496 — BioPW: An interactive tool for biological pathway visualization on linked data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 4.
+BioPW combines RDF pathway data with coordinated views and linked-resource browsing. Extract the demonstrated interaction workflow rather than treating the demo as a controlled study.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-63564-4_30.pdf?error=cookies_not_supported&code=3c02394e-b5d1-420e-8f3e-191e3d19b3d4
+
+V3-00515 — Browsing linked data with fenfire
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2.
+Fenfire specifies focus-node and neighbour browsing with RDF dereferencing. Content is relevant; verify the CEUR workshop review track before final inclusion.
+Fonte: https://ceur-ws.org/Vol-369/paper14.pdf
+
+V3-00533 — Building MD analytical stars using a visual linked data query builder
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 8, 9, 12.
+The analytical-stars approach guides users through dimensions/measures into SPARQL-backed Linked Data charts. Extract the supported visual analytical-query operations.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-25840-9_13.pdf?error=cookies_not_supported&code=dce3609e-bc78-4187-9d89-85b46b44bfc8
+
+V3-00630 — Combining faceted search with data-analytic visualizations on top of a SPARQL endpoint
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 5, 7, 9.
+The corrected CEUR paper specifies SPARQL Faceter, facet filters and linked analytical charts/maps across digital-humanities cases. The original download was proceedings front matter; a university publication record identifies the corrected report as peer reviewed.
+Fonte: https://ceur-ws.org/Vol-2187/paper5.pdf
+
+V3-00631 — Combining Flexible Queries and Knowledge Anchors to facilitate the exploration of Knowledge Graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 5, 14.
+Approximate queries and knowledge anchors support exploratory navigation for lifelong learning. The institutional record identifies acceptance and publication in IESD 2016; extract the actual relaxation/anchor method before taxonomy coding.
+Fonte: https://eprints.bbk.ac.uk/id/eprint/15944/1/combining-flexible-queries.pdf
+
+V3-00639 — Composite interests' exploration thanks to on-the-fly linked data spreading activation
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 8.
+Discovery Hub uses composite user interests to steer DBpedia exploration. Extract interest selection and combination; check shared-family and shared-study overlap with other Discovery Hub reports.
+Fonte: https://inria.hal.science/hal-01057048/document
+
+V3-00650 — Conceptual Navigation in Large Knowledge Graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 7, 24, 25, 26.
+Abstract Conceptual Navigation formalizes guided movement through query concepts and is instantiated in Sparklis. This is relevant method content; confirm the book chapter's review status and avoid double-counting prior Sparklis evidence.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-93278-7_2.pdf?error=cookies_not_supported&code=730789bf-0127-4457-b023-a9402583429a
+
+V3-00708 — Creating and Publishing Semantic Metadata about Linked and Open Datasets
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 12.
+DATAFINLAND/SAHA3/HAKO provide RDF dataset-metadata faceted browsing. Content is relevant; verify book-chapter review status and separate dataset-level metadata exploration from instance-level exploration.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-1-4614-1767-5_5.pdf?error=cookies_not_supported&code=7bac6c23-7ba1-479c-8cc7-dc91bbe5298e
+
+V3-00742 — CUTE: Querying knowledge graphs by tabular examples
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4.
+CUTE specifies continuous table-based query-by-example with multiple entity tuples. Extract example selection and refinement; verify the demonstration track's review status.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-96890-2_39.pdf?error=cookies_not_supported&code=65742c96-4da3-4a9e-8f6e-af264ba2bd35
+
+V3-00751 — DashSearch LD: Exploratory search for linked data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 6.
+The dashboard supports Linked Data exploration by dragging and overlapping entity-group widgets. Extract the corresponding SPARQL-backed interaction operations.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-37996-3_26.pdf?error=cookies_not_supported&code=99698354-b61a-4116-824c-8667de20025b
+
+V3-00761 — Data picking Linked Data: enabling users to create faceted browsers
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 4.
+mSpace Data Picker lets users select classes/properties and configure/export faceted Linked Data views. Confirm the publication and review track of this author manuscript.
+Fonte: https://eprints.soton.ac.uk/id/eprint/270804/1/DataPicker.pdf
+
+V3-00786 — DBpedia mobile: A location-enabled linked data browser
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2.
+DBpedia Mobile combines GPS/map exploration with a Fresnel semantic-resource browser and cross-dataset links. Verify the CEUR workshop review track before final inclusion.
+Fonte: https://ceur-ws.org/Vol-369/paper13.pdf
+
+V3-00821 — Design and implementation of a standpoint-based linked data visualization approach
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+The prototype switches rdf:type-based standpoints and coordinated entity/chart views over Linked Data. Confirm the JIST poster/demo track's peer review before final inclusion.
+Fonte: https://ceur-ws.org/Vol-2293/jist2018pd_paper2.pdf
+
+V3-00878 — Diversifying the results of keyword queries on linked data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 4.
+Diversifying RDF keyword-query patterns is an identifiable exploration-guidance contribution. Extract candidate interpretations/ranking as a method; an implemented GUI is not required for eligibility.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-48740-3_14.pdf?error=cookies_not_supported&code=2059c4b5-d55f-485b-be28-22a648dde61b
+
+V3-00894 — Domain-driven visual query formulation over RDF data sets
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 5, 6.
+QUaTRO supports ontology-guided visual querying of UniProt using concepts, properties and logical operators. Extract query construction separately from ontology modelling.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-55224-3_28.pdf?error=cookies_not_supported&code=4752344f-9f35-4c49-b590-205f0110f97e
+
+V3-00966 — Enhancing Information Retrieval in Digital Libraries Through Unit Harmonisation in Scholarly Knowledge Graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 8.
+ORKG unit harmonisation supports interactive comparison through unit selection and conversions. First online publication is 2 December 2025, despite the later volume copyright year.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-95-4861-3_15.pdf?error=cookies_not_supported&code=64c5fd3c-7896-4fdf-b57d-a6641af2f741
+
+V3-00971 — Enriching Scholarly Knowledge with Context
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 9, 10.
+Scholarly-context widgets expose ORKG entities and contextual comparison/profile views through GraphQL federation. Extract the user-facing workflow without equating GraphQL federation with SPARQL federation.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-09917-5_10.pdf?error=cookies_not_supported&code=5e36fd85-2643-4e5b-82b7-24efcd31132e
+
+V3-01034 — Explorator: A tool for exploring RDF data through direct manipulation
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 9.
+Explorator supports direct manipulation of RDF sets, chained operations and reusable query components. Verify the LDOW workshop review track before final inclusion.
+Fonte: https://ceur-ws.org/Vol-538/ldow2009_paper2.pdf
+
+V3-01038 — Exploratory patent search with faceted search and configurable entity mining
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 5.
+The patent-search workflow combines facets/entity mining with on-click Linked Data entity information and navigation. Confirm the conference publication of this exact manuscript and link its related professional/web-search reports.
+Fonte: https://zenodo.org/records/7749/files/fafalios_2013_explPatSearch.pdf
+
+V3-01039 — Exploratory professional search through semantic post-analysis of search results
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 23.
+Professional search combines result analysis with semantic-entity navigation. Check shared-method/shared-study overlap with the patent-search and entity-mining reports.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-12511-4_9.pdf?error=cookies_not_supported&code=e2fb10a1-ba68-45bd-adda-9f94d7d1ae84
+
+V3-01045 — Exploratory search on topics through different perspectives with DBpedia
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 5.
+Discovery Hub lets users steer DBpedia exploration through topic perspectives and computation parameters. Preserve the provenance of previously reported evaluations rather than counting them again.
+Fonte: https://inria.hal.science/hal-01057031/document
+
+V3-01053 — Exploring fact-checked claims and their descriptive statistics
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 4.
+ClaimsKG Explorer provides ad-hoc/faceted search and an associated statistical observatory. Verify peer review of the ISWC satellite track; distinguish interactive exploration from precomputed statistics.
+Fonte: https://hal.science/hal-02373042/document
+
+V3-01054 — Exploring heterogeneous datasets from different searcher perspectives
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 4, 5, 6, 7, 8, 10.
+The report contributes a primary expert/tactic-based evaluation of Tabulator's RDF exploration operations. A new tool is not required by the protocol. Extract the analyst-based Sii assessment; do not label its searcher profiles as recruited human participants or a controlled user study.
+Fonte: https://eprints.soton.ac.uk/id/eprint/267950/1/swui09_sii_mwilson.pdf
+
+V3-01060 — Exploring publication metadata graphs with the LODmilla browser and editor
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 6.
+LODmilla specifies linked-resource exploration, sharing and bounded graph search for publication graphs. Link to the existing LODmilla family instead of assuming a new independent system/study.
+Fonte: https://link.springer.com/content/pdf/10.1007/s00799-014-0130-2.pdf?error=cookies_not_supported&code=f69b6c56-6758-4249-9ff1-d12e408a2ac7
+
+V3-01106 — Facetted Browsing on Extracted Fusion Tables Data for Digital Cities.
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2.
+The Fusion Tables digital-cities paper specifies RDF POI facets, map/table views and DBpedia context. The title's on/of variation does not indicate a different work; verify the workshop review track.
+Fonte: https://ceur-ws.org/Vol-906/paper10.pdf
+
+V3-01125 — FedViz: A visual interface for SPARQL queries formulation and execution
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 8.
+FedViz specifies schema-guided visual queries across endpoints using FedX. Confirm the workshop review track; report SUS as a score, not a percentage of success.
+Fonte: https://ceur-ws.org/Vol-1456/paper5.pdf
+
+V3-01170 — From Asking to Understanding: A Human-Centered Approach for Human-AI Interaction
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 11, 12.
+CoaKG specifies clarification of missing temporal/contextual information before KG querying. First online publication is 11 February 2026; user studies are future work.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-032-16451-3_16.pdf?error=cookies_not_supported&code=c29ceaf5-8cba-4320-a35e-1f1addfbec9d
+
+V3-01173 — From Data to Dialogue: Leveraging the Structure of Knowledge Graphs for Conversational Exploratory Search
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 6.
+The conversational method suggests KG entities for users to select iteratively. The exact report has a published PACLIC 2023 version in ACL Anthology and an institutional peer-review record.
+Fonte: https://arxiv.org/pdf/2310.05150
+
+V3-01178 — From Linked Data Querying to Visual Search: Towards a Visualization Pipeline for LOD Exploration
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 12.
+LDViz specifies an endpoint-to-visualization pipeline with query templates and interactive exploration. The HAL cover identifies WEBIST 2021 and DOI 10.5220/0010654600003058.
+Fonte: https://hal.science/hal-03404572/document
+
+V3-01337 — Humboldt: Exploring linked data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1.
+Humboldt describes faceted and pivot-based Linked Data browsing. Content warrants inclusion-oriented follow-up; verify the CEUR review track and inspect the full operational method during extraction.
+Fonte: https://ceur-ws.org/Vol-369/paper15.pdf
+
+V3-01566 — IQbees: Interactive Query-by-example Entity Search in semantic knowledge graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4.
+IQbees supports iterative positive/negative example feedback over semantic entities. Extract feedback controls and aspect-selection guidance.
+Fonte: https://annals-csis.org/Volume_8/pliks/562.pdf
+
+V3-01616 — KG3D: An Interactive 3D Visualization Tool for Knowledge Graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+KG3D supports immersive entity/neighbour/path exploration and graph-pattern-to-SPARQL querying. Extract demonstrated operations and distinguish the query-pattern view from result views.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-35231-8_67.pdf?error=cookies_not_supported&code=3038ce88-5183-4edd-b898-303191f7c924
+
+V3-01622 — KGVis: An Interactive Visual Query Language for Knowledge Graphs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+KGVis links query-pattern editing and result exploration through bidirectional transformations. Check overlap with the already represented KGVQL family and later studies.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-18590-9_82.pdf?error=cookies_not_supported&code=df8ceb58-17cd-4a6e-84eb-13c498ede5f8
+
+V3-01624 — KinGVisher – Knowledge Graph Visualizer
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+KinGVisher supports ABox/TBox exploration, layouts and transparent SPARQL querying. Separate schema and instance exploration in extraction.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-78952-6_21?error=cookies_not_supported&code=7a03c103-34e3-4c2b-ad62-63171cfd36f0
+
+V3-01709 — La Rioja turismo: The construction and exploitation of a queryable tourism knowledge graph
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2.
+La Rioja's GNOSS-based tourism KG provides typed-entity facets and maps. Deployment/visit figures are not controlled evidence of user effectiveness.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-03056-8_20.pdf?error=cookies_not_supported&code=19ef96bf-ad49-42dd-a0fa-f1ea665928cb
+
+V3-01741 — Leveraging Enterprise Knowledge Graphs for Efficient Bridging Between Business Data with Large-Scale Web Data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 7, 8, 9, 10.
+KeyFS exposes keyword-based semantic integration through a multi-faceted entity-navigation interface, including CRM, Facebook and DBpedia sources. Extract the user-facing semantic workflow separately from KGMap integration.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-91305-2_16.pdf?error=cookies_not_supported&code=155d6481-4b40-4ff3-b92c-fcd0af5557f4
+
+V3-01744 — Leveraging link pattern for entity-centric exploration over Linked Data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 30.
+SView uses hierarchical link patterns and ranking to guide Linked Data navigation. Complete method extraction and identify any reused comparative-user evidence before aggregation.
+Fonte: https://link.springer.com/content/pdf/10.1007/s11280-017-0464-y.pdf?error=cookies_not_supported&code=3b65cf81-c2a4-48a9-9c11-b1e7e5541c60
+
+V3-01750 — LIDAB: a user-friendly display system for linked multimedia data and its application in education
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 11.
+LIDAB supplies template-based Linked Data/multimedia views with linked-resource navigation. Extract browsing operations and display roles.
+Fonte: https://link.springer.com/content/pdf/10.1007/s11042-015-2994-6.pdf?error=cookies_not_supported&code=2b7603ad-d0ed-4c82-b6b1-46d2fc1e05cc
+
+V3-01754 — LINDASearch: a faceted search system for linked open datasets
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 10.
+LINDA Search provides faceted metasearch across LOD sources. Extract cross-source query/refinement operations and preserve reported evaluation conditions.
+Fonte: https://link.springer.com/content/pdf/10.1007/s11276-019-02029-z.pdf?error=cookies_not_supported&code=94470e81-f6df-4752-9af0-2a4d9352d593
+
+V3-01823 — Making Sense of Linked Data: A Semantic Exploration Approach
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 15.
+Making Sense of Linked Data uses empirical semantic-browser observations to specify signposting/navigation guidance. Extract the original guidance proposal separately from contextual observations of existing tools.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-02612-1_4.pdf?error=cookies_not_supported&code=ee8bc3fd-624a-4ab0-9457-727aa716b269
+
+V3-01948 — Navigating OWL 2 Ontologies Through Graph Projection
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4, 5.
+OWL projection supports OptiqueVQS/SemFacet querying of instance KGs, including YAGO/Siemens examples. Extract its guidance role rather than coding it as ontology-only visualization.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-14401-2_10.pdf?error=cookies_not_supported&code=61ea913f-4cd8-4440-9152-8cdf5aa91c6b
+
+V3-01984 — On enhancing visual query building over KGs using query logs
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+Query-log guidance ranks and shortens OptiqueVQS extensions and supports reuse of queries. Link to the Optique family and separate proposed from implemented guidance.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-04284-4_6.pdf?error=cookies_not_supported&code=e371154a-eac2-48bd-ac02-7fa6abe2472f
+
+V3-02014 — Ontology-based visual query formulation: An industry experience
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 10.
+The Optique industry report contributes visual query-building evidence in industrial settings. Extract study allocation/tasks and check reuse across Optique reports.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-27857-5_75.pdf?error=cookies_not_supported&code=1442c2b1-1639-4635-8972-490b8df47206
+
+V3-02018 — Ontology-schema based query by example
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+VonQBE constructs schema fragments from natural language and suggests classes/properties for user expansion into queries. This is identifiable guidance even without requiring a complete GUI implementation.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-33223-5_17.pdf?error=cookies_not_supported&code=d1ef1899-708c-4992-913f-87cce162518b
+
+V3-02091 — PFSgeo: Preference-enriched faceted search for geographical data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 2, 3, 4, 9.
+PFSgeo combines faceted hard/soft constraints with geographic preference regions; its method explicitly represents the hotel object model in RDF/Turtle. Extract map interaction and preference-conflict handling.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-69459-7_9.pdf?error=cookies_not_supported&code=235ca5ac-0a6e-4376-87a9-45fabfa05cd4
+
+V3-02185 — Querying knowledge graphs through positive and negative examples and feedback
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 19.
+Positive/negative query-by-example provides SPARQL refinement through iterative entity examples and constraints. Extract the negative-example guidance and reported evaluation design.
+Fonte: https://link.springer.com/content/pdf/10.1007/s10844-024-00846-z.pdf?error=cookies_not_supported&code=947f2814-94ce-4ab7-b7fe-ddb99c99efc3
+
+V3-02210 — RDF Explorer: A Visual SPARQL Query Builder
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 10.
+RDF Explorer combines visual graph-pattern construction, navigation and non-empty query operations with a Wikidata user comparison. Preserve task/allocation details before summarizing outcomes.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-30793-6_37.pdf?error=cookies_not_supported&code=ac0d24c3-98dc-4907-a5e7-64f3c1f57aed
+
+V3-02220 — Reassembling and enriching the life stories in printed biographical registers: Norssi high school alumni on the semantic web
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 5.
+The Norssi alumni RDF application combines facets and automatically updated prosopographic charts. Link the Sampo/biographical exploration family and check reused implementation/evaluation evidence.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-59888-8_9.pdf?error=cookies_not_supported&code=319cd88b-88c2-4e06-8d9f-192eae4a721f
+
+V3-02260 — RepoTale: A visual analytics framework for exploring software repository evolution on issue tracking
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 9.
+RepoTale explores typed issue/PR/commit relations through coordinated temporal/social/topic views and filters. The source records publication on 8 May 2026, within the cutoff.
+Fonte: https://link.springer.com/content/pdf/10.1007/s12650-026-01129-1.pdf?error=cookies_not_supported&code=8b586eb8-c996-4248-b403-e7d1adc041a5
+
+V3-02264 — Representing statistical indexes as linked data including metadata about their computation process
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 9.
+The Web Index application uses Wesby semantic-resource templates, country visualizations and provenance-aware exploration. Extract portal interaction separately from indicator/provenance computation.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-13674-5_5.pdf?error=cookies_not_supported&code=143b4dac-f01b-403e-bc4e-73363aa44892
+
+V3-02393 — Schema-Based Visual Queries over Linked Data Endpoints
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 4.
+The ViziQuer endpoint report extracts/stores schemas to guide visual query construction. Link the ViziQuer family and separate schema-support methods from result visualization.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-36599-8_18.pdf?error=cookies_not_supported&code=c349d0ae-80cc-44c0-b11c-2000a4281bfd
+
+V3-02418 — SEED V3: Entity-Oriented Exploratory Search in Knowledge Graphs on Tablets
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+SEED v3 supports tablet-touch exploration of DBpedia film entities with embedding-based ranking and linked-entity explanations. Extract the actual interaction and explanation workflow.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-01391-2_2.pdf?error=cookies_not_supported&code=2b9aa9e5-490c-4021-be55-32d93445b9a8
+
+V3-02525 — Smeagol: A "specific-to-general" semantic web query interface paradigm for novices
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 13.
+Smeagol turns instance navigation into generalized graph-pattern queries through wildcard substitution. Extract the progression and comparative tasks; preserve the Pubby comparison context.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-23088-2_21.pdf?error=cookies_not_supported&code=cc4fb139-c375-40a9-b27d-291b63e7b7e5
+
+V3-02543 — SPARQL - Compliant semantic search engine with an intuitive user interface
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 6.
+SFC provides ontology-based variable/type suggestions for graphical semantic queries over DBpedia. Extract completion guidance and distinguish offline question coverage from user evaluation.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-05476-6_21.pdf?error=cookies_not_supported&code=2ff2027c-f60b-4672-895e-a4e15db66697
+
+V3-02586 — Stunning Doodle: A Tool for Joint Visualization and Analysis of Knowledge Graphs and Graph Embeddings
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 8.
+Stunning Doodle combines KG embeddings with entity/subgraph exploration and interpretation. Extract visual interaction and scalability conditions from the primary method before numerical synthesis.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-06981-9_22.pdf?error=cookies_not_supported&code=f53b1815-a0f5-485c-96a0-9a3071aa886a
+
+V3-02712 — Time-related patient data retrieval for the case studies from the pharmacogenomics research network.
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4.
+CNTRO-based patient temporal querying includes a SPARQLBuilder GUI with domain/range-guided steps. Extract that concrete query-guidance method rather than treating the report as ontology-only.
+Fonte: https://link.springer.com/content/pdf/10.1007/s10916-012-9888-1.pdf?error=cookies_not_supported&code=d87dbc85-4f4a-4683-a91b-9cfc3c7c806e
+
+V3-02739 — Towards exploiting query history for adaptive ontology-based visual query formulation
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3.
+Optique uses query history to recommend extensions and support visual query reuse. Extract proposed/implemented status and check overlap with later query-log and industrial reports.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-13674-5_11.pdf?error=cookies_not_supported&code=7db95436-ba38-44af-a21c-7367de4fdc22
+
+V3-02740 — Towards exploratory relationship search: A clustering-based approach
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 9.
+RelClus organizes DBpedia relation paths into hierarchies for browsing guidance. Extract the clustering/navigation workflow and preserve the participant/task structure of its comparison.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-06826-8_21.pdf?error=cookies_not_supported&code=12587358-4d00-4bd9-8e21-2fccb12bd86f
+
+V3-02741 — Towards exploratory video search using linked data
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 6.
+Linked Data video search specifies a semantic-context exploration model with relation/resource navigation. Complete operational extraction and distinguish video/media views from graph-query views.
+Fonte: https://link.springer.com/content/pdf/10.1007/s11042-011-0733-1.pdf?error=cookies_not_supported&code=24bc3713-e735-4c97-8a27-d0d16c834d46
+
+V3-02746 — Towards graphical query notation for semantic databases
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 4, 5.
+ViziQuer specifies graphical SPARQL patterns including optional/negated/nested structures. Link to the existing family and extract operators at their reported implementation state.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-21915-8_19.pdf?error=cookies_not_supported&code=e02a2e49-130c-4a5c-93da-45fd6c59ee4f
+
+V3-02757 — Towards UML-Style Visual Queries over Wikidata
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 3, 4.
+The Wikidata ViziQuer demo supports visual/textual SPARQL conversion, schema-assisted completion and progressive query growth. Code the graph as a query-pattern view, not automatically as a result view.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-11609-4_2.pdf?error=cookies_not_supported&code=5f53a8ed-fb12-453c-b3e2-8956b70029d7
+
+V3-02977 — Web searching with entity mining at query time
+Criterio: eligible_content. Pagine PDF consultate per la decisione: 1, 8, 9.
+Entity-mining web search exposes on-click Linked Data entity information and navigation via semantic endpoints. Link related patent/professional-search reports and avoid duplicate study counts.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-31274-8_6.pdf?error=cookies_not_supported&code=15ff6bfc-2535-4cd2-a113-a41992e13c44
+
+ESCLUSIONE RACCOMANDATA
+
+V3-00183 — A semantic keyword search based on the bidirectional fix root query graph construction algorithm
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2, 3, 8.
+X-SKengine automatically selects a ranked keyword interpretation and executes a SPARQL query. The inspected architecture specifies exact-answer retrieval rather than a human exploration or query-refinement contribution.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-15615-6_29.pdf?error=cookies_not_supported&code=8f7188a3-6018-4392-9712-00d28f9526d6
+
+V3-00189 — A SPARQL 1.1 Query Builder for the Data Analytics of Vanilla RDF Graphs
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The acquired SPARQL analytics source explicitly identifies itself as a research report. A peer-reviewed version of this exact report is not established; retain its relationship to the later FQAS report.
+Fonte: https://inria.hal.science/hal-01820469/document
+
+V3-00443 — AutoG: A visual query autocompletion framework for graph databases
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 2, 3, 4, 19.
+AutoG's principal workflow and evaluation concern generic chemical graph collections and topology-based query completion. A semantic KG as the exploration object is not established.
+Fonte: https://link.springer.com/content/pdf/10.1007/s00778-017-0454-9.pdf?error=cookies_not_supported&code=59209ba3-35a6-4734-8911-452ccbfb9f54
+
+V3-00556 — CASCADE: Cumulative Agentic Skill Creation through Autonomous Development and Evolution
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2.
+CASCADE focuses on autonomous agent skills and scientific tool execution rather than human exploration of a semantic KG.
+Fonte: https://arxiv.org/pdf/2512.23880
+
+V3-00636 — Comparison of city performances through statistical linked data exploration
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 4, 5, 6, 7, 8.
+The primary contribution models and computes cross-city performance indicators with semantic services. The inspected method does not specify a human KG exploration or guidance workflow.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-67636-4_1.pdf?error=cookies_not_supported&code=b2aa3dbc-909e-40e9-85e1-41be0f9f8664
+
+V3-00647 — Concept of Color Utilization and Its Application in Knowledge Graph Visualization
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 7, 8, 9.
+Graph-colour utilization is illustrated with static diagrams and chromatic measures. A concrete interactive exploration operation or guidance method is not specified in the inspected contribution.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-16-0081-4_59.pdf?error=cookies_not_supported&code=795c1fa5-a9d3-47b2-bda0-8a1a1f4f719e
+
+V3-00741 — Customizable Linked Data Browser
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The recovered Customizable Browser source is a master's thesis. Thesis examination does not establish the peer-reviewed publication required by this survey.
+Fonte: https://dspace.cuni.cz/bitstream/handle/20.500.11956/81230/DPTX_2013_2_11320_0_410617_0_154890.pdf;jsessionid=02BE8E41DD9ECBB9118F189722DA1CE1?sequence=1
+
+V3-00748 — D3.2v1 Design, implementation and deployment of text mining and enrichment services Phase 1
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The source is the RELIANCE D3.2 project deliverable. Internal project review is not evidence of an eligible peer-reviewed research publication.
+Fonte: https://zenodo.org/records/6260513/files/D3.2-Design,%20implementation%20and%20deployment%20of%20text%20mining%20and%20enrichment%20services%20Phase%201_v1.0.pdf
+
+V3-00787 — DBpedia spotlight: Shedding light on the web of documents
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2.
+DBpedia Spotlight's primary contribution is text entity annotation/disambiguation. Faceted exploration is a prospective application rather than its reported exploration method.
+Fonte: https://oa.upm.es/12507/2/INVE_MEM_2011_105398.pdf
+
+V3-00806 — Deliverable 1.4 Report on data gathering v2
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The source is the inDICEs D1.4 project deliverable, not an established peer-reviewed research publication.
+Fonte: https://zenodo.org/records/7486627/files/D1.4-Report%20on%20data%20gathering%20V2.pdf
+
+V3-00836 — Developing Assurance Cases for Adversarial Robustness and Regulatory Compliance in LLMs
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2.
+The contribution concerns LLM assurance, guardrails and compliance, not interactive semantic-KG exploration.
+Fonte: https://arxiv.org/pdf/2410.05304
+
+V3-00864 — Discovering Relationships Among Properties in Wikidata Knowledge Graph
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 4, 6.
+Predicate relationship measures support curation/quality analysis. The inspected method does not make human KG exploration or guidance a primary contribution.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-68323-7_35.pdf?error=cookies_not_supported&code=c4a0e052-d919-482c-a77a-3d188c7c215e
+
+V3-00875 — Distributed Storage and Query for Domain Knowledge Graphs
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 9.
+The primary method concerns distributed HBase/Neo4j storage and partitioning. Displaying a queried Neo4j graph does not establish a new exploration workflow.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-16-0479-9_10.pdf?error=cookies_not_supported&code=18539c8d-cb3d-475c-a06f-42b3b0aeb008
+
+V3-01037 — Exploratory and faceted browsing, over heterogeneous and cross-domain data sources
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The recovered source is Daniel Smith's complete doctoral thesis. An eligible peer-reviewed publication of this exact report is not established.
+Fonte: https://eprints.soton.ac.uk/id/eprint/195005/1/Binder1.pdf
+
+V3-01082 — Extracting conclusion sections from PubMed abstracts for rapid key assertion integration in biomedical research
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The source is a Nature Precedings posting. The recovered version does not establish eligible peer-reviewed publication, despite its relevant facet interface.
+Fonte: https://www.nature.com/articles/npre.2009.3775.1.pdf?error=cookies_not_supported&code=110cdaca-a346-4d76-aee6-9abc0a215bdd
+
+V3-01108 — Facettensuche für das Suchsystem von Open Research Knowledge Graph (ORKG)
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The recovered ORKG facets source is a thesis rather than an established peer-reviewed research publication; its main text is also German.
+Fonte: https://repo.uni-hannover.de/server/api/core/bitstreams/27d35c40-fe16-4550-b381-d62884815dc4/content
+
+V3-01128 — FERRARI: an efficient framework for visual exploratory subgraph search in graph databases
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 2, 3, 20.
+FERRARI targets generic chemical graph collections and topology-based graph querying. The inspected contribution does not establish a semantic KG exploration object.
+Fonte: https://link.springer.com/content/pdf/10.1007/s00778-020-00601-0.pdf?error=cookies_not_supported&code=c94b441f-fa65-4f6d-b6ca-deff81e91a23
+
+V3-01160 — Formation of Structured Representations of Scientific Journals for Integration into a Knowledge Graph and Semantic Search
+Criterio: language. Pagine PDF consultate per la decisione: 1, 2.
+The substantive SciLibRu report is in Russian. English metadata does not satisfy the survey's English full-report criterion.
+Fonte: https://rdl-journal.ru/article/download/978/997
+
+V3-01291 — Guided semantic annotation of comic panels with Sewelis
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2, 3, 4.
+UTILIS/Sewelis in this report primarily guides creation/annotation of new comic-panel objects. It reuses an existing navigation interface; curation-only guidance is insufficient as a standalone exploration contribution.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-33876-2_40.pdf?error=cookies_not_supported&code=ea92c20c-1ec3-4627-b51e-144eaf1f9154
+
+V3-01516 — Interactive and Provenance-Aware Search and QA over Documents Using LLMs, RAG and Knowledge Graph Verbalization
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 3, 5, 6, 7.
+The primary contribution is document RAG/QA with KG-backed indexing and document-chunk provenance. The KG is background infrastructure, not the user's exploration object.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-032-06136-2_24.pdf?error=cookies_not_supported&code=a6e00ee9-13ac-4741-863e-d48f23686ebf
+
+V3-01771 — Linked data part 2
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The acquired Linked Data Part 2 source is an iPhylo blog post, not a peer-reviewed research report.
+Fonte: https://fsn1.your-objectstorage.com/rogue-scholar/cc/4d/2ad2-74a1-4418-a473-dd11f5558ec5/data?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3B%20filename%3D10.59350_we7nd-x1z62.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=TRHKTWC6MWWSU3V92A9M%2F20261006%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261006T124347Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=444366cd3e2d2e226c06dcff03c433e411f81e974e0d91d6737da676481d0175
+
+V3-02170 — QUBLE: Towards blending interactive visual subgraph search queries on large networks
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 4, 18.
+QUBLE focuses on generic subgraph matching/latency. Its DBLP graph experiment relabels nodes by degree, removing the entity semantics needed for this survey's KG exploration object.
+Fonte: https://link.springer.com/content/pdf/10.1007/s00778-013-0322-1.pdf?error=cookies_not_supported&code=e6d34fd1-75ce-4b71-a76b-6572b266dd62
+
+V3-02183 — Querying Healthcare Data in Knowledge-Based Systems
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 4, 5, 6, 7.
+The visual AQL method operates on openEHR compositions/archetypes and document structures. A semantic KG as the primary exploration object is not established.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-58502-9_4.pdf?error=cookies_not_supported&code=47b68a35-4d5d-42f0-bde9-55070de8f686
+
+V3-02231 — Recommending tripleset interlinking through a social network approach
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 4, 5, 10, 11.
+The recommendation method ranks triplesets to create interlinks for a publisher. Its primary operation is graph construction/interlinking, not human exploration of KG contents.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-642-41230-1_13.pdf?error=cookies_not_supported&code=7b2551aa-2a19-4bd6-bfeb-bee21c1cf217
+
+V3-02495 — ShEx2SPARQL: Translating Shape Expressions into SPARQL Queries
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 7.
+ShEx2SPARQL translates selected shapes into ASK/SELECT/CONSTRUCT queries. The inspected contribution is backend translation rather than a specified human exploration/refinement method; distinguish it from interactive ShEx query builders.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-97207-2_16.pdf?error=cookies_not_supported&code=63311766-f725-4ef5-963f-7b6bacf9592e
+
+V3-02522 — Smart Query Definition for Content-Based Search in Large Sets of Graphs
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 2.
+Smart Query sketches topology over generic graph collections and clusters them with SOM. A semantic KG exploration object is not established.
+Fonte: https://diglib.eg.org/server/api/core/bitstreams/fb3e9afd-19ed-4cbf-bffb-1b834fd23591/content
+
+V3-02605 — SW-Store: A vertically partitioned DBMS for semantic web data management
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 2.
+SW-Store's contribution is RDF storage/vertical partitioning. Browser-like query benchmarks do not make it a primary exploration-method report.
+Fonte: https://link.springer.com/content/pdf/10.1007/s00778-008-0125-y.pdf?error=cookies_not_supported&code=53a7158c-77f0-4306-8798-3e2189d812e5
+
+V3-02778 — Two approaches to the dataset interlinking recommendation problem
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 4, 5, 6, 14.
+The method ranks dataset targets for interlinking/publishing using metadata and offline evaluation. Its primary operation is graph construction rather than exploration of semantic KG contents.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-11749-2_25?error=cookies_not_supported&code=371a22cb-c265-43b0-b5ac-d6a0c09cf404
+
+V3-02874 — Visual Analysis of the National Characteristics of the COVID-19 Vaccine Based on Knowledge Graph
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 5, 6, 9.
+The COVID national-information paper constructs a KG and presents static CiteSpace analyses. A primary interactive exploration or guidance method is not specified in the inspected contribution.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-19-5194-7_20.pdf?error=cookies_not_supported&code=e934d81c-54ac-478b-8779-cb3f52d95c10
+
+SOLO CONTESTO
+
+V3-00489 — Big-graphs: Querying, mining, and beyond
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2.
+The handbook chapter surveys graph exploration/querying/mining techniques. Use as background, not as an additional primary exploration report.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-319-49340-4_16.pdf?error=cookies_not_supported&code=4c28116d-ed1d-4d2f-8dd6-c4ddc13d0829
+
+V3-01041 — Exploratory Search in Databases and the Web.
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2.
+The acquired two-page source introduces the ExploreDB workshop and its programme; it does not report an original exploration method. Retain only as background if useful.
+Fonte: https://ceur-ws.org/Vol-1133/paper-25.pdf
+
+V3-01098 — Faceted exploration of RDF/S datasets: a survey
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2.
+Faceted RDF search is the subject of a survey/review. Use for related work and coverage checks, not as an additional primary-method report.
+Fonte: https://link.springer.com/content/pdf/10.1007/s10844-016-0413-8.pdf?error=cookies_not_supported&code=144d6189-031a-4d19-9213-722c79608f66
+
+V3-01196 — Fulfilling the Needs of a Metadata Creator and Analyst- An Investigation of RDF Browsing and Visualization Tools
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2.
+The chapter investigates existing metadata tools from creator/analyst perspectives. It is contextual comparison rather than a new primary KG exploration method.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-0-387-34347-1_6.pdf?error=cookies_not_supported&code=ca7dcc29-35fc-441d-88c2-5d871f60418c
+
+V3-02009 — Ontology-based end-user visual query formulation: Why, what, who, how, and which?
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2.
+Ontology visualization is reviewed and categorized across existing systems. Use as related work/design context, not an additional primary exploration report.
+Fonte: https://link.springer.com/content/pdf/10.1007/s10209-016-0465-0.pdf?error=cookies_not_supported&code=0f8ef240-b129-47ba-bdf7-efadd4c031d4
+
+V3-02430 — Semantic Descriptions in an Enterprise Search Solution
+Criterio: non_primary_report. Pagine PDF consultate per la decisione: 1, 2, 3, 4.
+This summer-school chapter discusses enterprise semantic search and interface principles. It does not supply sufficient original exploration-method detail for the primary-method corpus.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-540-74615-7_8.pdf?error=cookies_not_supported&code=660115f4-e34f-44a0-a1b9-e17d7dce0192
+
+DA CHIARIRE
+
+V3-00098 — A faceted browsing interface for diverse Large-Scale RDF Datasets
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired PDF is a citation guide, not the requested faceted RDF browser paper. Retrieve the actual report before judging eligibility.
+Fonte: https://repositorio.uchile.cl/pdf/guia.pdf
+
+V3-00173 — A review on application and development of fermentation cosmetics based on database visualization; [基于数据库可视化分析发酵源化妆品的应用与发展]
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The downloaded one-page Wanfang promotional document is not the requested report. Do not decide the target paper's language or eligibility from this substitute.
+Fonte: https://www.wanfangdata.com.cn/www/file/wfdatazs.pdf
+
+V3-00486 — Big data analytics for time-critical mobility forecasting: From raw data to trajectory-oriented mobility analytics in the aviation and maritime domains
+Criterio: source_completeness. Pagine PDF consultate per la decisione: 1.
+The download is book front matter rather than the requested full report. Obtain the substantive source before deciding scope.
+Fonte: https://link.springer.com/content/pdf/bfm:978-3-030-45164-6/1?error=cookies_not_supported&code=1291e7c5-7b38-4ec7-8ef6-67dc5c6493f7
+
+V3-00494 — BioKG Explorer: Interactive Visual Analytics for Biomedical Knowledge Graph Exploration over PrimeKG
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+BioKGExplorer describes relevant PrimeKG exploration and explanations, but the recovered Research Square version is a preprint posted 11 August 2026. Peer-reviewed publication by the cutoff is not established.
+Fonte: https://assets-eu.researchsquare.com/files/rs-10004105/v2_covered_e8d05f60-0957-491d-bd81-e3af02779710.pdf?c=1786623523
+
+V3-00507 — Bottom-up Anytime Discovery of Generalised Multimodal Graph Patterns for Knowledge Graphs
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 8, 9, 10, 11, 17.
+Pattern discovery supports relevant faceted KG exploration, but the Semantic Web Journal submission is marked under review. Do not treat this preprint/submission as an accepted report.
+Fonte: https://arxiv.org/pdf/2410.05839
+
+V3-00576 — Chem2Bio2RDF: A Linked Open Data Portal for Chemical Biology
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 3, 4, 5.
+Chem2Bio2RDF describes facets, semantic path generation and a Cytoscape plugin. Establish the peer-reviewed version of this exact title; a related journal article with a different title cannot be silently substituted.
+Fonte: https://arxiv.org/pdf/1012.4759
+
+V3-00655 — Construct Knowledge Graph for Exploratory Bug Issue Searching; [基于知识图谱的bug问题探索性搜索方法]
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired one-page Wanfang promotional document is not the requested bug/issue-search report.
+Fonte: https://www.wanfangdata.com.cn/www/file/wfdatazs.pdf
+
+V3-00686 — Context-KG: Context-Aware Knowledge Graph Visualization with User Preferences and Ontological Guidance
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+ContextKG proposes relevant context-aware KG layouts, but only the April 2026 arXiv preprint is established. Verify a peer-reviewed publication before the cutoff.
+Fonte: https://arxiv.org/pdf/2604.10384
+
+V3-00909 — Dynamic Faceted Search - From Haystack to Highlight
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The recovered file is a SmartFilters/ORKG Ask poster rather than the requested Haystack/Highlight report. Resolve bibliographic identity before deciding eligibility.
+Fonte: https://zenodo.org/records/20544167/files/I_1_Smart-Filters_ORKG_Ask.pdf
+
+V3-00934 — Efficiently Charting RDF
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+The method supports visual RDF chart exploration with approximate online aggregation, but only the arXiv version is established. Verify a peer-reviewed version of the exact report.
+Fonte: https://arxiv.org/pdf/1811.10955
+
+V3-00942 — EmpiRE-Compass: A Neuro-Symbolic Dashboard for Sustainable and Dynamic Knowledge Exploration, Synthesis, and Reuse
+Criterio: method_detail. Pagine PDF consultate per la decisione: 1.
+The one-page EmpiRE Compass poster presents a relevant dashboard vision but does not establish sufficient exploration-method detail or the eligible review track.
+Fonte: https://zenodo.org/records/18923774/files/REFSQ2026_Poster.pdf
+
+V3-00952 — Enabling semantic interoperability for risk and vulnerability analysis of public buildings
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 9, 10.
+The public-building risk paper presents semantic integration and mapped risk outputs. The inspected sections do not establish an interactive KG exploration workflow; inspect the complete method before excluding it.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-13693-2_12.pdf?error=cookies_not_supported&code=3271114e-8caf-45b1-837c-cb38a5d77f6d
+
+V3-00987 — Evaluating a Visual Query Tracer and Builder for Learning Declarative Logic Programming
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 2.
+Nemo Explain visualizes logic-program/query traces. Peer-reviewed publication and a semantic KG as the primary exploration object both require verification.
+Fonte: https://arxiv.org/pdf/2607.18864
+
+V3-01068 — Exploring the Unknown
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired Exploring the Unknown material has an EMBO 2001 identity inconsistent with the target record's year. Resolve the target/version before a scope decision.
+Fonte: https://link.springer.com/content/pdf/10.1093/embo-reports/kve014.pdf?error=cookies_not_supported&code=413456fd-b5f7-47e7-8fb7-3f764f7a9a1d
+
+V3-01079 — Extending Faceted Search with Automated Object Ranking
+Criterio: semantic_graph_object. Pagine PDF consultate per la decisione: 1, 3, 10, 11.
+Hippalus provides interactive faceted preference ranking, but RDF support is described as future work in this report. Verify whether the evaluated exploration object meets the survey's semantic-graph criterion.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-36599-8_20.pdf?error=cookies_not_supported&code=32a569a7-0245-4ad1-b275-a1732a6a4a74
+
+V3-01179 — From Lost to Linked: Actively Exploring Linked Data Through a Cross-departmental Project with Hidden Collections
+Criterio: source_completeness. Pagine PDF consultate per la decisione: 1.
+The acquired source is a conference programme, not the requested Hidden Collections report. Retrieve the substantive report.
+Fonte: https://uknowledge.uky.edu/ovgtsl2019/program.pdf
+
+V3-01272 — GraphDL: An ontology for linked data visualization
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 3, 4, 5, 6, 7, 8.
+GraphDL specifies an ontology and a pipeline to generate/display graph formats. A concrete interactive exploration or guidance contribution remains unestablished in the inspected passages.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-030-00374-6_33.pdf?error=cookies_not_supported&code=6b869a5a-5cce-4742-ab88-cd9c96eec67a
+
+V3-01310 — Hierarchical Knowledge Graphs: A Novel Information Representation for Exploratory Search Tasks
+Criterio: publication_status. Pagine PDF consultate per la decisione: 1, 13, 39.
+The hierarchical KG interface is relevant, but the recovered manuscript contains placeholder ACM publication metadata. Establish the accepted publication of this exact report before inclusion.
+Fonte: https://arxiv.org/pdf/2005.01716
+
+V3-01484 — Inference Variable—A Human Cognition and Design Perspective on Knowledge Graph Visualization
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 7, 8, 9.
+Inference-variable encodings guide visual analysis of KG examples, but the inspected proposal does not establish a concrete interactive operation. Recheck whether its method satisfies the existing guidance criterion without requiring a GUI.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-16-0119-4_48.pdf?error=cookies_not_supported&code=0826c708-45dc-456d-b5f7-fa8fe54f2ff4
+
+V3-01555 — Introduction
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired Introduction source concerns an unrelated metaphor/editorial context. The generic title match is insufficient to bind it to the intended target record.
+Fonte: https://energeia-online.org/article/download/9605/7724
+
+V3-01778 — Linked Data Visualization Techniques, Tools, and Big Data
+Criterio: source_completeness. Pagine PDF consultate per la decisione: 1.
+The download contains book front matter rather than substantive Linked Data visualization chapters. Obtain the relevant report before deciding eligibility.
+Fonte: https://link.springer.com/content/pdf/bfm:978-3-031-79490-2/1?error=cookies_not_supported&code=cde492c7-47b2-4a4a-9f1e-264e1f92f10e
+
+V3-01940 — Natural Language Query for Technical Knowledge Graph Navigation
+Criterio: exploration_scope. Pagine PDF consultate per la decisione: 1, 5, 6, 7, 10, 11, 12.
+The method maps natural-language maintenance questions to Cypher and displays subgraphs/statistics. Recheck whether the user workflow goes beyond exact-answer querying into the survey's exploration/guidance scope.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-981-19-8746-5_13.pdf?error=cookies_not_supported&code=3b584b83-2dfa-4b29-8f0f-0d500f018db8
+
+V3-02008 — Ontology-Based Development of Industry 4.0 and 5.0 Solutions for Smart Manufacturing and Production
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1, 6.
+The acquired source is a 277-page monograph; the target's report/chapter granularity is unresolved. Identify the actual report before judging its complete scope.
+Fonte: https://link.springer.com/content/pdf/10.1007/978-3-031-47444-6.pdf?error=cookies_not_supported&code=1c0b2b04-14bd-4de9-bef6-1750b7a1d2d7
+
+V3-02031 — Optimization and Visualization of Industrial Production Knowledge Graph Based on BERT and RGCN
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired BOT/project-risk paper is unrelated to the requested Production KG report. Retrieve the matching target source.
+Fonte: http://www.ppml.url.tw/EPPM_Journal/volumns/16_02_March_2026/ID_2025-35.pdf
+
+V3-02285 — Research On Cross - regional Emergency Coordination for Major Emergencies: Review and Prospect; [重大突发事件跨区域应急协同研究:回顾与展望]
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The downloaded one-page Wanfang promotional document is not the emergency-information review target. Retrieve the actual source before making any target decision.
+Fonte: https://www.wanfangdata.com.cn/www/file/wfdatazs.pdf
+
+V3-02796 — Understanding semantic web entity: Concept space based summarization method
+Criterio: source_identity. Pagine PDF consultate per la decisione: 1.
+The acquired one-page Wanfang promotional document is not the requested semantic-entity summarization report.
+Fonte: https://www.wanfangdata.com.cn/www/file/wfdatazs.pdf

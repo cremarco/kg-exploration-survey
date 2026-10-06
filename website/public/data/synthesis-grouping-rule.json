@@ -40,7 +40,7 @@
   "source_bindings": {
     "manuscript": {
       "document": "survey.tex",
-      "sha256": "16a80b92e14408b12db17e59d868a7a5fa27af36b2e5a44f4fef611053e46a07"
+      "sha256": "1c1cbc55e50d358616e68814128791f68c743082bdfa13e904b60d3203a4feb4"
     },
     "catalogue": {
       "document": "catalog.json",

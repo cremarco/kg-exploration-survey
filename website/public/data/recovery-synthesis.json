@@ -1,0 +1,4622 @@
+{
+  "schema": "recovery-manuscript-additions-1",
+  "documented_on": "2026-10-06",
+  "manuscript": "survey.tex",
+  "manuscript_sha256": "1c1cbc55e50d358616e68814128791f68c743082bdfa13e904b60d3203a4feb4",
+  "recovery_decisions": {
+    "document": "recovery-integration.json",
+    "sha256": "0bd42bc27e8a6074b04cc31a489922353461c3227299eaed8ab5aca7fba4bb4c"
+  },
+  "counts": {
+    "added_reports": 73,
+    "followup_excluded": 40,
+    "unresolved_candidates": 24,
+    "included_reports": 315,
+    "reports_sought": 991,
+    "reports_assessed": 437,
+    "excluded_reports": 122,
+    "not_retrieved": 543,
+    "pending_assessment": 11,
+    "duplicate_copies": 39
+  },
+  "current_profile": {
+    "reports": 315,
+    "dimensions": [
+      {
+        "dimension": "Interaction",
+        "reports_any_code": 304,
+        "implemented_or_demonstrated": 294,
+        "proposed_method": 12,
+        "future_work": 8,
+        "no_code": 11
+      },
+      {
+        "dimension": "Guidance",
+        "reports_any_code": 288,
+        "implemented_or_demonstrated": 269,
+        "proposed_method": 20,
+        "future_work": 10,
+        "no_code": 27
+      },
+      {
+        "dimension": "Representation",
+        "reports_any_code": 297,
+        "implemented_or_demonstrated": 290,
+        "proposed_method": 8,
+        "future_work": 6,
+        "no_code": 18
+      },
+      {
+        "dimension": "Data model",
+        "reports_any_code": 288,
+        "implemented_or_demonstrated": 282,
+        "proposed_method": 6,
+        "future_work": 0,
+        "no_code": 27
+      },
+      {
+        "dimension": "Data access",
+        "reports_any_code": 278,
+        "implemented_or_demonstrated": 275,
+        "proposed_method": 3,
+        "future_work": 1,
+        "no_code": 37
+      },
+      {
+        "dimension": "Scalability",
+        "reports_any_code": 223,
+        "implemented_or_demonstrated": 219,
+        "proposed_method": 5,
+        "future_work": 0,
+        "no_code": 92
+      },
+      {
+        "dimension": "Report evaluation",
+        "reports_any_code": 309,
+        "implemented_or_demonstrated": 305,
+        "proposed_method": 4,
+        "future_work": 10,
+        "no_code": 6
+      }
+    ],
+    "local_study_entries": 315,
+    "reports_with_study_entries": 232,
+    "entries_with_explicit_design_codes": 189,
+    "independent_study_count": "not_established"
+  },
+  "preserved_historical_contexts": {
+    "ledger_pairs": 49,
+    "unique_contexts": 27,
+    "exact_unchanged": true
+  },
+  "new_primary_report_ids": [
+    "V3-00117",
+    "V3-00138",
+    "V3-00165",
+    "V3-00187",
+    "V3-00229",
+    "V3-00261",
+    "V3-00323",
+    "V3-00346",
+    "V3-00347",
+    "V3-00369",
+    "V3-00411",
+    "V3-00496",
+    "V3-00515",
+    "V3-00533",
+    "V3-00576",
+    "V3-00630",
+    "V3-00639",
+    "V3-00650",
+    "V3-00708",
+    "V3-00742",
+    "V3-00751",
+    "V3-00786",
+    "V3-00821",
+    "V3-00878",
+    "V3-00894",
+    "V3-00942",
+    "V3-00966",
+    "V3-00971",
+    "V3-01034",
+    "V3-01038",
+    "V3-01039",
+    "V3-01053",
+    "V3-01060",
+    "V3-01079",
+    "V3-01106",
+    "V3-01125",
+    "V3-01170",
+    "V3-01173",
+    "V3-01178",
+    "V3-01337",
+    "V3-01484",
+    "V3-01566",
+    "V3-01616",
+    "V3-01622",
+    "V3-01624",
+    "V3-01709",
+    "V3-01741",
+    "V3-01744",
+    "V3-01750",
+    "V3-01754",
+    "V3-01948",
+    "V3-01984",
+    "V3-02014",
+    "V3-02018",
+    "V3-02091",
+    "V3-02185",
+    "V3-02210",
+    "V3-02220",
+    "V3-02260",
+    "V3-02264",
+    "V3-02393",
+    "V3-02418",
+    "V3-02495",
+    "V3-02525",
+    "V3-02543",
+    "V3-02586",
+    "V3-02712",
+    "V3-02739",
+    "V3-02740",
+    "V3-02741",
+    "V3-02746",
+    "V3-02757",
+    "V3-02977"
+  ],
+  "additions": [
+    {
+      "addition_id": "REC-RQ1-01",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "The recovered reports make the transition from browsing to querying more explicit. Smeagol lets users navigate concrete resources, select a subgraph and generalize nodes into variables; RDF Explorer combines pattern construction with constant-to-variable generalization and current-result feedback. The DBpedia Visualizer applies related operations through Android gestures, while KGVis allows transformations between query patterns and result graphs \\citep{V3-02525,V3-02210,V3-00229,V3-01622}. The reusable state is therefore more than a displayed neighborhood: it includes which nodes are constants, which are variables and which edges constrain the answer. The DBpedia report describes filters, aggregates and autocomplete as future work, so the gesture-based workflow does not establish the expressiveness of a full SPARQL editor.",
+      "sources": [
+        {
+          "report_id": "V3-02525",
+          "citation_key": "V3-02525",
+          "source_sha256": "d3f8dd9f759ceba42c6dbb959d4731e953ae4591c40adc9a295f22e5613fb837",
+          "pdf_pages": 15,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                5,
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Navigate concrete RDF resources, select example subgraph, wildcard nodes to generalize, and bind results back into graph.",
+                "pages": [
+                  5,
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Inspector and animated graph preserve focus; linked results feed next exploration step.",
+                "pages": [
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02210",
+          "citation_key": "V3-02210",
+          "source_sha256": "e16277efa2a676171583e17c516511f4071a211a1c6d79f3aaf54e648ef09b63",
+          "pdf_pages": 17,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                5,
+                7,
+                8
+              ],
+              "source_value": {
+                "text": "Incremental graph-pattern construction, node details, constant-to-variable generalization and result feedback.",
+                "pages": [
+                  5,
+                  7,
+                  8
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                7,
+                8
+              ],
+              "source_value": {
+                "text": "Suggests only property IRIs producing non-empty results for the current query; keyword entity suggestions and current-result feedback.",
+                "pages": [
+                  7,
+                  8
+                ],
+                "codes": [
+                  {
+                    "code": "G01_valid_next_step",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G02_lexical_completion",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00229",
+          "citation_key": "V3-00229",
+          "source_sha256": "699c96a766330c1a7178ce1f6a53b3f4fcdfaf999c98991e31f9c3234c702c9d",
+          "pdf_pages": 6,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Android keyword lookup selects a starting entity; long-click opens properties/values, chosen links grow the graph; double-click replaces entity constants by query variables, then Run executes generated SPARQL.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                2,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Property/value lists from the selected entity and visible constant-to-variable changes steer query construction. Autocomplete search is future work, not implemented.",
+                "pages": [
+                  2,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G01_valid_next_step",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01622",
+          "citation_key": "V3-01622",
+          "source_sha256": "a69c67c47e4087e1a25a1e23935b08b66e5d437963c794441aa4b49a7ccd7b9b",
+          "pdf_pages": 4,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Construct visual triple patterns/operators, expand query patterns into result graphs and collapse back; select returned entities as starts for deeper queries.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Node-link visual syntax and result graphs support bidirectional pattern/result transformation; List nodes compact multiple matches.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "query_pattern",
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 425
+    },
+    {
+      "addition_id": "REC-RQ1-02",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "A similar-looking graph can represent different objects at successive stages. The visual data-schema library contracts classes and properties to produce configurable UML-like source-schema diagrams; initiating queries directly from those diagrams is future work. Schema-based ViziQuer uses a class tree to start queries, and the Wikidata extension displays a query pattern with readable entity labels and reverse SPARQL visualization \\citep{V3-00138,V3-02393,V3-02757}. KG3D, in contrast, uses a three-dimensional entity view alongside query construction and tabular answers \\citep{V3-01616}. Schema simplification, query notation and result exploration require separate representation roles even when they use nodes and links. Lossy schema abstraction also needs an explicit indication of what the view omits.",
+      "sources": [
+        {
+          "report_id": "V3-00138",
+          "citation_key": "V3-00138",
+          "source_sha256": "9e63398d254c2eb21b0d41c206f5da2ce35a2a14f18736347230c26e83c464f4",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3
+              ],
+              "source_value": {
+                "text": "Users tune class contraction, superclass abstraction and property-link splitting; manually adjust the schema diagram and create a ViziQuer project over the same endpoint schema.",
+                "pages": [
+                  2,
+                  3
+                ],
+                "codes": [
+                  {
+                    "code": "I09_visual_configuration",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                2,
+                4
+              ],
+              "source_value": {
+                "text": "Schema abstraction reduces repeated attributes/edges with configurable no-loss or lossy options. Direct query initiation from the schema diagram is future work.",
+                "pages": [
+                  2,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                2,
+                3
+              ],
+              "source_value": {
+                "text": "UML-like class/property node-link schema diagrams, including generated superclasses.",
+                "pages": [
+                  2,
+                  3
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "source_schema"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02393",
+          "citation_key": "V3-02393",
+          "source_sha256": "5d52675631700540823c8f77dcc23a5537714dee9d5a1db3b23984fb798c2f46",
+          "pdf_pages": 7,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Schema tree initializes visual class queries; linked query nodes, aggregate/nested queries and generated SPARQL/results.",
+                "pages": [
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Class tree shows endpoint source schema; diagram shows query pattern, not result graph.",
+                "pages": [
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "source_schema",
+                      "query_pattern"
+                    ]
+                  },
+                  {
+                    "code": "V02_outline_tree",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "source_schema",
+                      "query_pattern"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02757",
+          "citation_key": "V3-02757",
+          "source_sha256": "0e5aa2dc10f83c38c249217187f287bb7ec3ce38d9b81f7cb9a7c1716a51ad11",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Seed/grow UML-style Wikidata queries; reverse SPARQL visualization and executable query gallery.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I10_reuse_history",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                2,
+                3
+              ],
+              "source_value": {
+                "text": "UML node-link query pattern uses entity labels; it visualizes SPARQL, not an answer graph.",
+                "pages": [
+                  2,
+                  3
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "query_pattern"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01616",
+          "citation_key": "V3-01616",
+          "source_sha256": "d05ec655afd6a200d1b1e9a7c4ff64b0042379979a9ed62cd3b2d77f0b59af1b",
+          "pdf_pages": 4,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Search entities, choose neighbor relation types from circular-menu prompts, specify connecting paths and drag/drop nodes to construct query patterns; switch results to table.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Interactive 3D RDF node-link result space with view-angle controls, pattern-design graph and optional table result view.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "V10_3d_vr",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "query_pattern",
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "query_pattern",
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 427
+    },
+    {
+      "addition_id": "REC-RQ1-03",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "Query-by-example is not one uniform interaction. The GF framework uses a grid of classes, properties, conditions and selected output fields. CUTE accepts tabular example tuples; iQbees starts from an entity and updates semantic-aspect rankings through positive and negative feedback. SPARQL-QBE builds conjunctive constraints from positive and negative entities, while Von-QBE maps keyword input through an ontology schema and suggests fragment expansions \\citep{V3-00165,V3-00742,V3-01566,V3-02185,V3-02018}. These mechanisms differ in whether an example specifies a table row, an entity, a graph fragment or a conceptual starting point. Their expressive limits and feedback semantics should be stated before treating the shared name as evidence of equivalent user control.",
+      "sources": [
+        {
+          "report_id": "V3-00165",
+          "citation_key": "V3-00165",
+          "source_sha256": "2ac3c0cd5abf58887319f122b09ab1f16cca6a75a9487ca54f6153ec2d65e994",
+          "pdf_pages": 16,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11,
+                14,
+                15
+              ],
+              "source_value": {
+                "text": "QBE grid selects subject classes, property aliases, conditions, visible/optional fields and aggregate/group operators; a second wizard defines CONSTRUCT output triples. A formal text-query input also exists.",
+                "pages": [
+                  9,
+                  10,
+                  11,
+                  14,
+                  15
+                ],
+                "codes": [
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00742",
+          "citation_key": "V3-00742",
+          "source_sha256": "7f4f03a5a22ffb8a8272a5d8fdb5dc4a4662416d25f181d2739528788bf6b4bb",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Enter one or multiple entity tuples in a table; choose entity candidates, select common attributes and mark unwanted results as negative examples; regenerate SPARQL iteratively.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "String-similarity entity recommendations and ranked common attributes; shortest relation paths and common graph patterns generate queries; negative-example attributes produce exclusion constraints.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "G02_lexical_completion",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G04_query_expansion_relaxation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01566",
+          "citation_key": "V3-01566",
+          "source_sha256": "71e28e880ddcc1e65fe8e4312f067b458c8f082ffcd44ea7bb725430094ee08b",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "Start with exact-name entity, inspect ranked similar entities, mark positive/negative examples, recalculate and restart search; debug controls expose shared aspects.",
+                "pages": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Aspect-based entity ranking supports diverse results; positive and negative feedback refines candidate aspects, with a relaxed non-maximal-aspect variant.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G04_query_expansion_relaxation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02185",
+          "citation_key": "V3-02185",
+          "source_sha256": "e8d86acec09e7e04a18bbc095e4ebac8066fc2732d2ff25f098464cedd09c0a9",
+          "pdf_pages": 22,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                11,
+                13,
+                14
+              ],
+              "source_value": {
+                "text": "Keyword search selects positive/negative entity examples; formulation tab displays generated constraints and results. Users add/remove constraints or give feedback through entities, including recursive property-path expansion.",
+                "pages": [
+                  11,
+                  13,
+                  14
+                ],
+                "codes": [
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                11,
+                13,
+                14,
+                15
+              ],
+              "source_value": {
+                "text": "Rank generated conjunctive queries/constraints from common example properties, show satisfaction in green and update after positive/negative feedback; caches reduce repeated ranking costs.",
+                "pages": [
+                  11,
+                  13,
+                  14,
+                  15
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02018",
+          "citation_key": "V3-02018",
+          "source_sha256": "eca615ae9401039393f05080dc9a81b7900958cb5d9a447d542dc477842fa727",
+          "pdf_pages": 9,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "Natural-language/keyword request identifies schema fragment; user accepts suggested directly adjacent concepts/properties, expands request and submits for SPARQL answers.",
+                "pages": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "I06_free_language",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Schema-based fragment expansion suggests connected classes/properties and inherited attributes; lexical similarity maps request terms, with shortest-path/MST fragment construction.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G01_valid_next_step",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G02_lexical_completion",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 429
+    },
+    {
+      "addition_id": "REC-RQ1-04",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "Views can also reorganize relationships without changing their role into source assertions. LDViz connects editable SPARQL queries and style sheets with coordinated MGExplorer views and exploration history. ARViz synchronizes scatter, chord and association-graph views of mined rules and provides links to the supporting publications \\citep{V3-01178,V3-00411}. Stunning Doodle places embedding neighbors beside asserted knowledge-graph links, with distance-based shading and a neighbor list \\citep{V3-02586}. These examples support preserving the distinction between returned facts, mined associations and embedding similarity throughout selection, explanation and export. Sparklis nested tables address a different presentation problem by using query-variable dependencies to group results and reduce repeated values; no measured usability gain is supplied for that extension \\citep{V3-00261}.",
+      "sources": [
+        {
+          "report_id": "V3-01178",
+          "citation_key": "V3-01178",
+          "source_sha256": "1f1144189799f834f868fb9862853431f53c30b20b9ede58e8ea8b12d75bab31",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                5,
+                6,
+                7,
+                8,
+                12
+              ],
+              "source_value": {
+                "text": "Edit/test/clone SPARQL queries and style sheets; select graph subsets, spawn complementary views, arrange/hide/revisit views and retrace analysis history.",
+                "pages": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  12
+                ],
+                "codes": [
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I08_coordinated_analysis",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I09_visual_configuration",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I10_reuse_history",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "source_value": {
+                "text": "Node-link, list, bar chart and glyph matrix views visualize query-derived resource associations; ontology hierarchy diagrams inspect source schema. MGExplorer supports complementary linked analytical views.",
+                "pages": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association",
+                      "source_schema"
+                    ]
+                  },
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V06_statistical_chart",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V07_matrix",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V11_coordinated_views",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00411",
+          "citation_key": "V3-00411",
+          "source_sha256": "142e7356186aa1e02171f1aec2063b6473f57297a4653148338198495057c302",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "Filter/sort/hover association rules by entities, clusters, confidence and interestingness; selected scatter subsets open chord view, selected chord entities open association graph; rule click opens source publications.",
+                "pages": [
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "I08_coordinated_analysis",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I02_faceted_filtering",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "Synchronized scatter, chord and association node-link views; they depict computed mined associations, and details show underlying source-publication metadata.",
+                "pages": [
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "V06_statistical_chart",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V11_coordinated_views",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "computed_association"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                5,
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Related named entities, coordinated selection, textual rule metrics and source-publication provenance assist rule interpretation and further exploration.",
+                "pages": [
+                  5,
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02586",
+          "citation_key": "V3-02586",
+          "source_sha256": "2beb243477cd75998a01d93177432af3c6dc190a212fbd20159754622527a61a",
+          "pdf_pages": 17,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Node-link KG and embedding neighbor list; nearest-neighbor shading denotes computed similarity distinct from source KG edges.",
+                "pages": [
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Similarity distance list and shading explain embedding-neighbor selection while KG links remain visible.",
+                "pages": [
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00261",
+          "citation_key": "V3-00261",
+          "source_sha256": "5ad1be6d203c216eb01d85550f17f475a4dc22667f323e224218f6757bb4d839",
+          "pdf_pages": 15,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                8,
+                9,
+                10,
+                11
+              ],
+              "source_value": {
+                "text": "Sparklis updates query AST, generated SPARQL and results after interactions; the new contribution reorganizes results automatically according to query variable dependencies and ordering.",
+                "pages": [
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "codes": [
+                  {
+                    "code": "I05_controlled_language",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                8,
+                10,
+                11,
+                14
+              ],
+              "source_value": {
+                "text": "Query-derived nesting exposes dependencies and removes redundant repeated values; variable ordering alters perspective. No empirical usability gain was measured.",
+                "pages": [
+                  8,
+                  10,
+                  11,
+                  14
+                ],
+                "codes": [
+                  {
+                    "code": "G07_visualisation_recommendation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                11,
+                12,
+                14
+              ],
+              "source_value": {
+                "text": "Nested tables with embedded result tables and gallery-like image cells; query dependency graphs are algorithm illustrations, not attested interactive result views.",
+                "pages": [
+                  11,
+                  12,
+                  14
+                ],
+                "codes": [
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V02_outline_tree",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 431
+    },
+    {
+      "addition_id": "REC-RQ2-01",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "Guidance can reduce the visible choices while introducing a risk of losing the desired target. SView ranks link patterns by goodness and diversity and exposes hierarchy, list and top-$k$ organizations. Its user comparison found shorter interactions with top-$k$ patterns, but twelve of the twenty-four participants noted target-loss risk; hierarchy improved overview while deep branches confused some participants \\citep{V3-01744}. RelClus instead groups relationship paths into a labeled hierarchy, with expansion and collapse for inspecting the grouped results \\citep{V3-02740}. Ranked pruning and grouped overview support different actions. A system that reduces options should retain a route back to the full candidate set and distinguish an absent target from one hidden by ranking.",
+      "sources": [
+        {
+          "report_id": "V3-01744",
+          "citation_key": "V3-01744",
+          "source_sha256": "28e821c4030e6a87599b4a694e7daccb00f0b3a952fb964377a2964d88ef8d65",
+          "pdf_pages": 33,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                14,
+                15,
+                16,
+                25
+              ],
+              "source_value": {
+                "text": "Link-pattern goodness combines informativeness, conciseness and specificity; diversity reranking and budgeted maximum coverage select top-k navigation alternatives.",
+                "pages": [
+                  14,
+                  15,
+                  16,
+                  25
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                21,
+                22,
+                25,
+                26,
+                27
+              ],
+              "source_value": {
+                "label": "Pattern organization comparison",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 24,
+                "recruited_or_completed_n": 24,
+                "population": "Same study setting describes 24 student subjects; cohort shared across comparison sections, do not sum distinct participants.",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Entity-centric summarization",
+                  "Related entity finding"
+                ],
+                "comparators": [
+                  "Hierarchy",
+                  "List",
+                  "Top-k"
+                ],
+                "measures": [
+                  "Task time",
+                  "Number of actions",
+                  "Post-task Likert ratings"
+                ],
+                "results": "Top-k reduced actions/time; 12 subjects (50%) noted risk of target loss. Hierarchy provided better overview but deep branches confused some subjects.",
+                "limitations": [
+                  "Two comparison sections share study setting; not 48 independent participants."
+                ],
+                "response_sets": [],
+                "pages": [
+                  21,
+                  22,
+                  25,
+                  26,
+                  27
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02740",
+          "citation_key": "V3-02740",
+          "source_sha256": "896c104f51fc4b93f01cf10078476d955f9f6c4e93713f1c927cd382777dfa0c",
+          "pdf_pages": 17,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                8,
+                9,
+                10
+              ],
+              "source_value": {
+                "text": "Search paths between entities and expand/collapse hierarchically grouped relationship results.",
+                "pages": [
+                  8,
+                  9,
+                  10
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                7,
+                8,
+                9
+              ],
+              "source_value": {
+                "text": "Schematic cluster labels generalize relationship patterns; sizes and hierarchy guide exploration.",
+                "pages": [
+                  7,
+                  8,
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                9
+              ],
+              "source_value": {
+                "text": "Expandable relationship hierarchy and ordered relationship lists.",
+                "pages": [
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "V02_outline_tree",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  },
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 461
+    },
+    {
+      "addition_id": "REC-RQ2-02",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "An implemented host interface does not make every guidance extension implemented. The OptiqueVQS query-history report specifies conditional-probability ranking of continuations through partial-query matching, illustrated with an assumed query log; the ranking is a proposed method. A later query-log report combines proposed ranking and dead-end approximation, reporting a preliminary elimination of up to 80\\% of dead ends using views about 10\\% of the original data \\citep{V3-02739,V3-01984}. Combined ranking and dead-end evaluation remains future work. Separately, OWL graph projection supplies a concrete navigation component used in OptiqueVQS and SemFacet, while summarizing earlier application evaluations rather than recruiting a new cohort \\citep{V3-01948}. These reports warrant separate method, implementation and study identities within the same family.",
+      "sources": [
+        {
+          "report_id": "V3-02739",
+          "citation_key": "V3-02739",
+          "source_sha256": "0447183f0421b9c96fb12c335bfea65bb06ae6361eff63707739179c58390cf0",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                5,
+                6,
+                9
+              ],
+              "source_value": {
+                "text": "Proposed conditional-probability ranking matches partial query patterns against SPARQL query log with semantic relationships; current pivot limits suggestions.",
+                "pages": [
+                  5,
+                  6,
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "proposed_method"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                5,
+                6,
+                9,
+                11
+              ],
+              "source_value": {
+                "label": "Statoil ranking worked example",
+                "pages": [
+                  5,
+                  6,
+                  9,
+                  11
+                ],
+                "design_codes": [],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Rank continuations for partial wellbore query"
+                ],
+                "comparators": [],
+                "measures": [],
+                "results": "Illustrated conditional-probability ranking on assumed three-query log; not an empirical evaluation.",
+                "limitations": [],
+                "response_sets": []
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01984",
+          "citation_key": "V3-01984",
+          "source_sha256": "882ff7a3b85c40b15bbd8c9207e1134e696c48a466d3cc5b680266a4a4c3b85e",
+          "pdf_pages": 9,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                4,
+                5,
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Proposed extension ranks candidate query components by conditional frequency in query logs and removes contextual dead ends via prematerialized frequent-pattern answers.",
+                "pages": [
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "proposed_method"
+                  },
+                  {
+                    "code": "G01_valid_next_step",
+                    "status": "proposed_method"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                6,
+                7
+              ],
+              "source_value": {
+                "label": "Preliminary deadend approximation",
+                "design_codes": [
+                  "E06_offline_accuracy"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Approximate deadend elimination with pre-materialized query-pattern views"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Fraction of deadends eliminated",
+                  "View size relative to original data"
+                ],
+                "results": "Up to 80% deadends eliminated with views about 10% original data; full workload details not stated.",
+                "limitations": [
+                  "Preliminary result; combined ranking/deadend evaluation future work."
+                ],
+                "response_sets": [],
+                "pages": [
+                  6,
+                  7
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01948",
+          "citation_key": "V3-01948",
+          "source_sha256": "d2f87c43089c9dabb1dac83d577f908f75ed8c1c099b93bc12c192d582a50cd3",
+          "pdf_pages": 7,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4,
+                6
+              ],
+              "source_value": {
+                "text": "Domain/range, restrictions, inverses, chains and hierarchy propagation determine available class/property edges for navigation. Multi-edge non-local navigation remains future work.",
+                "pages": [
+                  2,
+                  3,
+                  4,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "G01_valid_next_step",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "OWL2 ontology axioms projected into directed labeled navigation graph, enabling RDF KG query tools; underlying instances accessed by host applications rather than a new native store.",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "B06_schema_only",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A06_projection_cache",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                4,
+                6
+              ],
+              "source_value": {
+                "label": "Previously evaluated applications",
+                "design_codes": [
+                  "E02_case_study"
+                ],
+                "evidence_origin": "summarized_previous_study",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "OptiqueVQS Siemens/Statoil/generic use cases",
+                  "SemFacet Yago slice"
+                ],
+                "comparators": [],
+                "measures": [],
+                "results": "Prior application studies cited without new participant counts here.",
+                "limitations": [],
+                "response_sets": [],
+                "pages": [
+                  4,
+                  6
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 463
+    },
+    {
+      "addition_id": "REC-RQ2-03",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "Conversational exploration also depends on a declared interaction scope. The news agent of Schneider et al. uses a Neo4j graph and structured exploration modes, with suggestions for related entities; unrestricted language-model generation is future work. Its 54 users produced 65 sessions, with mean SUS 79.4 (SD 18.5), but only 130 of 222 entity-related search requests were recognized \\citep{V3-01173}. Seabra et al. implement clarification and reformulation with a knowledge graph and GPT-4o, illustrated through four underspecified questions about historical Brazilian capitals; quantitative participant evaluation remains future work \\citep{V3-01170}. User ratings in the former and clarification examples in the latter provide different evidence. Neither establishes arbitrary conversational access across graphs or reliable resolution of every ambiguous question.",
+      "sources": [
+        {
+          "report_id": "V3-01173",
+          "citation_key": "V3-01173",
+          "source_sha256": "b31a096895644442ea8990abf3684d569312079eecd12ec5c4ec31e63de50ef6",
+          "pdf_pages": 11,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                6
+              ],
+              "source_value": {
+                "text": "Voice input supports popular-article overview, category/entity search, reading/selecting/skipping articles, and following suggested entities across news topics.",
+                "pages": [
+                  3,
+                  4,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "I06_free_language",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                3,
+                4,
+                6
+              ],
+              "source_value": {
+                "text": "Finite dialogue states and frequency-ranked related entities suggest three topic pivots after an article, while greeting/help introduces search mechanisms.",
+                "pages": [
+                  3,
+                  4,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G05_template_entry",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                3,
+                4,
+                8
+              ],
+              "source_value": {
+                "text": "News/Wikidata entity relationships represented as a Neo4j property graph; dialogue manager builds graph queries from templates. LLM response generation is future work.",
+                "pages": [
+                  3,
+                  4,
+                  8
+                ],
+                "codes": [
+                  {
+                    "code": "B02_property_graph",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A03_local_store",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "source_value": {
+                "label": "Conversational news exploration",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 54,
+                "recruited_or_completed_n": 54,
+                "population": "Volunteers recruited via university courses, social media and snowball sampling; ages 14–86.",
+                "allocation": "single_system",
+                "tasks": [
+                  "Greet agent and seek news without detailed operation instructions"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Dialogue logs",
+                  "SUS",
+                  "Five-point experience ratings",
+                  "Entity matching accuracy"
+                ],
+                "results": "SUS mean 79.4 (SD 18.5); 130 of 222 entity-related search requests recognized (59%); overall satisfaction mean 3.7/5.",
+                "limitations": [
+                  "One news source and German interface; speech and entity matching failures; age and technical familiarity vary."
+                ],
+                "response_sets": [
+                  {
+                    "count": 65,
+                    "unit": "dialogue sessions",
+                    "condition": "54 users over two weeks"
+                  },
+                  {
+                    "count": 2172,
+                    "unit": "dialogue turns",
+                    "condition": "agent or user utterances"
+                  }
+                ],
+                "pages": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01170",
+          "citation_key": "V3-01170",
+          "source_sha256": "91685ec2ecaf74689b5ee6b8f8612eecb0c9322f116b8ed7282886653d14e7ed",
+          "pdf_pages": 14,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                8,
+                11,
+                12
+              ],
+              "source_value": {
+                "text": "Users submit underspecified natural-language questions, receive graph-grounded clarification prompts, and refine temporal/contextual intent in a Streamlit interface.",
+                "pages": [
+                  8,
+                  11,
+                  12
+                ],
+                "codes": [
+                  {
+                    "code": "I06_free_language",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "source_value": {
+                "text": "LLM detects missing contextual qualifiers in a CoaKG and generates follow-up questions that request timeframes, scope, definitions or provenance.",
+                "pages": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "codes": [
+                  {
+                    "code": "G09_language_generation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "source_value": {
+                "text": "Four example questions are qualitatively analyzed; prompt-linearized triples, natural-language triples and vector retrieval strategies are discussed. A participant study is future work.",
+                "pages": [
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "codes": [
+                  {
+                    "code": "E01_demonstration",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "source_value": {
+                "label": "Qualitative clarification examples",
+                "design_codes": [
+                  "E01_demonstration"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Refine four underspecified queries about historical Brazilian capitals"
+                ],
+                "comparators": [
+                  "Prompt-based linearized triples",
+                  "Prompt-based natural-language descriptions",
+                  "Vector RAG strategy"
+                ],
+                "measures": [
+                  "Qualitative appropriateness of clarification"
+                ],
+                "results": "Figures contrast underspecified question with temporally anchored reformulation; no controlled participant outcome reported.",
+                "limitations": [],
+                "response_sets": [
+                  {
+                    "count": 4,
+                    "unit": "illustrative questions",
+                    "condition": "qualitative examples"
+                  }
+                ],
+                "pages": [
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 465
+    },
+    {
+      "addition_id": "REC-RQ2-04",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "Preferences can affect filtering, ordering and subsequent recommendations in different ways. PFSgeo combines facets with rectangular geographic selection and best/worst preference actions; one geographical facet is implemented. SEED V3 applies weighted positive and negative entity/aspect feedback and provides graph-link explanations of embedding-ranked entities \\citep{V3-02091,V3-02418}. LINDASearch records preference learning and query recommendations, but its three-expert assessment concerns analytic annotation choices rather than a three-person end-to-end search trial \\citep{V3-01754}. An application should distinguish a hard restriction from a soft preference and retain the feedback history that changes a ranked result. A related graph path explains a connection without proving that an embedding score itself is a source assertion.",
+      "sources": [
+        {
+          "report_id": "V3-02091",
+          "citation_key": "V3-02091",
+          "source_sha256": "768bb9544305995fda190e4f95e16db9b40150050123ad8b88c96862bf171066",
+          "pdf_pages": 19,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                6,
+                7,
+                8,
+                9
+              ],
+              "source_value": {
+                "text": "Facet restrictions and map rectangle selection refine hotel focus; BEST/WORST geographic preferences combine with non-geographic actions; ranked bucket results and map are synchronized.",
+                "pages": [
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "I02_faceted_filtering",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I08_coordinated_analysis",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                6,
+                7,
+                8,
+                9,
+                11
+              ],
+              "source_value": {
+                "text": "Preference inheritance and scope-based conflict resolution rank hotels from explicit user preferences; this is interactive preference guidance, not inferred-profile adaptation.",
+                "pages": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  11
+                ],
+                "codes": [
+                  {
+                    "code": "G08_personalisation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02418",
+          "citation_key": "V3-02418",
+          "source_sha256": "f580bc8454020acc2fa92e49f202fd83b7462a5aba185cc142dc30eb87baadcf",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Tablet touch actions add positive/negative weighted entity/aspect feedback; browse entity detail and joint entity links.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I07_example_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "TransE ranks entity/aspect results and paths explain correlations; result updates follow positive/negative feedback.",
+                "pages": [
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                2,
+                3
+              ],
+              "source_value": {
+                "text": "Entity and aspect lists with link-based explanation view.",
+                "pages": [
+                  2,
+                  3
+                ],
+                "codes": [
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01754",
+          "citation_key": "V3-01754",
+          "source_sha256": "0b42a33eed7687e4319b60531336e82d05f2cdb593da3058c164471cb89c19b1",
+          "pdf_pages": 19,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                5
+              ],
+              "source_value": {
+                "text": "Preference learner ranks queries from navigation duration/TF-IDF, association mining recommends queries from similar users, and doc2vec recommends related queries.",
+                "pages": [
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G08_personalisation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                8,
+                9,
+                10,
+                11
+              ],
+              "source_value": {
+                "label": "Expert AHP feature assessment",
+                "design_codes": [
+                  "E03_formative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 3,
+                "recruited_or_completed_n": 3,
+                "population": "One Web designer, one Linked Data specialist and one software engineer.",
+                "allocation": "annotation",
+                "tasks": [
+                  "Identify essential faceted-search features",
+                  "Pairwise weighting and feature comparison"
+                ],
+                "comparators": [
+                  "Gnoss",
+                  "Elastic lists",
+                  "Buzzillions",
+                  "Forrester Research",
+                  "Air New Zealand"
+                ],
+                "measures": [
+                  "AHP feature weights",
+                  "Feature presence"
+                ],
+                "results": "LINDASearch covers selected core features; assessment identifies link discovery, navigation history/recommendations strengths.",
+                "limitations": [
+                  "Expert feature judgment, not user task performance."
+                ],
+                "response_sets": [],
+                "pages": [
+                  8,
+                  9,
+                  10,
+                  11
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 467
+    },
+    {
+      "addition_id": "REC-RQ3-01",
+      "section": "Backend Assumptions and Scalability",
+      "context_text": "The recovered sources expose distinct portability costs. Humboldt works with locally loaded RDF documents and SPARQL; run-time dereferencing remains a planned extension. FedViz uses dataset class/property connectivity to build and execute federated queries, whereas the KeyFS/MidSemI architecture aligns enterprise SQL, Facebook JSON and a DBpedia RDF dump through explicit mapping components \\citep{V3-01337,V3-01125,V3-01741}. Graph projection translates OWL axioms into navigable structures for existing query interfaces \\citep{V3-01948}. These are different access and schema-maintenance arrangements. Their data routes must be recorded directly rather than inferred from a graph-shaped view or a list of backend engine names.",
+      "sources": [
+        {
+          "report_id": "V3-01337",
+          "citation_key": "V3-01337",
+          "source_sha256": "760a812e9e13447f7c9ae409833dac0c23aa29bbd9470b2d5cc617774885a6d6",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                5,
+                7
+              ],
+              "source_value": {
+                "text": "C# web prototype on RDF documents fetched through HTTP GET and local SPARQL queries; runtime URI dereferencing extension explicitly future work.",
+                "pages": [
+                  5,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "B01_rdf",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A03_local_store",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A05_file_input",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01125",
+          "citation_key": "V3-01125",
+          "source_sha256": "98df2a3ff66fa11bb419a3689a08ab40951144fd89335a650565efdf83bdacfe",
+          "pdf_pages": 12,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                4,
+                9
+              ],
+              "source_value": {
+                "text": "RDF endpoint federation through FedX SPARQL1.0/1.1, intermediate servlet layer integrates endpoint results.",
+                "pages": [
+                  4,
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "B01_rdf",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A01_endpoint_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A04_federation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01741",
+          "citation_key": "V3-01741",
+          "source_sha256": "ab04f45110d7ed5425479a5d792b6e864abacaafa75a97eeafe298b4d06244de",
+          "pdf_pages": 14,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                6,
+                8,
+                9,
+                11
+              ],
+              "source_value": {
+                "text": "Mediator integrates SQL relational CRM, Facebook JSON API and local DBpedia RDF dump queried with Fuseki SPARQL; mapping metadata in Microsoft SQL Server.",
+                "pages": [
+                  6,
+                  8,
+                  9,
+                  11
+                ],
+                "codes": [
+                  {
+                    "code": "B05_mixed_models",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A03_local_store",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A04_federation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01948",
+          "citation_key": "V3-01948",
+          "source_sha256": "d2f87c43089c9dabb1dac83d577f908f75ed8c1c099b93bc12c192d582a50cd3",
+          "pdf_pages": 7,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "OWL2 ontology axioms projected into directed labeled navigation graph, enabling RDF KG query tools; underlying instances accessed by host applications rather than a new native store.",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "B06_schema_only",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A06_projection_cache",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 507
+    },
+    {
+      "addition_id": "REC-RQ3-02",
+      "section": "Backend Assumptions and Scalability",
+      "context_text": "Source size and interactive cost remain separate in the extension. La Rioja Turismo reports 67,284 entities and 675,368 triples in a deployed tourism graph; approximately 40,000 monthly visits are deployment traffic. LDViz describes a DBpedia source of about 400 million triples, while its illustrated visual graphs have 26 nodes/124 links and 237 nodes/1,160 links \\citep{V3-01709,V3-01178}. Stunning Doodle gives operation times for rendered selections: centering 502 nodes took 21.7 seconds and expanding 271 nodes took 12.03 seconds in its stated setting \\citep{V3-02586}. The larger source description therefore cannot substitute for the rendered workload or for a measured end-to-end response.",
+      "sources": [
+        {
+          "report_id": "V3-01709",
+          "citation_key": "V3-01709",
+          "source_sha256": "ae2e7dd72ab7eaf089be0a94dc66d14c45f5fcebeb8e7cbd8181691629cc139a",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                1,
+                3,
+                7
+              ],
+              "source_value": {
+                "text": "Institutional tourism portal operational deployment, reportedly more than 40,000 monthly visits; no recruited usability cohort or controlled comparison.",
+                "pages": [
+                  1,
+                  3,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "E08_deployment",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "E02_case_study",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/0",
+              "physical_pdf_pages": [
+                3
+              ],
+              "source_value": {
+                "value": 67284,
+                "range": null,
+                "unit": "entities",
+                "scope": "loaded_dataset",
+                "conditions": "La Rioja Turismo knowledge graph",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  3
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/2",
+              "physical_pdf_pages": [
+                3
+              ],
+              "source_value": {
+                "value": 675368,
+                "range": null,
+                "unit": "triples",
+                "scope": "loaded_dataset",
+                "conditions": "Same graph",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01178",
+          "citation_key": "V3-01178",
+          "source_sha256": "1f1144189799f834f868fb9862853431f53c30b20b9ede58e8ea8b12d75bab31",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/scalability",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "source_value": {
+                "text": "Queries restrict displayed subsets and summarize structural paths. DBpedia FR source contains about 400 million triples; demonstrations display far smaller extracts, not the entire source.",
+                "pages": [
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "codes": [
+                  {
+                    "code": "S03_reported_data_scale",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "S04_reported_visual_scale",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "S05_strategy_only",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/0",
+              "physical_pdf_pages": [
+                9
+              ],
+              "source_value": {
+                "value": 400000000,
+                "range": null,
+                "unit": "triples",
+                "scope": "source_dataset",
+                "conditions": "Approximate DBpedia FR source scale, not loaded/view scale",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  9
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/1",
+              "physical_pdf_pages": [
+                11
+              ],
+              "source_value": {
+                "value": 26,
+                "range": null,
+                "unit": "nodes",
+                "scope": "displayed_view",
+                "conditions": "Robert Redford co-star network",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  11
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/2",
+              "physical_pdf_pages": [
+                11
+              ],
+              "source_value": {
+                "value": 124,
+                "range": null,
+                "unit": "links",
+                "scope": "displayed_view",
+                "conditions": "Same network",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  11
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02586",
+          "citation_key": "V3-02586",
+          "source_sha256": "2beb243477cd75998a01d93177432af3c6dc190a212fbd20159754622527a61a",
+          "pdf_pages": 17,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                8,
+                9
+              ],
+              "source_value": {
+                "label": "YAGO3action timing",
+                "pages": [
+                  8,
+                  9
+                ],
+                "design_codes": [
+                  "E07_performance"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Load graph, center, expand and select closest embeddings"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Execution time",
+                  "Displayed node count"
+                ],
+                "results": "Load120s; center502nodes21.7s; expand271nodes12.03s; closest100nodes5.4s.",
+                "limitations": [
+                  "One described hardware/data setting; no repeated-run variability reported here."
+                ],
+                "response_sets": []
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 509
+    },
+    {
+      "addition_id": "REC-RQ3-03",
+      "section": "Backend Assumptions and Scalability",
+      "context_text": "Measured scalability can depend sharply on the action and cache state. SPARQL-QBE reports average query execution of 103 milliseconds on its approximately one-million-triple movie dataset; feedback ranking initially ranges from 103 to 824 milliseconds and is about 103 milliseconds when cached. These are client-component times on the specified browser and hardware \\citep{V3-02185}. PFSgeo separately tests synthetic datasets up to 20,000 hotels: average initialization is 1.8 seconds, yet some large-data preference actions exceed 100 seconds and the per-object alternative times out \\citep{V3-02091}. Its human trial uses only twenty hotels. Reporting an initialization average or a warm-cache result as a uniform interaction bound would conceal a material workload difference.",
+      "sources": [
+        {
+          "report_id": "V3-02185",
+          "citation_key": "V3-02185",
+          "source_sha256": "e8d86acec09e7e04a18bbc095e4ebac8066fc2732d2ff25f098464cedd09c0a9",
+          "pdf_pages": 22,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                13,
+                14,
+                15
+              ],
+              "source_value": {
+                "label": "Client performance",
+                "design_codes": [
+                  "E07_performance"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Keyword search",
+                  "Query execution",
+                  "Feedback loop and ranking"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Average runtime"
+                ],
+                "results": "About one million triples: keyword search126ms,query103ms, feedback103–824ms initially and approximately103ms cached; compressed dataset6.4MB downloads about2.5s.",
+                "limitations": [
+                  "IntelCorei5-8250U/8GB,Chromium96; ranking first-time cost scales with constraints; exponential candidate power set limited by initial reduction."
+                ],
+                "response_sets": [],
+                "pages": [
+                  13,
+                  14,
+                  15
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/0",
+              "physical_pdf_pages": [
+                13,
+                14
+              ],
+              "source_value": {
+                "value": 1083029,
+                "range": null,
+                "unit": "triples",
+                "scope": "loaded_dataset",
+                "conditions": "DBpedia films/actors dataset",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  13,
+                  14
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02091",
+          "citation_key": "V3-02091",
+          "source_sha256": "768bb9544305995fda190e4f95e16db9b40150050123ad8b88c96862bf171066",
+          "pdf_pages": 19,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                14,
+                15,
+                16,
+                17
+              ],
+              "source_value": {
+                "label": "Map vs text preference exploration",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 20,
+                "recruited_or_completed_n": 20,
+                "population": "Volunteers; 65% CS employees, 20% researchers, 15% other.",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Four hotel restriction/preference tasks per UI"
+                ],
+                "comparators": [
+                  "Hippalus without map",
+                  "PFSgeo with map"
+                ],
+                "measures": [
+                  "Hotel-answer success",
+                  "Usefulness ratings",
+                  "UI preference"
+                ],
+                "results": "79/80 map condition task responses successful (98.75%) versus63/80 without map (78.75%);85% prefer PFSgeo,90% rate useful/very useful.",
+                "limitations": [
+                  "Fixed order without-map then with-map; twenty-hotel user-test dataset; any hotel response counted correct except none in subjective tasks.",
+                  "Paper calls scale SUS but reports usefulness categories; do not invent standard 10-item SUS score."
+                ],
+                "response_sets": [
+                  {
+                    "count": 80,
+                    "unit": "task responses",
+                    "condition": "four tasks x20 users, PFSgeo"
+                  },
+                  {
+                    "count": 80,
+                    "unit": "task responses",
+                    "condition": "four tasks x20 users, plain PFS"
+                  }
+                ],
+                "pages": [
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                11,
+                12,
+                13,
+                14
+              ],
+              "source_value": {
+                "label": "Synthetic geographic performance",
+                "design_codes": [
+                  "E07_performance"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Ten restriction/preference requests for nine simulated users/shapes, with datasets1000/5000/20000hotels"
+                ],
+                "comparators": [
+                  "Per-object preference actions (Method1)",
+                  "Single geo-anchor action (Method2)"
+                ],
+                "measures": [
+                  "Initialization time",
+                  "Restriction response time",
+                  "Preference response time"
+                ],
+                "results": "20,000-object average initialization1.8s; Method1 timeouts at5000/20000; Method2 large-data actions in Table2 can exceed100s.",
+                "limitations": [
+                  "Local dual-core1.8GHz,6GBRAM; map API/render/update overhead included."
+                ],
+                "response_sets": [],
+                "pages": [
+                  11,
+                  12,
+                  13,
+                  14
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/0",
+              "physical_pdf_pages": [
+                11
+              ],
+              "source_value": {
+                "value": 20000,
+                "range": null,
+                "unit": "hotels",
+                "scope": "benchmark_workload",
+                "conditions": "Synthetic maximum tested dataset",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  11
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/scale_observations/1",
+              "physical_pdf_pages": [
+                15
+              ],
+              "source_value": {
+                "value": 20,
+                "range": null,
+                "unit": "hotels",
+                "scope": "loaded_dataset",
+                "conditions": "Separate human study information base",
+                "status": "implemented_or_demonstrated",
+                "pages": [
+                  15
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 511
+    },
+    {
+      "addition_id": "REC-RQ4-01",
+      "section": "Evaluation Evidence",
+      "context_text": "The recovered comparisons extend the evidence without supplying a common effectiveness scale. RDF Explorer compares query construction with Wikidata Query Helper in a within-subject study of 28 fourth-year computer-science students without prior SPARQL knowledge. Reported differences favor RDF Explorer for whole-query correctness and graph shape, while the triple-pattern difference is not significant \\citep{V3-02210}. Smeagol compares 20 users with 23 Pubby users; correctness differences are significant for more complex topologies but not the simple two-node tasks. Its text mentions twelve tasks while the results table lists ten \\citep{V3-02525}. Task reach under fixed time and inconsistent task inventories remain part of the interpretation, rather than being removed when describing a favorable result.",
+      "sources": [
+        {
+          "report_id": "V3-02210",
+          "citation_key": "V3-02210",
+          "source_sha256": "e16277efa2a676171583e17c516511f4071a211a1c6d79f3aaf54e648ef09b63",
+          "pdf_pages": 17,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "source_value": {
+                "label": "Wikidata query construction comparison",
+                "pages": [
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 28,
+                "recruited_or_completed_n": 28,
+                "population": "Fourth-year computer science students without previous SPARQL/Semantic Web knowledge",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Two five-task sets of increasing graph-pattern complexity; 40 minutes per interface"
+                ],
+                "comparators": [
+                  "Wikidata Query Helper"
+                ],
+                "measures": [
+                  "Correct queries, triple patterns and graph shapes",
+                  "NASA-TLX",
+                  "Likert usability"
+                ],
+                "results": "Mean correctness difference 0.1714 for queries and 0.1928 for shapes significantly favors RDF Explorer; triple-pattern difference 0.06 is not significant.",
+                "limitations": [
+                  "Fixed time meant some participants did not reach later tasks; restricted student population."
+                ],
+                "response_sets": []
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02525",
+          "citation_key": "V3-02525",
+          "source_sha256": "d3f8dd9f759ceba42c6dbb959d4731e953ae4591c40adc9a295f22e5613fb837",
+          "pdf_pages": 15,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                11,
+                12,
+                13
+              ],
+              "source_value": {
+                "label": "Smeagol vs Pubby",
+                "pages": [
+                  11,
+                  12,
+                  13
+                ],
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 43,
+                "recruited_or_completed_n": 43,
+                "population": "Undergraduates18–22 from diverse majors",
+                "allocation": "between_subject",
+                "tasks": [
+                  "Scripted and nonscripted graph-topology tasks"
+                ],
+                "comparators": [
+                  "Pubby"
+                ],
+                "measures": [
+                  "Timed task correctness",
+                  "Fisher exact tests"
+                ],
+                "results": "Smeagol higher correctness on every tabulated task; significant differences occurred for topologies with more than two nodes, not simple two-node tasks.",
+                "limitations": [
+                  "Methods refer to12tasks but Table1tabulates10; retain source inconsistency."
+                ],
+                "response_sets": [
+                  {
+                    "count": 20,
+                    "unit": "participants",
+                    "condition": "Smeagol"
+                  },
+                  {
+                    "count": 23,
+                    "unit": "participants",
+                    "condition": "Pubby"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 549
+    },
+    {
+      "addition_id": "REC-RQ4-02",
+      "section": "Evaluation Evidence",
+      "context_text": "The industrial OptiqueVQS report contributes two small domain trials: three Statoil experts and four Siemens experts. Correct completion is reported as 84\\% and 88\\%, respectively, with first-attempt completion of 69\\% and 72\\%; the report also summarizes an earlier fifteen-student movie study \\citep{V3-02014}. The earlier group is not a newly recruited industrial cohort. In SView, the browser and pattern-organization comparisons share the same twenty-four-student study setting; mean SUS is 79.8 for SView, 70.32 for Rhizomer and 64.51 for OpenLink, while reorientation and link-label ratings expose contrary findings \\citep{V3-01744}. Neither repeating the shared sample across analyses nor adding prior-study summaries creates independent participants.",
+      "sources": [
+        {
+          "report_id": "V3-02014",
+          "citation_key": "V3-02014",
+          "source_sha256": "88e25c06091bd93cbeda07b96a09c76b6a0748de05355e52c0ef657f01f85432",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                8,
+                9,
+                10
+              ],
+              "source_value": {
+                "label": "Statoil industry study",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 3,
+                "recruited_or_completed_n": 3,
+                "population": "Oil/gas domain experts (P1–P3).",
+                "allocation": "single_system",
+                "tasks": [
+                  "Nine conjunctive-query industrial information needs"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Correct completion rate",
+                  "First-attempt correct completion",
+                  "Think-aloud comments"
+                ],
+                "results": "84% overall correct completion, 69% first-attempt correct completion.",
+                "limitations": [
+                  "Small domain cohort; bootstrapped ontology mismatched experts’ domain understanding."
+                ],
+                "response_sets": [],
+                "pages": [
+                  8,
+                  9,
+                  10
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                8,
+                9,
+                10
+              ],
+              "source_value": {
+                "label": "Siemens industry study",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 4,
+                "recruited_or_completed_n": 4,
+                "population": "Diagnostic domain experts (P4–P7).",
+                "allocation": "single_system",
+                "tasks": [
+                  "Five conjunctive-query diagnostic information needs"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Correct completion rate",
+                  "First-attempt correct completion"
+                ],
+                "results": "88% overall correct completion, 72% first-attempt correct completion.",
+                "limitations": [
+                  "Small domain cohort; data and ontologies not public."
+                ],
+                "response_sets": [],
+                "pages": [
+                  8,
+                  9,
+                  10
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/2",
+              "physical_pdf_pages": [
+                8,
+                10
+              ],
+              "source_value": {
+                "label": "Earlier movie study",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "summarized_previous_study",
+                "participants_n": 15,
+                "recruited_or_completed_n": 15,
+                "population": "Bachelor students in social science disciplines.",
+                "allocation": "single_system",
+                "tasks": [
+                  "Movie-ontology query tasks"
+                ],
+                "comparators": [],
+                "measures": [],
+                "results": "100% completion and 80% first-attempt completion summarized from earlier report.",
+                "limitations": [],
+                "response_sets": [],
+                "pages": [
+                  8,
+                  10
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01744",
+          "citation_key": "V3-01744",
+          "source_sha256": "28e821c4030e6a87599b4a694e7daccb00f0b3a952fb964377a2964d88ef8d65",
+          "pdf_pages": 33,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                21,
+                22,
+                23,
+                24,
+                25
+              ],
+              "source_value": {
+                "label": "Browser comparison",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 24,
+                "recruited_or_completed_n": 24,
+                "population": "Computer science students familiar with Web, unfamiliar with project.",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Entity-centric summarization",
+                  "Related entity finding with relationship explanation"
+                ],
+                "comparators": [
+                  "SView",
+                  "OpenLink Faceted Search & Find Service",
+                  "Rhizomer"
+                ],
+                "measures": [
+                  "Task time",
+                  "Number of actions",
+                  "Post-task Likert ratings",
+                  "SUS"
+                ],
+                "results": "SView SUS 79.8 (SD 7.69), Rhizomer 70.32 (9.83), OpenLink 64.51 (9.35); SView faster/fewer actions. SView link labels and reorientation rated worse.",
+                "limitations": [
+                  "Tutorial and supervised tasks; student cohort; reasonable open answers counted complete; no correctness accuracy measure."
+                ],
+                "response_sets": [],
+                "pages": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                21,
+                22,
+                25,
+                26,
+                27
+              ],
+              "source_value": {
+                "label": "Pattern organization comparison",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 24,
+                "recruited_or_completed_n": 24,
+                "population": "Same study setting describes 24 student subjects; cohort shared across comparison sections, do not sum distinct participants.",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Entity-centric summarization",
+                  "Related entity finding"
+                ],
+                "comparators": [
+                  "Hierarchy",
+                  "List",
+                  "Top-k"
+                ],
+                "measures": [
+                  "Task time",
+                  "Number of actions",
+                  "Post-task Likert ratings"
+                ],
+                "results": "Top-k reduced actions/time; 12 subjects (50%) noted risk of target loss. Hierarchy provided better overview but deep branches confused some subjects.",
+                "limitations": [
+                  "Two comparison sections share study setting; not 48 independent participants."
+                ],
+                "response_sets": [],
+                "pages": [
+                  21,
+                  22,
+                  25,
+                  26,
+                  27
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 551
+    },
+    {
+      "addition_id": "REC-RQ4-03",
+      "section": "Evaluation Evidence",
+      "context_text": "The PFSgeo and SPARQL-QBE evaluations require task-response denominators. Twenty PFSgeo users contribute eighty responses per interface, with 79/80 successful responses using the map and 63/80 without it. Interface order is fixed: without map precedes map use. The source reports usefulness categories rather than a standard ten-item SUS score \\citep{V3-02091}. SPARQL-QBE recruits twenty-two computer-science volunteers for ten tasks, yielding 220 responses with 65 failures; favorable usefulness ratings coexist with difficulty translating some tasks into actions \\citep{V3-02185}. These findings motivate evaluation of recovery and query understanding, but do not imply 160 or 220 users or causal superiority across interfaces.",
+      "sources": [
+        {
+          "report_id": "V3-02091",
+          "citation_key": "V3-02091",
+          "source_sha256": "768bb9544305995fda190e4f95e16db9b40150050123ad8b88c96862bf171066",
+          "pdf_pages": 19,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                14,
+                15,
+                16,
+                17
+              ],
+              "source_value": {
+                "label": "Map vs text preference exploration",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 20,
+                "recruited_or_completed_n": 20,
+                "population": "Volunteers; 65% CS employees, 20% researchers, 15% other.",
+                "allocation": "within_subject",
+                "tasks": [
+                  "Four hotel restriction/preference tasks per UI"
+                ],
+                "comparators": [
+                  "Hippalus without map",
+                  "PFSgeo with map"
+                ],
+                "measures": [
+                  "Hotel-answer success",
+                  "Usefulness ratings",
+                  "UI preference"
+                ],
+                "results": "79/80 map condition task responses successful (98.75%) versus63/80 without map (78.75%);85% prefer PFSgeo,90% rate useful/very useful.",
+                "limitations": [
+                  "Fixed order without-map then with-map; twenty-hotel user-test dataset; any hotel response counted correct except none in subjective tasks.",
+                  "Paper calls scale SUS but reports usefulness categories; do not invent standard 10-item SUS score."
+                ],
+                "response_sets": [
+                  {
+                    "count": 80,
+                    "unit": "task responses",
+                    "condition": "four tasks x20 users, PFSgeo"
+                  },
+                  {
+                    "count": 80,
+                    "unit": "task responses",
+                    "condition": "four tasks x20 users, plain PFS"
+                  }
+                ],
+                "pages": [
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02185",
+          "citation_key": "V3-02185",
+          "source_sha256": "e8d86acec09e7e04a18bbc095e4ebac8066fc2732d2ff25f098464cedd09c0a9",
+          "pdf_pages": 22,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                15,
+                16,
+                17,
+                18
+              ],
+              "source_value": {
+                "label": "SPARQL-QBE user evaluation",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": 22,
+                "recruited_or_completed_n": 22,
+                "population": "Volunteers with CS education, ages19–52; mixed previous SPARQL familiarity; none familiar with tested KG.",
+                "allocation": "single_system",
+                "tasks": [
+                  "Ten movie/actor search, commonality and feedback tasks"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Task-answer success",
+                  "User-friendliness/intuitiveness/usefulness questionnaire",
+                  "Free-form feedback"
+                ],
+                "results": "65/220 responses failure (30%), six unable to translate task into action;86.3%rate query formulation user-friendly;100%rate system useful.",
+                "limitations": [
+                  "Small self-selected CS cohort; no baseline comparison; source uses inconsistent wording for six failure cases, preserve response units."
+                ],
+                "response_sets": [
+                  {
+                    "count": 220,
+                    "unit": "task responses",
+                    "condition": "ten tasks x22 users"
+                  },
+                  {
+                    "count": 65,
+                    "unit": "failed task responses",
+                    "condition": "wrong/incomplete or unable to act"
+                  }
+                ],
+                "pages": [
+                  15,
+                  16,
+                  17,
+                  18
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 553
+    },
+    {
+      "addition_id": "REC-RQ4-04",
+      "section": "Evaluation Evidence",
+      "context_text": "Questionnaire and response units also need reconciliation within a report. FedViz reports fifteen SUS respondents and ten respondents to a custom questionnaire, but their overlap is unestablished; they cannot be summed as twenty-five unique participants \\citep{V3-01125}. The Sparklis analytical-query study describes twelve pairs while its analysis also uses twelve subjects. Its reported mean answered-question counts, 1.67 with Yasgui and 6.17 with Sparklis, belong to those recorded response units; a unique individual count is not inferred \\citep{V3-00369}. The Sparklis extension, RDF Explorer demonstration/research/Android reports, ViziQuer reports, and OptiqueVQS components retain family links. Shared names or repeated results prompt an overlap check rather than an automatic merge or an independent-study count.",
+      "sources": [
+        {
+          "report_id": "V3-01125",
+          "citation_key": "V3-01125",
+          "source_sha256": "98df2a3ff66fa11bb419a3689a08ab40951144fd89335a650565efdf83bdacfe",
+          "pdf_pages": 12,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                9,
+                10,
+                11
+              ],
+              "source_value": {
+                "label": "SUS response set",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "current_report",
+                "participants_n": 15,
+                "recruited_or_completed_n": 15,
+                "population": "Semantic Web researchers/engineers from AKSW Leipzig and INSIGHT Galway",
+                "allocation": null,
+                "tasks": [
+                  "Use FedViz interface and complete standard SUS questionnaire"
+                ],
+                "comparators": [],
+                "measures": [
+                  "SUS0–100score"
+                ],
+                "results": [
+                  "Mean SUS74.16; source prints percent symbol."
+                ],
+                "limitations": [
+                  "No comparator; participant overlap with custom questionnaire not established; task allocation unspecified."
+                ],
+                "response_sets": [
+                  {
+                    "count": 15,
+                    "unit": "respondents",
+                    "condition": "SUS"
+                  }
+                ],
+                "pages": [
+                  9,
+                  10,
+                  11
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/1",
+              "physical_pdf_pages": [
+                10,
+                11
+              ],
+              "source_value": {
+                "label": "Custom questionnaire response set",
+                "design_codes": [
+                  "E04_single_system_user"
+                ],
+                "evidence_origin": "current_report",
+                "participants_n": 10,
+                "recruited_or_completed_n": 10,
+                "population": "Researchers including computer scientists and bioinformaticians",
+                "allocation": null,
+                "tasks": [
+                  "Formulate federated and non-federated queries"
+                ],
+                "comparators": [],
+                "measures": [
+                  "1–5Likert perceived usability/usefulness"
+                ],
+                "results": [
+                  "Simple-query formulation4.2±0.91;federated3.9±0.73;dataset-selection ease4.4±0.69."
+                ],
+                "limitations": [
+                  "Overlap with15SUSrespondents unknown; no observed accuracy/time measure."
+                ],
+                "response_sets": [
+                  {
+                    "count": 10,
+                    "unit": "respondents",
+                    "condition": "custom_questionnaire"
+                  }
+                ],
+                "pages": [
+                  10,
+                  11
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00369",
+          "citation_key": "V3-00369",
+          "source_sha256": "4a89bdc59b92dcfe219cc4f320c737ab692a78e9297aff3339d2bc9ca7d74301",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                10,
+                11
+              ],
+              "source_value": {
+                "label": "Sparklis versus Yasgui analytical task study",
+                "design_codes": [
+                  "E05_comparative_user"
+                ],
+                "evidence_origin": "this_report",
+                "participants_n": null,
+                "recruited_or_completed_n": {
+                  "pairs_reported": 12,
+                  "individuals_implied_by_pairs": 24,
+                  "individual_count_unambiguous": false
+                },
+                "population": "Postgraduate computer-science/business-management students after approximately 10 hours of SPARQL course teaching/practice.",
+                "allocation": "Randomized tool order (Yasgui-first versus Sparklis-first); each response unit uses both tools on similar 10-question series.",
+                "tasks": "Two series of 10 Mondial analytical questions, 45 minutes per system plus 10-minute setup.",
+                "comparators": [
+                  "Yasgui SPARQL editor"
+                ],
+                "measures": [
+                  "answered questions",
+                  "correctness",
+                  "completion time",
+                  "0–10 subjective score"
+                ],
+                "results": "Reported mean questions answered 1.67 with Yasgui versus 6.17 with Sparklis; correctness 71% versus 85%; subjective mean 4.8 versus 8.3.",
+                "limitations": [
+                  "Methods say 12 pairs but analysis repeatedly says 12 subjects; do not count 12 individual participants.",
+                  "Earlier Sparklis analytical-query report may recount this same cohort; link study before synthesis."
+                ],
+                "response_sets": [
+                  {
+                    "count": 12,
+                    "unit": "pair/response units as described",
+                    "condition": "each uses both tools"
+                  }
+                ],
+                "pages": [
+                  10,
+                  11
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00229",
+          "citation_key": "V3-00229",
+          "source_sha256": "699c96a766330c1a7178ce1f6a53b3f4fcdfaf999c98991e31f9c3234c702c9d",
+          "pdf_pages": 6,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Android keyword lookup selects a starting entity; long-click opens properties/values, chosen links grow the graph; double-click replaces entity constants by query variables, then Run executes generated SPARQL.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02757",
+          "citation_key": "V3-02757",
+          "source_sha256": "0e5aa2dc10f83c38c249217187f287bb7ec3ce38d9b81f7cb9a7c1716a51ad11",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Seed/grow UML-style Wikidata queries; reverse SPARQL visualization and executable query gallery.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I03_visual_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I10_reuse_history",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-01948",
+          "citation_key": "V3-01948",
+          "source_sha256": "d2f87c43089c9dabb1dac83d577f908f75ed8c1c099b93bc12c192d582a50cd3",
+          "pdf_pages": 7,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                4,
+                6
+              ],
+              "source_value": {
+                "label": "Previously evaluated applications",
+                "design_codes": [
+                  "E02_case_study"
+                ],
+                "evidence_origin": "summarized_previous_study",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "OptiqueVQS Siemens/Statoil/generic use cases",
+                  "SemFacet Yago slice"
+                ],
+                "comparators": [],
+                "measures": [],
+                "results": "Prior application studies cited without new participant counts here.",
+                "limitations": [],
+                "response_sets": [],
+                "pages": [
+                  4,
+                  6
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 555
+    },
+    {
+      "addition_id": "REC-RQ4-05",
+      "section": "Evaluation Evidence",
+      "context_text": "Offline guidance tests answer different questions from human trials. iQbees evaluates 163 INEX topics with simulated feedback: positive and mixed feedback improve its ranking, while a single negative hint does not. Von-QBE evaluates selected IMDB and QALD queries without recruiting users; reported precision is 0.69 for IMDB and 0.0047 for the QALD subset \\citep{V3-01566,V3-02018}. The ViziQuer Wikidata demonstration successfully visualizes 105 of 120 example queries under a criterion combining returned-result agreement with mathematical equivalence for timeout or empty cases \\citep{V3-02757}. Ranking quality, keyword-to-query precision and query round-trip coverage are distinct outcomes. They do not establish human task success or comprehension, even when embedded in an implemented exploration workflow.",
+      "sources": [
+        {
+          "report_id": "V3-01566",
+          "citation_key": "V3-01566",
+          "source_sha256": "71e28e880ddcc1e65fe8e4312f067b458c8f082ffcd44ea7bb725430094ee08b",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                4,
+                5,
+                6,
+                7
+              ],
+              "source_value": {
+                "label": "Simulated relevance feedback",
+                "design_codes": [
+                  "E06_offline_accuracy"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "163 one-entity queries with random ground-truth positive, negative or mixed feedback in second step"
+                ],
+                "comparators": [
+                  "FEEDBACK",
+                  "RELAX"
+                ],
+                "measures": [
+                  "MAP",
+                  "MNDCG"
+                ],
+                "results": "Positive and mixed feedback improved retrieval; one negative hint did not improve this offline setting; RELAX consistently exceeded FEEDBACK.",
+                "limitations": [
+                  "Only two-step simulated feedback; no human usability cohort."
+                ],
+                "response_sets": [
+                  {
+                    "count": 163,
+                    "unit": "query topics",
+                    "condition": "INEX 2007 mapped to YAGO"
+                  }
+                ],
+                "pages": [
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02018",
+          "citation_key": "V3-02018",
+          "source_sha256": "eca615ae9401039393f05080dc9a81b7900958cb5d9a447d542dc477842fa727",
+          "pdf_pages": 9,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                6,
+                7,
+                8
+              ],
+              "source_value": {
+                "label": "Schema-only query accuracy",
+                "design_codes": [
+                  "E06_offline_accuracy"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Generate SPARQL for selected conceptual IMDB/Ontop and QALD questions"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Precision",
+                  "Recall"
+                ],
+                "results": "IMDB 29 questions recall .96 precision .69; QALD subset weighted recall .53 precision .0047. Instance-specific names cause broad inaccurate queries.",
+                "limitations": [
+                  "Only 12 QALD questions retained across versions5/6/7/9; no comparison to instance-based approaches or user study."
+                ],
+                "response_sets": [
+                  {
+                    "count": 29,
+                    "unit": "queries",
+                    "condition": "IMDB answerable subset of 37"
+                  },
+                  {
+                    "count": 12,
+                    "unit": "queries",
+                    "condition": "QALD5/6/7/9 answerable subset"
+                  }
+                ],
+                "pages": [
+                  6,
+                  7,
+                  8
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02757",
+          "citation_key": "V3-02757",
+          "source_sha256": "0e5aa2dc10f83c38c249217187f287bb7ec3ce38d9b81f7cb9a7c1716a51ad11",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                3
+              ],
+              "source_value": {
+                "label": "Wikidata query visualization",
+                "pages": [
+                  3
+                ],
+                "design_codes": [
+                  "E06_offline_accuracy"
+                ],
+                "evidence_origin": "reported_here",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "not_applicable",
+                "tasks": [
+                  "Visualize120Wikidata example queries"
+                ],
+                "comparators": [],
+                "measures": [
+                  "Successful round-trip visualization"
+                ],
+                "results": "105/120=87.5%; successful criterion uses same results or mathematical equivalence for timeout/empty cases.",
+                "limitations": [
+                  "No user comprehension benefit measured; criterion combines execution and logical equivalence."
+                ],
+                "response_sets": []
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis and explicitly bounded outcome interpretation; no pooled effect, new human reading attestation or independent cohort total.",
+      "manuscript_line": 557
+    },
+    {
+      "addition_id": "REC-RQ5-01",
+      "section": "Discussion and Design Agenda",
+      "context_text": "Reproducibility in the extension also depends on preserving configuration and the assessed implementation. KinGVisher permits sharing graph configurations and reports code and demonstration addresses; its maximum-edge setting and property selection affect what the shared view contains. The schema library reports cached JSON schema descriptions and a schema-library repository, while SPARQL-QBE loads RDF text files into a custom browser-side executor \\citep{V3-01624,V3-00138,V3-02185}. Reusing a graph image, a schema diagram or a generated query alone can therefore omit the bounds, data snapshot or executor subset needed to reproduce the result. The reported resource addresses are artifact leads; their presence does not establish a current release, license, archived version or successful independent reproduction.",
+      "sources": [
+        {
+          "report_id": "V3-01624",
+          "citation_key": "V3-01624",
+          "source_sha256": "ba7920060b236aba29eaa69a55053bf6e7f814dd69d634b35934627549960602",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4
+              ],
+              "source_value": {
+                "text": "Connect endpoint/graph, choose maximum edges, blacklist/whitelist properties and important resources; adjust layout, inspect incoming/outgoing edges and share configurations.",
+                "pages": [
+                  2,
+                  3,
+                  4
+                ],
+                "codes": [
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I09_visual_configuration",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I10_reuse_history",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/reported_resources/0",
+              "physical_pdf_pages": [
+                4
+              ],
+              "source_value": {
+                "url": "https://github.com/WSE-research/KinGVisher-Knowledge-Graph-Visualizer",
+                "role": "source code",
+                "pages": [
+                  4
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/reported_resources/1",
+              "physical_pdf_pages": [
+                4
+              ],
+              "source_value": {
+                "url": "https://wse-research.org/kingvisher-knowledge-graph-visualizer/",
+                "role": "demo",
+                "pages": [
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-00138",
+          "citation_key": "V3-00138",
+          "source_sha256": "9e63398d254c2eb21b0d41c206f5da2ce35a2a14f18736347230c26e83c464f4",
+          "pdf_pages": 5,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                3
+              ],
+              "source_value": {
+                "text": "RDF SPARQL endpoints are inspected by OBIS Schema Extractor; JSON schemas are cached in Data Shape Server and consumed by ViziQuer and DSS Schema Explorer.",
+                "pages": [
+                  3
+                ],
+                "codes": [
+                  {
+                    "code": "B01_rdf",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A01_endpoint_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A06_projection_cache",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/reported_resources/0",
+              "physical_pdf_pages": [
+                4
+              ],
+              "source_value": {
+                "url": "https://github.com/LUMII-Syslab/viziquer/tree/development/doc/demo/schemas24a",
+                "role": "experiment_and_schema_library",
+                "pages": [
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "report_id": "V3-02185",
+          "citation_key": "V3-02185",
+          "source_sha256": "e8d86acec09e7e04a18bbc095e4ebac8066fc2732d2ff25f098464cedd09c0a9",
+          "pdf_pages": 22,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                13,
+                14,
+                15
+              ],
+              "source_value": {
+                "text": "RDF triples shipped in text files loaded once by browser. Custom JavaScript query execution supports generated single-variable single-class conjunctive SPARQL subset.",
+                "pages": [
+                  13,
+                  14,
+                  15
+                ],
+                "codes": [
+                  {
+                    "code": "B01_rdf",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A05_file_input",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "A03_local_store",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/reported_resources/0",
+              "physical_pdf_pages": [
+                20,
+                21
+              ],
+              "source_value": {
+                "url": "https://demos.isl.ics.forth.gr/SPARQL-QBE/",
+                "role": "prototype and visible client source",
+                "pages": [
+                  20,
+                  21
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded configuration and artifact requirements; no present availability or independent reproduction claim.",
+      "manuscript_line": 577
+    },
+    {
+      "addition_id": "REC-RQ2-05",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "Schema-derived entry patterns also have a distinct operational contract. The peer-reviewed ShEx2SPARQL report accepts a Shape Expressions schema, an output query type and optionally a resource URI, and generates SELECT or CONSTRUCT patterns for exploring shape-conforming resources. ASK supplies an exact compliance check and requires a URI; that capability alone does not establish exploration \\citep{V3-02495}. Its prototype executes 292 Wikidata Entity-Schema CONSTRUCT queries: 187 initially receive HTTP 200, and 47 more succeed with a one-result limit. Fifty-six of the 234 successful responses are empty. Request success, nonempty answers and user usefulness are therefore separate outcomes. Recursive shapes and imports remain unsupported, and no graphical authoring or recruited-user trial is established.",
+      "sources": [
+        {
+          "report_id": "V3-02495",
+          "citation_key": "V3-02495",
+          "source_sha256": "965a3b7f50822e937849e131d6853c255fc81ea2272a6335de1a52811e96c73e",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                2,
+                4,
+                7
+              ],
+              "source_value": {
+                "text": "Caller supplies an existing ShEx schema, a selected output query type, and optionally a resource URI. CONSTRUCT/SELECT explore shape-conforming resources; ASK requires URI and performs exact shape compliance checking. No graphical query-authoring or end-user interaction trial is established.",
+                "pages": [
+                  2,
+                  4,
+                  7
+                ],
+                "codes": []
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                2,
+                4,
+                7
+              ],
+              "source_value": {
+                "text": "Reusable ShEx shape constraints provide explicit semantic entry patterns and eliminate manual query-pattern construction; start shape establishes entry point, while recursive shape references are excluded. URI anchoring narrows the entry pattern to a chosen resource.",
+                "pages": [
+                  2,
+                  4,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "G05_template_entry",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                7,
+                8
+              ],
+              "source_value": {
+                "text": "Prototype executes292Wikidata Entity-Schema CONSTRUCT queries:187initial HTTP200successes,47additional with LIMIT1,56empty among234successful. This establishes operational feasibility/endpoint failure behaviour, not human usability or independent retrieval correctness.",
+                "pages": [
+                  7,
+                  8
+                ],
+                "codes": [
+                  {
+                    "code": "E01_demonstration",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "E07_performance",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis with stated version/evaluation boundaries; no human reading, causal outcome or independent-study claim.",
+      "manuscript_line": 445
+    },
+    {
+      "addition_id": "REC-RQ1-05",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "Chem2Bio2RDF adds a domain-specific combination of facets, generated relationship paths and resource-level inspection. DrugBank entries can be narrowed and presented as tables, tiles, thumbnails or approval timelines; the ontology-driven link-path generator connects selected classes and produces SPARQL. A Cytoscape plugin exposes resource menus and related MEDLINE/PubMed literature \\citep{V3-00576}. The report's biomedical examples and source-coverage comparisons establish concrete discovery operations, without a recruited-user study or an interaction-latency benchmark. The assessed author manuscript uses a title omitting ``Systems''; the published IEEE title, DOI and author sequence are retained separately, without substituting the related journal article.",
+      "sources": [
+        {
+          "report_id": "V3-00576",
+          "citation_key": "V3-00576",
+          "source_sha256": "69d20754137120ea6cef919287310a529269ea0d656b26b5bd2659300c829a07",
+          "pdf_pages": 8,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Filter datasets by provenance and DrugBank entries by attributes; change table/timeline/tile/thumbnail view; provide two domain classes/terms for path generation; Cytoscape plugin accepts entity names and right-click resource menus expose related literature.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "I02_faceted_filtering",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I01_entity_navigation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I09_visual_configuration",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "DrugBank table/tile/thumbnail and approval timeline views display returned entities; web network panel and Cytoscape node-link view show connected resources/path-derived associations and related-literature panel.",
+                "pages": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "V03_table_list",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V05_timeline",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V01_node_link",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result",
+                      "computed_association"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Domain ontology links identify non-repeating class/dataset paths and generate SPARQL; term-associated MEDLINE/PubMed links provide supporting publication context for discovered relationships. Literature-confidence path ranking is described as something cross-validation can support, without a measured ranking workflow.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G10_orientation_feedback",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                5,
+                6,
+                7
+              ],
+              "source_value": {
+                "text": "Three drug-discovery use cases and literature/domain checks, plus dataset/result coverage comparison and historical integration comparison. No human cohort or controlled interface trial. Additional sources increase returned compounds in a disease search, without an accuracy denominator.",
+                "pages": [
+                  5,
+                  6,
+                  7
+                ],
+                "codes": [
+                  {
+                    "code": "E02_case_study",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis with stated version/evaluation boundaries; no human reading, causal outcome or independent-study claim.",
+      "manuscript_line": 433
+    },
+    {
+      "addition_id": "REC-RQ2-06",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "EmpiRE-Compass couples curated competency questions with custom natural-language querying, SPARQL inspection, manual or prompt-based refinement, and restoration of query/analysis history. Curated interpretations are currently written manually for correctness; custom interpretations use language-model generation and require validation \\citep{V3-00942}. The two implemented research use cases support a concrete exploration and reuse workflow, while expert reviews, pilot studies and larger assessments remain planned. No chart type, linked brushing or measured cognitive benefit is inferred from the dashboard label. Eligibility and extraction concern the complete seven-page proceedings report, published on 2 June 2026, rather than treating its original one-page poster as a sufficient method report.",
+      "sources": [
+        {
+          "report_id": "V3-00942",
+          "citation_key": "V3-00942",
+          "source_sha256": "2756e129956224d52c21a632c52854ad202219ef061169fa9640a7f8c65cfd8b",
+          "pdf_pages": 7,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Users select curated competency questions or pose custom natural-language questions, inspect generated SPARQL, refine queries/visualizations/interpretations manually or through prompts, and export underlying data or complete custom analysis content. A history manager restores selected context and persists sessions; import resumes exported custom analyses.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "I04_text_query",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I06_free_language",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I09_visual_configuration",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "I10_reuse_history",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "Curated questions provide entry points tied to SPARQL. For custom questions an LLM generates a query using the selected use-case schema. Contextual interpretations/explanations accompany results and can be refined. Curated interpretations are currently manually written for correctness; custom explanations are generated and remain subject to validation.",
+                "pages": [
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "G05_template_entry",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G09_language_generation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5
+              ],
+              "source_value": {
+                "text": "The dashboard generates interactive visualizations with interpretations and explanations. Concrete chart types are not established from the textual method; natural-language explanations accompany selected KG query results. Manual and prompt-based refinement is specified, without inferring linked brushing or a node-link view.",
+                "pages": [
+                  3,
+                  4,
+                  5
+                ],
+                "codes": [
+                  {
+                    "code": "V09_text_document",
+                    "status": "implemented_or_demonstrated",
+                    "roles": [
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "source_value": {
+                "text": "Two use cases demonstrate functioning workflows. The expert reviews/surveys, pilot synthesis-task studies and large-scale quantitative/qualitative knowledge-reuse assessment are an evaluation plan; completed participant studies and measured benefits are not reported.",
+                "pages": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "codes": [
+                  {
+                    "code": "E01_demonstration",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "E03_formative_user",
+                    "status": "future_work"
+                  },
+                  {
+                    "code": "E04_single_system_user",
+                    "status": "future_work"
+                  },
+                  {
+                    "code": "E06_offline_accuracy",
+                    "status": "future_work"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis with stated version/evaluation boundaries; no human reading, causal outcome or independent-study claim.",
+      "manuscript_line": 469
+    },
+    {
+      "addition_id": "REC-RQ2-07",
+      "section": "Guidance, Context, and Explanations",
+      "context_text": "The Hippalus automatic-ranking extension makes relaxation and ordering inspectable. SmartFSRank retains preference buckets, fills a short result set with approximate objects and uses discrimination statistics to break large ranking ties; its object explanations expose the score components and satisfied preferences. Added objects can violate hard constraints, so their approximate status affects the interpretation of the result population \\citep{V3-01079}. Computational simulations use each of 382 hotels as a target: at top-one retrieval, common-value ranking requires a mean 4.11 hard constraints, compared with 4.55 without automatic ranking, while rare-value ranking worsens this to 4.85. These are simulated target-finding costs. The separately reported action latency rises from about 2 to 20 milliseconds with ranking; neither result establishes a measured human-task improvement or a performance bound for much larger data.",
+      "sources": [
+        {
+          "report_id": "V3-01079",
+          "citation_key": "V3-01079",
+          "source_sha256": "eea22d571847fa213f67764df99cf52877f0f5b84a533118e089a6acf0dd5b29",
+          "pdf_pages": 13,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                3,
+                4,
+                5,
+                9,
+                10
+              ],
+              "source_value": {
+                "text": "Hippalus combines iterative categorical, numeric and hierarchical facet constraints with explicit best/worst/preferTo preferences. New controls set desired result count R, maximum ranking-bucket size MB, inner-bucket ordering and preference for common or rare values. An object-level explain button reveals score components and satisfied preferences.",
+                "pages": [
+                  3,
+                  4,
+                  5,
+                  9,
+                  10
+                ],
+                "codes": [
+                  {
+                    "code": "I02_faceted_filtering",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/guidance",
+              "physical_pdf_pages": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "source_value": {
+                "text": "SmartFSRank preserves preference buckets, fills a short focus with approximately matching objects scored against hard constraints (including taxonomy-based Jaccard similarity), and breaks large ranking ties using contextual/global discrimination statistics. The interface distinguishes ranked buckets and shows per-object/per-facet score explanations; approximate results can violate hard constraints.",
+                "pages": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "codes": [
+                  {
+                    "code": "G03_semantic_ranking",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G04_query_expansion_relaxation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G06_context_explanation",
+                    "status": "implemented_or_demonstrated"
+                  },
+                  {
+                    "code": "G08_personalisation",
+                    "status": "implemented_or_demonstrated"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/0",
+              "physical_pdf_pages": [
+                10,
+                11,
+                12
+              ],
+              "source_value": {
+                "label": "Hard-constraint target-finding simulation",
+                "design_codes": [
+                  "E06_offline_accuracy"
+                ],
+                "evidence_origin": "this_report",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": "Same random initial object order in each simulated session; MB=1 for automatic ranking.",
+                "tasks": "For each of 382 hotels, apply matching facet-value hard constraints until that target is in the top K (K=1,2,3).",
+                "comparators": [
+                  "No automatic ranking",
+                  "Rare-value discrimination ranking",
+                  "Common-value discrimination ranking"
+                ],
+                "measures": [
+                  "Mean and maximum constraints until top-K target retrieval"
+                ],
+                "results": "At K=1, mean required hard constraints: disabled ranking 4.55, rare-value ranking 4.85, common-value ranking 4.11. At K=2: 3.08/3.29/2.92; K=3: 2.51/2.62/2.45. Maximums respectively K=1 19/19/18, K=2 15/18/10, K=3 14/15/10.",
+                "limitations": [
+                  "No recruited or measured human workflow outcomes; simulations use authored target-object constraints.",
+                  "One dataset, common initial random ordering, and no statistical uncertainty analysis reported.",
+                  "Preferring rare values increases the reported average constraint costs."
+                ],
+                "response_sets": [
+                  {
+                    "count": 382,
+                    "unit": "target hotels in simulated sessions",
+                    "condition": "hard-constraint experiment; same targets across configurations"
+                  }
+                ],
+                "pages": [
+                  10,
+                  11,
+                  12
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/studies/2",
+              "physical_pdf_pages": [
+                12
+              ],
+              "source_value": {
+                "label": "Reported hard-constraint latency",
+                "design_codes": [
+                  "E07_performance"
+                ],
+                "evidence_origin": "this_report",
+                "participants_n": null,
+                "recruited_or_completed_n": null,
+                "population": null,
+                "allocation": null,
+                "tasks": "Apply a hard constraint to the hotel dataset.",
+                "comparators": [
+                  "Without automatic ranking",
+                  "With automatic ranking"
+                ],
+                "measures": [
+                  "Average action latency"
+                ],
+                "results": "Average action latency approximately20 ms with automatic ranking versus2 ms without ranking on382 objects.",
+                "limitations": [
+                  "Hardware, repetitions and timing boundary are not reported."
+                ],
+                "response_sets": [],
+                "pages": [
+                  12
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis with stated version/evaluation boundaries; no human reading, causal outcome or independent-study claim.",
+      "manuscript_line": 471
+    },
+    {
+      "addition_id": "REC-RQ1-06",
+      "section": "Interaction Workflows and Representations",
+      "context_text": "Inference Variable proposes an encoding aligned with the question being investigated. In its time-oriented organizational example, subject and object capsules span occurrence-to-cessation intervals and relationship arcs show activity across those intervals; current and past attributes have distinct marks \\citep{V3-01484}. This is a proposed representation and visual inferencing procedure over typed semantic relationships, without an established implemented interface, RDF serialization or graph-store backend. Its authored employee-selection example motivates cognitive-fit and load hypotheses, but supplies no participant trial or cognitive-load measurement. It therefore extends the representation comparison while leaving its usability benefit open.",
+      "sources": [
+        {
+          "report_id": "V3-01484",
+          "citation_key": "V3-01484",
+          "source_sha256": "95120f4658df5d85489f3ca647c835e71db772ed62578ab80f6503105cd2d8cc",
+          "pdf_pages": 12,
+          "locators": [
+            {
+              "extraction_pointer": "/facts/visualisation",
+              "physical_pdf_pages": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "source_value": {
+                "text": "Subjects and objects are elongated capsules spanning occurrence-to-cessation along the selected inference dimension; arcs show relationships active across intervals. The time example aligns actors with2013–2017, using filled/unfilled peripheral attribute nodes for current/past presence and college/department context.",
+                "pages": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "codes": [
+                  {
+                    "code": "V05_timeline",
+                    "status": "proposed_method",
+                    "roles": [
+                      "data_result"
+                    ]
+                  },
+                  {
+                    "code": "V01_node_link",
+                    "status": "proposed_method",
+                    "roles": [
+                      "data_result"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/interaction",
+              "physical_pdf_pages": [
+                7,
+                9,
+                10
+              ],
+              "source_value": {
+                "text": "The authored FIN-organization example contrasts traditional successive filtering with visual narrowing/counting along the proposed time-oriented representation. The new method specifies a visual encoding and inferencing procedure; functioning filter widgets or an implemented interactive tool are not established.",
+                "pages": [
+                  7,
+                  9,
+                  10
+                ],
+                "codes": []
+              }
+            },
+            {
+              "extraction_pointer": "/facts/evaluation",
+              "physical_pdf_pages": [
+                7,
+                9,
+                10,
+                11,
+                12
+              ],
+              "source_value": {
+                "text": "An authored worked example asks which FIN employees joined as interns after2015 from IDC and remain employed, yielding3 by visual inference. Cognitive-fit and load benefits are argued conceptually; no recruited participant trial or cognitive-load measurement is reported.",
+                "pages": [
+                  7,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "codes": [
+                  {
+                    "code": "E02_case_study",
+                    "status": "proposed_method"
+                  }
+                ]
+              }
+            },
+            {
+              "extraction_pointer": "/facts/backend",
+              "physical_pdf_pages": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                9
+              ],
+              "source_value": {
+                "text": "The proposal specifies semantic subject–predicate–object relationships among typed employees/interns/contractors, organization and attributes. An RDF serialization, property-graph store, query engine or implementation is not established; third-party tools in the related-work table are not the proposed system’s backend.",
+                "pages": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "codes": [
+                  {
+                    "code": "B03_typed_legacy_graph",
+                    "status": "proposed_method"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "support_scope": "Source-grounded descriptive synthesis with stated version/evaluation boundaries; no human reading, causal outcome or independent-study claim.",
+      "manuscript_line": 435
+    }
+  ],
+  "methodology_scope": "Author-authorized Codex scoped extraction and criteria application; root plus three extraction agents. Not independent/blinded duplicate screening or additional human full-text/extraction attestation.",
+  "validation": {
+    "native_compiler": {
+      "status": "success",
+      "source_sha256": "0bad8eadd1e52e46636c34ed64366aecd4e037ec2467ee32632ab37b75036042",
+      "tool": "compile_latex_document",
+      "editor_navigation": false
+    },
+    "current_count_reconciliation": true,
+    "new_report_ids_match_final_ledger": true,
+    "embedded_bibliography_keys": 136,
+    "missing_citations": [],
+    "duplicate_bibliography_keys": [],
+    "source_hash_and_page_locator_validation": true,
+    "historical_contexts_preserved": 49
+  }
+}

@@ -11,6 +11,7 @@
 *.synctex.gz
 # Only ignore the main survey PDF, but keep papers
 survey.pdf
+!website/public/data/survey.pdf
 *.blg
 *.bbl
 *.nav

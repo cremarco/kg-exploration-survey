@@ -119,6 +119,20 @@ main { margin: 0 3.8%; min-height: 60vh; padding-top: 3.5rem; }
 .year-filter { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
 .reset-button { width: 100%; justify-content: flex-start; padding-left: 0; }
 .data-note { color: #53615d; font-size: .83rem; line-height: 1.6; margin: 1.1rem 0; max-width: 80ch; }
+.requirement-entry { border-bottom: 1px solid var(--rule); border-radius: 0; }
+.requirement-entry .collapse-title { padding-left: 0; }
+.requirement-entry .collapse-title span { display: block; font-size: .8rem; color: var(--muted); }
+.requirement-entry .collapse-title strong { display: block; font-weight: 550; margin-top: .3rem; }
+.requirement-entry .collapse-content { padding-left: 0; }
+.requirement-list > div { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+.requirement-list dt { font-weight: 600; font-size: .85rem; }
+.requirement-list dd { margin: 0; }
+.target-list > div { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+.target-list dt { font-weight: 600; }
+.target-list dd { margin: .3rem 0 0; }
+.recovery-summary { max-width: var(--measure); margin-bottom: 2.5rem; }
+.request-list { padding-left: 1rem; font-size: .8rem; }
+.request-list small { display: block; overflow-wrap: anywhere; }
 .results-toolbar { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--color-base-content); }
 .results-toolbar p { font-size: .9rem; margin: 0; }
 .sort-control { display: flex; gap: .7rem; align-items: baseline; font-size: .8rem; flex-shrink: 0; }

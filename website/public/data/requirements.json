@@ -1,0 +1,290 @@
+{
+  "version": "1.4",
+  "date": "2026-10-06",
+  "status": "Behavioural specification; implementation and acceptance results are not asserted.",
+  "source_sha256": "354bf4daf9e988684fd4d3fb1a1925b2233731f3fa122ab36f0485421d4cf22a",
+  "visual_query_profile": "The builder supports connected patterns, variables, repeated-variable joins, type or label constraints, directed and inverse relationships, optional patterns, alternatives, equality and inequality, string matching, numeric and temporal ranges, projection, distinct results, ordering, limits, and grouped COUNT, SUM, AVG, MIN, and MAX. Filters and aggregates check applicable value types.",
+  "functional_requirements": [
+    {
+      "id": "FR-01",
+      "title": "Read-only dual-backend connections",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-01",
+        "AC-08"
+      ],
+      "description": "Connect to an RDF/SPARQL endpoint and a property-graph/Cypher source through profiles. Expose source scope, dialect, connection, and authentication status. Changing source preserves the earlier workspace as a separate context. Both connectors implement every mandatory workflow."
+    },
+    {
+      "id": "FR-02",
+      "title": "Identity and value preservation",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-01",
+        "AC-07"
+      ],
+      "description": "Details, table cells, and exports preserve the semantics above. Equal labels never merge unequal entities. Identifiers remain inspectable. Language preference changes presentation, not source values."
+    },
+    {
+      "id": "FR-03",
+      "title": "Entity search and disambiguation",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-02"
+      ],
+      "description": "Search by identifier or label text. Candidates expose type or label, source, and identifier. State search scope and result limits. Expose discovered entity types or labels, relationships, and property value types."
+    },
+    {
+      "id": "FR-04",
+      "title": "Faceted refinement",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-02"
+      ],
+      "description": "Combine categorical, numeric, and temporal facets. Selections within a categorical facet use OR; selections across facets use AND. Show removable constraints and exact or estimated counts. Empty results preserve constraints and support removal or undo. Missing values remain distinct from empty strings."
+    },
+    {
+      "id": "FR-05",
+      "title": "Incremental neighbourhood navigation",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-03"
+      ],
+      "description": "Inspect incoming and outgoing relationships; expand a relationship type; pin an entity; collapse and restore expansions. Expansion is bounded and pageable. Collapse hides view elements while preserving source data and exploration history. Edges retain direction and type."
+    },
+    {
+      "id": "FR-06",
+      "title": "Bounded relationship paths",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-03"
+      ],
+      "description": "Search between two selected entities with relationship and direction constraints. Default depth is three hops, configurable up to six. Initially show at most ten paths ordered by hop count and a deterministic tie-break. Expose path identities, directions, and source scope. A reached limit is not proof that no path exists."
+    },
+    {
+      "id": "FR-07",
+      "title": "Visual query profile",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-04"
+      ],
+      "description": "Implement the version 1 visual query profile for both models. Add, change, and remove constraints incrementally. Show generated query text, parameters, scope, and a readable description before execution."
+    },
+    {
+      "id": "FR-08",
+      "title": "Expert read-query mode",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-04",
+        "AC-08"
+      ],
+      "description": "Inspect, edit, execute, and save native read queries with language and dialect. Native editing does not overwrite the saved visual state silently. Errors identify rejected syntax or capabilities. Queries outside the visual profile remain usable in native mode."
+    },
+    {
+      "id": "FR-09",
+      "title": "Inspectable next-step suggestions",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-05"
+      ],
+      "description": "Provide user-requested eligible relationships, refinements, or result views. Each suggestion states its basis: schema compatibility, checked counts, or ranking criteria. Distinguish schema-valid, estimated, and verified non-empty suggestions. Users may ignore guidance."
+    },
+    {
+      "id": "FR-10",
+      "title": "Readable query descriptions",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-05"
+      ],
+      "description": "Describe active query and filters in plain English from the current query state. Distinguish conjunction, alternatives, optional values, aggregates, and limits. Descriptions use source labels and do not imply stronger findings than the query produces."
+    },
+    {
+      "id": "FR-11",
+      "title": "Graph, table, and detail coordination",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-06"
+      ],
+      "description": "Views use the same result scope and preserve selection, filters, and query context. A selected entity is identifiable across views. Textual controls provide equivalent core inspection and navigation when the graph cannot be used."
+    },
+    {
+      "id": "FR-12",
+      "title": "Aggregation and display limits",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-06",
+        "AC-09"
+      ],
+      "description": "Show counts and grouped summaries with computation scope and completeness. Drill from an aggregate to its entities. Initially display at most 500 nodes and 1,000 relationships; use grouping, paging, or selected slices beyond this envelope. Display omission never changes the reported query result."
+    },
+    {
+      "id": "FR-12a",
+      "title": "Additional typed views",
+      "priority": "Should",
+      "acceptance_cases": [],
+      "description": "Offer temporal and geographical views when source values support them without inventing dates, coordinates, or units. Otherwise retain table inspection."
+    },
+    {
+      "id": "FR-13",
+      "title": "Recoverable exploration workspace",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-07"
+      ],
+      "description": "Save and reopen queries, filters, selections, annotations, positions, source references, and steps. Undo and redo restore view and query state. Branching preserves earlier branches. Reopening distinguishes saved observations from refreshed results."
+    },
+    {
+      "id": "FR-14",
+      "title": "Data and query export",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-07"
+      ],
+      "description": "Export tables as comma-separated values (CSV) and typed JavaScript Object Notation (JSON), native query text, and graph views as Scalable Vector Graphics (SVG). RDF statement exports retain graph context; property-graph exports retain identities and properties. Indicate full versus bounded results. Typed JSON preserves distinctions flattened for CSV presentation."
+    },
+    {
+      "id": "FR-15",
+      "title": "Finding provenance",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-07"
+      ],
+      "description": "An evidence bundle includes finding, source profile identifier, graph scope, retrieval time, native query and parameters, filters, limits, available source version, and annotations. An unavailable version is recorded as unknown. Provenance does not imply independent verification of returned assertions."
+    },
+    {
+      "id": "FR-16",
+      "title": "Cancellation and recoverable failure",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-08"
+      ],
+      "description": "Cancel or retry requests without losing the last valid workspace. Distinguish connection, authentication, query, timeout, and decoding failures. Late cancelled results do not replace current state. Retained results show timestamp and stale status."
+    },
+    {
+      "id": "FR-17",
+      "title": "Optional evaluation recording",
+      "priority": "Should",
+      "acceptance_cases": [],
+      "description": "Optional evaluation recording captures task identifiers, enabled interaction events, completion, time, and errors. It excludes credentials and unnecessary data values. Users inspect, export, and delete records. Recording is disabled by default."
+    },
+    {
+      "id": "FR-18",
+      "title": "Inspectable source configuration",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-10"
+      ],
+      "description": "Before exploration, show the selected graph family, source profile identifier, graph scope, declared query dialect/version and connection state. Distinguish configured labels and facets from source-observed schema. Validate a profile before saving it; report unsupported mandatory operations before query construction. Changing the profile does not silently execute an old query against a new source. Credentials are referenced separately and remain outside the saved profile."
+    },
+    {
+      "id": "FR-19",
+      "title": "Versioned workspace import and deletion",
+      "priority": "Must",
+      "acceptance_cases": [
+        "AC-11"
+      ],
+      "description": "Export and import a versioned workspace file containing the fields in FR-13 and FR-15 and the relevant data-model identifier. Validate schema version, identifiers, field types and size before importing. Preview source/scope differences; require an explicit choice to create a separate workspace or replace the current one. Invalid or unsupported files leave the current workspace intact. Imported query text is inert until an explicit execution action; annotations are displayed as text. Allow deletion of a saved workspace and associated local evaluation records, with a clear indication of what will be removed. Credential material is never restored from an imported file."
+    }
+  ],
+  "quality_requirements": [
+    {
+      "id": "NFR-01",
+      "description": "Exact queries match the fixture oracle for every mandatory case. Preserve identity, direction, datatype, named scope, and aggregate scope. Test both backend families separately."
+    },
+    {
+      "id": "NFR-02",
+      "description": "Core workflows support keyboard use, visible focus, meaningful control names, and a textual graph alternative. Target Web Content Accessibility Guidelines (WCAG) 2.2 level AA. Use manual and automated checks; automated scanning alone is insufficient."
+    },
+    {
+      "id": "NFR-03",
+      "description": "Proposed local selection, view-switching, and undo feedback target: 95th percentile of 200 ms within the display limits in FR-12 on the declared benchmark. Measure network requests separately."
+    },
+    {
+      "id": "NFR-04",
+      "description": "Proposed search, facet, and single-hop expansion target: 95th percentile of 2 s end-to-end on the controlled warm-source benchmark. Report cold runs, bounded paths, and public-endpoint variability separately. Arbitrary queries and external sources have no universal latency guarantee."
+    },
+    {
+      "id": "NFR-05",
+      "description": "Default timeout is 10 s. Initial expansion retrieves at most 100 relationships; table pages contain at most 100 rows. Cancellation updates local state within 200 ms. Where source cancellation is unavailable, discard late results and report outstanding source execution accurately."
+    },
+    {
+      "id": "NFR-06",
+      "description": "Keep credentials separate from workspace data. Never expose them in exports, URLs, histories, or logs. Stored credentials require a protected mechanism. Source permissions and operation controls enforce read-only access."
+    },
+    {
+      "id": "NFR-07",
+      "description": "Inject timeout, disconnect, malformed result, and expired authentication. The last valid workspace survives with query, source, constraints, completeness, and stale state."
+    },
+    {
+      "id": "NFR-08",
+      "description": "Run mandatory tasks on at least two distinct domain vocabularies per backend without application-code changes. Presentation configuration may differ."
+    },
+    {
+      "id": "NFR-09",
+      "description": "Record fixture version, expected results, application and connector versions, dialect, language-reference release and commit, compatibility manifest, environment, cache conditions, failures, and timings for each acceptance run. Report backend results separately."
+    },
+    {
+      "id": "NFR-10",
+      "description": "Document deployment configuration, allowed sources, adapter versions and supported browsers. Authenticated deployments use HTTPS except for isolated localhost testing. Query logging and evaluation recording are disabled by default; enabled logs redact authentication and source-sensitive values. Saving, exporting, importing and deleting local workspaces are available without enabling telemetry."
+    },
+    {
+      "id": "NFR-11",
+      "description": "At 320 CSS pixels wide and at 200% browser zoom, core controls, source scope, error recovery and textual results remain operable. Wide native queries and graph canvases may have labelled local scrolling without forcing the whole page to scroll horizontally. Tested browser versions are declared in the acceptance manifest."
+    }
+  ],
+  "acceptance_cases": [
+    {
+      "id": "AC-01",
+      "description": "Connect, choose scope, inspect equal-labelled entities and their incoming/outgoing edges, and attempt mutation. Identities and model-specific values are retained; entities remain separate; reads succeed and writes are rejected. Named graph and relationship-property cases pass independently."
+    },
+    {
+      "id": "AC-02",
+      "description": "Search, disambiguate, combine categorical and range facets, remove a filter, and select missing values. Results match the oracle; OR/AND semantics, counts, scope restoration, completeness, and missing-value distinctions are correct."
+    },
+    {
+      "id": "AC-03",
+      "description": "Expand, collapse, restore, and search a known path under direction/type/hop constraints. Neighbourhoods and paths match the oracle. Limits and omissions are visible; no-path and reached-limit outcomes remain distinct; undo preserves context."
+    },
+    {
+      "id": "AC-04",
+      "description": "Exercise every operator in the version 1 visual query profile using the operator-level cases in the downloadable specification, independently on RDF/SPARQL and property-graph/Cypher. Inspect generated native text and edit a separate native query. Results and errors match the oracle; descriptions match semantics; native edits preserve visual state; unsupported translation is not fabricated. A compound example does not replace operator-level coverage."
+    },
+    {
+      "id": "AC-05",
+      "description": "Request and inspect guidance, accept or reject it, create an empty result, and remove a constraint. Suggestion certainty is explicit; chosen actions update query and description consistently; guidance remains optional; previous state survives."
+    },
+    {
+      "id": "AC-06",
+      "description": "Select an entity across views, filter, group results, and drill into an aggregate. Scope and selection remain consistent; counts reconcile with underlying exact or bounded data; textual controls support equivalent inspection."
+    },
+    {
+      "id": "AC-07",
+      "description": "Save/reopen a branch, replay after fixture change, and export results, query, view, and evidence bundle. State survives; change is flagged; identity, typed values, source, query, times, limits, and completeness remain correct; credentials are absent."
+    },
+    {
+      "id": "AC-08",
+      "description": "Inject timeout, disconnect, authentication and decoding errors, and late cancelled results. Errors remain distinct; valid state survives with stale indication; retry succeeds; late results cannot overwrite state."
+    },
+    {
+      "id": "AC-09",
+      "description": "Run display and performance workloads, exceed the display cap, and repeat on a second vocabulary. Grouping and limits work; declared benchmark targets are met; both backends and domains pass independently."
+    },
+    {
+      "id": "AC-10",
+      "description": "Configure public and authenticated source profiles, reject unsupported required constructs, switch sources with an existing query, expire authentication, and inspect browser storage, requests, logs and exports. Source, graph scope and dialect remain visible; no old query runs on source change; secret material is absent from persisted or exported application data; an expired session preserves the workspace and offers reauthentication. Repeat core controls with keyboard, 320-pixel width and 200% zoom."
+    },
+    {
+      "id": "AC-11",
+      "description": "Export a workspace, clear local state, import into a fresh browser profile and compare every required field. Inject an unsupported schema version, wrong field types, an oversized file, markup in annotations and a mutating query. Invalid imports leave the active workspace intact; imported text is inert; execution still applies read-only controls; credentials are absent. Delete a saved workspace and verify associated local records are removed. A changed source requires an explicit new-workspace or replacement choice."
+    }
+  ],
+  "targets": {
+    "local_feedback_p95_ms": 200,
+    "controlled_warm_source_p95_ms": 2000,
+    "non_expert_unaided_task_completion_percent": 80,
+    "benchmark_entities": 100000,
+    "benchmark_relationship_facts": 1000000,
+    "repetitions_per_operation": 30
+  },
+  "target_note": "Proposed engineering targets under the specified conditions, not measured application results."
+}

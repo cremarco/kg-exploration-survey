@@ -22,7 +22,7 @@
 \newcommand{\evidence}[1]{\hyperlink{evidence:#1}{#1}}
 \title{Requirements Specification for a\\Knowledge Graph Exploration Application}
 \author{}
-\date{Version 1.3\\6 October 2026\\Literature cutoff: 29 August 2026}
+\date{Version 1.4\\6 October 2026\\Literature cutoff: 29 August 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -42,6 +42,11 @@ Source connections are read-only. Version 1 excludes graph construction and edit
 
 \subsection{Priority conventions}
 \textbf{Must} requirements are release conditions. \textbf{Should} requirements improve the release but cannot compensate for a missing Must capability. Functional requirements (FR), non-functional requirements (NFR), and acceptance scenarios (AC) use stable identifiers; a changed requirement shall receive a new version and updated tests. The requirements specify behaviour; implementation technology is left open.
+
+\subsection{Document status and delivery boundary}
+Version 1.4 is the completed behavioural specification for implementation and acceptance planning. It specifies required behaviour and proposed targets; it does not certify that an application has been built or tested. The survey companion website is a separate deliverable for reading and comparing research reports. Its catalogue filters are not a graph-query builder, and publication of that website does not satisfy application acceptance.
+
+All Must requirements belong to the version 1 baseline. Implementation may proceed in increments: connections and semantic fidelity; search, facets and navigation; visual/native queries and inspectable guidance; coordinated views, workspace recovery and exports; then paired acceptance, accessibility and performance evaluation. Intermediate increments are development milestones, not a reduced-compliance version 1 release. The specification introduces no delivery date or budget commitment.
 
 \section{Evidence basis and design rationale}
 The literature cutoff is 29 August 2026. Table~\ref{tab:evidence} lists eight research papers, four technical specifications, and one security-guidance source, with section references and source URLs. The papers inform the proposed features. Mandatory support for both graph models, priorities, and numerical thresholds are project decisions.
@@ -91,6 +96,21 @@ G06 & \evidence{E01}, \evidence{E04}, \evidence{E08} & Source access, graph sema
 Either user may select a configured connection or enter an authorised source profile. A profile contains graph family, address, dataset or graph scope, authentication reference, and query dialect. It does not imply permission to modify the source.
 
 The core sequence is: select source; search or choose a type; inspect entities; refine facets; expand relationships or find a path; build or inspect a query; change view; save a finding; export its supporting context. Users may repeat or branch these steps without completing a fixed wizard.
+
+\subsection{Reference use cases and domain fixtures}
+The following are proposed acceptance fixtures, not observations about commissioned users or available institutional datasets. Each fixture shall be represented independently in RDF and a property graph, with model-specific identity and an explicit result oracle.
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelwidth=0pt,style=nextline]
+\item[UC-01: Research-publication exploration.] A researcher starts with an ambiguous author name, selects the intended person, filters publications by year and topic, follows affiliations or co-authorship, and asks for a bounded relationship between two authors. The researcher inspects the native query, saves a finding and exports its evidence bundle. Distinct people with the same label remain distinct. Jointly authored records do not imply a relationship that is absent from the source. Verify FR-01--10 and FR-13--16 through AC-01--05, AC-07 and AC-08.
+\item[UC-02: Cultural-heritage exploration.] A non-expert starts from a person or place label, restricts a collection by date and category, follows a documented relationship, and changes between list and graph views without losing filters. The fixture includes multilingual labels, missing dates, repeated relationship types, and a disconnected entity. The user explains the active constraints and saves a finding without writing a native query. Verify FR-01--07 and FR-09--16 through AC-01--08.
+\item[UC-03: Recovery and portability.] Run both information needs with keyboard controls, on both graph families, on a narrow viewport, and after injected connection and authentication failures. Reopen an exported workspace against an updated fixture and identify stale observations before refreshing. Verify NFR-01--11 through AC-07--11. The two domain vocabularies provide the portability test; equivalent content does not require identical storage encodings.
+\end{description}
+
+The small correctness fixtures are distinct from the 100,000-entity performance fixture. Every fixture package shall contain source files or reproducible generation instructions, a version/hash, graph scope, connection configuration without secrets, input states, expected results and deliberately failing cases. Personal names and events in synthetic fixtures shall be identified as synthetic. No real participant data are required for these technical tests.
+
+\subsection{Deployment, connection administration, and local data}
+The version 1 deployment baseline is a browser interface with explicitly configured read-only graph adapters. It may run on localhost or an institutional HTTPS service. A deployment declares its supported browser/runtime and adapter versions. Public endpoints may be accessed directly when their access policy permits it; an authenticated source or one requiring mediation uses a configured adapter service. Deployment administrators configure allowed source addresses, scopes, dialects and server-side secret references. Users choose or enter authorised profiles within those controls. An application-side read-only parser does not replace source-side read permissions.
+
+Workspace data remain local to the user's browser in version 1, with explicit export/import and deletion. Saving locally is a deliberate user action; the interface states that local storage is specific to the browser profile and may be cleared. Persistent shared workspaces, background telemetry and central participant registries are outside this baseline. Authentication material stays outside saved profiles, workspace files, logs and exports. Reopening a restricted source may require fresh authentication. A user may inspect, download or delete local workspace data without contacting the source.
 
 \section{Graph models, connections, and data semantics}
 RDF terms and dataset context follow the RDF 1.1 data model \citep{rdfconcepts}. Resources retain their Internationalized Resource Identifier (IRI) or source-scoped blank-node identity. Literals retain lexical value, datatype, and language tag. Named-graph context remains inspectable when provided. Blank-node labels shall not be treated as persistent cross-session identifiers.
@@ -214,6 +234,18 @@ Cancel or retry requests without losing the last valid workspace. Distinguish co
 \origin{Documented precedent; project decision}{Sparklis, \evidence{E04}, Section 6 introductory paragraphs \citep{sparklis}, describes navigation logs and a user logging switch.}{Task/error instrumentation, inspect/export/delete controls, data minimization and recording disabled by default are project decisions. The precedent's IP/query/endpoint logging does not supply these privacy defaults.}
 \end{minipage}\par
 
+\subsection{Source profiles and workspace interchange}
+\par\noindent\begin{minipage}{\linewidth}
+\req{FR-18}{Inspectable source configuration}{Must}{AC-10}
+Before exploration, show the selected graph family, source profile identifier, graph scope, declared query dialect/version and connection state. Distinguish configured labels and facets from source-observed schema. Validate a profile before saving it; report unsupported mandatory operations before query construction. Changing the profile does not silently execute an old query against a new source. Credentials are referenced separately and remain outside the saved profile.
+\origin{Design extension; project decision}{Sparklis, \evidence{E04}, Section 5.5 \citep{sparklis}, describes endpoint-driven discovery; the model and language semantics are grounded in \evidence{E09}--\evidence{E11}.}{The visible configuration contract, preflight, capability declaration and source-change behaviour are project decisions that make FR-01 and FR-07 testable.}
+\end{minipage}\par
+\par\noindent\begin{minipage}{\linewidth}
+\req{FR-19}{Versioned workspace import and deletion}{Must}{AC-11}
+Export and import a versioned workspace file containing the fields in FR-13 and FR-15 and the relevant data-model identifier. Validate schema version, identifiers, field types and size before importing. Preview source/scope differences; require an explicit choice to create a separate workspace or replace the current one. Invalid or unsupported files leave the current workspace intact. Imported query text is inert until an explicit execution action; annotations are displayed as text. Allow deletion of a saved workspace and associated local evaluation records, with a clear indication of what will be removed. Credential material is never restored from an imported file.
+\origin{Design extension; project decision}{LODmilla, \evidence{E05}, Section 3.1 \citep{lodmilla}, motivates recoverable saved state; Tabulator, \evidence{E01}, Section 3.1 \citep{tabulator}, motivates retained source context.}{The versioned interchange schema, validation, explicit replacement, inert imports and local deletion contract extend these precedents.}
+\end{minipage}\par
+
 \section{Quality requirements and operational constraints}
 The timings below are engineering targets under the declared benchmark conditions. Measure local user interface (UI) feedback separately from source-query execution.
 
@@ -232,6 +264,8 @@ NFR-06 & Keep credentials separate from workspace data. Never expose them in exp
 NFR-07 & Inject timeout, disconnect, malformed result, and expired authentication. The last valid workspace survives with query, source, constraints, completeness, and stale state.\par\smallskip \textbf{Sources: design extension and project test policy.} Tabulator, \evidence{E01}, Section 3.1 \citep{tabulator}, shows network failures; LODmilla, \evidence{E05}, Section 3.1 \citep{lodmilla}, saves graph state. The injected failure set and retained-state pass condition are specified here.\\
 NFR-08 & Run mandatory tasks on at least two distinct domain vocabularies per backend without application-code changes. Presentation configuration may differ.\par\smallskip \textbf{Sources: documented motivation and project portability test.} Sparklis, \evidence{E04}, Section 5.5 \citep{sparklis}, discovers endpoint structure; /facet, \evidence{E02}, Sections 3.4 and 4.4 \citep{facet}, configures facets at runtime. Two vocabularies per backend and the no-code-change criterion are project decisions.\\
 NFR-09 & Record fixture version, expected results, application and connector versions, dialect, language-reference release and commit, compatibility manifest, environment, cache conditions, failures, and timings for each acceptance run. Report backend results separately.\par\smallskip \textbf{Sources: reference-based verification and project reporting policy.} \evidence{E11}, the pinned openCypher TCK README \citep{opencypher}, describes scenario inputs and expected results/errors. The acceptance-run manifest, cache/timing metadata and separate backend reports extend that reference for this application.\\
+NFR-10 & Document deployment configuration, allowed sources, adapter versions and supported browsers. Authenticated deployments use HTTPS except for isolated localhost testing. Query logging and evaluation recording are disabled by default; enabled logs redact authentication and source-sensitive values. Saving, exporting, importing and deleting local workspaces are available without enabling telemetry.\par\smallskip \textbf{Sources: project deployment and privacy policy.} \evidence{E13} \citep{owasprest} supports avoiding credential exposure; deployment and local-storage defaults are project decisions. Verify configuration, browser storage, representative request/log records and exported files in AC-10--11.\\
+NFR-11 & At 320 CSS pixels wide and at 200\% browser zoom, core controls, source scope, error recovery and textual results remain operable. Wide native queries and graph canvases may have labelled local scrolling without forcing the whole page to scroll horizontally. Tested browser versions are declared in the acceptance manifest.\par\smallskip \textbf{Sources: normative basis and project viewport tests.} \evidence{E12}, WCAG 2.2 \citep{wcag}, supplies the adopted accessibility framework. The stated viewport and zoom cases are project checks supporting NFR-02; they do not alone establish AA conformance.\\
 \end{longtable}}
 
 \section{Acceptance and evaluation plan}
@@ -255,6 +289,8 @@ AC-06 & Select an entity across views, filter, group results, and drill into an 
 AC-07 & Save/reopen a branch, replay after fixture change, and export results, query, view, and evidence bundle. State survives; change is flagged; identity, typed values, source, query, times, limits, and completeness remain correct; credentials are absent.\par\smallskip \textbf{Project acceptance test derived from FR-13, FR-14, FR-15 and NFR-06.}\par\smallskip \textbf{Sources.} Saved graph state: \evidence{E05}, LODmilla, Section 3.1 \citep{lodmilla}; source provenance: \evidence{E01}, Tabulator, Section 3.1 \citep{tabulator}; CSV export: \evidence{E06}, Sampo-UI, Section 4.1 \citep{sampoui}. Branching, change detection, additional export formats and credential exclusion are project extensions or policy.\\
 AC-08 & Inject timeout, disconnect, authentication and decoding errors, and late cancelled results. Errors remain distinct; valid state survives with stale indication; retry succeeds; late results cannot overwrite state.\par\smallskip \textbf{Project acceptance test derived from FR-16, NFR-05 and NFR-07.}\par\smallskip \textbf{Sources.} Network feedback: \evidence{E01}, Tabulator, Section 3.1 \citep{tabulator}; endpoint-dependent performance and limits: \evidence{E04}, Sparklis, Sections 5.4--5.5 \citep{sparklis}. Failure injection, retry and late-response pass conditions are project tests.\\
 AC-09 & Run display and performance workloads, exceed the display cap, and repeat on a second vocabulary. Grouping and limits work; declared benchmark targets are met; both backends and domains pass independently.\par\smallskip \textbf{Project acceptance test derived from FR-12, NFR-03, NFR-04 and NFR-08.}\par\smallskip \textbf{Sources.} Complexity control: \evidence{E08}, SemSpect, Sections 1--2 \citep{semspect}; endpoint conditions and portability: \evidence{E04}, Sparklis, Sections 5.4--5.5 \citep{sparklis}. Workloads, performance thresholds and repeated-domain pass conditions are project decisions.\\
+AC-10 & Configure public and authenticated source profiles, reject unsupported required constructs, switch sources with an existing query, expire authentication, and inspect browser storage, requests, logs and exports. Source, graph scope and dialect remain visible; no old query runs on source change; secret material is absent from persisted or exported application data; an expired session preserves the workspace and offers reauthentication. Repeat core controls with keyboard, 320-pixel width and 200\% zoom.\par\smallskip \textbf{Project acceptance test derived from FR-01, FR-07, FR-18 and NFR-02, NFR-06, NFR-10--11.} Source and language fidelity follow \evidence{E09}--\evidence{E11}; accessibility follows \evidence{E12}; credential-exposure guidance is \evidence{E13}. Configuration, failure and viewport cases are project tests.\\
+AC-11 & Export a workspace, clear local state, import into a fresh browser profile and compare every required field. Inject an unsupported schema version, wrong field types, an oversized file, markup in annotations and a mutating query. Invalid imports leave the active workspace intact; imported text is inert; execution still applies read-only controls; credentials are absent. Delete a saved workspace and verify associated local records are removed. A changed source requires an explicit new-workspace or replacement choice.\par\smallskip \textbf{Project acceptance test derived from FR-13--15, FR-19 and NFR-01, NFR-06--07, NFR-10.} Saved-state and provenance precedents are \evidence{E01} and \evidence{E05}; the interchange and failure-injection contract is a project decision.\\
 \end{longtable}}
 
 \subsection{Visual query coverage for AC-04}
@@ -303,11 +339,17 @@ FR-11--12 & \evidence{E01}, \evidence{E06}, \evidence{E08}, \evidence{E12} / G02
 FR-13--15 & \evidence{E01}, \evidence{E04}--\evidence{E06}, \evidence{E08}--\evidence{E09}, \evidence{E11} / G04 & Saved context and faithful exports. & AC-07; NFR-01,06,07,09.\\
 FR-16 & \evidence{E01}, \evidence{E04} / G02,G06 & Cancellation and recovery. & AC-08; NFR-05--07.\\
 FR-12a,17 & \evidence{E01}, \evidence{E02}, \evidence{E04}, \evidence{E06} + project choices & Typed views and optional evaluation records. & Type/recording-control inspection; NFR-06,09.\\
+FR-18--19 & \evidence{E01}, \evidence{E04}, \evidence{E05}, \evidence{E09}--\evidence{E13} + project choices & Inspectable configuration, versioned interchange and local deletion. & AC-10--11; NFR-01--02,06--07,10--11.\\
 \end{longtable}}
 
 Release requires every Must requirement and scenario to pass separately for RDF/SPARQL and property-graph/Cypher, including model-specific checks. A combined percentage shall not conceal a connector failure. Performance targets apply to declared conditions. An adopted target change updates the specification before release evaluation.
 
 Future federation, additional views or query constructs, and collaboration must preserve the version 1 baseline. Architecture and stack choices must preserve the specified semantics and pass the behavioural tests.
+
+\subsection{Acceptance evidence and release record}
+For each Must requirement, the release record shall name its acceptance cases, fixture versions, responsible implementer and verifier, test outcome and reproducible evidence. Outcomes are pass, fail or not run; a missing result is not a pass. Functional and semantic cases require all expected results and errors to match; accessibility requires the manual and automated checks stated in NFR-02; performance requires operation-level distributions under the declared benchmark. No implementation results are asserted by this specification.
+
+The release package shall include the source-profile template without secrets, dialect compatibility manifest, versioned workspace schema and examples, both domain fixtures in both graph models, fixture oracles, execution instructions, test results, benchmark records and a short user guide covering search, source scope, query inspection, bounded results, saved-state recovery and export. A verifier can reproduce each failed or passed case from those materials. Participant recruitment, consent and retention are settled before the optional usability evaluation; technical fixture tests do not substitute for that evaluation.
 
 \begin{thebibliography}{99}
 \setlength{\itemsep}{5pt}

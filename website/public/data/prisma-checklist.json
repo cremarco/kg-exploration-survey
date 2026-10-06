@@ -13,9 +13,9 @@
     {
       "row": 9,
       "item": "2",
-      "status": "Done",
-      "location": "survey.tex: Abstract (251 words)",
-      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+      "status": "Partially reported",
+      "location": "survey.tex: Abstract",
+      "note": "Abstract reports scope, sources/date, report counts, synthesis, limitations, funding and non-registration; risk-of-bias assessment methods are not reported. Participant/study totals are not inferred."
     },
     {
       "row": 10,
@@ -57,14 +57,14 @@
       "item": "8",
       "status": "Partially reported",
       "location": "survey.tex: Review Method / Selection and Retrieval; Appendix A; workbook05–06",
-      "note": "Two independent human title/abstract reviewers are confirmed. Full-text determinations apply criteria with source locators; independently duplicated review and a verified full-text human-reviewer count are not documented."
+      "note": "Two independent human title/abstract reviewers and one human full-text reviewer are author-confirmed. Full-text eligibility was not independently duplicated. Historical automation use and detailed workflow responsibilities remain undocumented."
     },
     {
       "row": 16,
       "item": "9",
       "status": "Partially reported",
       "location": "survey.tex: Review Method / Extraction and Evidence Appraisal; workbook07",
-      "note": "Source-located extraction and checks are recorded. A verified human-extractor count and independent duplicate extraction are not documented; no missing inputs are imputed."
+      "note": "Three human data extractors are author-confirmed. Source-located fields and checks are recorded, but per-report allocation, independent duplicate extraction, checking and disagreement resolution are not documented."
     },
     {
       "row": 17,
@@ -83,9 +83,9 @@
     {
       "row": 19,
       "item": "11",
-      "status": "Done",
+      "status": "Partially reported",
       "location": "survey.tex: Extraction and Evidence Appraisal; Missingness and Appraisal; per-report workbook07 AE",
-      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+      "note": "Appraisal considerations are described, but the procedure and assessor responsibilities require author confirmation. Source verification and missingness do not establish a completed risk-of-bias assessment."
     },
     {
       "row": 20,
@@ -174,9 +174,9 @@
     {
       "row": 32,
       "item": "18",
-      "status": "Done",
+      "status": "Partially reported",
       "location": "survey.tex: Missingness and Appraisal; per-report design/reporting limitations in workbook07 AE",
-      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+      "note": "Source-located design/reporting limitations are available; documented risk-of-bias assessments for each included study are not established."
     },
     {
       "row": 33,
@@ -188,9 +188,9 @@
     {
       "row": 34,
       "item": "20a",
-      "status": "Done",
+      "status": "Partially reported",
       "location": "survey.tex: Interaction Workflows; Guidance; Backend Assumptions; Evaluation Evidence",
-      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+      "note": "Narrative synthesis describes contributing reports and their limitations; synthesis-specific summaries of assessed risk of bias are not established."
     },
     {
       "row": 35,

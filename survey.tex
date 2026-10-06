@@ -1,17 +1,17 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[manuscript,review,screen]{acmart}
+\acmJournal{CSUR}
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\citestyle{acmnumeric}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[margin=24mm]{geometry}
 \usepackage{microtype}
 \usepackage{array,booktabs,tabularx,longtable}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning}
-\usepackage[authoryear,round]{natbib}
 \usepackage{enumitem}
 \usepackage{xurl}
-\usepackage[hidelinks]{hyperref}
 \setlength{\parindent}{1.3em}
 \setlength{\parskip}{0.3em}
 \setlength{\tabcolsep}{4pt}
@@ -22,22 +22,29 @@
 \newcommand{\NA}{\textit{NA}}
 \newcommand{\doi}[1]{\url{https://doi.org/#1}}
 \title{Knowledge Graph Exploration: A Systematic Review of Interaction, Guidance, and Evaluation}
-\author{K\={a}rlis \v{C}er\={a}ns\textsuperscript{1}, Andr\'{a}s Micsik\textsuperscript{2}, Marco Cremaschi\textsuperscript{3}\\[0.5em]
-\small\textsuperscript{1}Institute of Mathematics and Computer Science, University of Latvia, Riga, Latvia\\
-\small\textsuperscript{2}Department of Distributed Systems, HUN-REN SZTAKI, Budapest, Hungary\\
-\small\textsuperscript{3}Department of Informatics, Systems and Communication,\\
-\small University of Milano-Bicocca, Milan, Italy\\[0.3em]
-\small\texttt{karlis.cerans@lumii.lv}; \texttt{micsik@sztaki.hu}; \texttt{marco.cremaschi@unimib.it}}
+\author{K\={a}rlis \v{C}er\={a}ns}
+\email{karlis.cerans@lumii.lv}
+\affiliation{\institution{Institute of Mathematics and Computer Science, University of Latvia}\city{Riga}\country{Latvia}}
+\author{Andr\'{a}s Micsik}
+\email{micsik@sztaki.hu}
+\affiliation{\institution{Department of Distributed Systems, HUN-REN SZTAKI}\city{Budapest}\country{Hungary}}
+\author{Marco Cremaschi}
+\email{marco.cremaschi@unimib.it}
+\affiliation{\institution{Department of Informatics, Systems and Communication, University of Milano-Bicocca}\city{Milan}\country{Italy}}
+\renewcommand{\shortauthors}{\v{C}er\={a}ns, Micsik, and Cremaschi}
 \date{Literature cutoff: 29 August 2026}
 \begin{document}
-\maketitle
 
 
 
 \begin{abstract}
 Knowledge graph exploration combines entity and relationship inspection with iterative filtering, query construction, and interpretation. This systematic review relates interaction, guidance, representations, backend access, scalability, and evaluation. Searches covered Scopus, the ACM Digital Library, OpenAlex, and IEEE Xplore through 29 August 2026. Eligible reports were English-language, peer-reviewed primary publications describing human exploration or specified guidance over semantic knowledge graphs. The frozen search contains 4,159 raw occurrences and 3,030 deduplicated records. Two human title--abstract reviewers excluded 2,061 records; 969 database reports and 22 distinct existing-collection reports entered retrieval. Of 991 sought reports, 324 were assessed, 242 included, 82 excluded, and 667 not retrieved. All included reports enter a descriptive coding profile; illustrative comparisons retain evaluation designs, samples, comparators, measures, and limitations. Report counts do not establish independent systems or studies. Narrative synthesis uses no common quality score or statistical pooling. Navigation, facets, paths, and query construction support different tasks and expose different constraints. Guidance separates executable refinements, approximate candidates, ranking, personalization, and explanation. Usability ratings, qualitative observations, ranking experiments, execution benchmarks, and deployment statistics support different inferences. Requirements concern visible query scope, recoverable state, provenance, computation bounds, and evaluation under stated task and user conditions. The retrieval gap, incomplete search provenance, and undocumented independent duplicate full-text review limit coverage and comparative inference. The review was not registered and received no specific funding or support.
 \end{abstract}
-\noindent\textbf{Keywords:} knowledge graph exploration; exploratory search; interaction; user guidance; visual queries; evidence synthesis
+\keywords{knowledge graph exploration, exploratory search, interaction, user guidance, visual queries, evidence synthesis}
+\ccsdesc[500]{Information systems~Graph-based database models}
+\ccsdesc[500]{Human-centered computing~Visualization}
+\ccsdesc[300]{Information systems~Search interfaces}
+\maketitle
 
 \section{Introduction}
 Knowledge graphs represent entities, their attributes, and typed relationships in a form that can be inspected and queried. Exploration begins when a user does not yet know which entities, relationships, or constraints will resolve an information need. A historian may follow people through institutions and life events; a researcher may refine a set of publications through topics and collaborators; an analyst may construct a query while learning the vocabulary of an unfamiliar dataset. In each case, useful information can change the next question. The evolving search described by \citet{bates1989} provides a useful frame for these changes. Work on exploratory search connects this process with understanding beyond an isolated query response \citep{marchionini2006,white2009}.
@@ -81,7 +88,7 @@ An existing collection contributes a separate retrieval route. Sixty-one local c
 The search log records a supplementary Google Scholar search covering the first 200 relevance-ranked results on 29 August 2026. Its raw results export was unavailable, so the search record does not permit independent replay of that result set. The supplementary route is not added to the four-source corpus or treated as 200 eligible systems. Web of Science, DBLP, and backward citation searching were listed as planned sources, but their execution is not documented. They are therefore not described as completed searches.
 
 \subsection{Selection and Retrieval}
-The title--abstract stage has two confirmed independent human reviewers. Their recorded decisions and subsequent adjudication retain separate provenance. Following this stage, 2,061 records are excluded and 969 advance to report retrieval. Adding the 22 distinct existing-collection reports gives 991 reports sought. Report assessment covered 324 reports, of which 242 met the criteria and 82 were excluded with recorded reasons; 667 reports were not retrieved. These figures distinguish retrieval, assessment, and inclusion. They do not establish independent full-text agreement or a count of independent evaluation studies.
+The title--abstract stage has two confirmed independent human reviewers. Their recorded decisions and subsequent adjudication retain separate provenance. Full-text eligibility was reviewed by one person, as confirmed by the authors on 6 October 2026; independent duplicate full-text review was not performed. Following this stage, 2,061 records are excluded and 969 advance to report retrieval. Adding the 22 distinct existing-collection reports gives 991 reports sought. The frozen assessment covered 324 reports, of which 242 met the criteria and 82 were excluded with recorded reasons; 667 reports were not retrieved in that assessment snapshot. These figures distinguish retrieval, assessment, and inclusion. They do not establish independent full-text agreement or a count of independent evaluation studies. A subsequent public-source recovery pass retains dated request receipts and acquired copies in a separate ledger. Acquisition alone does not establish eligibility; recovered sources enter the synthesis only after full-text assessment and source-grounded extraction, with a synchronized revision of the selection register, catalogue, and analytical counts.
 
 \begin{table}[htbp]
 \centering\small
@@ -136,10 +143,11 @@ Reports not retrieved & 667 & Retrieval gaps retained in the flow\\\bottomrule
 \draw[flowarrow] (assessed.east) -- ++(0.55,0) |- (excluded.west);
 \end{tikzpicture}
 \caption{PRISMA selection flow for the frozen corpus. Removal counts use raw occurrences for the database route; 39 local copies are identity aliases, not additional reports sought. The final unit is the report, with no inferred independent-system or cohort count.}
+\Description{Two identification routes merge into 991 reports sought. Four databases yield 4,159 occurrences and 3,030 records after deduplication; 969 advance after 2,061 title-abstract exclusions. An existing collection supplies 22 distinct reports after removing 39 represented copies. Of 991 sought reports, 667 were not retrieved and 324 were assessed. Assessment includes 242 reports and excludes 82 with criterion-specific reasons.}
 \label{fig:prisma}
 \end{figure}
 
-Full-text eligibility uses criteria-based report assessment with individual source locators (Figure~\ref{fig:prisma}). The 82 exclusions comprise 26 non-primary reports, 37 outside scope, 11 non-English reports, five with insufficient detail, and three whose publication status was not established. Missing reports remain retrieval gaps; uncertainty about a publication track remains an editorial-evidence gap. Neither establishes a negative finding about the method. Assessment dispositions apply the documented eligibility criteria to the source evidence. Independent duplicate full-text screening and extraction are not documented. No independent full-text reviewer count or inter-rater coefficient is inferred. Eligibility dispositions are therefore distinct from independent reviewer votes.
+Full-text eligibility uses criteria-based report assessment with individual source locators (Figure~\ref{fig:prisma}). The 82 exclusions comprise 26 non-primary reports, 37 outside scope, 11 non-English reports, five with insufficient detail, and three whose publication status was not established. Missing reports remain retrieval gaps; uncertainty about a publication track remains an editorial-evidence gap. Neither establishes a negative finding about the method. Assessment dispositions apply the documented eligibility criteria to the source evidence. One person reviewed full-text eligibility, without independent duplicate review. Three people participated in extraction; independently duplicated extraction and checking responsibilities are not documented. No full-text inter-rater coefficient is inferred. Eligibility dispositions are therefore distinct from independent reviewer votes.
 
 \subsection{Retrieval Coverage}
 \label{sec:retrieval-coverage-proposal}
@@ -200,7 +208,7 @@ The retrieval state is reported as of 6 October 2026. This reporting date is not
 
 
 \subsection{Extraction and Evidence Appraisal}
-Extraction covers title, authors, report identity, publication dates, graph object, implemented workflow, guidance mechanism, representations, backend, scalability, evaluation, and artifacts. Each substantive field carries a report locator. A complete paper is distinguished from a supplement, a proceedings container, or a truncated copy. An appendix containing algorithms does not establish that the corresponding main report was read. When a container includes several papers, evidence is limited to the pages of the requested report.
+Three people participated in data extraction, as confirmed by the authors on 6 October 2026. This count does not establish that each report was extracted independently by all three people. Per-report allocation, duplicate extraction, and the checking or disagreement-resolution procedure are not documented. Extraction covers title, authors, report identity, publication dates, graph object, implemented workflow, guidance mechanism, representations, backend, scalability, evaluation, and artifacts. Each substantive field carries a report locator. A complete paper is distinguished from a supplement, a proceedings container, or a truncated copy. An appendix containing algorithms does not establish that the corresponding main report was read. When a container includes several papers, evidence is limited to the pages of the requested report.
 
 Evaluation extraction preserves design, participant count and background, task, comparator, measures, results, and limitations. Missing values remain unreported. A count of sessions, judgments, queries, devices, graph entities, or website visitors is not converted into a count of human participants. An earlier study cited by a new report retains its original identity. The reported evaluation details permit discussion of task relevance, participant selection, comparator suitability, allocation and learning effects, measure interpretation, uncertainty reporting, and materials availability. The appraisal procedure and responsibilities require author confirmation; no common numerical quality score is computed.
 
@@ -487,7 +495,7 @@ Different backend assumptions and separate timing units \citep{2017_Ferre_Sparkl
 \section{Limitations}
 The review is bounded by its frozen sources, English-language criterion, working protocol, and documented retrieval state. Only 324 of 991 sought reports were assessed (32.7\%); 667 were not retrieved (67.3\%). This large retrieval gap limits coverage and prevents a claim that the assessed reports represent the full eligible field. The existing collection has incomplete original-discovery provenance. Planned searches without execution evidence are not counted. Original ACM, OpenAlex, IEEE, and supplementary Google Scholar results exports are absent, and the exact submitted IEEE block strings were not retained, limiting independent search reproduction. Database indexing can omit reports or produce divergent dates and titles. Publication-track verification can remain unresolved even when substantive content is readable. These limitations affect coverage and selection and do not establish limitations of an underlying exploration method.
 
-The descriptive profile covers the included, retrieved reports. The narrative comparisons use illustrative, source-located examples and do not estimate feature prevalence across all eligible systems. Reports often omit participant counts, latency conditions, task materials, or stable artifact versions. Qualitative studies and domain deployments provide context-dependent evidence. Independent duplicate full-text review and extraction are not documented, and the synthesis makes no pooled effectiveness or certainty-of-evidence claim. Separate reports about a system may still contain unrecognized shared data; where sharing is not verified, no independent study count is inferred.
+The descriptive profile covers the included, retrieved reports. The narrative comparisons use illustrative, source-located examples and do not estimate feature prevalence across all eligible systems. Reports often omit participant counts, latency conditions, task materials, or stable artifact versions. Qualitative studies and domain deployments provide context-dependent evidence. Full-text eligibility was reviewed by one person; three people participated in extraction, but independently duplicated extraction and per-report checking are not documented. The synthesis makes no pooled effectiveness or certainty-of-evidence claim. Separate reports about a system may still contain unrecognized shared data; where sharing is not verified, no independent study count is inferred.
 
 \section{Conclusions}
 Knowledge graph exploration involves choices about actions, suggestions, views, data access, computation, and evidence. Comparing those choices reveals why similar interfaces can support different tasks and why strong component results do not automatically establish end-to-end usability. The six-dimensional framework preserves these distinctions and connects concrete report findings with application requirements. The most defensible design implications are to preserve interpretable state, explain the scope and basis of guidance, expose retrieval and computation limits, and evaluate claims under explicit task and user conditions. The descriptive profile covers 242 included, retrieved reports; the illustrative comparisons explain mechanisms and source-specific evidence. The frozen search and retrieval gaps limit extension of these findings to the full eligible field.
@@ -499,11 +507,13 @@ Knowledge graph exploration involves choices about actions, suggestions, views, 
 
 \noindent\textbf{Protocol and data availability.} The working protocol, source/search register, selection accounting, and report-level catalogue accompany the review. The review was not registered. The protocol and search register are available in the accompanying review workbook at \url{https://docs.google.com/spreadsheets/d/1NCKCZTV90CyJZTcpzGVmBnYSgm3rqKiWWHStI3MftC4/edit}. Bibliographic source links identify primary reports; their availability does not imply redistribution rights or verified software availability.
 
+\noindent\textbf{Assistance in this revision.} Codex assisted with manuscript formatting and methodological reporting, preparation of the application specification and companion website, and public-source recovery. Automated source acquisition is recorded separately from human eligibility review and data extraction. This statement describes assistance in the current revision; it does not reconstruct the historical use of tools during screening or extraction.
+
 \appendix
 \section{Operational Protocol Summary}\label{app:protocol}
 The core inclusion test requires both a semantic graph exploration object and a concrete interaction or guidance contribution. Evaluation is desirable but is not mandatory for eligibility. Code and demonstration availability are extraction fields rather than inclusion criteria. An absent abstract or inaccessible full text is not a substantive exclusion by itself. Matching title--abstract Exclude votes close that stage; matching Include or Maybe votes advance to full text. Missing or invalid votes and disagreements require a separately recorded routing decision based on the criteria, preserving the original votes. All 185 unresolved title--abstract cases were advanced on 6 October 2026 without imputing missing votes.
 
-Exclusions distinguish topic failures, non-English reports, non-primary genre, insufficient report detail, and publication-type failures. A construction, ontology-engineering, isolated-answer, or backend report can meet scope only if it supplies a primary exploration or identifiable guidance contribution. A proposed method is not excluded solely because a graphical interface has not been implemented. Final eligibility reasons remain attached to individual reports rather than assigned from a system name or keyword.
+Exclusions distinguish topic failures, non-English reports, non-primary genre, insufficient report detail, and failures to establish publication status. A construction, ontology-engineering, isolated-answer, or backend report can meet scope only if it supplies a primary exploration or identifiable guidance contribution. A proposed method is not excluded solely because a graphical interface has not been implemented. Final eligibility reasons remain attached to individual reports rather than assigned from a system name or keyword.
 
 \section{Recorded Search Strategy}\label{app:search}
 The four primary searches were frozen on 29 August 2026 with no lower publication-date restriction and no language restriction at retrieval. English was applied as an eligibility criterion. The following is the exact portable expression recorded for v3; source adapters retain their specified fields.
@@ -528,7 +538,7 @@ Sapphire remains a historical bibliographic reference with its recorded title--a
 
 \section{Representative Report and Family Catalogue}\label{app:catalogue}
 Table~\ref{tab:catalogue} provides report-level anchors for representative comparisons. Family links identify common systems, not shared cohorts. The accompanying catalogue retains each report separately, including companions and version-specific findings.
-\begin{longtable}{L{32mm}L{38mm}L{81mm}}
+\begin{longtable}{@{}L{30mm}L{36mm}L{79mm}@{}}
 \caption{Representative catalogue and evidence-unit cautions.}\label{tab:catalogue}\\
 \toprule System/report & Source anchor & Report/family distinction\\\midrule
 \endfirsthead

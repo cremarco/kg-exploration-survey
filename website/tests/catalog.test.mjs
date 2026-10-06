@@ -143,9 +143,30 @@ test('RDF Surveyor preserves usability, analytics, and author scenario evidence 
   assert(report.studies.every(study => study.results === null && study.measures.length === 0))
   assert.deepEqual(report.studies.map(study => study.study_id), ['V3-01765-usability', 'V3-01765-live-operations', 'V3-01765-analytics', 'V3-01765-author-scenario-comparison'])
 })
-test('all fifteen artifact hashes in the public manifest bind the current published files', () => {
+test('all companion artifact hashes bind the current published files', () => {
   const manifest = read('data-manifest.json')
-  const names = ['catalog.json', 'catalog-index.json', 'catalog.schema.json', 'codebook.json', 'selection-register.json', 'search-strategies.json', 'prisma-checklist.json', 'survey.tex', 'kg-exploration-requirements.tex', 'survey.pdf', 'kg-exploration-requirements.pdf', 'synthesis-grouping-rule.json', 'synthesis-evidence-ledger.json', 'synthesis-evidence-ledger.csv', 'synthesis-candidate-register.csv']
+  const names = ['catalog.json', 'catalog-index.json', 'catalog.schema.json', 'codebook.json', 'selection-register.json', 'search-strategies.json', 'prisma-checklist.json', 'survey.tex', 'kg-exploration-requirements.tex', 'survey.pdf', 'kg-exploration-requirements.pdf', 'synthesis-grouping-rule.json', 'synthesis-evidence-ledger.json', 'synthesis-evidence-ledger.csv', 'synthesis-candidate-register.csv', 'review-method.json', 'requirements.json', 'recovery-ledger.json']
   assert.deepEqual(Object.keys(manifest.artifact_sha256).sort(), names.sort())
   for (const name of names) assert.equal(manifest.artifact_sha256[name], crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'public/data', name))).digest('hex'), name)
+})
+test('recovery candidates reconcile with receipts without changing adjudicated eligibility', () => {
+  const recovery = read('recovery-ledger.json'); const frozen = new Map(read('selection-register.json').records.map(r => [r.record_id, r]))
+  assert.equal(new Set(recovery.records.map(r => r.record_id)).size, recovery.summary.attempted)
+  assert.equal(recovery.records.filter(r => r.pdf_sha256).length, recovery.summary.pdfs_acquired)
+  assert.equal(recovery.records.filter(r => r.title_matched).length, recovery.summary.pdfs_title_matched)
+  assert.equal(recovery.records.filter(r => r.pdf_sha256 && !r.title_matched).length, recovery.summary.pending_identity)
+  assert.equal(recovery.summary.pdfs_acquired + recovery.summary.not_recovered, recovery.summary.attempted)
+  for (const r of recovery.records) {
+    assert.equal(frozen.get(r.record_id).workflow, 'Not retrieved'); assert.equal(frozen.get(r.record_id).final_decision, null)
+    assert.equal(r.assessment_status, 'not_assessed')
+    if (r.pdf_sha256) { assert.match(r.pdf_sha256, /^[a-f0-9]{64}$/); assert(safeUrl(r.source_url)); assert(r.pdf_pages > 0) }
+  }
+  assert(!JSON.stringify(recovery).includes('/Users/'))
+})
+test('requirements retain the mandatory dual-model baseline and all acceptance references resolve', () => {
+  const spec = read('requirements.json'); const ids = new Set(spec.acceptance_cases.map(r => r.id))
+  assert.equal(spec.functional_requirements.length, 20); assert.equal(spec.quality_requirements.length, 11); assert.equal(ids.size, 11)
+  for (const r of spec.functional_requirements) for (const id of r.acceptance_cases) assert(ids.has(id), `${r.id}: ${id}`)
+  assert.equal(spec.source_sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'public/data/kg-exploration-requirements.tex'))).digest('hex'))
+  assert.equal(read('review-method.json').full_text_reviewers, 1); assert.equal(read('review-method.json').data_extractors, 3)
 })

@@ -1,0 +1,1568 @@
+{
+  "schema": "bounded-catalog-correction/1",
+  "extraction_sha256": "4455e52c6267ae41304f87f99dbbb0fa6d9084d5fba9bba3c9ff3bc0ae783009",
+  "source_identity": {
+    "report_id": "V3-00696",
+    "url": "https://aclanthology.org/2024.icnlsp-1.40.pdf",
+    "sha256": "6e20f7c340b3b58b089257c2355d382aaf1d7a997b0328a6eaa1bef38cc3c322",
+    "locators": "Sections 4.1–4.2; Table 1; Appendix Table 3 (physical PDF pages 5–8, 12)"
+  },
+  "report_summary": {
+    "report_id": "V3-00696",
+    "extraction_fields_sha256": "8bea65d4165e41ae3a988d5239afd40274b27d187bb0f09abab82082df6a48d6"
+  },
+  "study_changes": [
+    {
+      "report_id": "2003_Quan_Haystack_A",
+      "study_id": "2003_Quan_Haystack_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2009_Harth_VisiNav_Visual",
+      "study_id": "2009_Harth_VisiNav_Visual-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2011_Popov_Connecting_the",
+      "study_id": "2011_Popov_Connecting_the-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2012_Camarda_LodLive_exploring",
+      "study_id": "2012_Camarda_LodLive_exploring-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2013_Klimek_Payola_collaborative",
+      "study_id": "2013_Klimek_Payola_collaborative-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E03_formative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2013_Rietveld_YASGUI_Not",
+      "study_id": "2013_Rietveld_YASGUI_Not-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Arenas_SemFacet_Semantic",
+      "study_id": "2014_Arenas_SemFacet_Semantic-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Cheng_Explass_Exploring",
+      "study_id": "2014_Cheng_Explass_Exploring-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Hoefler_Linked_Data",
+      "study_id": "2014_Hoefler_Linked_Data-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Hoefler_Linked_Data",
+      "study_id": "2014_Hoefler_Linked_Data-S2",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Mader_Facilitating_the",
+      "study_id": "2014_Mader_Facilitating_the-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2014_Micsik_LODmilla_Shared",
+      "study_id": "2014_Micsik_LODmilla_Shared-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2015_Jayaram_VIIQ_auto-suggestion",
+      "study_id": "2015_Jayaram_VIIQ_auto-suggestion-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2015_Pirro_Explaining_and",
+      "study_id": "2015_Pirro_Explaining_and-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2015_Skjveland_Sgvizler_a",
+      "study_id": "2015_Skjveland_Sgvizler_a-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2015_Thellmann_LinkDaViz_Automatic",
+      "study_id": "2015_Thellmann_LinkDaViz_Automatic-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2016_Soylu_Experiencing_OptiqueVQS",
+      "study_id": "2016_Soylu_Experiencing_OptiqueVQS-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2021_Destandau_S-Paths_Set-based",
+      "study_id": "2021_Destandau_S-Paths_Set-based-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "2021_Hyvonen_Knowledge-based_relational",
+      "study_id": "2021_Hyvonen_Knowledge-based_relational-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00064",
+      "study_id": "V3-00064-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E06_offline_accuracy",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00087",
+      "study_id": "V3-00087-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00100",
+      "study_id": "V3-00100-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00101",
+      "study_id": "V3-00101-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00110",
+      "study_id": "V3-00110-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00114",
+      "study_id": "V3-00114-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00120",
+      "study_id": "V3-00120-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E03_formative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00132",
+      "study_id": "2018_Durao_A_Linked-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00142",
+      "study_id": "V3-00142-S1",
+      "field": "design_codes",
+      "old": [
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00144",
+      "study_id": "V3-00144-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00144",
+      "study_id": "V3-00144-S2",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00151",
+      "study_id": "V3-00151-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00162",
+      "study_id": "V3-00162-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00217",
+      "study_id": "V3-00217-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E06_offline_accuracy",
+        "E07_performance",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00220",
+      "study_id": "2025_Emonet_A_User-Friendly-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00221",
+      "study_id": "V3-00221-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E03_formative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00227",
+      "study_id": "V3-00227-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00254",
+      "study_id": "V3-00254-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00256",
+      "study_id": "V3-00256-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00257",
+      "study_id": "V3-00257-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00257",
+      "study_id": "V3-00257-S2",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00277",
+      "study_id": "V3-00277-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00278",
+      "study_id": "V3-00278-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00278",
+      "study_id": "V3-00278-S2",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00278",
+      "study_id": "V3-00278-S3",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00313",
+      "study_id": "V3-00313-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00313",
+      "study_id": "V3-00313-S2",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00341",
+      "study_id": "V3-00341-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00349",
+      "study_id": "V3-00349-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00428",
+      "study_id": "V3-00428-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00449",
+      "study_id": "2019_Feddoul_Automatic_Facet-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00493",
+      "study_id": "V3-00493-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00504",
+      "study_id": "V3-00504-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00505",
+      "study_id": "V3-00505-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00523",
+      "study_id": "V3-00523-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E03_formative_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00607",
+      "study_id": "V3-00607-referenced-inCloud-study",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00615",
+      "study_id": "V3-00615-design-workshop",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-topic-classification",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": [
+        "E06_offline_accuracy"
+      ]
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-abstract-sentence-classification",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": [
+        "E06_offline_accuracy"
+      ]
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-human-comparison",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": [
+        "E05_comparative_user"
+      ]
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-human-comparison",
+      "field": "allocation",
+      "old": "not_reported",
+      "new": "within_subject"
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-human-comparison",
+      "field": "response_note",
+      "old": null,
+      "new": "Participants were randomly assigned to interface-order Groups A and B. Group A used the conversational interface for Scenario 1, followed by the graphical interface for Scenario 2; Group B used the graphical interface for Scenario 1, followed by the conversational interface for Scenario 2. Each participant used both interfaces on different scenarios. The described scenario order is fixed (Scenario 1, then Scenario 2). Random assignment concerns the interface-order groups, not randomized scenario order. See primary report Section 4.2, PDF pages 6–7."
+    },
+    {
+      "report_id": "V3-00696",
+      "study_id": "V3-00696-human-comparison",
+      "field": "limitations",
+      "old": [
+        "Descriptive rating analysis without reported significance/effect-size test. No objective retrieval/task-time gain established. Main method says approximately10minutes; appendix scenarios specify up to8minutes. Scenario and interface are counterbalanced but each person sees a given scenario with only one interface."
+      ],
+      "new": [
+        "Descriptive rating analysis without reported significance/effect-size test. No objective retrieval/task-time gain established. Main method says approximately10minutes; appendix scenarios specify up to8minutes. Interface assignment/order is counterbalanced between groups; the described scenario order is fixed (Scenario 1 then Scenario 2), and each person sees a given scenario with only one interface."
+      ]
+    },
+    {
+      "report_id": "V3-01014",
+      "study_id": "2009_Araujo_Experimenting_with-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01014",
+      "study_id": "2009_Araujo_Experimenting_with-S2",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01093",
+      "study_id": "2006_Hildebrand_facet_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01100",
+      "study_id": "2016_Arenas_Faceted_search-S1",
+      "field": "design_codes",
+      "old": [
+        "E07_performance",
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01102",
+      "study_id": "2011_Heim_Faceted_Visual-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01118",
+      "study_id": "2021_Parra_Fast_Approximate-S1",
+      "field": "design_codes",
+      "old": [
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01127",
+      "study_id": "2018_Khalili_FERASAT_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01230",
+      "study_id": "2008_Heim_gFacet_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01249",
+      "study_id": "2018_Moreno-Vega_GraFa_Scalable-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01265",
+      "study_id": "2020_Lissandrini_Graph-Query_Suggestions-S1",
+      "field": "design_codes",
+      "old": [
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01523",
+      "study_id": "2022_Amsterdamer_Interactive_Knowledge-S1",
+      "field": "design_codes",
+      "old": [
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01532",
+      "study_id": "2010_Heim_Interactive_Relationship-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01619",
+      "study_id": "2024_Yuan_KGScope_Interactive-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01659",
+      "study_id": "2019_Kuric_Knowledge_Graph-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01723",
+      "study_id": "2014_Lukovnikov_LD_Viewer-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01726",
+      "study_id": "2023_Menin_LDViz_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01799",
+      "study_id": "2018_Jacksi_LOD_Explorer-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01830",
+      "study_id": "V3-01830-feature-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-01936",
+      "study_id": "2021_Witschel_Natural_Language-based-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02206",
+      "study_id": "V3-02206-preliminary-tasks",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02206",
+      "study_id": "V3-02206-feature-comparison",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02209",
+      "study_id": "2019_Vargas_RDF_Explorer-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02215",
+      "study_id": "2014_Bikakis_rdfSynopsViz_a-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02248",
+      "study_id": "2009_Heim_RelFinder_Revealing-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02367",
+      "study_id": "2022_Ikkala_Sampo-UI_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02383",
+      "study_id": "2023_Liebig_Scalable_No-Code-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02392",
+      "study_id": "V3-02392-europeana-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02437",
+      "study_id": "V3-02437-formal-analysis",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02437",
+      "study_id": "V3-02437-product-example",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02461",
+      "study_id": "V3-02461-course-walkthrough",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02461",
+      "study_id": "V3-02461-educational-use",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02477",
+      "study_id": "V3-02477-yago-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02539",
+      "study_id": "2017_Ferre_Sparklis_An-S1",
+      "field": "design_codes",
+      "old": [
+        "E06_offline_accuracy",
+        "E07_performance",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02540",
+      "study_id": "2023_Francart_Sparnatural_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02552",
+      "study_id": "V3-02552-controlled",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02552",
+      "study_id": "V3-02552-public",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02552",
+      "study_id": "V3-02552-repair-validation",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02585",
+      "study_id": "2022_Grether_Studying_Interaction-S1",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02585",
+      "study_id": "2022_Grether_Studying_Interaction-S2",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02616",
+      "study_id": "2006_Berners-Lee_Tabulator_Exploring-S1",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E03_formative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02771",
+      "study_id": "V3-02771-output-relevance-rating",
+      "field": "design_codes",
+      "old": [
+        "E06_offline_accuracy",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02801",
+      "study_id": "2024_Papadaki_Unifying_Faceted-S1",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02830",
+      "study_id": "V3-02830-complexity-analysis",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02845",
+      "study_id": "V3-02845-accuracy-annotation",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy",
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02845",
+      "study_id": "V3-02845-card-preference",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy",
+        "E09_formal_analysis"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02849",
+      "study_id": "V3-02849-pilot",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02849",
+      "study_id": "V3-02849-comparison",
+      "field": "design_codes",
+      "old": [
+        "E03_formative_user",
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02858",
+      "study_id": "V3-02858-imdb-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02861",
+      "study_id": "V3-02861-example-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02863",
+      "study_id": "V3-02863-codesign",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02863",
+      "study_id": "V3-02863-expert-feedback",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study",
+        "E03_formative_user",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02884",
+      "study_id": "V3-02884-nobel-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02906",
+      "study_id": "V3-02906-qualitative",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02907",
+      "study_id": "V3-02907-nobel-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02911",
+      "study_id": "V3-02911-prototype-survey",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E04_single_system_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02928",
+      "study_id": "V3-02928-lab-views",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02946",
+      "study_id": "2018_Cerans_ViziQuer_A-S1",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02947",
+      "study_id": "V3-02947-mini-university",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02952",
+      "study_id": "V3-02952-vocabulary-examples",
+      "field": "design_codes",
+      "old": [
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02968",
+      "study_id": "V3-02968-lemmatization",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E06_offline_accuracy",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02968",
+      "study_id": "V3-02968-ner",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E06_offline_accuracy",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02968",
+      "study_id": "V3-02968-public-release",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study",
+        "E06_offline_accuracy",
+        "E08_deployment"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02990",
+      "study_id": "V3-02990-browser-comparison",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E06_offline_accuracy"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-02994",
+      "study_id": "V3-02994-demo",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration",
+        "E02_case_study"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-03005",
+      "study_id": "V3-03005-runtime",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-03005",
+      "study_id": "V3-03005-path-interest",
+      "field": "design_codes",
+      "old": [
+        "E05_comparative_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-03007",
+      "study_id": "V3-03007-performance",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-03007",
+      "study_id": "V3-03007-survey",
+      "field": "design_codes",
+      "old": [
+        "E04_single_system_user",
+        "E07_performance"
+      ],
+      "new": []
+    },
+    {
+      "report_id": "V3-03021",
+      "study_id": "2017_Khalili_WYSIWYQ_What-S1",
+      "field": "design_codes",
+      "old": [
+        "E01_demonstration"
+      ],
+      "new": []
+    }
+  ],
+  "publication_change": {
+    "report_id": "V3-02974",
+    "old": {
+      "title": "Web-based topology queries on a BIM model",
+      "authors": [
+        "Mads Holten Rasmussen",
+        "Christian Anker Hviid",
+        "Jan Karlshøj"
+      ],
+      "year": 2017,
+      "publication_date": null,
+      "publication_date_note": null,
+      "venue": "Not reported",
+      "doi": null,
+      "persistent_url": "https://backend.orbit.dtu.dk/ws/files/216853690/byg_r419.pdf",
+      "genre": "thesis",
+      "language": "English",
+      "version": null,
+      "frozen_record_title": null,
+      "frozen_record_year": 2017,
+      "identity_status": "confirmed",
+      "evidence_ids": []
+    },
+    "new": {
+      "title": "Web-based topology queries on a BIM model",
+      "authors": [
+        "Mads Holten Rasmussen",
+        "Christian Anker Hviid",
+        "Jan Karlshøj"
+      ],
+      "year": 2017,
+      "publication_date": null,
+      "publication_date_note": null,
+      "venue": "LDAC2017 – 5th Linked Data in Architecture and Construction Workshop, Dijon, France",
+      "doi": null,
+      "persistent_url": "https://backend.orbit.dtu.dk/ws/portalfiles/portal/140019661/Untitled.pdf",
+      "genre": "conference_paper",
+      "language": "English",
+      "version": "Assessed unit: the 8-page 2017 LDAC workshop report embedded in the author’s 2019 doctoral thesis, physical container pages 147–154. The DTU standalone institutional cover labels its document “Peer reviewed version”; that cover corroborates identity/version metadata. Standalone-versus-embedded byte equivalence has not been verified.",
+      "frozen_record_title": null,
+      "frozen_record_year": 2017,
+      "identity_status": "confirmed",
+      "evidence_ids": [
+        "V3-02974-EV-a90c4be97ee95e87"
+      ]
+    },
+    "added_evidence": {
+      "report_id": "V3-02974",
+      "claim": "The DTU institutional standalone cover identifies the report title, Rasmussen/Hviid/Karlshøj authorship, publication year 2017, LDAC2017 – 5th Linked Data in Architecture and Construction Workshop in Dijon, France, and the document-version label “Peer reviewed version”. This is metadata corroboration; the assessed source and reading scope remain the embedded report in the existing container.",
+      "source_kind": "publisher_metadata",
+      "source_url": "https://backend.orbit.dtu.dk/ws/portalfiles/portal/140019661/Untitled.pdf",
+      "source_sha256": null,
+      "section": "Institutional repository cover, first page (advisory locator): title/authors; Publication date; Document Version; Citation (APA). No local standalone PDF bytes/preflight claimed.",
+      "physical_pdf_pages": [],
+      "advisory_pdf_pages": [
+        1
+      ],
+      "structural_preflight": "UNAVAILABLE",
+      "verified_on": "2026-10-06",
+      "evidence_id": "V3-02974-EV-a90c4be97ee95e87"
+    }
+  },
+  "representation_roles": {
+    "default": {
+      "roles": [],
+      "missingness": "unspecified",
+      "role_assertions": []
+    },
+    "qualified": [
+      {
+        "report_id": "V3-02190",
+        "codes": [
+          {
+            "code": "V01_node_link",
+            "representation_role": {
+              "roles": [
+                "query_pattern"
+              ],
+              "missingness": null,
+              "role_assertions": [
+                {
+                  "role": "query_pattern",
+                  "scope": "QueryVOWL query graph in the described web and desktop implementations; exclude the background WebVOWL ontology figure.",
+                  "evidence_ids": [
+                    "V3-02190-EV-002bf3d1d9b4dfca"
+                  ],
+                  "source_sha256": "ce188db439ed0c02e0109906cc5a102d136b18483874585067619ba691688b89",
+                  "physical_pdf_pages": [
+                    5,
+                    6,
+                    10
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "code": "V03_table_list",
+            "representation_role": {
+              "roles": [
+                "data_result"
+              ],
+              "missingness": null,
+              "role_assertions": [
+                {
+                  "role": "data_result",
+                  "scope": "The bottom result list in the web-based prototype (Figure 6a); other sidebar suggestion lists are not separately audited here.",
+                  "evidence_ids": [
+                    "V3-02190-EV-9234e25d05b9ebb2"
+                  ],
+                  "source_sha256": "ce188db439ed0c02e0109906cc5a102d136b18483874585067619ba691688b89",
+                  "physical_pdf_pages": [
+                    5,
+                    10
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "report_id": "V3-02191",
+        "codes": [
+          {
+            "code": "V01_node_link",
+            "representation_role": {
+              "roles": [
+                "query_pattern"
+              ],
+              "missingness": null,
+              "role_assertions": [
+                {
+                  "role": "query_pattern",
+                  "scope": "Main QueryVOWL query graph in Figure 1 and Sections 2/2.1; not a retrieved RDF subgraph rendering.",
+                  "evidence_ids": [
+                    "V3-02191-EV-17d9a3c665022512"
+                  ],
+                  "source_sha256": "b7eea51c7599194edb4aac172691ce578747e5298068434e3b3b1f170d54b115",
+                  "physical_pdf_pages": [
+                    2,
+                    3
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "code": "V03_table_list",
+            "representation_role": {
+              "roles": [
+                "data_result"
+              ],
+              "missingness": null,
+              "role_assertions": [
+                {
+                  "role": "data_result",
+                  "scope": "The result list described in Section 2.3 and shown below the query graph in Figure 1; sidebar refinement lists are outside this annotation.",
+                  "evidence_ids": [
+                    "V3-02191-EV-a29895e841f53b2c"
+                  ],
+                  "source_sha256": "b7eea51c7599194edb4aac172691ce578747e5298068434e3b3b1f170d54b115",
+                  "physical_pdf_pages": [
+                    2,
+                    4
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "selection_changes": [
+    {
+      "record_id": "V3-01769",
+      "old": {
+        "record_id": "V3-01769",
+        "canonical_report_id": "V3-01769",
+        "title": "Linked Data Interfaces: A Survey",
+        "workflow": "Not retrieved",
+        "source_available": "",
+        "final_decision": null,
+        "decision_basis": "Retrieved16-page IRIS PDF is an IRCDL/CEUR February2023 survey report, not the journal version identified by Information DOI10.3390/info14090483. Do not attach that DOI or journal metadata to this conference PDF. Retrieve/compare the requested journal report before resolving identity; source content is otherwise directly relevant contextual evidence.",
+        "exclusion_reason": "",
+        "source_record_id": "V3-01769"
+      },
+      "new": {
+        "record_id": "V3-01769",
+        "canonical_report_id": "V3-01769",
+        "title": "Linked Data Interfaces: A Survey",
+        "workflow": "Assessed",
+        "source_available": "Yes",
+        "final_decision": "Exclude",
+        "decision_basis": "The official five-author journal report is a contextual review of 47 existing interfaces. Apply the confirmed exclusion of non-primary reviews; preserve the distinct three-author CEUR report and the frozen record identity. Assessment is source/criterion-based; no reviewer votes are imputed.",
+        "exclusion_reason": "Not a primary study",
+        "source_record_id": "V3-01769"
+      }
+    },
+    {
+      "record_id": "V3-00083",
+      "old": {
+        "record_id": "V3-00083",
+        "canonical_report_id": "V3-00083",
+        "title": "A comparative study of state-of-the-art linked data visualization tools",
+        "workflow": "Assessed",
+        "source_available": "Yes",
+        "final_decision": "Exclude",
+        "decision_basis": "The protocol requires a primary KG exploration or guidance contribution with sufficient method detail. This report reviews or benchmarks already-existing interfaces; retain it for background/discussion as ContextualReview, outside the primary report dataset. Desimoni follows the comparison-only exclusion criterion even though its benchmark is original. GUI absence is not the exclusion criterion.",
+        "exclusion_reason": "Not a primary study",
+        "source_record_id": "2020_Desimoni_A_Comparative"
+      },
+      "new": {
+        "record_id": "V3-00083",
+        "canonical_report_id": "V3-00083",
+        "title": "A comparative study of state-of-the-art linked data visualization tools",
+        "workflow": "Assessed",
+        "source_available": "Yes",
+        "final_decision": "Exclude",
+        "decision_basis": "This is an original comparative benchmark of existing Linked Data visualization tools. It remains outside the protocol's primary-method scope because its contribution is comparison/evaluation, rather than a proposed KG exploration interaction model or guidance mechanism (02_Protocol_and_Criteria, Include if). Correct exclusion category: Out of scope. Its original benchmark data are retained as contextual evidence; neither lack of original research nor GUI absence is asserted.",
+        "exclusion_reason": "Out of scope",
+        "source_record_id": "2020_Desimoni_A_Comparative"
+      }
+    }
+  ]
+}

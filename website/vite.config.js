@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/kge-survey/' : '/',
+  base: mode === 'production' ? '/kg-exploration-survey/' : '/',
   plugins: [react(), tailwindcss()],
 }))

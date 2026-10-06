@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T03:00:00+02:00",
+  "title": "Design System: Knowledge Graph Exploration Survey",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Restrained teal",
+        "canonical": "#235e55",
+        "tonalRamp": [
+          "oklch(15% 0.0628 181.66)",
+          "oklch(25% 0.0628 181.66)",
+          "oklch(35% 0.0628 181.66)",
+          "oklch(45% 0.0628 181.66)",
+          "oklch(55% 0.0628 181.66)",
+          "oklch(65% 0.0628 181.66)",
+          "oklch(80% 0.0628 181.66)",
+          "oklch(95% 0.0628 181.66)"
+        ]
+      },
+      "ochre": {
+        "role": "secondary",
+        "displayName": "Chronological ochre",
+        "canonical": "#775a28",
+        "tonalRamp": [
+          "oklch(15% 0.0769 78.84)",
+          "oklch(25% 0.0769 78.84)",
+          "oklch(35% 0.0769 78.84)",
+          "oklch(45% 0.0769 78.84)",
+          "oklch(55% 0.0769 78.84)",
+          "oklch(65% 0.0769 78.84)",
+          "oklch(80% 0.0769 78.84)",
+          "oklch(95% 0.0769 78.84)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Ivory paper",
+        "canonical": "#f7f5ed",
+        "tonalRamp": [
+          "oklch(15% 0.0108 95.16)",
+          "oklch(25% 0.0108 95.16)",
+          "oklch(35% 0.0108 95.16)",
+          "oklch(45% 0.0108 95.16)",
+          "oklch(55% 0.0108 95.16)",
+          "oklch(65% 0.0108 95.16)",
+          "oklch(80% 0.0108 95.16)",
+          "oklch(95% 0.0108 95.16)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Dark ink",
+        "canonical": "#202c2b",
+        "tonalRamp": [
+          "oklch(15% 0.0165 189.94)",
+          "oklch(25% 0.0165 189.94)",
+          "oklch(35% 0.0165 189.94)",
+          "oklch(45% 0.0165 189.94)",
+          "oklch(55% 0.0165 189.94)",
+          "oklch(65% 0.0165 189.94)",
+          "oklch(80% 0.0165 189.94)",
+          "oklch(95% 0.0165 189.94)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Publication display",
+        "purpose": "Home introduction; report and page titles use smaller related scales."
+      },
+      "body": {
+        "displayName": "Operational text",
+        "purpose": "Readable body, filters, counts and labels."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "comparison-reveal",
+        "value": "180ms ease-out; clip-path inset(0 0 100% 0) to inset(0)",
+        "purpose": "Reveal the comparison tray once; reduced-motion disables the animation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "intermediate",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The principal reading or comparison action.",
+      "html": "<button class=\"ds-primary\">Browse the report catalogue</button>",
+      "css": ".ds-primary{background:var(--color-primary,#235e55);color:#fff;padding:.65rem 1rem;border:0;border-radius:.3rem;font:550 1rem system-ui}.ds-primary:hover{background:#164d43}.ds-primary:focus-visible{outline:3px solid var(--color-secondary,#805d25);outline-offset:4px}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Exports and secondary operations.",
+      "html": "<button class=\"ds-outline\">Download JSON</button>",
+      "css": ".ds-outline{background:transparent;color:var(--color-base-content,#202c2b);padding:.65rem 1rem;border:1px solid #cbd0c5;border-radius:.3rem;font:550 1rem system-ui}.ds-outline:hover{background:#e6ebdf;border-color:#235e55}.ds-outline:focus-visible{outline:3px solid var(--color-secondary,#805d25);outline-offset:4px}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A native labelled search field.",
+      "html": "<label class=\"ds-field\">Search reports<input type=\"search\" placeholder=\"Title, author, system, DOI\"></label>",
+      "css": ".ds-field{display:block;font:600 .8rem system-ui;color:#202c2b}.ds-field input{display:block;margin-top:.35rem;background:#fffef9;border:1px solid #a7b5a9;border-radius:.3rem;padding:.7rem;width:100%;font:400 .9rem system-ui;color:#202c2b;caret-color:#235e55}.ds-field input::placeholder{color:#616d66}.ds-field input:focus-visible{outline:3px solid var(--color-secondary,#805d25);outline-offset:4px}"
+    },
+    {
+      "name": "Reading navigation",
+      "kind": "nav",
+      "description": "Text routes with an understated active underline.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-active\" href=\"#catalogue\">Catalogue</a><a href=\"#evidence\">Evidence</a><a href=\"#methods\">Methods</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.5rem;flex-wrap:wrap;font:.9rem system-ui}.ds-nav a{color:#202c2b;padding:.5rem 0;text-decoration:none;border-bottom:1px solid transparent}.ds-nav a:hover{text-decoration:underline;text-underline-offset:.2em}.ds-nav .ds-active{border-color:#235e55;color:#235e55}.ds-nav a:focus-visible{outline:3px solid var(--color-secondary,#805d25);outline-offset:4px}"
+    },
+    {
+      "name": "Report source row",
+      "kind": "custom",
+      "description": "Chronology and source title without a card shell.",
+      "html": "<article class=\"ds-report\"><span>2018</span><div><h3>ViziQuer: A web-based tool for visual diagrammatic queries over RDF data</h3><p>ViziQuer · visual query</p></div></article>",
+      "css": ".ds-report{display:grid;grid-template-columns:55px 1fr;gap:1rem;border-bottom:1px solid #cbd0c5;padding:1.5rem 0;color:#202c2b}.ds-report>span{color:#775a28;font:.9rem system-ui}.ds-report h3{font:500 1.5rem Newsreader,Georgia,serif;line-height:1.12;margin:0 0 .5rem}.ds-report p{font:.8rem system-ui;color:#235e55;margin:0}"
+    },
+    {
+      "name": "Comparison tray",
+      "kind": "custom",
+      "description": "A bounded source selection with one principal action.",
+      "html": "<aside class=\"ds-tray\"><strong>2 of 4 selected</strong><button>Compare reports</button></aside>",
+      "css": ".ds-tray{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fffef9;border:1px solid #91a799;border-radius:.6rem;padding:.75rem 1rem;font:.8rem system-ui;color:#202c2b}.ds-tray button{background:#235e55;color:#fff;border:0;border-radius:.3rem;padding:.5rem .75rem;font:550 .85rem system-ui}.ds-tray button:hover{background:#164d43}.ds-tray button:focus-visible{outline:3px solid var(--color-secondary,#805d25);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The research reading room",
+    "overview": "The surface uses publication typography, visible rules, and carefully spaced source entries. Reading and comparing evidence drives its hierarchy. Dense data is presented in lists and tables, with a quiet page field and restrained operational controls.",
+    "keyCharacteristics": [
+      "Serif titles and report entries paired with deliberate system sans controls.",
+      "Ivory paper, dark ink, teal actions, and ochre chronology.",
+      "Flat surfaces separated by rules and spacing.",
+      "Clear source locators, evidence states, and report-specific denominators."
+    ],
+    "rules": [],
+    "dos": [
+      "Do give source titles and report evidence the main visual hierarchy.",
+      "Do keep labels, focus states, error recovery, and no-results states explicit.",
+      "Do retain the report-specific analytical unit beside its count.",
+      "Do use rules, white space, and tonal surfaces to separate content."
+    ],
+    "donts": [
+      "Don’t replace source evidence with decorative graphs or inferred citation edges.",
+      "Don’t introduce gradients, oversized badge collections, or repeated metric cards.",
+      "Don’t treat proposed or future capabilities as implemented features.",
+      "Don’t use geometric illustrations in place of the actual research content."
+    ]
+  }
+}

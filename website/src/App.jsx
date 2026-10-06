@@ -1,600 +1,155 @@
-/**
- * KG Exploration Survey Data Application
- * 
- * This application provides a comprehensive interface for viewing and analyzing
- * survey data related to knowledge graph exploration approaches.
- * 
- * Features:
- * - Interactive data table with sorting and filtering
- * - Field validation with missing data indicators
- * - Visual badges for method types, domains, and user revision types
- * - Responsive design with collapsible navigation
- * - Integration with external chart components
- * 
- * Data Structure:
- * - Each row represents a research paper/approach
- * - Fields include authors, methods, domains, tasks, and validation info
- * - Required fields are validated and highlighted when missing
- * 
- * Components:
- * - Main data table with React Table
- * - Cell renderers for different data types
- * - Navigation and routing system
- * - Statistics calculation and display
- */
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link, NavLink, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { STATUS_LABELS, MISSING_LABELS, DIMENSIONS, primaryApproaches, namesOf, reportPath, codeLabel, shortCode, safeUrl, readFilters, writeFilters, filterReports, compareIds, citation, reportsCsv, reportsBib, download, fetchJson, reportSummary } from './lib/catalog.js'
 
-import { useState, useEffect, useMemo, useRef } from "react";
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import * as d3 from 'd3';
-import CitationMap from "./CitationMap";
-import Taxonomy from "./Taxonomy";
-import Navigation from "./Navigation";
-import Charts from "./Charts";
-import SurveyTable from "./SurveyTable";
-import Icon from "./Icon";
-
-/**
- * Custom hook for animated counting
- */
-const useCountUp = (end, start = 0, duration = 1000) => {
-  const [count, setCount] = useState(start);
-  
-  useEffect(() => {
-    // Handle invalid values
-    if (typeof end !== 'number' || isNaN(end)) {
-      setCount(0);
-      return;
-    }
-    
-    // Ensure duration is positive
-    const safeDuration = Math.max(duration, 1);
-    
-    let startTime = null;
-    const animate = (currentTime) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / safeDuration, 1);
-      const currentCount = Math.floor(start + (end - start) * progress);
-      setCount(currentCount);
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-  }, [end, start, duration]);
-  
-  return count;
-};
-
-/**
- * Utility function to check if a value is empty, null, or undefined
- */
-const isEmpty = (value) => {
-  if (value === null || value === undefined) return true;
-  if (typeof value === "string") return value.trim() === "";
-  if (typeof value === "object" && !Array.isArray(value)) {
-    return Object.keys(value).length === 0;
-  }
-  return false;
-};
-
-/**
- * Required fields configuration for validation
- */
-const REQUIRED_FIELDS = {
-  id: true,
-  year: true,
-  firstAuthor: true,
-  authors: true,
-  title: true,
-  applicationPurpose: true,
-  userInterfaceTool: true,
-  output: true,
-  "mainMethod.type": true,
-  "domain.domain": true,
-  "validation.type": true,
-  "coreTasks.facets": true,
-  "coreTasks.navigation": true,
-  "coreTasks.queryBuilding": true,
-  "coreTasks.recommendation": true,
-  "revision.type": true,
-  "supportTasks.guidance": true,
-  "supportTasks.backendAssumptions": true,
-  "supportTasks.evidence": true,
-  "supportTasks.availability": true,
-};
-
-/**
- * Checks if a required field is missing from a row
- */
-const isRequiredFieldMissing = (row, fieldPath) => {
-  if (!REQUIRED_FIELDS[fieldPath]) return false;
-  
-  // Optimized nested value getter
-  const getNestedValue = (obj, path) => {
-    const keys = path.split(".");
-    let current = obj;
-    for (const key of keys) {
-      if (current == null) return undefined;
-      current = current[key];
-    }
-    return current;
-  };
-  
-  const value = getNestedValue(row, fieldPath);
-  return isEmpty(value);
-};
-
-/**
- * Main App component with routing
- */
-function App() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showStatistics] = useState(false);
-  const [animationStarted, setAnimationStarted] = useState(false);
-  const location = useLocation();
-  
-  // Refs for charts
-  const chartRefs = useRef({
-    total: null,
-    yearRange: null,
-    facets: null,
-    navigation: null,
-    queryBuilding: null,
-    recommendation: null
-  });
-
-  // Load data on component mount
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetch(import.meta.env.BASE_URL + 'data/sti-survey.json');
-        if (!response.ok) {
-          throw new Error('Failed to load data');
-        }
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, []);
-
-  // Start animations when data is loaded and on home page
-  useEffect(() => {
-    if (data.length > 0 && location.pathname === '/') {
-      if (!animationStarted) {
-        const timer = setTimeout(() => setAnimationStarted(true), 500);
-        return () => clearTimeout(timer);
-      }
-    } else if (location.pathname !== '/') {
-      // Reset animation state when leaving home page
-      setAnimationStarted(false);
-    }
-  }, [data, animationStarted, location.pathname]);
-
-  // Function to render mini line chart with animation
-  const renderMiniChart = (svgRef, chartData, color, width = 80, height = 30) => {
-    if (!svgRef || !chartData || chartData.length === 0) return;
-
-    // Clear previous chart
-    d3.select(svgRef).selectAll("*").remove();
-
-    // Create SVG
-    const svg = d3.select(svgRef)
-      .attr("width", width)
-      .attr("height", height);
-
-    // Prepare data - count approaches by year
-    const yearCounts = {};
-    chartData.forEach(item => {
-      if (item.year && typeof item.year === 'number') {
-        yearCounts[item.year] = (yearCounts[item.year] || 0) + 1;
-      }
-    });
-
-    const processedData = Object.entries(yearCounts)
-      .map(([year, count]) => ({ year: parseInt(year), count }))
-      .sort((a, b) => a.year - b.year);
-
-    if (processedData.length === 0) return;
-
-    // Calculate cumulative counts for growth line
-    let cumulative = 0;
-    const growthData = processedData.map(item => {
-      cumulative += item.count;
-      return { year: item.year, cumulative };
-    });
-
-    // Scales
-    const xScale = d3.scaleLinear()
-      .domain(d3.extent(growthData, d => d.year))
-      .range([0, width]);
-
-    const yScale = d3.scaleLinear()
-      .domain([0, d3.max(growthData, d => d.cumulative)])
-      .range([height, 0]);
-
-    // Line generator
-    const line = d3.line()
-      .x(d => xScale(d.year))
-      .y(d => yScale(d.cumulative))
-      .curve(d3.curveMonotoneX);
-
-    // Create gradient
-    const gradient = svg.append("defs")
-      .append("linearGradient")
-      .attr("id", `gradient-${color.replace('#', '')}`)
-      .attr("gradientUnits", "userSpaceOnUse")
-      .attr("x1", "0%")
-      .attr("y1", "0%")
-      .attr("x2", "0%")
-      .attr("y2", "100%");
-
-    gradient.append("stop")
-      .attr("offset", "0%")
-      .attr("stop-color", color)
-      .attr("stop-opacity", 0.8);
-
-    gradient.append("stop")
-      .attr("offset", "100%")
-      .attr("stop-color", color)
-      .attr("stop-opacity", 0.1);
-
-    // Add area with animation
-    const area = d3.area()
-      .x(d => xScale(d.year))
-      .y0(height)
-      .y1(d => yScale(d.cumulative))
-      .curve(d3.curveMonotoneX);
-
-    const areaPath = svg.append("path")
-      .datum(growthData)
-      .attr("fill", `url(#gradient-${color.replace('#', '')})`)
-      .attr("d", area)
-      .style("opacity", 0);
-
-    // Add line with animation
-    const linePath = svg.append("path")
-      .datum(growthData)
-      .attr("fill", "none")
-      .attr("stroke", color)
-      .attr("stroke-width", 1.5)
-      .attr("d", line)
-      .style("opacity", 0);
-
-    // Animate both area and line
-    areaPath.transition()
-      .duration(1200)
-      .style("opacity", 1);
-
-    linePath.transition()
-      .duration(1200)
-      .style("opacity", 1);
-  };
-
-  // Effect to render charts when data changes and on home page
-  useEffect(() => {
-    if (data.length > 0 && animationStarted && location.pathname === '/') {
-      // Render all charts simultaneously during number animation
-      setTimeout(() => {
-        renderMiniChart(chartRefs.current.total, data, "#64748b");
-        renderMiniChart(chartRefs.current.yearRange, data, "#3b82f6");
-        renderMiniChart(chartRefs.current.facets, data.filter(item => item.coreTasks?.facets), "#f43f5e");
-        renderMiniChart(chartRefs.current.navigation, data.filter(item => item.coreTasks?.navigation), "#f97316");
-        renderMiniChart(chartRefs.current.queryBuilding, data.filter(item => item.coreTasks?.queryBuilding), "#f59e0b");
-        renderMiniChart(chartRefs.current.recommendation, data.filter(item => item.coreTasks?.recommendation), "#eab308");
-      }, 300); // Start charts during counting animation
-    }
-  }, [data, animationStarted, location.pathname]);
-
-  // Calculate summary statistics with optimized performance
-  const summaryStats = useMemo(() => {
-    if (data.length === 0) {
-      return {
-        totalEntries: 0,
-        entriesWithMissingFields: 0,
-        totalMissingFields: 0,
-        mostMissing: 'N/A',
-        mainMethodTypeDistribution: {},
-        domainDistribution: {},
-        yearRange: { min: 'N/A', max: 'N/A' },
-        approachesWithCode: 0,
-        licenseDistribution: {},
-        taskCounts: { facets: 0, navigation: 0, queryBuilding: 0, recommendation: 0 },
-      };
-    }
-
-    const totalEntries = data.length;
-    
-    // Single pass through data for better performance
-    const stats = data.reduce((acc, row) => {
-      // Missing fields analysis
-      const missingFields = Object.keys(REQUIRED_FIELDS).filter(field => isRequiredFieldMissing(row, field));
-      if (missingFields.length > 0) {
-        acc.entriesWithMissingFields++;
-        acc.totalMissingFields += missingFields.length;
-        missingFields.forEach(field => {
-          acc.fieldCounts[field] = (acc.fieldCounts[field] || 0) + 1;
-        });
-      }
-
-      // Main method distribution
-      const methodType = row['mainMethod']?.type || 'N/A';
-      acc.mainMethodTypeDistribution[methodType] = (acc.mainMethodTypeDistribution[methodType] || 0) + 1;
-
-      // Domain distribution
-      const domain = row['domain']?.domain || 'N/A';
-      acc.domainDistribution[domain] = (acc.domainDistribution[domain] || 0) + 1;
-
-      // Year range
-      if (typeof row.year === 'number') {
-        acc.years.push(row.year);
-      }
-
-      // Availability
-      if (row.codeAvailability && row.codeAvailability.trim() !== '') {
-        acc.approachesWithCode++;
-      }
-
-      // License distribution
-      const license = row['license'] || 'N/A';
-      acc.licenseDistribution[license] = (acc.licenseDistribution[license] || 0) + 1;
-
-      // Task counts
-      if (row.coreTasks?.facets) acc.taskCounts.facets++;
-      if (row.coreTasks?.navigation) acc.taskCounts.navigation++;
-      if (row.coreTasks?.queryBuilding) acc.taskCounts.queryBuilding++;
-      if (row.coreTasks?.recommendation) acc.taskCounts.recommendation++;
-
-      return acc;
-    }, {
-      entriesWithMissingFields: 0,
-      totalMissingFields: 0,
-      fieldCounts: {},
-      mainMethodTypeDistribution: {},
-      domainDistribution: {},
-      years: [],
-      approachesWithCode: 0,
-      licenseDistribution: {},
-      taskCounts: { facets: 0, navigation: 0, queryBuilding: 0, recommendation: 0 },
-    });
-
-    // Calculate most missing field
-    const mostMissingEntry = Object.entries(stats.fieldCounts)
-      .sort(([,a], [,b]) => b - a)[0];
-    const mostMissing = mostMissingEntry ? `${mostMissingEntry[0]} (${mostMissingEntry[1]})` : 'None';
-
-    // Calculate year range
-    const yearRange = {
-      min: stats.years.length > 0 ? Math.min(...stats.years) : 'N/A',
-      max: stats.years.length > 0 ? Math.max(...stats.years) : 'N/A',
-    };
-    
-    return {
-      totalEntries,
-      entriesWithMissingFields: stats.entriesWithMissingFields,
-      totalMissingFields: stats.totalMissingFields,
-      mostMissing,
-      mainMethodTypeDistribution: stats.mainMethodTypeDistribution,
-      domainDistribution: stats.domainDistribution,
-      yearRange,
-      approachesWithCode: stats.approachesWithCode,
-      approachesWithCodePercentage: totalEntries > 0 ? (stats.approachesWithCode / totalEntries) * 100 : 0,
-      licenseDistribution: stats.licenseDistribution,
-      taskCounts: stats.taskCounts,
-    };
-  }, [data]);
-
-  // Animated counters
-  const animatedTotalEntries = useCountUp(summaryStats.totalEntries || 0, 0, animationStarted ? 1500 : 1);
-  const animatedFacets = useCountUp(summaryStats.taskCounts?.facets || 0, 0, animationStarted ? 1500 : 1);
-  const animatedNavigation = useCountUp(summaryStats.taskCounts?.navigation || 0, 0, animationStarted ? 1500 : 1);
-  const animatedQueryBuilding = useCountUp(summaryStats.taskCounts?.queryBuilding || 0, 0, animationStarted ? 1500 : 1);
-  const animatedRecommendation = useCountUp(summaryStats.taskCounts?.recommendation || 0, 0, animationStarted ? 1500 : 1);
-
-  // Loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-neutral-900 flex items-center justify-center">
-        <div className="text-neutral-300 text-lg">Loading data...</div>
-      </div>
-    );
-  }
-
-  // Error state
-  if (error) {
-    return (
-      <div className="min-h-screen bg-neutral-900 flex items-center justify-center">
-        <div className="text-red-400 bg-red-900/20 border border-red-800 p-6 text-lg">
-          Error: {error}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <Routes>
-      <Route path="/" element={
-        <div className="min-h-screen bg-neutral-900 flex flex-col">
-          <Navigation />
-          <div className="flex-1 flex flex-col items-center justify-center py-12 px-4">
-            <div className="w-full max-w-7xl flex flex-col items-center">
-              {/* Main Title */}
-              <div className="w-full pb-4 mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-neutral-100 mb-2">
-                  KG Exploration Survey Companion
-                </h1>
-                <p className="text-neutral-400 text-lg mb-4">
-                  Interactive resources for <span className="italic">Knowledge Exploration in Knowledge Graphs: State of the Art, Taxonomy, and Open Challenges</span>
-                </p>
-                
-                {/* Authors */}
-                <div className="text-neutral-300 text-sm mb-2">
-                  <p>Task 2.4 group</p>
-                </div>
-              
-              </div>
-              
-              {/* Data Overview Section */}
-              <div className="w-full mb-8">
-                {/* Overall Data Snapshot */}
-                <div className="bg-neutral-800 shadow-lg overflow-hidden">
-                  <div className="p-6 pb-0">
-                    <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-xl font-bold text-neutral-100 flex items-center">
-                        <Icon name="analytics" className="mr-2 text-blue-400" />
-                        Data Overview
-                      </h3>
-                    </div>
-                    
-                    {/* Summary when closed */}
-                    {!showStatistics && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
-                        <div className="bg-slate-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-slate-100">{animatedTotalEntries}</div>
-                          <div className="text-xs text-slate-300">Total Approaches</div>
-                          <svg
-                            ref={el => chartRefs.current.total = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                        <div className="bg-blue-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-blue-100">{summaryStats.yearRange.min} - {summaryStats.yearRange.max}</div>
-                          <div className="text-xs text-blue-300">Year Range</div>
-                          <svg
-                            ref={el => chartRefs.current.yearRange = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                        <div className="bg-rose-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-rose-100">{animatedFacets}</div>
-                          <div className="text-xs text-rose-300">Facets</div>
-                          <svg
-                            ref={el => chartRefs.current.facets = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                        <div className="bg-orange-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-orange-100">{animatedNavigation}</div>
-                          <div className="text-xs text-orange-300">Navigation</div>
-                          <svg
-                            ref={el => chartRefs.current.navigation = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                        <div className="bg-amber-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-amber-100">{animatedQueryBuilding}</div>
-                          <div className="text-xs text-amber-300">Query Building</div>
-                          <svg
-                            ref={el => chartRefs.current.queryBuilding = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                        <div className="bg-yellow-500/10 p-4 relative min-h-[80px]">
-                          <div className="text-2xl font-bold text-yellow-100">{animatedRecommendation}</div>
-                          <div className="text-xs text-yellow-300">Guidance/Visualization</div>
-                          <svg
-                            ref={el => chartRefs.current.recommendation = el}
-                            className="absolute bottom-0 right-0 opacity-70"
-                            style={{ pointerEvents: 'none' }}
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Navigation Boxes */}
-              <div className="w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                  <Link to="/survey" className="bg-neutral-800 shadow-lg overflow-hidden hover:bg-neutral-700 transition-all duration-300 group">
-                    <div className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-blue-500/20 flex items-center justify-center mr-4">
-                          <Icon name="table_chart" className="text-blue-400 text-xl" />
-                        </div>
-                        <h3 className="text-lg font-bold text-neutral-100">Survey Data</h3>
-                      </div>
-                      <p className="text-neutral-400 text-sm">
-                        Explore the complete dataset with interactive filtering, sorting, and detailed information about each exploration system.
-                      </p>
-                    </div>
-                  </Link>
-
-                  <Link to="/citation-map" className="bg-neutral-800 shadow-lg overflow-hidden hover:bg-neutral-700 transition-all duration-300 group">
-                    <div className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-green-500/20 flex items-center justify-center mr-4">
-                          <Icon name="account_tree" className="text-green-400 text-xl" />
-                        </div>
-                        <h3 className="text-lg font-bold text-neutral-100">Citation Map</h3>
-                      </div>
-                      <p className="text-neutral-400 text-sm">
-                        Visualize the relationships between research papers through their citation networks and connections.
-                      </p>
-                    </div>
-                  </Link>
-
-                  <Link to="/taxonomy" className="bg-neutral-800 shadow-lg overflow-hidden hover:bg-neutral-700 transition-all duration-300 group">
-                    <div className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-purple-500/20 flex items-center justify-center mr-4">
-                          <Icon name="category" className="text-purple-400 text-xl" />
-                        </div>
-                        <h3 className="text-lg font-bold text-neutral-100">Taxonomy</h3>
-                      </div>
-                      <p className="text-neutral-400 text-sm">
-                        Discover the hierarchical classification of interaction paradigms, guidance strategies, and backends.
-                      </p>
-                    </div>
-                  </Link>
-
-                  <Link to="/charts" className="bg-neutral-800 shadow-lg overflow-hidden hover:bg-neutral-700 transition-all duration-300 group">
-                    <div className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-orange-500/20 flex items-center justify-center mr-4">
-                          <Icon name="bar_chart" className="text-orange-400 text-xl" />
-                        </div>
-                        <h3 className="text-lg font-bold text-neutral-100">Analytics</h3>
-                      </div>
-                      <p className="text-neutral-400 text-sm">
-                        View charts and analytics showing trends, distributions, and insights from the KG exploration survey.
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-              
-              {/* Footer */}
-              <footer className="w-full mt-8 p-6 bg-neutral-800">
-                <div className="text-center text-neutral-400 text-sm">
-                  <p>© 2026 KG Exploration Survey. All rights reserved.</p>
-                </div>
-              </footer>
-            </div>
-          </div>
-        </div>
-      } />
-      <Route path="/survey" element={<SurveyTable />} />
-      <Route path="/citation-map" element={<CitationMap />} />
-      <Route path="/taxonomy" element={<Taxonomy />} />
-      <Route path="/charts" element={<Charts data={data} />} />
-    </Routes>
-  );
+function Icon({ name = 'arrow', className = '' }) {
+  const paths = { arrow: 'M5 12h14m-6-6 6 6-6 6', search: 'M10.5 3a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15m5.5 13 5 5', close: 'm6 6 12 12M6 18 18 6', download: 'M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5', external: 'M14 3h7v7m0-7-11 11M10 3H3v18h18v-7', chevron: 'm9 5 7 7-7 7' }
+  return <svg className={`icon ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] || paths.arrow} /></svg>
 }
-
-export default App;
+function ExternalLink({ href, children, className = '' }) { const url = safeUrl(href); return url ? <a className={className} href={url} target="_blank" rel="noreferrer">{children}<Icon name="external" /></a> : <span>{children}</span> }
+function useResource(path) {
+  const [state, setState] = useState({ path: null, data: null, error: null })
+  const [attempt, setAttempt] = useState(0)
+  useEffect(() => {
+    if (!path) return
+    const controller = new AbortController(); let active = true
+    fetchJson(path, controller.signal).then(data => { if (active) setState({ path, data, error: null }) }).catch(error => { if (active && error.name !== 'AbortError') setState({ path, data: null, error: error.message }) })
+    return () => { active = false; controller.abort() }
+  }, [path, attempt])
+  return { data: state.path === path ? state.data : null, error: state.path === path ? state.error : null, retry: () => setAttempt(n => n + 1) }
+}
+function AsyncState({ error, retry, label = 'Loading the report catalogue…' }) { return error ? <div className="error-state" role="alert"><h2>The data could not be loaded</h2><p>{error} Try the request again.</p><button className="btn btn-primary" onClick={retry}>Retry</button></div> : <div className="loading-state" role="status"><span className="loading loading-spinner loading-sm" aria-hidden="true" /><p>{label}</p></div> }
+function PageHeading({ title, children, actions }) { return <header className="page-heading"><div><h1>{title}</h1>{children && <div className="lead">{children}</div>}</div>{actions && <div className="heading-actions">{actions}</div>}</header> }
+function DataNote({ children }) { return <p className="data-note">{children}</p> }
+function Status({ value }) { return <span className={`evidence-status state-${value}`}>{STATUS_LABELS[value] || MISSING_LABELS[value] || value}</span> }
+function EvidenceLinks({ report, ids, compact = false }) {
+  const anchors = [...new Set(ids)].map(id => report.evidence.find(e => e.evidence_id === id)).filter(Boolean)
+  if (!anchors.length) return <span className="missing-text">Source locator not established</span>
+  return <ul className={`source-links ${compact ? 'compact' : ''}`}>{anchors.map(e => <li key={e.evidence_id}><span>{e.section || 'Primary report'}</span>{e.physical_pdf_pages.length > 0 && <span> · PDF pp. {e.physical_pdf_pages.join(', ')}</span>}{!e.physical_pdf_pages.length && e.advisory_pdf_pages.length > 0 && <span> · advisory pages {e.advisory_pdf_pages.join(', ')}; structural check unavailable</span>}{e.source_url && <ExternalLink href={e.source_url}>Open source</ExternalLink>}</li>)}</ul>
+}
+function RepresentationRole({ code }) {
+  const assertions = code.representation_role?.role_assertions || []
+  const labels = { query_pattern: 'Query pattern', data_result: 'Returned data', source_schema: 'Source schema', computed_association: 'Computed association' }
+  return assertions.map((assertion, i) => <p className="code-definition" key={`${assertion.role}-${i}`}><strong>View object: {labels[assertion.role]}</strong><br />{assertion.scope} · PDF pp. {assertion.physical_pdf_pages.join(', ')}</p>)
+}
+function Dimension({ report, dimension, book }) {
+  const data = dimension === 'model' ? report.backend.data_model : dimension === 'access' ? report.backend.access : report.taxonomy[dimension]
+  return <div className="dimension"><h3>{dimension === 'model' ? 'Graph model' : dimension === 'access' ? 'Data access' : dimension[0].toUpperCase() + dimension.slice(1)}</h3>{report.descriptions[dimension] && <p>{report.descriptions[dimension]}</p>}{data.codes.length ? <ul className="claim-list">{data.codes.map((c, i) => <li key={`${c.code}-${c.status}-${i}`}><div className="claim-heading"><strong>{shortCode(c.code)}</strong><Status value={c.status} /></div><p className="code-definition">{codeLabel(c.code, book)}</p>{dimension === 'visualisation' && <RepresentationRole code={c} />}{c.notes && <p>{c.notes}</p>}<EvidenceLinks report={report} ids={c.evidence_ids} compact /></li>)}</ul> : <p className="missing-text">{MISSING_LABELS[data.missingness] || 'Not established'}. Missing evidence does not establish that the capability is absent.</p>}</div>
+}
+function ExportButtons({ reports, fullReport = false, onNotice }) {
+  const [busy, setBusy] = useState(false)
+  async function jsonExport() {
+    setBusy(true)
+    try {
+      const rows = fullReport ? reports : (await fetchJson('catalog.json')).reports.filter(r => reports.some(x => x.report_id === r.report_id))
+      download(JSON.stringify({ literature_cutoff: '2026-08-29', verified_on: '2026-10-06', unit: 'primary reports', reports: rows }, null, 2), 'kg-exploration-reports.json', 'application/json')
+      onNotice?.(`Exported ${rows.length} report records.`)
+    } catch (error) { onNotice?.(`${error.message} The export was not created.`) } finally { setBusy(false) }
+  }
+  return <div className="export-actions"><button className="btn btn-sm btn-outline" disabled={!reports.length || busy} onClick={() => download(reportsCsv(reports), 'kg-exploration-reports.csv', 'text/csv;charset=utf-8')}>CSV</button><button className="btn btn-sm btn-outline" disabled={!reports.length || busy} onClick={jsonExport}>{busy ? 'Preparing JSON…' : 'JSON'}</button><button className="btn btn-sm btn-outline" disabled={!reports.length} onClick={() => download(reportsBib(reports), 'kg-exploration-reports.bib', 'text/plain;charset=utf-8')}>BibTeX</button></div>
+}
+function CompareTray({ selected, clear }) { return selected.length > 0 && <aside className="compare-tray" aria-label="Comparison selection"><p><strong>{selected.length} of 4 selected</strong><span>{selected.length < 2 ? 'Choose at least two reports.' : 'Ready to compare.'}</span></p><div><button className="btn btn-ghost btn-sm" onClick={clear}>Clear</button><Link className={`btn btn-primary btn-sm ${selected.length < 2 ? 'btn-disabled' : ''}`} aria-disabled={selected.length < 2} tabIndex={selected.length < 2 ? -1 : 0} to={`/compare?ids=${selected.map(encodeURIComponent).join(',')}`}>Compare reports<Icon /></Link></div></aside> }
+function ReportRow({ report, selected, toggle, maxed }) {
+  const n = namesOf(report)
+  return <article className="report-row"><div className="report-year">{report.publication.year}</div><div className="report-entry"><h2><Link to={reportPath(report)}>{report.publication.title}</Link></h2><p className="report-authors">{report.publication.authors.join('; ')}</p><p className="report-names">{n.length ? n.join(' · ') : 'Primary system or method name not established'}</p><p className="report-summary">{reportSummary(report)}</p></div><label className={`compare-control ${maxed && !selected ? 'control-disabled' : ''}`}><input className="checkbox checkbox-sm" type="checkbox" checked={selected} disabled={maxed && !selected} onChange={() => toggle(report.report_id)} /><span>Compare<span className="sr-only"> {report.publication.title}</span></span></label></article>
+}
+function FilterSelect({ label, value, onChange, options, placeholder = 'All', allowAll = true }) { return <label className="filter-field"><span>{label}</span><select className="select select-bordered" value={value} onChange={e => onChange(e.target.value)}>{allowAll && <option value="">{placeholder}</option>}{options.map(([id, text]) => <option key={id} value={id}>{text}</option>)}</select></label> }
+function Catalog({ catalog, book, selected, toggle, notice }) {
+  const resultsTop = useRef(null); const focusAfterPage = useRef(false)
+  const [params, setParams] = useSearchParams(); const f = readFilters(params); const filtered = filterReports(catalog.reports, f)
+  const pages = Math.max(1, Math.ceil(filtered.length / 20)); const page = Math.min(pages, Math.max(1, Number.parseInt(f.page, 10) || 1)); const shown = filtered.slice((page - 1) * 20, page * 20)
+  const update = (key, value) => { if (key === 'page') focusAfterPage.current = true; const next = { ...f, [key]: value, page: key === 'page' ? value : '1' }; const p = writeFilters(next); if (selected.length) p.set('compare', selected.join(',')); setParams(p, { replace: key === 'q' }) }
+  useEffect(() => { if (focusAfterPage.current) { focusAfterPage.current = false; resultsTop.current?.focus({ preventScroll: true }); resultsTop.current?.scrollIntoView({ block: 'start' }) } }, [params])
+  const codeOptions = dimension => Object.keys(book.vocabularies[dimension]).filter(code => catalog.reports.some(r => (dimension === 'data_model' ? r.backend.data_model : r.taxonomy[dimension]).codes.some(c => c.code === code))).map(code => [code, shortCode(code)])
+  const active = ['q', 'interaction', 'guidance', 'model', 'evaluation', 'status', 'from', 'to'].filter(key => f[key])
+  const reset = () => { const p = new URLSearchParams(); if (selected.length) p.set('compare', selected.join(',')); setParams(p) }
+  return <><PageHeading title="Report catalogue"><p>Browse {catalog.counts.included_reports} included primary reports by interaction, guidance, graph model, and evaluation. Open a report for source evidence and study details.</p></PageHeading><div className="catalog-layout"><aside className="filters"><form onSubmit={e => e.preventDefault()}><label className="filter-field search-field"><span>Search reports</span><div><Icon name="search" /><input className="input input-bordered" type="search" value={f.q} onChange={e => update('q', e.target.value)} placeholder="Title, author, system, DOI" /></div></label><FilterSelect label="Interaction" value={f.interaction} onChange={v => update('interaction', v)} options={codeOptions('interaction')} /><FilterSelect label="Guidance" value={f.guidance} onChange={v => update('guidance', v)} options={codeOptions('guidance')} /><FilterSelect label="Graph model" value={f.model} onChange={v => update('model', v)} options={codeOptions('data_model')} /><FilterSelect label="Evaluation" value={f.evaluation} onChange={v => update('evaluation', v)} options={codeOptions('evaluation')} /><FilterSelect label="Capability status" value={f.status} onChange={v => update('status', v)} options={Object.entries(STATUS_LABELS)} /><div className="year-filter"><label className="filter-field"><span>From year</span><input className="input input-bordered" type="number" min="1800" max="2026" value={f.from} onChange={e => update('from', e.target.value)} placeholder="Any" /></label><label className="filter-field"><span>To year</span><input className="input input-bordered" type="number" min="1800" max="2026" value={f.to} onChange={e => update('to', e.target.value)} placeholder="2026" /></label></div><button className="btn btn-ghost reset-button" type="button" onClick={reset} disabled={!active.length}>Clear filters</button></form><DataNote>A filter matches a report’s coded evidence. “Not established” does not mean that a capability is absent.</DataNote></aside><section ref={resultsTop} tabIndex="-1" className="catalog-results" aria-label="Filtered reports"><div className="results-toolbar"><p role="status" aria-live="polite"><strong>{filtered.length}</strong> {filtered.length === 1 ? 'report' : 'reports'}{active.length ? ' match your filters' : ' in the included corpus'}</p><label className="sort-control"><span>Sort</span><select aria-label="Sort reports" className="select select-sm" value={f.sort} onChange={e => update('sort', e.target.value)}><option value="year-desc">Newest first</option><option value="year-asc">Oldest first</option><option value="title">Title A–Z</option></select></label></div>{active.length > 0 && <div className="active-filters" aria-label="Active filters">{active.map(key => <button className="btn btn-xs btn-outline" key={key} onClick={() => update(key, '')}>{key}: {key === 'status' ? STATUS_LABELS[f[key]] : ['interaction', 'guidance', 'model', 'evaluation'].includes(key) ? shortCode(f[key]) : f[key]}<Icon name="close" /><span className="sr-only">Remove filter</span></button>)}</div>}<div className="catalog-export"><span>Export the {filtered.length} matching reports</span><ExportButtons reports={filtered} onNotice={notice} /></div>{shown.length ? <div className="report-list">{shown.map(r => <ReportRow key={r.report_id} report={r} selected={selected.includes(r.report_id)} toggle={toggle} maxed={selected.length >= 4} />)}</div> : <div className="empty-state"><h2>No reports match these filters</h2><p>Try fewer filters or search for a title, author, system name, or DOI.</p><button className="btn btn-outline" onClick={reset}>Clear filters</button></div>}<div className="pagination-bar"><span>{filtered.length ? `${(page - 1) * 20 + 1}–${Math.min(page * 20, filtered.length)} of ${filtered.length}` : '0 reports'}</span><nav className="join" aria-label="Catalogue pagination"><button className="btn btn-sm join-item" disabled={page <= 1} onClick={() => update('page', String(page - 1))}>Previous</button><span className="page-position">Page {page} of {pages}</span><button className="btn btn-sm join-item" disabled={page >= pages} onClick={() => update('page', String(page + 1))}>Next</button></nav></div></section></div></>
+}
+function Study({ study, report }) { return <article className="study-entry"><h3>{study.design || study.design_codes.map(c => shortCode(c)).join(' · ') || 'Evaluation entry'}</h3><dl className="study-facts"><div><dt>Evidence type</dt><dd>{study.design_codes.map(c => shortCode(c)).join('; ') || 'Not established'}</dd></div><div><dt>Participants</dt><dd>{study.participants_n == null ? 'Not established; no participant total inferred' : `n = ${study.participants_n}`}</dd></div><div><dt>Allocation</dt><dd>{study.allocation.replaceAll('_', ' ')}</dd></div><div><dt>Origin</dt><dd>{study.evidence_origin.replaceAll('_', ' ')}</dd></div></dl>{study.condition_allocation && <p><strong>Participation modes:</strong> {Object.entries(study.condition_allocation).map(([mode, n]) => `${mode.replaceAll('_', ' ')}: ${n}`).join('; ')}. These are report-specific modes, not independent study cohorts.</p>}{study.response_note && <p><strong>Source response-set note:</strong> {study.response_note}</p>}{study.population && <p><strong>Population:</strong> {study.population}</p>}{study.tasks.length > 0 && <p><strong>Tasks:</strong> {study.tasks.join('; ')}</p>}{study.comparators.length > 0 && <p><strong>Comparators:</strong> {study.comparators.join('; ')}</p>}{study.measures.length > 0 && <p><strong>Measures:</strong> {study.measures.join('; ')}</p>}{study.results && <p><strong>Results:</strong> {study.results}</p>}{study.limitations.length > 0 && <p><strong>Limits:</strong> {study.limitations.join('; ')}</p>}<DataNote>{study.cohort_note || 'Cross-report participant overlap is not established.'} Participants, annotations, queries, visits, and datasets remain separate units.</DataNote><EvidenceLinks report={report} ids={study.evidence_ids} /></article> }
+function ReportEvaluationSummary({ report }) {
+  const summary = report.report_level_evaluation
+  if (!summary) return null
+  const fields = [['design', 'Design'], ['participants', 'Sample and population'], ['tasks', 'Tasks'], ['comparators', 'Comparators'], ['measures', 'Measures'], ['results', 'Results'], ['limitations', 'Limits']]
+  return <details className="collapse collapse-arrow query-details"><summary className="collapse-title">Report-level evaluation summary</summary><div className="collapse-content"><DataNote>Combined report-level outcomes remain separate from individual study entries.</DataNote>{fields.map(([key, label]) => <p key={key}><strong>{label}:</strong> {summary[key]}</p>)}<EvidenceLinks report={report} ids={summary.evidence_ids} compact /></div></details>
+}
+function ReportDetail({ catalog, book, selected, toggle, notice }) {
+  const { id } = useParams(); const known = catalog.reports.find(r => r.report_id === id); const { data: report, error, retry } = useResource(known ? `reports/${encodeURIComponent(id)}.json` : null)
+  if (!known) return <NotFound />
+  if (!report) return <AsyncState error={error} retry={retry} label="Loading the source evidence…" />
+  return <ReportArticle report={report} catalog={catalog} book={book} selected={selected} toggle={toggle} notice={notice} />
+}
+function ReportArticle({ report, catalog, book, selected = [], toggle, notice }) {
+  const id = report.report_id
+  const location = useLocation()
+  useEffect(() => { if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' }) }, [id, location.hash])
+  const sameFamily = catalog.reports.filter(r => r.report_id !== id && primaryApproaches(r).some(a => primaryApproaches(report).some(b => a.family_id && a.family_id === b.family_id)))
+  return <><Link className="back-link" to="/catalogue">Back to catalogue</Link><PageHeading title={report.publication.title} actions={<button className="btn btn-outline" disabled={selected.length >= 4 && !selected.includes(id)} onClick={() => toggle(id)}>{selected.includes(id) ? 'Remove from comparison' : 'Add to comparison'}</button>}><p>{report.publication.authors.join('; ')}</p><p className="publication-line">{report.publication.year}{report.publication.venue && ` · ${report.publication.venue}`}</p></PageHeading><div className="detail-layout"><aside className="report-sidebar"><dl className="bibliography-facts"><div><dt>Report ID</dt><dd>{report.report_id}</dd></div><div><dt>Primary approach</dt><dd>{namesOf(report).join('; ') || 'Name not established'}</dd></div><div><dt>Report version</dt><dd>{report.publication.version || 'Version label not established'}</dd></div>{report.publication.publication_date && <div><dt>Publication date</dt><dd>{report.publication.publication_date}</dd></div>}<div><dt>Evidence coverage</dt><dd>{report.source_reading.status.replaceAll('_', ' ')}</dd></div></dl><ExternalLink className="btn btn-primary source-button" href={report.publication.persistent_url || report.evidence.find(e => e.source_url)?.source_url}>Read primary source</ExternalLink>{report.publication.doi && <p className="doi">DOI: {report.publication.doi}</p>}<details className="citation-details"><summary>Cite this report</summary><p className="citation-text">{citation(report)}</p><button className="btn btn-sm btn-outline" onClick={async () => { try { await navigator.clipboard.writeText(citation(report)); notice('Citation copied.') } catch { notice('Clipboard access failed. Select and copy the citation text above.') } }}>Copy citation</button></details><ExportButtons reports={[report]} fullReport onNotice={notice} /><nav className="contents" aria-label="Report sections">{['Interaction and guidance', 'Visualisation and backend', 'Evaluation', 'Scalability', 'Availability', 'Source evidence'].map((label, i) => <a key={label} href={`#report-section-${i}`}>{label}</a>)}</nav></aside><div className="report-body"><section id="report-section-0"><h2>Interaction and guidance</h2><Dimension report={report} dimension="interaction" book={book} /><Dimension report={report} dimension="guidance" book={book} /></section><section id="report-section-1"><h2>Visualisation and backend</h2><Dimension report={report} dimension="visualisation" book={book} /><Dimension report={report} dimension="model" book={book} /><Dimension report={report} dimension="access" book={book} />{report.descriptions.backend && <p>{report.descriptions.backend}</p>}{['query_languages', 'implementation_engines'].map(key => <div className="dimension" key={key}><h3>{key === 'query_languages' ? 'Query languages' : 'Implementation engines'}</h3>{report.backend[key].length ? <ul className="claim-list">{report.backend[key].map((x, i) => <li key={`${x.name}-${i}`}><div className="claim-heading"><strong>{x.name}</strong><Status value={x.status} /></div><p>{x.role}</p><EvidenceLinks report={report} ids={x.evidence_ids} compact /></li>)}</ul> : <p className="missing-text">Not established from the located evidence.</p>}</div>)}</section><section id="report-section-2"><h2>Evaluation</h2><DataNote>Each entry retains its report-specific sample and design. No participant or independent-study total is calculated across companion reports.</DataNote><Dimension report={report} dimension="evaluation" book={book} /><ReportEvaluationSummary report={report} />{report.studies.length ? report.studies.map((s, i) => <Study key={`${s.study_id}-${i}`} study={s} report={report} />) : <p className="missing-text">Structured evaluation details are not established for this report.</p>}</section><section id="report-section-3"><h2>Scalability</h2><Dimension report={report} dimension="scalability" book={book} />{report.scale_observations.length > 0 && <ul className="scale-list">{report.scale_observations.map((s, i) => <li key={i}><strong>{s.value?.toLocaleString('en')} {s.unit}</strong><p>{s.scope.replaceAll('_', ' ')} · {s.conditions}</p><EvidenceLinks report={report} ids={s.evidence_ids} compact /></li>)}</ul>}<DataNote>Graph size, the visible view, preprocessing workload, and timed query conditions support different claims.</DataNote></section><section id="report-section-4"><h2>Availability</h2><DataNote>A matching landing page does not establish a working demonstration, a successful source build, a licence, or equivalence to the historical version.</DataNote>{report.resources.length ? <ul className="resource-list">{report.resources.map((x, i) => <li key={`${x.reported_url}-${i}`}><ExternalLink href={x.reported_url}>{x.resource_role.replaceAll('_', ' ')}</ExternalLink><p className="resource-url">{x.reported_url}</p><dl className="resource-facts"><div><dt>Landing identity</dt><dd>{x.identity_status.replaceAll('_', ' ')}{x.identity_scope && ` · ${x.identity_scope.replaceAll('_', ' ')}`}</dd></div><div><dt>HTTP / checked</dt><dd>{x.http_status || 'Not established'} / {x.checked_on || 'Date not established'}</dd></div><div><dt>Operation / build / licence</dt><dd>{x.working_demo_verified === true ? 'Operation verified' : 'Operation unverified'}; {x.source_build_verified === true ? 'build verified' : 'build unverified'}; {x.license_verified === true ? 'licence verified' : 'licence unverified'}</dd></div></dl>{x.notes && <p>{x.notes}</p>}</li>)}</ul> : <p className="missing-text">No verified resource entry is available in the catalogue.</p>}</section>{sameFamily.length > 0 && <section><h2>Reports in the same named family</h2><DataNote>Family membership identifies a shared named approach. It does not merge reports or establish shared participants.</DataNote><ul className="related-reports">{sameFamily.map(r => <li key={r.report_id}><Link to={reportPath(r)}>{r.publication.title}</Link><span>{r.publication.year}</span></li>)}</ul></section>}<section id="report-section-5"><h2>Source evidence</h2><details className="collapse collapse-arrow evidence-inventory"><summary className="collapse-title">Open all {report.evidence.length} source locators</summary><div className="collapse-content"><EvidenceLinks report={report} ids={report.evidence.map(e => e.evidence_id)} /></div></details>{report.limitations.length > 0 && <><h3>Report and extraction limits</h3><ul>{report.limitations.map((x, i) => <li key={i}>{x}</li>)}</ul></>}<p className="eligibility-basis">Eligibility basis: {report.selection.adjudication.basis}</p></section></div></div></>
+}
+function Compare({ catalog, notice }) {
+  const [params] = useSearchParams(); const ids = useMemo(() => compareIds(params, new Set(catalog.reports.map(r => r.report_id))), [params, catalog.reports]); const path = `compare:${ids.join(',')}`
+  const [state, setState] = useState({ path: null, reports: [], error: null }); const [attempt, setAttempt] = useState(0)
+  useEffect(() => { const controller = new AbortController(); let active = true; if (ids.length >= 2) Promise.all(ids.map(id => fetchJson(`reports/${encodeURIComponent(id)}.json`, controller.signal))).then(reports => { if (active) setState({ path, reports, error: null }) }).catch(error => { if (active && error.name !== 'AbortError') setState({ path, reports: [], error: error.message }) }); return () => { active = false; controller.abort() } }, [path, attempt, ids])
+  if (ids.length < 2) return <><PageHeading title="Compare reports"><p>Choose two to four reports in the catalogue to compare their evidence side by side.</p></PageHeading><Link className="btn btn-primary" to="/catalogue">Choose reports<Icon /></Link></>
+  if (state.path !== path || !state.reports.length) return <AsyncState error={state.error} retry={() => setAttempt(n => n + 1)} label="Loading the comparison evidence…" />
+  return <Comparison reports={state.reports} notice={notice} />
+}
+function Comparison({ reports, notice }) {
+  return <><PageHeading title="Compare reports" actions={<ExportButtons reports={reports} fullReport onNotice={notice} />}><p>Compare publication details, implementation status, evaluation samples, and source evidence for {reports.length} primary reports.</p></PageHeading><div className="comparison-scroll" role="region" aria-label="Report comparison table" tabIndex="0"><table className="table comparison-table"><caption>Source-grounded comparison of selected reports</caption><thead><tr><th scope="col">Dimension</th>{reports.map(r => <th key={r.report_id} scope="col"><Link to={reportPath(r)}>{r.publication.title}</Link><span>{r.publication.year} · {namesOf(r).join('; ') || 'Name not established'}</span></th>)}</tr></thead><tbody>{['interaction', 'guidance', 'visualisation', 'model', 'access', 'evaluation', 'scalability'].map(d => <tr key={d}><th scope="row">{d === 'model' ? 'Graph model' : d === 'access' ? 'Data access' : d[0].toUpperCase() + d.slice(1)}</th>{reports.map(r => { const data = d === 'model' ? r.backend.data_model : d === 'access' ? r.backend.access : r.taxonomy[d]; return <td key={r.report_id}>{data.codes.length ? <ul className="comparison-claims">{data.codes.map((c, i) => <li key={`${c.code}-${i}`}><strong>{shortCode(c.code)}</strong><Status value={c.status} />{d === 'visualisation' && <RepresentationRole code={c} />}{c.notes && <p>{c.notes}</p>}<EvidenceLinks report={r} ids={c.evidence_ids} compact /></li>)}</ul> : <p className="missing-text">{MISSING_LABELS[data.missingness] || 'Not established'}</p>}</td> })}</tr>)}<tr><th scope="row">Evaluation sample and limits</th>{reports.map(r => <td key={r.report_id}>{r.studies.length ? r.studies.map((s, i) => <div className="comparison-study" key={i}><strong>{s.design || s.design_codes.map(x => shortCode(x)).join('; ')}</strong><p>{s.participants_n == null ? 'Participant count not established' : `n = ${s.participants_n}`} · {s.evidence_origin.replaceAll('_', ' ')}</p>{s.results && <p>{s.results}</p>}{s.limitations.length > 0 && <p>{s.limitations.join('; ')}</p>}<EvidenceLinks report={r} ids={s.evidence_ids} compact /></div>) : 'Not established'}<DataNote>No cross-report cohort total.</DataNote></td>)}</tr><tr><th scope="row">Query languages</th>{reports.map(r => <td key={r.report_id}>{r.backend.query_languages.length ? r.backend.query_languages.map((x, i) => <div key={i}>{x.name} <Status value={x.status} /><EvidenceLinks report={r} ids={x.evidence_ids} compact /></div>) : 'Not established'}</td>)}</tr><tr><th scope="row">Resource identity</th>{reports.map(r => <td key={r.report_id}>{r.resources.length ? r.resources.map((x, i) => <p key={i}><ExternalLink href={x.reported_url}>{x.resource_role.replaceAll('_', ' ')}</ExternalLink> · {x.identity_status.replaceAll('_', ' ')}</p>) : 'Not established'}<DataNote>Landing identity is separate from operation, build, and licence.</DataNote></td>)}</tr></tbody></table></div><p className="comparison-note">Open each report for source locators and evaluation details.</p></>
+}
+function Home({ catalog, selected, toggle }) {
+  const featured = ['2019_Vargas_RDF_Explorer', '2017_Ferre_Sparklis_An', '2018_Cerans_ViziQuer_A', 'V3-01126'].map(id => catalog.reports.find(r => r.report_id === id)).filter(Boolean)
+  const preview = featured.length >= 3 ? featured.slice(0, 3) : catalog.reports.slice(0, 3)
+  return <><section className="home-intro"><div><h1>How people explore knowledge graphs</h1><p className="lead">A systematic review of interaction, guidance, and evaluation. Read the methods, follow the evidence, and compare the approaches described in {catalog.counts.included_reports} primary reports.</p><Link className="btn btn-primary" to="/catalogue">Browse the report catalogue<Icon /></Link><p className="cutoff-line">Literature through 29 August 2026 · source verification 6 October 2026</p></div><div className="scope-ledger"><h2>The review at a glance</h2><dl><div><dt>Primary reports included</dt><dd>{catalog.counts.included_reports}</dd></div><div><dt>Reports assessed</dt><dd>{catalog.counts.reports_assessed}</dd></div><div><dt>Reports not retrieved</dt><dd>{catalog.counts.not_retrieved}</dd></div></dl><p>Reports remain separate from systems and independent evaluation cohorts.</p><Link to="/methods">Read the selection and retrieval limits<Icon /></Link></div></section><section className="home-examples"><div className="section-heading"><h2>Start with a report</h2><Link to="/catalogue">All included reports<Icon /></Link></div><div className="report-list">{preview.map(r => <ReportRow key={r.report_id} report={r} selected={selected.includes(r.report_id)} toggle={toggle} maxed={selected.length >= 4} />)}</div></section><section className="home-reading"><h2>Methods and evaluations</h2><div className="reading-columns"><div><h3>Interaction, guidance, and representation</h3><p>Navigation, facets, visual queries, and coordinated views support different tasks. Implemented behaviour, proposed methods, and future work retain distinct labels.</p><Link to="/evidence">Explore the coding vocabulary<Icon /></Link></div><div><h3>Evaluation designs and samples</h3><p>A query benchmark, an annotation task, a usability trial, and deployment statistics answer different questions. Samples and denominators stay attached to their reports.</p><Link to="/catalogue?evaluation=E05_comparative_user">Read reports with comparative user evidence<Icon /></Link></div></div></section></>
+}
+function Evidence({ catalog, book }) {
+  const [dimension, setDimension] = useState('interaction'); const [status, setStatus] = useState('implemented_or_demonstrated')
+  const dataFor = r => dimension === 'data_model' ? r.backend.data_model : dimension === 'access' ? r.backend.access : r.taxonomy[dimension]
+  const rows = Object.entries(book.vocabularies[dimension]).map(([code, definition]) => ({ code, definition, count: catalog.reports.filter(r => dataFor(r).codes.some(c => c.code === code && c.status === status)).length })).sort((a, b) => b.count - a.count || a.code.localeCompare(b.code))
+  const coded = catalog.reports.filter(r => dataFor(r).codes.length).length
+  const filterKey = { interaction: 'interaction', guidance: 'guidance', data_model: 'model', evaluation: 'evaluation' }[dimension]
+  return <><PageHeading title="Evidence dimensions"><p>Browse the coding definitions and report counts for each evidence status. Counts refer to reports with supporting source evidence, not to independent systems or studies. A missing code does not establish that a capability is absent.</p></PageHeading><div className="evidence-controls"><FilterSelect allowAll={false} label="Dimension" value={dimension} onChange={setDimension} options={[...DIMENSIONS, 'data_model', 'access'].map(d => [d, d.replaceAll('_', ' ')])} /><FilterSelect allowAll={false} label="Evidence status" value={status} onChange={setStatus} options={Object.entries(STATUS_LABELS)} /></div><DataNote>{coded} of {catalog.reports.length} reports have at least one established code in this dimension; {catalog.reports.length - coded} have no established code. Multiple codes may occur in one report. The status-specific counts below do not sum to the corpus size.</DataNote><table className="table evidence-table"><caption>{dimension.replaceAll('_', ' ')} · {STATUS_LABELS[status]}</caption><thead><tr><th scope="col">Code and definition</th><th scope="col">Reports / {catalog.reports.length}</th></tr></thead><tbody>{rows.map(r => <tr key={r.code}><td><strong>{shortCode(r.code)}</strong><p>{r.definition}</p><small>{r.code}</small></td><td><div className="count-bar"><span style={{ width: `${r.count / catalog.reports.length * 100}%` }} /><strong>{filterKey && r.count ? <Link to={`/catalogue?${filterKey}=${r.code}&status=${status}`}>{r.count}</Link> : r.count}</strong></div></td></tr>)}</tbody></table><section className="evidence-reading"><h2>How to read the states</h2><dl className="state-definitions"><div><dt>Implemented or demonstrated</dt><dd>The primary source describes functioning behaviour or an executed evaluation under stated conditions.</dd></div><div><dt>Proposed method</dt><dd>The report specifies a method or design contribution whose implementation is not established for this claim.</dd></div><div><dt>Future work</dt><dd>The source explicitly places the capability outside the implemented contribution.</dd></div><div><dt>Not established</dt><dd>The available primary evidence does not support a more specific code or claim.</dd></div></dl></section></>
+}
+function Families({ catalog }) {
+  const groups = new Map()
+  for (const r of catalog.reports) for (const a of primaryApproaches(r)) if (a.family_id) { if (!groups.has(a.family_id)) groups.set(a.family_id, { name: a.attested_name, reports: [] }); const g = groups.get(a.family_id); if (!g.reports.some(x => x.report_id === r.report_id)) g.reports.push(r) }
+  const recurring = [...groups.entries()].filter(([, x]) => x.reports.length > 1).sort((a, b) => a[1].name.localeCompare(b[1].name))
+  return <><PageHeading title="Named families and relationships"><p>Follow source-attested names across reports. The relationships below describe shared tools, extensions, or components. They do not establish shared participants or a citation network.</p></PageHeading><section><h2>Reports in a named family</h2><div className="family-list">{recurring.map(([id, g]) => <article key={id}><h3>{g.name}</h3><ul>{g.reports.sort((a, b) => a.publication.year - b.publication.year).map(r => <li key={r.report_id}><span>{r.publication.year}</span><Link to={reportPath(r)}>{r.publication.title}</Link></li>)}</ul><Link className="family-compare" to={`/compare?ids=${g.reports.slice(0, 4).map(r => encodeURIComponent(r.report_id)).join(',')}`}>Compare {Math.min(4, g.reports.length)} reports<Icon /></Link></article>)}</div></section><section className="relationship-section"><h2>Explicit relationships in the sources</h2>{catalog.family_relations.length ? <ul className="relationship-list">{catalog.family_relations.map((x, i) => <li key={i}><strong>{x.relationship.replaceAll('_', ' ')}</strong><p>{x.notes}</p><ul>{x.report_ids.map(id => <li key={id}><Link to={reportPath(id)}>{catalog.reports.find(r => r.report_id === id)?.publication.title || id}</Link></li>)}</ul><p className="relationship-evidence">Source evidence: {x.evidence_ids.map((eid, j) => { const owner = x.report_ids.find(id => eid.startsWith(id + '-EV-')); return owner ? <Link key={eid} to={reportPath(owner) + '#report-section-5'}>{j ? '; ' : ''}report source inventory</Link> : null })}</p></li>)}</ul> : <p className="missing-text">No explicit report relationship has an established source locator.</p>}<DataNote>Bibliographic citation edges have not been verified for the complete corpus; no citation-network count or inferred edge is displayed.</DataNote></section></>
+}
+function Methods({ catalog, searchRecord }) {
+  const { data, error, retry } = useResource('search-strategies.json')
+  const search = searchRecord || data
+  const stages = [['Raw occurrences in four sources', 4159], ['Records after deduplication', 3030], ['Title–abstract exclusions', 2061], ['Database reports advancing to retrieval', 969], ['Distinct reports from an existing collection', 22], ['Reports sought', catalog.counts.reports_sought], ['Reports not retrieved', catalog.counts.not_retrieved], ['Reports assessed', catalog.counts.reports_assessed], ['Reports excluded after assessment', catalog.counts.excluded_reports], ['Primary reports included', catalog.counts.included_reports]]
+  return <><PageHeading title="Methods and selection"><p>The review follows PRISMA 2020 reporting. The literature cutoff is 29 August 2026; source verification on 5–6 October 2026 checked the frozen records.</p></PageHeading><div className="methods-layout"><aside className="contents"><a href="#selection">Selection accounting</a><a href="#eligibility">Eligibility</a><a href="#search">Search strategies</a><a href="#limits">Review limitations</a><Link to="/register">Decision register</Link></aside><div className="methods-body"><section id="selection"><h2>Selection accounting</h2><ol className="flow-list">{stages.map(([label, count]) => <li key={label}><span>{label}</span><strong>{count.toLocaleString('en')}</strong></li>)}</ol><p>The raw total includes 37 within-source duplicate occurrences. A total of 1,129 duplicates was removed before title–abstract screening. The exported occurrence total was 4,122. The existing collection contained 61 copies: 39 corresponded to reports already represented in the search and 22 were distinct reports.</p><p>Two independent human reviewers completed title–abstract screening. Their original decisions and subsequent adjudication retain separate provenance. All 185 unresolved cases advanced without imputing missing votes. Final report assessment applies the protocol criteria with source locators; independently duplicated full-text review is not documented.</p><Link className="btn btn-outline" to="/register">Open the decision register ({catalog.counts.reports_sought} reports)<Icon /></Link></section><section id="eligibility"><h2>Eligibility and extraction</h2><p>An eligible English-language, peer-reviewed primary report must describe human exploration or a specified guidance contribution over semantic knowledge graphs, with sufficient interaction, method, interface, tool, or framework detail. Evaluation, code, and demonstration availability are extraction fields and are not mandatory inclusion criteria.</p><p>Proposed methods remain eligible when the semantic graph object and concrete interaction or guidance contribution are established. A construction, ontology-engineering, isolated-answer, or backend report requires an identifiable exploration or guidance contribution to meet scope.</p><p>Extraction retains report identity, publication version and date, source locators, implemented interaction, guidance, representation, backend, scalability, evaluation design, sample, measures, and artifacts. All included primary reports are assessed under the same eligibility criteria. The review profiles the 242 included reports and groups source-located operations, conditions, and results by research question and operation or task. Outcome units, null or contrary findings, and limitations remain explicit; the synthesis does not rank effectiveness or pool outcomes statistically.</p><div className="exclusion-accounting"><h3>Assessment exclusions</h3><table className="table"><caption>{catalog.counts.excluded_reports} excluded reports, with report-specific source-linked reasons</caption><tbody>{[['Not a primary study', 26], ['Out of scope', 37], ['Publication status not established', 3], ['Insufficient methodological detail', 5], ['Non-English', 11]].map(([reason, n]) => <tr key={reason}><th scope="row">{reason}</th><td>{n}</td></tr>)}</tbody></table></div><DataNote>“Publication status not established” means that an eligible peer-reviewed publication was not established in the available primary sources. It is not an assertion that a report was unreviewed. Inaccessibility is retained as “not retrieved”, rather than a content exclusion.</DataNote></section><section id="search"><h2>Recorded search strategies</h2>{search ? <><table className="table search-sources"><caption>Frozen primary search record</caption><thead><tr><th scope="col">Source</th><th scope="col">Field</th><th scope="col">Raw occurrences</th></tr></thead><tbody>{search.sources.map(s => <tr key={s.name}><th scope="row">{s.name}</th><td>{s.field}</td><td>{s.raw_occurrences.toLocaleString('en')}</td></tr>)}</tbody></table><details className="collapse collapse-arrow query-details"><summary className="collapse-title">Exact portable v3 expression</summary><div className="collapse-content"><pre>{search.portable_v3}</pre></div></details><a className="btn btn-sm btn-outline" href={`${import.meta.env.BASE_URL}data/search-strategies.json`} download>Download search record<Icon name="download" /></a></> : <AsyncState error={error} retry={retry} label="Loading the recorded expression…" />}<p>IEEE partitioned the exploration clauses into seven All Metadata queries with raw counts 13, 30, 40, 19, 7, 42, and 40. The exact submitted strings were not retained. Original ACM, OpenAlex, and IEEE exports were unavailable for independent replay.</p><p>The search log records the first 200 relevance-ranked Google Scholar results separately as a supplementary search. Its raw 200-result export was unavailable. Web of Science, DBLP, and backward citation searches were planned; their execution is not documented.</p></section><section id="limits"><h2>PRISMA reporting checklist</h2><p>The 42 checklist rows have verified reporting locators: 30 are reported, 4 are partially reported, and 8 are not applicable. Items 6–9 retain limitations concerning information sources, search reproduction, selection staffing, and extraction staffing. This does not establish full compliance.</p><a className="btn btn-sm btn-outline" href={`${import.meta.env.BASE_URL}data/prisma-checklist.json`} download>Download the checklist and locators<Icon name="download" /></a><h2>Review and evidence limits</h2><p>The {catalog.counts.not_retrieved} reports not retrieved limit coverage. The existing collection’s original identification dates and methods are not established. Missing source exports and IEEE strings limit independent search reproduction. The review was not registered, and independent duplicate full-text review is not documented.</p><p>Case demonstrations, controlled trials, ranking annotations, execution benchmarks, and deployment statistics are kept distinct. A common system family does not establish a common cohort; participant totals are not pooled across reports. Performance results apply to the reported workload and implementation conditions.</p><p>The authors report no specific funding or support and no competing interests.</p><div className="methods-links"><ExternalLink href={catalog.review.workbook_url}>Review workbook and protocol</ExternalLink><ExternalLink href="https://www.prisma-statement.org/prisma-2020">PRISMA 2020</ExternalLink><a href={`${import.meta.env.BASE_URL}data/survey.tex`} download>Review LaTeX source<Icon name="download" /></a></div></section></div></div></>
+}
+function Register() {
+  const tableTop = useRef(null); const focusAfterPage = useRef(false)
+  const { data, error, retry } = useResource('selection-register.json'); const [params, setParams] = useSearchParams(); const q = params.get('q') || ''; const decision = params.get('decision') || ''; const requested = Math.max(1, Number.parseInt(params.get('page') || '1', 10) || 1)
+  useEffect(() => { if (focusAfterPage.current) { focusAfterPage.current = false; tableTop.current?.focus({ preventScroll: true }); tableTop.current?.scrollIntoView({ block: 'start' }) } }, [params])
+  if (!data) return <AsyncState error={error} retry={retry} label="Loading the decision register…" />
+  const rows = data.records.filter(r => (!decision || (r.final_decision || r.workflow) === decision) && (!q || [r.title || '', r.record_id, r.decision_basis || '', r.exclusion_reason || ''].join(' ').toLowerCase().includes(q.toLowerCase())))
+  const pages = Math.max(1, Math.ceil(rows.length / 25)); const page = Math.min(pages, requested)
+  const update = (key, value) => { if (key === 'page') focusAfterPage.current = true; const p = new URLSearchParams(params); value ? p.set(key, value) : p.delete(key); if (key !== 'page') p.delete('page'); setParams(p, { replace: key === 'q' }) }
+  return <><PageHeading title="Retrieval and decision register"><p>The register contains all 991 distinct reports sought. The 242 included primary reports form the synthesis catalogue; 39 duplicate copies are excluded from the 991-report denominator.</p></PageHeading><div className="register-controls"><label className="filter-field"><span>Search title, ID, or reason</span><input className="input input-bordered" type="search" value={q} onChange={e => update('q', e.target.value)} /></label><FilterSelect label="Disposition" value={decision} onChange={v => update('decision', v)} options={['Include', 'Exclude', 'Not retrieved'].map(x => [x, x])} /><a className="btn btn-outline" href={`${import.meta.env.BASE_URL}data/selection-register.json`} download>Download complete register<Icon name="download" /></a></div><p role="status" aria-live="polite">{rows.length} matching records</p><div ref={tableTop} className="register-table-scroll" tabIndex="0" role="region" aria-label="Decision register"><table className="table register-table"><caption>Criteria-based report assessment and documented retrieval gaps</caption><thead><tr><th scope="col">Report</th><th scope="col">Disposition</th><th scope="col">Assessment basis or retrieval limit</th></tr></thead><tbody>{rows.slice((page - 1) * 25, page * 25).map(r => <tr key={r.record_id}><th scope="row">{r.final_decision === 'Include' ? <Link to={reportPath(r.canonical_report_id)}>{r.title || r.record_id}</Link> : r.title || r.record_id}<small>{r.record_id}</small></th><td>{r.final_decision || r.workflow}</td><td>{r.exclusion_reason || r.decision_basis || 'No source-based content exclusion established.'}</td></tr>)}</tbody></table></div>{!rows.length && <p className="empty-state">No records match these filters. Clear the search or choose another disposition.</p>}<div className="pagination-bar"><span>Page {page} of {pages}</span><div className="join"><button className="btn btn-sm join-item" disabled={page === 1} onClick={() => update('page', String(page - 1))}>Previous</button><button className="btn btn-sm join-item" disabled={page === pages} onClick={() => update('page', String(page + 1))}>Next</button></div></div><details className="collapse collapse-arrow duplicate-details"><summary className="collapse-title">Show {data.duplicate_copies.length} reconciled duplicate copies</summary><div className="collapse-content"><ul>{data.duplicate_copies.map(r => <li key={r.record_id}>{r.record_id} → {r.canonical_report_id}</li>)}</ul></div></details></>
+}
+function About({ catalog }) { return <><PageHeading title="About the review"><p>{catalog.review.title}</p></PageHeading><section className="authors-section"><h2>Authors and affiliations</h2><div className="author-list">{catalog.review.authors.map(a => <article key={a.name}><h3>{a.name}</h3><p>{a.affiliation}</p><a href={`mailto:${a.email}`}>{a.email}</a></article>)}</div></section><section className="about-data"><h2>Data and documents</h2><p>Use the catalogue to read and compare primary reports, then inspect their source evidence, evaluation samples, and recorded resource checks.</p><ul className="download-list"><li><a href={`${import.meta.env.BASE_URL}data/catalog.json`} download>Complete included-report catalogue · JSON<Icon name="download" /></a><span>242 reports with source locators and structured coding</span></li><li><a href={`${import.meta.env.BASE_URL}data/catalog.schema.json`} download>Catalogue schema · JSON<Icon name="download" /></a><span>Fields, controlled states, and integrity rules</span></li><li><a href={`${import.meta.env.BASE_URL}data/selection-register.json`} download>Decision register · JSON<Icon name="download" /></a><span>991 distinct reports sought; 39 copies separately</span></li><li><a href={`${import.meta.env.BASE_URL}data/survey.pdf`} download>Review manuscript · PDF<Icon name="download" /></a><a href={`${import.meta.env.BASE_URL}data/survey.tex`} download>LaTeX source<Icon name="download" /></a></li><li><a href={`${import.meta.env.BASE_URL}data/kg-exploration-requirements.pdf`} download>Requirements for a future exploration application · PDF<Icon name="download" /></a><a href={`${import.meta.env.BASE_URL}data/kg-exploration-requirements.tex`} download>LaTeX source<Icon name="download" /></a><span>A separate specification for researchers and non-experts, supporting RDF/SPARQL and property graphs/Cypher in version 1</span></li><li><a href={`${import.meta.env.BASE_URL}data/synthesis-evidence-ledger.json`} download>Synthesis evidence ledger · JSON<Icon name="download" /></a><span>Source locators, operations, conditions, results, and outcome units</span></li><li><a href={`${import.meta.env.BASE_URL}data/synthesis-evidence-ledger.csv`} download>Synthesis evidence ledger · CSV<Icon name="download" /></a></li><li><a href={`${import.meta.env.BASE_URL}data/synthesis-candidate-register.csv`} download>Synthesis candidate register · CSV<Icon name="download" /></a></li><li><a href={`${import.meta.env.BASE_URL}data/synthesis-grouping-rule.json`} download>Synthesis grouping rule · JSON<Icon name="download" /></a><span>Method data for grouping evidence by research question and operation or task</span></li><li><a href={`${import.meta.env.BASE_URL}data/data-manifest.json`} download>Data manifest and catalogue checksum · JSON<Icon name="download" /></a></li></ul><DataNote>Primary papers are linked at their publishers or repositories; their PDFs are not redistributed here. A verified landing-page match does not establish a working demonstration, a successful source build, a licence, or equivalence to the historical version.</DataNote><ExternalLink href={catalog.review.workbook_url}>Protocol and review workbook</ExternalLink></section></> }
+function NotFound() { return <><PageHeading title="This page was not found"><p>The address may have changed. Open the report catalogue or methods to continue.</p></PageHeading><Link className="btn btn-primary" to="/catalogue">Open catalogue<Icon /></Link></> }
+function App() {
+  const { data: catalog, error, retry } = useResource('catalog-index.json'); const { data: book, error: bookError, retry: retryBook } = useResource('codebook.json')
+  const location = useLocation(); const navigate = useNavigate(); const main = useRef(null); const [message, setMessage] = useState('')
+  const [selected, setSelected] = useState(() => [...new Set((new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search).get('compare') || '').split(',').filter(Boolean))].slice(0, 4))
+  useEffect(() => { document.title = 'Knowledge Graph Exploration Survey'; if (!location.hash) { window.scrollTo({ top: 0, behavior: 'instant' }); main.current?.focus({ preventScroll: true }) } }, [location.pathname, location.hash])
+  const validIds = new Set(catalog?.reports.map(r => r.report_id) || [])
+  const querySelection = new URLSearchParams(location.search).get('compare')
+  const validSelected = [...new Set((location.pathname === '/catalogue' && querySelection !== null ? querySelection.split(',') : selected).filter(id => validIds.has(id)))].slice(0, 4)
+  useEffect(() => {
+    if (!catalog || location.pathname !== '/catalogue' || querySelection === null) return
+    const known = new Set(catalog.reports.map(r => r.report_id))
+    const next = [...new Set(querySelection.split(',').filter(id => known.has(id)))].slice(0, 4)
+    setSelected(previous => previous.join(',') === next.join(',') ? previous : next)
+  }, [catalog, location.pathname, querySelection])
+  const toggle = id => { const next = validSelected.includes(id) ? validSelected.filter(x => x !== id) : validSelected.length < 4 ? [...validSelected, id] : validSelected; setSelected(next); if (location.pathname === '/catalogue') { const p = new URLSearchParams(location.search); next.length ? p.set('compare', next.join(',')) : p.delete('compare'); navigate({ pathname: location.pathname, search: p.toString() }, { replace: true }) } }
+  const clear = () => { setSelected([]); if (location.pathname === '/catalogue') { const p = new URLSearchParams(location.search); p.delete('compare'); navigate({ pathname: location.pathname, search: p.toString() }, { replace: true }) } }
+  return <div className="site-shell"><a className="skip-link" href="#main-content">Skip to content</a><header className="site-header"><Link className="wordmark" to="/">Knowledge Graph<br /><span>Exploration Survey</span></Link><nav aria-label="Main navigation"><NavLink to="/catalogue">Catalogue</NavLink><NavLink to="/evidence">Evidence</NavLink><NavLink to="/families">Families</NavLink><NavLink to="/methods">Methods</NavLink><NavLink to="/about">About</NavLink></nav></header><main id="main-content" ref={main} tabIndex="-1">{!catalog || !book ? <AsyncState error={error || bookError} retry={() => { retry(); retryBook() }} /> : <Routes><Route path="/" element={<Home catalog={catalog} book={book} selected={validSelected} toggle={toggle} />} /><Route path="/catalogue" element={<Catalog catalog={catalog} book={book} selected={validSelected} toggle={toggle} notice={setMessage} />} /><Route path="/reports/:id" element={<ReportDetail catalog={catalog} book={book} selected={validSelected} toggle={toggle} notice={setMessage} />} /><Route path="/compare" element={<Compare catalog={catalog} book={book} notice={setMessage} />} /><Route path="/evidence" element={<Evidence catalog={catalog} book={book} />} /><Route path="/families" element={<Families catalog={catalog} />} /><Route path="/methods" element={<Methods catalog={catalog} />} /><Route path="/register" element={<Register />} /><Route path="/about" element={<About catalog={catalog} />} /><Route path="/survey" element={<Navigate to="/catalogue" replace />} /><Route path="/taxonomy" element={<Navigate to="/evidence" replace />} /><Route path="/charts" element={<Navigate to="/evidence" replace />} /><Route path="/citation-map" element={<Navigate to="/families" replace />} /><Route path="*" element={<NotFound />} /></Routes>}</main><footer className="site-footer"><p>Knowledge Graph Exploration Survey</p><p>Literature cutoff: 29 August 2026<br />Source verification: 6 October 2026</p><Link to="/about">Authors, data, and documents<Icon /></Link></footer><CompareTray selected={validSelected} clear={clear} /><div className="notice-region" role="status" aria-live="polite">{message && <p>{message}<button className="btn btn-xs btn-ghost" onClick={() => setMessage('')} aria-label="Dismiss notification"><Icon name="close" /></button></p>}</div></div>
+}
+export { Home, Catalog, ReportArticle, Comparison, Evidence, Families, Methods, About, NotFound }
+export default App

@@ -1,0 +1,301 @@
+{
+  "verified_on": "2026-10-06",
+  "manuscript": "survey.tex",
+  "compilation": "success",
+  "rows": [
+    {
+      "row": 8,
+      "item": "1",
+      "status": "Done",
+      "location": "survey.tex: title",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 9,
+      "item": "2",
+      "status": "Done",
+      "location": "survey.tex: Abstract (251 words)",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 10,
+      "item": "3",
+      "status": "Done",
+      "location": "survey.tex: Introduction; Related Work and Historical Context",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 11,
+      "item": "4",
+      "status": "Done",
+      "location": "survey.tex: Introduction, RQ1–RQ5",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 12,
+      "item": "5",
+      "status": "Done",
+      "location": "survey.tex: Review Method / Protocol, Scope, and Analytical Units; Appendix A; workbook02",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 13,
+      "item": "6",
+      "status": "Partially reported",
+      "location": "survey.tex: Review Method / Information Sources and Search; Appendix B; workbook03",
+      "note": "Original discovery dates/routes of the existing local collection are not established; executed and planned sources are separated. The limitation is reported explicitly."
+    },
+    {
+      "row": 14,
+      "item": "7",
+      "status": "Partially reported",
+      "location": "survey.tex: Appendix B, Recorded Search Strategy; workbook03 literal strings and verification log",
+      "note": "Seven exact submitted IEEE block strings and the original ACM/OpenAlex/IEEE exports are not retained; the combined expression and block counts provide partial reproducibility. The supplementary Google Scholar first-200 raw results export was also unavailable for independent replay."
+    },
+    {
+      "row": 15,
+      "item": "8",
+      "status": "Partially reported",
+      "location": "survey.tex: Review Method / Selection and Retrieval; Appendix A; workbook05–06",
+      "note": "Two independent human title/abstract reviewers are confirmed. Full-text determinations apply criteria with source locators; independently duplicated review and a verified full-text human-reviewer count are not documented."
+    },
+    {
+      "row": 16,
+      "item": "9",
+      "status": "Partially reported",
+      "location": "survey.tex: Review Method / Extraction and Evidence Appraisal; workbook07",
+      "note": "Source-located extraction and checks are recorded. A verified human-extractor count and independent duplicate extraction are not documented; no missing inputs are imputed."
+    },
+    {
+      "row": 17,
+      "item": "10a",
+      "status": "Done",
+      "location": "survey.tex: Extraction and Evidence Appraisal; Evaluation Evidence; workbook07 S:X",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 18,
+      "item": "10b",
+      "status": "Done",
+      "location": "survey.tex: Extraction and Evidence Appraisal; Taxonomy and Coding Framework; workbook07",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 19,
+      "item": "11",
+      "status": "Done",
+      "location": "survey.tex: Extraction and Evidence Appraisal; Missingness and Appraisal; per-report workbook07 AE",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 20,
+      "item": "12",
+      "status": "N/A",
+      "location": "survey.tex: Review Method; Evaluation Evidence; source measures preserved in workbook07",
+      "note": "No common effect measure or pooled estimate was defined; source-specific measures/units and reported precision are retained."
+    },
+    {
+      "row": 21,
+      "item": "13a",
+      "status": "Done",
+      "location": "survey.tex: Protocol, Scope, and Analytical Units; Taxonomy and Coding Framework; Appendix A",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 22,
+      "item": "13b",
+      "status": "Done",
+      "location": "survey.tex: Extraction and Evidence Appraisal; report/version corrections and explicit missingness in workbook07",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 23,
+      "item": "13c",
+      "status": "Done",
+      "location": "survey.tex: taxonomy, workflow, scalability, evaluation and catalogue tables; Figure1; workbook07",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 24,
+      "item": "13d",
+      "status": "Done",
+      "location": "survey.tex: Review Method; Taxonomy and Coding Framework; Evaluation Evidence",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 25,
+      "item": "13e",
+      "status": "Done",
+      "location": "survey.tex: Backend Assumptions and Scalability; Evaluation Evidence; Discussion and Design Agenda",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 26,
+      "item": "13f",
+      "status": "N/A",
+      "location": "survey.tex: Review Method; Limitations",
+      "note": "No statistical sensitivity analysis was conducted; retrieval, source-version and report-family limitations are explicit."
+    },
+    {
+      "row": 27,
+      "item": "14",
+      "status": "N/A",
+      "location": "survey.tex: Extraction and Evidence Appraisal; Missingness and Appraisal; Limitations",
+      "note": "No formal synthesis-level reporting-bias estimate was conducted for the heterogeneous descriptive synthesis; incomplete access/reporting is discussed."
+    },
+    {
+      "row": 28,
+      "item": "15",
+      "status": "N/A",
+      "location": "survey.tex: Review Method; Missingness and Appraisal; Limitations",
+      "note": "No graded certainty assessment was conducted; the review gives source/design limitations and makes no certainty rating."
+    },
+    {
+      "row": 29,
+      "item": "16a",
+      "status": "Done",
+      "location": "survey.tex: Selection and Retrieval, Table1 and Figure1; workbook09",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 30,
+      "item": "16b",
+      "status": "Done",
+      "location": "survey.tex: Selection and Retrieval; Appendix C; workbook06 J:L and source locators",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 31,
+      "item": "17",
+      "status": "Done",
+      "location": "survey.tex: Appendices and representative tables; all242 report characteristics in workbook07 and companion catalogue",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 32,
+      "item": "18",
+      "status": "Done",
+      "location": "survey.tex: Missingness and Appraisal; per-report design/reporting limitations in workbook07 AE",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 33,
+      "item": "19",
+      "status": "Done",
+      "location": "survey.tex: Evaluation Evidence and table; all242 report-level outcomes/missingness in workbook07 S:Y",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 34,
+      "item": "20a",
+      "status": "Done",
+      "location": "survey.tex: Interaction Workflows; Guidance; Backend Assumptions; Evaluation Evidence",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 35,
+      "item": "20b",
+      "status": "N/A",
+      "location": "survey.tex: Review Method; Evaluation Evidence",
+      "note": "No statistical synthesis or pooled effect estimate was conducted."
+    },
+    {
+      "row": 36,
+      "item": "20c",
+      "status": "Done",
+      "location": "survey.tex: Evaluation Evidence; Discussion and Design Agenda; Limitations",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 37,
+      "item": "20d",
+      "status": "N/A",
+      "location": "survey.tex: Review Method; Limitations",
+      "note": "No statistical sensitivity analysis was conducted."
+    },
+    {
+      "row": 38,
+      "item": "21",
+      "status": "N/A",
+      "location": "survey.tex: Missingness and Appraisal; Limitations",
+      "note": "No formal reporting-bias estimate is presented; source/reporting gaps are described narratively."
+    },
+    {
+      "row": 39,
+      "item": "22",
+      "status": "N/A",
+      "location": "survey.tex: Missingness and Appraisal; Limitations",
+      "note": "No graded certainty result is presented; the report does not imply a GRADE or similar rating."
+    },
+    {
+      "row": 40,
+      "item": "23a",
+      "status": "Done",
+      "location": "survey.tex: Discussion and Design Agenda; Conclusions",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 41,
+      "item": "23b",
+      "status": "Done",
+      "location": "survey.tex: Missingness and Appraisal; Limitations",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 42,
+      "item": "23c",
+      "status": "Done",
+      "location": "survey.tex: Limitations; Information Sources and Search",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 43,
+      "item": "23d",
+      "status": "Done",
+      "location": "survey.tex: Discussion and Design Agenda; kg-exploration-requirements.tex",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 44,
+      "item": "24a",
+      "status": "Done",
+      "location": "survey.tex: Protocol, Scope, and Analytical Units; Declarations; Abstract",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 45,
+      "item": "24b",
+      "status": "Done",
+      "location": "survey.tex: Declarations / Protocol and data availability; workbook02",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 46,
+      "item": "24c",
+      "status": "Done",
+      "location": "survey.tex: Review Method and Appendix A; workbook02 dated amendments5–6October2026",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 47,
+      "item": "25",
+      "status": "Done",
+      "location": "survey.tex: Declarations / Funding; Abstract",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 48,
+      "item": "26",
+      "status": "Done",
+      "location": "survey.tex: Declarations / Competing interests",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    },
+    {
+      "row": 49,
+      "item": "27",
+      "status": "Done",
+      "location": "survey.tex: Declarations / Protocol and data availability; workbook; companion downloadable catalogue and decision register",
+      "note": "Reporting locator verified against compiled survey.tex on 6 October 2026. Descriptive report-level synthesis; no unsupported cohort, reviewer or outcome claim."
+    }
+  ]
+}

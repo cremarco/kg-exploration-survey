@@ -1,29 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="review">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KG Exploration Survey</title>
-    <!-- GitHub Pages SPA redirect handler: restores real path after 404 fallback -->
-    <script type="text/javascript">
-      (function (l) {
-        if (l.search && l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          var newPath = l.pathname.replace(/\/$/, "") + decoded + l.hash;
-          window.history.replaceState(null, null, newPath);
+    <meta name="theme-color" content="#f7f5ed" />
+    <meta name="description" content="A systematic review of knowledge graph exploration, with primary reports and source evidence on interaction, guidance, visualisation, backends, scalability, and evaluation." />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="preload" href="%BASE_URL%fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <title>Knowledge Graph Exploration Survey</title>
+    <script>
+      (function () {
+        const target = new URLSearchParams(window.location.search).get('redirect');
+        if (target && target.startsWith('/') && !target.startsWith('//')) {
+          const base = window.location.pathname.replace(/\/$/, '');
+          window.history.replaceState(null, '', base + target);
         }
-      })(window.location);
+      })();
     </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript><p>This catalogue needs JavaScript for filtering and comparison. The <a href="%BASE_URL%data/catalog.json">complete report catalogue</a>, <a href="%BASE_URL%data/selection-register.json">decision register</a>, and <a href="%BASE_URL%data/survey.tex">review manuscript</a> remain available to download.</p></noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

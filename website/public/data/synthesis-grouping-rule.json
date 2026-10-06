@@ -1,0 +1,96 @@
+{
+  "schema": "illustration-retention-and-grouping-rule-1",
+  "documented_on": "2026-10-06",
+  "procedure_name": "Illustrative report retention and grouping procedure",
+  "time_order": "This rule was introduced on 6 October 2026 after the draft already cited 49 of the frozen 242 PRISMA-included primary reports; it documents their retention and grouping, not how the earlier choice was made.",
+  "uniform_documentary_access_tests": [
+    "Resolve the included canonical ID and frozen row.",
+    "Resolve source hashes and existing evidence IDs/page-or-section locators; verify a local-copy hash when found.",
+    "Preserve concrete operation/mechanism/condition text, original status and explicit missingness.",
+    "Keep report evaluation scope and each local study entry; do not impute missing study classifications or independent cohorts."
+  ],
+  "current_illustration_retention_tests": [
+    "Nominate a precise fact in a current cited context, separating it from general design implications.",
+    "Inspect available primary text and record the factual correspondence, source SHA, existing evidence IDs and exact page scope; a token/locator match alone is insufficient.",
+    "Retain only for an explicit documentary operation/condition, qualified contrast, boundary/null outcome, companion/demo distinction or historical purpose.",
+    "Preserve material relevant qualifications identified in the inspected scope; favorable and contrary cases use the same source/version requirement.",
+    "State the distinct purpose relative to named overlapping examples; unresolved evidence or redundancy requires source review, even for an existing citation."
+  ],
+  "narrative_roles": {
+    "principal": "Documentary anchor for a precise operation, mechanism, access condition or evidence unit; no best/typical/effective verdict.",
+    "contrasting": "A named descriptive difference in operations, assumptions, tasks or designs; no superiority or causal verdict.",
+    "boundary": "A material limitation, contrary/null outcome, missing measurement or scope condition qualifying interpretation.",
+    "demo": "A demonstrated example or companion implementation, without inferring a new independent study or cohort.",
+    "historical": "Source-located background for an earlier operation/configuration; dates do not establish improvement."
+  },
+  "disposition_definitions": {
+    "retained_current_illustration_scoped": "Retained for the nominated fact-context pair and stated purpose only; not all report claims or conclusions.",
+    "current_illustration_needs_source_review": "A current illustration has an insufficient/inconsistent nominated source basis or unresolved retention redundancy.",
+    "not_selected_current_unresolved": "Uncited included alternative; no present fact nominated or comparative retention judgement performed."
+  },
+  "comparison_basis": "Descriptive contrasts can explain differing operations/tasks/assumptions. Outcome comparisons must preserve task, population, comparator, measure/unit and conditions; without established compatibility use a boundary case rather than a comparative effect.",
+  "grouping_basis": "The five existing RQs and exact existing map groups/codes/statuses are candidate pools only. Their membership does not prove compatibility or claim support.",
+  "amendment_rule": "Any additional/removed illustration needs a dated record of the nominated fact, source-target result, distinct purpose and qualification/overlap basis; no numerical quota or favorable-outcome requirement.",
+  "limits": [
+    "Targeted documentary inspection, not an independent human appraisal or full-text reading attestation.",
+    "The 193 alternatives remain unresolved; the 49 are not claimed to be minimal or optimal.",
+    "All other citation facts and synthesis conclusions remain outside these nominated checks unless separately listed.",
+    "No quality rating, expertise inference, effect pooling, causal comparison or new corpus."
+  ],
+  "source_bindings": {
+    "manuscript": {
+      "document": "survey.tex",
+      "sha256": "6e1350860ecc3487ab8d9632cb84a8ca315b4c7e25a50c30b55bb44ad11e185c"
+    },
+    "catalogue": {
+      "document": "catalog.json",
+      "sha256": "0e144d2ffc774613d8c1367599a16c6644b6c110374f68c1e2e3f1c86fbd891f"
+    },
+    "codebook": {
+      "document": "codebook.json",
+      "sha256": "963940030e7df0fb0a79cadd438ef0abee5f8797a6e4acf7d76617490b30a2d0"
+    },
+    "frozen_extraction": {
+      "document": "included-extraction.json",
+      "sha256": "4455e52c6267ae41304f87f99dbbb0fa6d9084d5fba9bba3c9ff3bc0ae783009"
+    },
+    "mapping_rules": {
+      "document": "mapping-rules.txt",
+      "sha256": "0283c18959d346a9e21d84d4beac2b160d0d723888af733b25509df26e6ac29d"
+    },
+    "rq_evidence_map": {
+      "document": "rq-evidence-map.json",
+      "sha256": "7d1a6b9d58284d52dfe4f4411c924fb288ae1e509230ac4f5cc9054228592fe0"
+    },
+    "documented_rule": {
+      "document": "illustration-selection-rule.txt",
+      "sha256": "5f1222d2567330a9d1c6da8b040e37c78e20578e0a8c5109c83332962713466b"
+    }
+  },
+  "original_inspection_basis": {
+    "documented_on": "2026-10-06",
+    "manuscript_sha256": "f5ba981708972fffdc646373d0ae3d7cb9682b1d569c0edcb524d58e05e84928",
+    "scope": "The original targeted inspection concerns 49 nominated fact-context pairs. Current source bindings relocate those exact unchanged paragraphs; no new primary inspection is claimed.",
+    "all_49_original_context_paragraphs_unchanged": true,
+    "claim_support_judgement": "not_performed"
+  },
+  "applied_summary": {
+    "included_retrieved_report_n": 242,
+    "current_included_primary_illustration_n": 49,
+    "nominated_fact_context_pair_n": 49,
+    "scoped_retained_current_illustration_n": 49,
+    "current_illustration_needs_source_review_n": 0,
+    "uncited_unresolved_alternative_n": 193,
+    "local_primary_copy_hash_matched_report_n": 221,
+    "local_primary_copy_location_unresolved_report_n": 21,
+    "unique_primary_source_file_sha256_n_for_49": 48,
+    "maximum_short_primary_anchor_words_per_unique_source_file": 9,
+    "material_nominated_fact_inconsistency_identified_n": 0,
+    "existing_map_group_n_preserved": 325,
+    "existing_map_membership_n_preserved": 7342,
+    "existing_source_evidence_object_n_preserved": 6029,
+    "claim_support_judgement": "not_performed",
+    "scope": "These are audit/documentary counts; they do not establish all-citation factual verification, optimal selection, full-text reading, independence or effectiveness."
+  },
+  "claim_support_judgement": "not_performed"
+}
